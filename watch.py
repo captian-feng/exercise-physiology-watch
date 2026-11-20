@@ -33,6 +33,7 @@ SOURCES = json.loads((ROOT / "sources.json").read_text(encoding="utf-8-sig"))
 TOPICS = SOURCES["topics"]
 FEEDS = SOURCES["feeds"]
 PUBLISHER_PAGES = SOURCES.get("publisher_pages", {})
+HISTORY_BACKFILL = SOURCES.get("history_backfill")
 
 
 # Each host has its own lock and minimum interval between request starts.
@@ -79,12 +80,14 @@ def identity(text):
     return "".join(c for c in unicodedata.normalize("NFKC", text).casefold() if c.isalnum())
 
 
-def crossref(issns, since, baseline, issue_sweep=False):
+def crossref(issns, since, baseline, issue_sweep=False, until=None):
     filters = ["issn:" + "|".join(issns)]
     if issue_sweep:
         filters.append("from-print-pub-date:" + since)
     else:
         filters.append(("from-pub-date:" if baseline else "from-index-date:") + since)
+    if until:
+        filters.append("until-pub-date:" + until)
     if not baseline and not issue_sweep:
         publication_floor = datetime.fromisoformat(since).date() - timedelta(days=90)
         filters.append("from-pub-date:" + publication_floor.isoformat())
@@ -132,8 +135,8 @@ def openalex(issns, since):
         cursor = page["meta"].get("next_cursor") if len(page["results"]) == 100 else None
 
 
-def pubmed_ids(query, start, end):
-    window = f'"{start:%Y/%m/%d}"[crdt] : "{end:%Y/%m/%d}"[crdt]'
+def pubmed_ids(query, start, end, field="crdt"):
+    window = f'"{start:%Y/%m/%d}"[{field}] : "{end:%Y/%m/%d}"[{field}]'
     search = json.loads(fetch(NCBI + "esearch.fcgi", db="pubmed", retmode="json",
                               retmax=9999, term=f"({query}) AND ({window})"))
     result = search["esearchresult"]
@@ -144,14 +147,14 @@ def pubmed_ids(query, start, end):
     if start == end:
         raise ValueError(f"PubMed query still exceeds the per-request cap on {start}")
     midpoint = start + (end - start) // 2
-    yield from pubmed_ids(query, start, midpoint)
-    yield from pubmed_ids(query, midpoint + timedelta(days=1), end)
+    yield from pubmed_ids(query, start, midpoint, field)
+    yield from pubmed_ids(query, midpoint + timedelta(days=1), end, field)
 
 
-def pubmed(query, since):
+def pubmed(query, since, until=None):
     start_date = datetime.fromisoformat(since).date()
-    today = max(start_date, datetime.now(TZ).date())
-    ids = list(pubmed_ids(query, start_date, today))
+    end = datetime.fromisoformat(until).date() if until else max(start_date, datetime.now(TZ).date())
+    ids = list(pubmed_ids(query, start_date, end, "pdat" if until else "crdt"))
     for start in range(0, len(ids), 100):
         batch = ElementTree.fromstring(fetch(NCBI + "efetch.fcgi", db="pubmed",
                                              id=",".join(ids[start:start + 100]), retmode="xml"))
@@ -425,6 +428,27 @@ def main():
         enqueue("PubMed", "全部重点刊", pubmed, (pubmed_journals,), True)
         for topic, query in TOPICS.items():
             enqueue("PubMed", topic, pubmed, (query,), False)
+        if HISTORY_BACKFILL:
+            start, until = HISTORY_BACKFILL["from"], HISTORY_BACKFILL["through"]
+            period = start + " 至 " + until
+            backfill_crossref = "历史 Crossref " + period
+            backfill_pubmed = "历史 PubMed " + period
+            done = set(db.execute(
+                "SELECT source, label FROM checkpoints WHERE source IN (?, ?)",
+                (backfill_crossref, backfill_pubmed),
+            ))
+            plans = [
+                (backfill_crossref, name, crossref, (issns, start, True, False, until), True)
+                for name, issns in journals
+            ]
+            plans.extend(
+                (backfill_pubmed, name, pubmed,
+                 (" OR ".join(f'"{issn}"[is]' for issn in issns), start, until), True)
+                for name, issns in journals
+            )
+            plans.extend((backfill_pubmed, topic, pubmed, (query, start, until), False)
+                         for topic, query in TOPICS.items())
+            jobs.extend(plan for plan in plans if plan[:2] not in done)
         history = []
         completed = []
         with ThreadPoolExecutor(max_workers=3) as pool:
@@ -456,7 +480,7 @@ def main():
             for item in items:
                 canonical = next((issn_names[issn] for issn in item.get("issns", [])
                                   if issn in issn_names), None)
-                if journal and source == "PubMed" and not canonical:
+                if journal and (source == "PubMed" or source.startswith("历史 PubMed ")) and not canonical:
                     continue
                 upsert(db, item, canonical or label if journal else label, source, day, journal)
                 if canonical and not journal:

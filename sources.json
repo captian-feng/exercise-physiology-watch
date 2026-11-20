@@ -119,5 +119,9 @@
         "url": "https://journals.humankinetics.com/view/journals/ijspp/aop/issue.xml"
       }
     ]
+  },
+  "history_backfill": {
+    "from": "2025-11-20",
+    "through": "2026-11-20"
   }
 }
