@@ -12,7 +12,7 @@ from collections import defaultdict
 from pathlib import Path
 import re
 
-from terminology import correct
+from terminology import correct, matched_terms
 
 MODEL = Path(__file__).resolve().parent / "models" / "translate-en_zh-1_9"
 TOPIC_PATTERNS = {
@@ -240,6 +240,10 @@ REDUPLICATION = {
     "满满", "空空", "看看", "想想", "试试", "说说", "走走", "坐坐", "谈谈",
 }
 REPEATED_UNIT = re.compile(r"([\u4e00-\u9fff]{2,3})\1")
+LEFT_OVER_WORD = re.compile(r"[A-Za-z][A-Za-z\-]{2,}")
+# Titles often separate a descriptive clause from the finding with a colon or a
+# dash; decoding the pieces separately stops the model from drifting.
+SEGMENT_SPLIT = re.compile(r"(?<=[:;])\s+|\s+[–—]\s+")
 
 
 def collapse_repeats(text):
@@ -284,6 +288,79 @@ def truncated(title, chinese):
     return len(chinese) < len(title) * 0.20
 
 
+def quality_score(title, chinese):
+    """Rank candidate translations without a reference.
+
+    Glossary coverage is the strongest signal available offline: if the title
+    names a term the glossary knows, a good translation uses its approved
+    Chinese. Leftovers, loops, doubled words and truncation subtract.
+    """
+    terms = matched_terms(title)
+    score = 2 * sum(1 for term in terms if term["zh"] in chinese)
+    score -= 3 * len(LEFT_OVER_WORD.findall(chinese))
+    score -= 6 if degenerate(chinese) else 0
+    score -= 3 if REPEATED_UNIT.search(chinese) else 0
+    score -= 3 if truncated(title, chinese) else 0
+    return score
+
+
+def assemble(parts, pieces):
+    """Join translated segments back with Chinese punctuation."""
+    text = ""
+    for index, piece in enumerate(pieces):
+        text += piece
+        if index < len(pieces) - 1:
+            text += "：" if parts[index].rstrip().endswith((":", "：")) else "；"
+    return text
+
+
+def translate_batch(engine, sp, titles):
+    """Pick the best of several decoding attempts per title.
+
+    Three whole-title hypotheses plus one segmented attempt are decoded, then
+    ranked by quality_score. Long titles with a colon drift or stop early when
+    decoded in one pass, so the segmented candidate usually wins there, while
+    plain titles keep the whole-title hypothesis.
+    """
+    tokens = sp.encode(titles, out_type=str)
+    whole = engine.translate_batch(
+        tokens, beam_size=4, num_hypotheses=3, max_batch_size=32,
+        max_input_length=160, max_decoding_length=96, replace_unknowns=True,
+        no_repeat_ngram_size=4, repetition_penalty=1.15)
+
+    segments = {}          # title index -> list of segments
+    flat = []              # all segments across titles, for one batched decode
+    for index, title in enumerate(titles):
+        parts = [part.strip() for part in SEGMENT_SPLIT.split(title) if part and part.strip()]
+        if 1 < len(parts) <= 4:
+            segments[index] = parts
+            flat.extend(parts)
+    translated_segments = {}
+    if flat:
+        piece_tokens = sp.encode(flat, out_type=str)
+        pieces = engine.translate_batch(
+            piece_tokens, beam_size=4, max_batch_size=32, max_input_length=160,
+            max_decoding_length=96, replace_unknowns=True,
+            no_repeat_ngram_size=4, repetition_penalty=1.15)
+        pieces = [sp.decode(result.hypotheses[0]).replace("▁", " ").strip()
+                  for result in pieces]
+        cursor = 0
+        for index, parts in segments.items():
+            translated_segments[index] = assemble(parts, pieces[cursor:cursor + len(parts)])
+            cursor += len(parts)
+
+    best = []
+    for index, title in enumerate(titles):
+        candidates = [sp.decode(hypothesis).replace("▁", " ").strip()
+                      for hypothesis in whole[index].hypotheses]
+        if index in translated_segments:
+            candidates.append(translated_segments[index])
+        polished = [polish(title, candidate) for candidate in candidates]
+        ranked = max(range(len(candidates)), key=lambda i: quality_score(title, polished[i]))
+        best.append(candidates[ranked])
+    return best
+
+
 def translations(db, records):
     db.execute("CREATE TABLE IF NOT EXISTS translations (title TEXT PRIMARY KEY, zh TEXT NOT NULL)")
     cached = {title: collapse_repeats(correct(title, zh))
@@ -309,16 +386,12 @@ def translations(db, records):
                                        compute_type="int8", inter_threads=2, intra_threads=3)
         for start in range(0, len(pending), 64):
             titles = pending[start:start + 64]
-            tokens = sp.encode(titles, out_type=str)
-            predictions = engine.translate_batch(
-                tokens, beam_size=4, max_batch_size=32, max_input_length=160,
-                max_decoding_length=96, replace_unknowns=True,
-                no_repeat_ngram_size=4, repetition_penalty=1.15)
-            for title, token, result in zip(titles, tokens, predictions):
-                chinese = sp.decode(result.hypotheses[0]).replace("▁", " ").strip()
+            candidates = translate_batch(engine, sp, titles)
+            for title, chinese in zip(titles, candidates):
                 if degenerate(chinese) or truncated(title, chinese):
                     # Retry once on its own with a different decoding profile, so
                     # a loop or an early stop gets a second, independent chance.
+                    token = sp.encode([title], out_type=str)[0]
                     retry = engine.translate_batch(
                         [token], beam_size=6, max_batch_size=1,
                         max_decoding_length=max(48, len(token) * 4),
