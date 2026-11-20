@@ -78,3 +78,7 @@
 - 增补后运行 `python scripts/check_glossary.py`：它会校验字段、大小写、重复项，并断言「把规范译名喂给修正函数必须原样返回」，防止错译变体污染正确译文
 
 覆盖率可以这样自查：统计标题命中术语的比例，以及仍有英文残留的题名数量。
+
+错译变体不靠猜，用 `scripts/mine_variants.py` 从线上站点反查：若某条标题含某术语、但译文里缺少该术语的规范译名，就把这些标题的中文片段与全库对比，挑出**过度出现**的片段——那就是模型对这个术语的习惯性错译，人工确认后填入 `variants`。
+
+    python scripts/mine_variants.py --site dist/index.html --top 40
