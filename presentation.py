@@ -363,6 +363,7 @@ def translate_batch(engine, sp, titles):
 
 def translations(db, records):
     db.execute("CREATE TABLE IF NOT EXISTS translations (title TEXT PRIMARY KEY, zh TEXT NOT NULL)")
+    db.execute("CREATE TABLE IF NOT EXISTS retranslated (title TEXT PRIMARY KEY)")
     cached = {title: collapse_repeats(correct(title, zh))
               for title, zh in db.execute("SELECT title, zh FROM translations")}
     # A cached title that ended in a decoding loop or stopped half-way is
@@ -370,6 +371,22 @@ def translations(db, records):
     # broken text forever.
     for title in [title for title, zh in cached.items()
                   if degenerate(zh) or truncated(title, zh)]:
+        del cached[title]
+    # The decoder improved, but the archive keeps whatever it cached earlier.
+    # Re-decode the weakest entries a slice at a time, remembering which titles
+    # were already retried so a run cannot loop on titles that stay bad.
+    tried = {row[0] for row in db.execute("SELECT title FROM retranslated")}
+    weak = []
+    for title, zh in cached.items():
+        if title in tried:
+            continue
+        if quality_score(title, zh) < 0:
+            weak.append(title)
+            if len(weak) >= 1500:
+                break
+    retried = set(weak)
+    previous = {title: cached[title] for title in weak}
+    for title in weak:
         del cached[title]
     pending = list(dict.fromkeys(
         item["title"] for item in records
@@ -403,11 +420,22 @@ def translations(db, records):
                         or not re.search(r"[\u3400-\u9fff]", chinese)):
                     # Never cache a broken title; the English original is shown.
                     rejected += 1
+                    if title in previous:
+                        cached[title] = previous[title]
                     continue
+                # Re-decoding is not uniformly better, so a retried title keeps
+                # its old translation unless the new one scores higher.
+                if title in previous and (quality_score(title, previous[title])
+                                          >= quality_score(title, chinese)):
+                    chinese = previous[title]
                 cached[title] = chinese
                 db.execute("INSERT OR REPLACE INTO translations VALUES (?, ?)", (title, chinese))
+        for title in retried:
+            db.execute("INSERT OR IGNORE INTO retranslated VALUES (?)", (title,))
         if rejected:
             print(f"Translation guard rejected {rejected} titles", flush=True)
+        if retried:
+            print(f"Re-decoded {len(retried)} weakly cached titles", flush=True)
         return cached, ""
     except (ImportError, OSError, RuntimeError, ValueError) as error:
         return cached, str(error)
