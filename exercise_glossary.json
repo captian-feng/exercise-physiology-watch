@@ -46,6 +46,16 @@
       ]
     },
     {
+      "en": "acl reconstruction",
+      "zh": "前交叉韧带重建",
+      "abbreviations": [
+        "ACLR"
+      ],
+      "variants": [
+        "前十字韧带重建术"
+      ]
+    },
+    {
       "en": "actigraphy",
       "zh": "活动记录仪",
       "abbreviations": [],
@@ -89,6 +99,31 @@
       ]
     },
     {
+      "en": "activity patterns",
+      "zh": "活动模式",
+      "abbreviations": [],
+      "variants": [
+        "活性模式"
+      ]
+    },
+    {
+      "en": "acute exercise",
+      "zh": "急性运动",
+      "abbreviations": [],
+      "variants": [
+        "剧烈运动",
+        "急性锻炼"
+      ]
+    },
+    {
+      "en": "acutely",
+      "zh": "急性地",
+      "abbreviations": [],
+      "variants": [
+        "急性的"
+      ]
+    },
+    {
       "en": "adaptation process",
       "zh": "适应过程",
       "abbreviations": [],
@@ -128,6 +163,14 @@
       "abbreviations": [],
       "variants": [
         "青春期运动员"
+      ]
+    },
+    {
+      "en": "adults aged",
+      "zh": "成年人年龄",
+      "abbreviations": [],
+      "variants": [
+        "年龄成人"
       ]
     },
     {
@@ -199,6 +242,14 @@
       "abbreviations": [],
       "variants": [
         "所有原因死亡率"
+      ]
+    },
+    {
+      "en": "allocation concealment",
+      "zh": "分配隐藏",
+      "abbreviations": [],
+      "variants": [
+        "分配隐藏法"
       ]
     },
     {
@@ -638,6 +689,16 @@
       ]
     },
     {
+      "en": "blood flow restriction training",
+      "zh": "血流限制训练",
+      "abbreviations": [
+        "BFR"
+      ],
+      "variants": [
+        "血液流动限制训练"
+      ]
+    },
+    {
       "en": "blood flow velocity",
       "zh": "血流速度",
       "abbreviations": [],
@@ -792,6 +853,14 @@
       ]
     },
     {
+      "en": "bone loss",
+      "zh": "骨丢失",
+      "abbreviations": [],
+      "variants": [
+        "骨质流失"
+      ]
+    },
+    {
       "en": "bone mineral content",
       "zh": "骨矿物质含量",
       "abbreviations": [
@@ -827,6 +896,14 @@
       ],
       "variants": [
         "脑衍生神经营养因子"
+      ]
+    },
+    {
+      "en": "breast cancer",
+      "zh": "乳腺癌",
+      "abbreviations": [],
+      "variants": [
+        "胸部癌症"
       ]
     },
     {
@@ -938,6 +1015,14 @@
       ]
     },
     {
+      "en": "cardiometabolic risk",
+      "zh": "心血管代谢风险",
+      "abbreviations": [],
+      "variants": [
+        "心脏代谢风险"
+      ]
+    },
+    {
       "en": "cardiopulmonary exercise",
       "zh": "心肺运动",
       "abbreviations": [],
@@ -997,6 +1082,14 @@
       "abbreviations": [],
       "variants": [
         "案例报告"
+      ]
+    },
+    {
+      "en": "case series",
+      "zh": "病例系列",
+      "abbreviations": [],
+      "variants": [
+        "案例系列"
       ]
     },
     {
@@ -1063,6 +1156,14 @@
       ]
     },
     {
+      "en": "change of direction speed",
+      "zh": "变向速度",
+      "abbreviations": [],
+      "variants": [
+        "方向改变速度"
+      ]
+    },
+    {
       "en": "children",
       "zh": "儿童",
       "abbreviations": [],
@@ -1081,6 +1182,16 @@
       ]
     },
     {
+      "en": "chronic kidney disease",
+      "zh": "慢性肾病",
+      "abbreviations": [
+        "CKD"
+      ],
+      "variants": [
+        "慢性肾脏疾病"
+      ]
+    },
+    {
       "en": "clinic",
       "zh": "门诊",
       "abbreviations": [],
@@ -1094,6 +1205,24 @@
       "abbreviations": [],
       "variants": [
         "临床结果"
+      ]
+    },
+    {
+      "en": "clinical practice",
+      "zh": "临床实践",
+      "abbreviations": [],
+      "variants": [
+        "临床实习"
+      ]
+    },
+    {
+      "en": "clinically meaningful",
+      "zh": "临床有意义",
+      "abbreviations": [
+        "MCID"
+      ],
+      "variants": [
+        "临床上有意义的"
       ]
     },
     {
@@ -1261,6 +1390,16 @@
       ]
     },
     {
+      "en": "confidence intervals",
+      "zh": "置信区间",
+      "abbreviations": [
+        "CI"
+      ],
+      "variants": [
+        "可信区间"
+      ]
+    },
+    {
       "en": "confidence level",
       "zh": "置信水平",
       "abbreviations": [],
@@ -1301,11 +1440,27 @@
       ]
     },
     {
+      "en": "control condition",
+      "zh": "对照条件",
+      "abbreviations": [],
+      "variants": [
+        "控制条件"
+      ]
+    },
+    {
       "en": "cool down",
       "zh": "整理活动",
       "abbreviations": [],
       "variants": [
         "冷却"
+      ]
+    },
+    {
+      "en": "cool-down protocol",
+      "zh": "整理活动方案",
+      "abbreviations": [],
+      "variants": [
+        "冷却方案"
       ]
     },
     {
@@ -1317,10 +1472,26 @@
       ]
     },
     {
+      "en": "coronary artery",
+      "zh": "冠状动脉",
+      "abbreviations": [],
+      "variants": [
+        "冠状動脈"
+      ]
+    },
+    {
       "en": "correlation coefficient",
       "zh": "相关系数",
       "abbreviations": [],
       "variants": []
+    },
+    {
+      "en": "correlation coefficients",
+      "zh": "相关系数",
+      "abbreviations": [],
+      "variants": [
+        "相关性系数"
+      ]
     },
     {
       "en": "corticospinal excitability",
@@ -1350,6 +1521,16 @@
         "反运动跳跃",
         "反向运动跳跃",
         "反向动作跳跃"
+      ]
+    },
+    {
+      "en": "countermovement jump height",
+      "zh": "反向纵跳高度",
+      "abbreviations": [
+        "CMJ"
+      ],
+      "variants": [
+        "反向运动跳跃高度"
       ]
     },
     {
@@ -1434,6 +1615,14 @@
       ]
     },
     {
+      "en": "cross-education",
+      "zh": "交叉教育",
+      "abbreviations": [],
+      "variants": [
+        "交叉训练效应"
+      ]
+    },
+    {
       "en": "cross-over design",
       "zh": "交叉设计",
       "abbreviations": [],
@@ -1508,6 +1697,14 @@
       ]
     },
     {
+      "en": "current evidence",
+      "zh": "现有证据",
+      "abbreviations": [],
+      "variants": [
+        "当前证据"
+      ]
+    },
+    {
       "en": "cycle ergometer",
       "zh": "功率自行车",
       "abbreviations": [],
@@ -1561,6 +1758,14 @@
       "abbreviations": [],
       "variants": [
         "日步"
+      ]
+    },
+    {
+      "en": "daily steps",
+      "zh": "每日步数",
+      "abbreviations": [],
+      "variants": [
+        "日常步数"
       ]
     },
     {
@@ -1687,6 +1892,14 @@
       "abbreviations": [],
       "variants": [
         "饮食硝酸盐"
+      ]
+    },
+    {
+      "en": "digital health",
+      "zh": "数字健康",
+      "abbreviations": [],
+      "variants": [
+        "数位健康"
       ]
     },
     {
@@ -1883,6 +2096,14 @@
       ]
     },
     {
+      "en": "elite female",
+      "zh": "高水平女性",
+      "abbreviations": [],
+      "variants": [
+        "精英女性"
+      ]
+    },
+    {
       "en": "elite male",
       "zh": "高水平男性",
       "abbreviations": [],
@@ -1896,6 +2117,14 @@
       "abbreviations": [],
       "variants": [
         "内皮细胞群"
+      ]
+    },
+    {
+      "en": "endothelial dysfunction",
+      "zh": "内皮功能障碍",
+      "abbreviations": [],
+      "variants": [
+        "内皮功能紊乱"
       ]
     },
     {
@@ -1988,6 +2217,14 @@
       "abbreviations": [],
       "variants": [
         "能量新陈代谢"
+      ]
+    },
+    {
+      "en": "energy status",
+      "zh": "能量状态",
+      "abbreviations": [],
+      "variants": [
+        "能源状态"
       ]
     },
     {
@@ -2126,6 +2363,14 @@
       ]
     },
     {
+      "en": "exercise modalities",
+      "zh": "运动方式",
+      "abbreviations": [],
+      "variants": [
+        "锻炼形式"
+      ]
+    },
+    {
       "en": "exercise modality",
       "zh": "运动方式",
       "abbreviations": [
@@ -2150,6 +2395,14 @@
       "variants": [
         "锻炼表现",
         "锻炼性能"
+      ]
+    },
+    {
+      "en": "exercise prescription",
+      "zh": "运动处方",
+      "abbreviations": [],
+      "variants": [
+        "锻炼处方"
       ]
     },
     {
@@ -2182,6 +2435,14 @@
       "abbreviations": [],
       "variants": [
         "运动治疗"
+      ]
+    },
+    {
+      "en": "exercise tolerance",
+      "zh": "运动耐量",
+      "abbreviations": [],
+      "variants": [
+        "运动耐受性"
       ]
     },
     {
@@ -2269,6 +2530,14 @@
       ],
       "variants": [
         "细胞外小泡"
+      ]
+    },
+    {
+      "en": "factors associated",
+      "zh": "相关因素",
+      "abbreviations": [],
+      "variants": [
+        "关联因素"
       ]
     },
     {
@@ -2388,6 +2657,14 @@
       "abbreviations": [],
       "variants": [
         "女子选手"
+      ]
+    },
+    {
+      "en": "female soccer",
+      "zh": "女子足球",
+      "abbreviations": [],
+      "variants": [
+        "雌性足球"
       ]
     },
     {
@@ -2573,11 +2850,27 @@
       ]
     },
     {
+      "en": "functional outcomes",
+      "zh": "功能结局",
+      "abbreviations": [],
+      "variants": [
+        "功能结果"
+      ]
+    },
+    {
       "en": "functional performance",
       "zh": "功能表现",
       "abbreviations": [],
       "variants": [
         "功能性性能"
+      ]
+    },
+    {
+      "en": "functional recovery",
+      "zh": "功能恢复",
+      "abbreviations": [],
+      "variants": [
+        "功能复原"
       ]
     },
     {
@@ -2816,11 +3109,27 @@
       ]
     },
     {
+      "en": "health monitoring",
+      "zh": "健康监测",
+      "abbreviations": [],
+      "variants": [
+        "健康监控"
+      ]
+    },
+    {
       "en": "health outcomes",
       "zh": "健康结局",
       "abbreviations": [],
       "variants": [
         "健康结果"
+      ]
+    },
+    {
+      "en": "health status",
+      "zh": "健康状况",
+      "abbreviations": [],
+      "variants": [
+        "健康状态值"
       ]
     },
     {
@@ -2858,11 +3167,29 @@
       ]
     },
     {
+      "en": "healthy young adults",
+      "zh": "健康青年",
+      "abbreviations": [],
+      "variants": [
+        "健康年轻成人"
+      ]
+    },
+    {
       "en": "heart disease",
       "zh": "心脏病",
       "abbreviations": [],
       "variants": [
         "心脏疾病"
+      ]
+    },
+    {
+      "en": "heart failure",
+      "zh": "心力衰竭",
+      "abbreviations": [
+        "HF"
+      ],
+      "variants": [
+        "心脏衰竭"
       ]
     },
     {
@@ -3161,12 +3488,28 @@
       ]
     },
     {
+      "en": "incidence rate",
+      "zh": "发病率",
+      "abbreviations": [],
+      "variants": [
+        "发生率比值"
+      ]
+    },
+    {
       "en": "inclusion criteria",
       "zh": "纳入标准",
       "abbreviations": [],
       "variants": [
         "包含标准",
         "入选标准"
+      ]
+    },
+    {
+      "en": "independently associated",
+      "zh": "独立相关",
+      "abbreviations": [],
+      "variants": [
+        "独立关联"
       ]
     },
     {
@@ -3300,6 +3643,16 @@
       ]
     },
     {
+      "en": "intention-to-treat",
+      "zh": "意向性治疗",
+      "abbreviations": [
+        "ITT"
+      ],
+      "variants": [
+        "意图治疗分析"
+      ]
+    },
+    {
       "en": "intermittent hypoxia",
       "zh": "间歇性低氧",
       "abbreviations": [
@@ -3364,6 +3717,16 @@
       ],
       "variants": [
         "类内相关"
+      ]
+    },
+    {
+      "en": "intraclass correlation coefficient",
+      "zh": "组内相关系数",
+      "abbreviations": [
+        "ICC"
+      ],
+      "variants": [
+        "类内相关系数"
       ]
     },
     {
@@ -3506,6 +3869,14 @@
       ]
     },
     {
+      "en": "key points",
+      "zh": "要点",
+      "abbreviations": [],
+      "variants": [
+        "关键点"
+      ]
+    },
+    {
       "en": "kidney disease",
       "zh": "肾病",
       "abbreviations": [],
@@ -3612,6 +3983,14 @@
       "abbreviations": [],
       "variants": [
         "乳酸盐"
+      ]
+    },
+    {
+      "en": "lactate concentration",
+      "zh": "乳酸浓度",
+      "abbreviations": [],
+      "variants": [
+        "乳酸盐浓度"
       ]
     },
     {
@@ -3768,11 +4147,35 @@
       ]
     },
     {
+      "en": "linear mixed-effects models",
+      "zh": "线性混合效应模型",
+      "abbreviations": [],
+      "variants": [
+        "线性混合效果模式"
+      ]
+    },
+    {
       "en": "linear regression",
       "zh": "线性回归",
       "abbreviations": [],
       "variants": [
         "直线回归"
+      ]
+    },
+    {
+      "en": "linear regression models",
+      "zh": "线性回归模型",
+      "abbreviations": [],
+      "variants": [
+        "线性回归模式"
+      ]
+    },
+    {
+      "en": "literature search",
+      "zh": "文献检索",
+      "abbreviations": [],
+      "variants": [
+        "文献搜索"
       ]
     },
     {
@@ -3801,6 +4204,22 @@
       "variants": [
         "物流回归",
         "逻辑回归法"
+      ]
+    },
+    {
+      "en": "long jump",
+      "zh": "跳远",
+      "abbreviations": [],
+      "variants": [
+        "长跳"
+      ]
+    },
+    {
+      "en": "long-term",
+      "zh": "长期",
+      "abbreviations": [],
+      "variants": [
+        "长时间的"
       ]
     },
     {
@@ -3924,6 +4343,22 @@
       "abbreviations": [],
       "variants": [
         "男子选手"
+      ]
+    },
+    {
+      "en": "male soccer",
+      "zh": "男子足球",
+      "abbreviations": [],
+      "variants": [
+        "雄性足球"
+      ]
+    },
+    {
+      "en": "male soccer players",
+      "zh": "男子足球运动员",
+      "abbreviations": [],
+      "variants": [
+        "男性足球运动员"
       ]
     },
     {
@@ -4059,6 +4494,14 @@
       ]
     },
     {
+      "en": "measurement units",
+      "zh": "测量单位",
+      "abbreviations": [],
+      "variants": [
+        "测量单元"
+      ]
+    },
+    {
       "en": "mechanical efficiency",
       "zh": "机械效率",
       "abbreviations": [],
@@ -4073,6 +4516,14 @@
       "variants": [
         "机械加载",
         "力学负载"
+      ]
+    },
+    {
+      "en": "mechanical properties",
+      "zh": "力学特性",
+      "abbreviations": [],
+      "variants": [
+        "机械性能"
       ]
     },
     {
@@ -4140,6 +4591,14 @@
       "abbreviations": [],
       "variants": [
         "月经循环"
+      ]
+    },
+    {
+      "en": "menstrual function",
+      "zh": "月经功能",
+      "abbreviations": [],
+      "variants": [
+        "月经机能"
       ]
     },
     {
@@ -4265,6 +4724,16 @@
       ]
     },
     {
+      "en": "minimal clinically important difference",
+      "zh": "最小临床重要差异",
+      "abbreviations": [
+        "MCID"
+      ],
+      "variants": [
+        "最小临床重要差别"
+      ]
+    },
+    {
       "en": "minimal detectable change",
       "zh": "最小可检测变化",
       "abbreviations": [
@@ -4324,11 +4793,27 @@
       ]
     },
     {
+      "en": "mixed models",
+      "zh": "混合模型",
+      "abbreviations": [],
+      "variants": [
+        "混合模式"
+      ]
+    },
+    {
       "en": "mixed-effects model",
       "zh": "混合效应模型",
       "abbreviations": [],
       "variants": [
         "混合效果模型"
+      ]
+    },
+    {
+      "en": "mixed-effects models",
+      "zh": "混合效应模型",
+      "abbreviations": [],
+      "variants": [
+        "混合效果模式"
       ]
     },
     {
@@ -4854,6 +5339,14 @@
       ]
     },
     {
+      "en": "nutritional status",
+      "zh": "营养状况",
+      "abbreviations": [],
+      "variants": [
+        "营养状态"
+      ]
+    },
+    {
       "en": "obesity",
       "zh": "肥胖",
       "abbreviations": [],
@@ -5132,6 +5625,16 @@
       ]
     },
     {
+      "en": "parkinson disease",
+      "zh": "帕金森病",
+      "abbreviations": [
+        "PD"
+      ],
+      "variants": [
+        "帕金森氏病"
+      ]
+    },
+    {
       "en": "patellar",
       "zh": "髌骨",
       "abbreviations": [],
@@ -5156,6 +5659,14 @@
       "variants": [
         "膝盖骨股骨疼痛",
         "髌股部疼痛"
+      ]
+    },
+    {
+      "en": "patient outcomes",
+      "zh": "患者结局",
+      "abbreviations": [],
+      "variants": [
+        "病人结果"
       ]
     },
     {
@@ -5205,6 +5716,14 @@
       ]
     },
     {
+      "en": "peaking",
+      "zh": "竞技状态峰值",
+      "abbreviations": [],
+      "variants": [
+        "峰值化"
+      ]
+    },
+    {
       "en": "pectoralis major",
       "zh": "胸大肌",
       "abbreviations": [],
@@ -5237,6 +5756,16 @@
       ]
     },
     {
+      "en": "per-protocol",
+      "zh": "符合方案",
+      "abbreviations": [
+        "PP"
+      ],
+      "variants": [
+        "按方案分析"
+      ]
+    },
+    {
       "en": "perceived",
       "zh": "主观感知的",
       "abbreviations": [],
@@ -5260,6 +5789,14 @@
       "abbreviations": [],
       "variants": [
         "感知反应"
+      ]
+    },
+    {
+      "en": "performance metrics",
+      "zh": "表现指标",
+      "abbreviations": [],
+      "variants": [
+        "性能度量"
       ]
     },
     {
@@ -5324,6 +5861,22 @@
       "abbreviations": [],
       "variants": [
         "体能活动水平"
+      ]
+    },
+    {
+      "en": "physical activity patterns",
+      "zh": "体力活动模式",
+      "abbreviations": [],
+      "variants": [
+        "身体活动模式"
+      ]
+    },
+    {
+      "en": "physical capacity",
+      "zh": "身体能力",
+      "abbreviations": [],
+      "variants": [
+        "物理容量"
       ]
     },
     {
@@ -5530,6 +6083,14 @@
       ]
     },
     {
+      "en": "positively associated",
+      "zh": "正相关",
+      "abbreviations": [],
+      "variants": [
+        "正相关联"
+      ]
+    },
+    {
       "en": "post hoc",
       "zh": "事后",
       "abbreviations": [],
@@ -5545,6 +6106,16 @@
       ],
       "variants": [
         "激活后性能提升"
+      ]
+    },
+    {
+      "en": "post-activation potentiation",
+      "zh": "激活后增强",
+      "abbreviations": [
+        "PAP"
+      ],
+      "variants": [
+        "激活后强化"
       ]
     },
     {
@@ -5606,6 +6177,26 @@
       ]
     },
     {
+      "en": "preferred reporting items",
+      "zh": "首选报告条目",
+      "abbreviations": [
+        "PRISMA"
+      ],
+      "variants": [
+        "首选报告项目"
+      ]
+    },
+    {
+      "en": "preferred reporting items for systematic reviews",
+      "zh": "系统综述首选报告条目",
+      "abbreviations": [
+        "PRISMA"
+      ],
+      "variants": [
+        "系统评价首选报告项目"
+      ]
+    },
+    {
       "en": "pregnancy",
       "zh": "妊娠",
       "abbreviations": [],
@@ -5661,6 +6252,14 @@
       "abbreviations": [],
       "variants": [
         "处理速度"
+      ]
+    },
+    {
+      "en": "professional football",
+      "zh": "职业足球",
+      "abbreviations": [],
+      "variants": [
+        "专业橄榄球"
       ]
     },
     {
@@ -5857,6 +6456,14 @@
       "abbreviations": [],
       "variants": [
         "睡眠品质"
+      ]
+    },
+    {
+      "en": "random assignment",
+      "zh": "随机分组",
+      "abbreviations": [],
+      "variants": [
+        "随机指派"
       ]
     },
     {
@@ -6057,6 +6664,14 @@
       ]
     },
     {
+      "en": "regression models",
+      "zh": "回归模型",
+      "abbreviations": [],
+      "variants": [
+        "回归模式"
+      ]
+    },
+    {
       "en": "rehabilitation program",
       "zh": "康复方案",
       "abbreviations": [],
@@ -6070,6 +6685,14 @@
       "abbreviations": [],
       "variants": [
         "相对能量缺乏"
+      ]
+    },
+    {
+      "en": "relative humidity",
+      "zh": "相对湿度",
+      "abbreviations": [],
+      "variants": [
+        "相对潮湿"
       ]
     },
     {
@@ -6123,6 +6746,14 @@
       ],
       "variants": [
         "重复最大值"
+      ]
+    },
+    {
+      "en": "residual fatigue",
+      "zh": "残余疲劳",
+      "abbreviations": [],
+      "variants": [
+        "残留疲惫"
       ]
     },
     {
@@ -6337,6 +6968,22 @@
       ]
     },
     {
+      "en": "rugby league",
+      "zh": "橄榄球联赛",
+      "abbreviations": [],
+      "variants": [
+        "联盟橄榄球"
+      ]
+    },
+    {
+      "en": "rugby players",
+      "zh": "橄榄球运动员",
+      "abbreviations": [],
+      "variants": [
+        "盟球运动员"
+      ]
+    },
+    {
       "en": "rugby union",
       "zh": "英式橄榄球",
       "abbreviations": [],
@@ -6484,6 +7131,14 @@
       ]
     },
     {
+      "en": "sedentary behaviour",
+      "zh": "久坐行为",
+      "abbreviations": [],
+      "variants": [
+        "定居行为"
+      ]
+    },
+    {
       "en": "sedentary time",
       "zh": "久坐时间",
       "abbreviations": [],
@@ -6509,6 +7164,14 @@
       ]
     },
     {
+      "en": "sensor data",
+      "zh": "传感器数据",
+      "abbreviations": [],
+      "variants": [
+        "感应器数据"
+      ]
+    },
+    {
       "en": "session duration",
       "zh": "训练课时长",
       "abbreviations": [],
@@ -6524,6 +7187,14 @@
       ],
       "variants": [
         "会话感知努力评分"
+      ]
+    },
+    {
+      "en": "sessions per week",
+      "zh": "每周训练课次",
+      "abbreviations": [],
+      "variants": [
+        "每周会话数"
       ]
     },
     {
@@ -6551,6 +7222,14 @@
       ]
     },
     {
+      "en": "short-term",
+      "zh": "短期",
+      "abbreviations": [],
+      "variants": [
+        "短时间的"
+      ]
+    },
+    {
       "en": "shoulder",
       "zh": "肩关节",
       "abbreviations": [],
@@ -6564,6 +7243,14 @@
       "abbreviations": [],
       "variants": [
         "肩膀不稳定"
+      ]
+    },
+    {
+      "en": "signal-to-noise ratio",
+      "zh": "信噪比",
+      "abbreviations": [],
+      "variants": [
+        "信号噪声比"
       ]
     },
     {
@@ -6657,12 +7344,28 @@
       ]
     },
     {
+      "en": "sleep onset",
+      "zh": "入睡",
+      "abbreviations": [],
+      "variants": [
+        "睡眠开始"
+      ]
+    },
+    {
       "en": "sleep quality",
       "zh": "睡眠质量",
       "abbreviations": [],
       "variants": [
         "睡眠品质",
         "睡觉质量"
+      ]
+    },
+    {
+      "en": "sleep time",
+      "zh": "睡眠时间",
+      "abbreviations": [],
+      "variants": [
+        "睡觉时间"
       ]
     },
     {
@@ -6674,6 +7377,16 @@
       "variants": [
         "小边比赛",
         "少人制比赛"
+      ]
+    },
+    {
+      "en": "smallest worthwhile change",
+      "zh": "最小有价值变化",
+      "abbreviations": [
+        "SWC"
+      ],
+      "variants": [
+        "最小值得改变"
       ]
     },
     {
@@ -6818,6 +7531,14 @@
       ]
     },
     {
+      "en": "sprint training",
+      "zh": "冲刺训练",
+      "abbreviations": [],
+      "variants": [
+        "短跑训练"
+      ]
+    },
+    {
       "en": "sprinting",
       "zh": "冲刺跑",
       "abbreviations": [],
@@ -6832,6 +7553,26 @@
       "variants": [
         "蹲举",
         "蹲起"
+      ]
+    },
+    {
+      "en": "squat jump",
+      "zh": "蹲跳",
+      "abbreviations": [
+        "SJ"
+      ],
+      "variants": [
+        "深蹲跳起"
+      ]
+    },
+    {
+      "en": "standard deviation",
+      "zh": "标准差",
+      "abbreviations": [
+        "SD"
+      ],
+      "variants": [
+        "标准偏差"
       ]
     },
     {
@@ -7091,6 +7832,14 @@
       ]
     },
     {
+      "en": "swimming performance",
+      "zh": "游泳表现",
+      "abbreviations": [],
+      "variants": [
+        "游泳性能"
+      ]
+    },
+    {
       "en": "sympathetic",
       "zh": "交感",
       "abbreviations": [],
@@ -7124,11 +7873,29 @@
       ]
     },
     {
+      "en": "systolic blood pressure",
+      "zh": "收缩压",
+      "abbreviations": [
+        "SBP"
+      ],
+      "variants": [
+        "收缩期血压"
+      ]
+    },
+    {
       "en": "tactical",
       "zh": "战术",
       "abbreviations": [],
       "variants": [
         "策略性"
+      ]
+    },
+    {
+      "en": "taper",
+      "zh": "减量期",
+      "abbreviations": [],
+      "variants": [
+        "锥形"
       ]
     },
     {
@@ -7138,6 +7905,22 @@
       "variants": [
         "锥形训练",
         "递减训练"
+      ]
+    },
+    {
+      "en": "task failure",
+      "zh": "任务失败",
+      "abbreviations": [],
+      "variants": [
+        "任务失败点"
+      ]
+    },
+    {
+      "en": "team sports",
+      "zh": "团体运动",
+      "abbreviations": [],
+      "variants": [
+        "团队运动项目"
       ]
     },
     {
@@ -7209,6 +7992,14 @@
       ],
       "variants": [
         "张力描记"
+      ]
+    },
+    {
+      "en": "test battery",
+      "zh": "测试组合",
+      "abbreviations": [],
+      "variants": [
+        "测试电池"
       ]
     },
     {
@@ -7312,6 +8103,14 @@
       ]
     },
     {
+      "en": "time points",
+      "zh": "时间点",
+      "abbreviations": [],
+      "variants": [
+        "时间点值"
+      ]
+    },
+    {
       "en": "time spent",
       "zh": "时间花费",
       "abbreviations": [],
@@ -7350,6 +8149,14 @@
       ]
     },
     {
+      "en": "tissue properties",
+      "zh": "组织特性",
+      "abbreviations": [],
+      "variants": [
+        "组织属性"
+      ]
+    },
+    {
       "en": "total distance",
       "zh": "总距离",
       "abbreviations": [],
@@ -7366,11 +8173,45 @@
       ]
     },
     {
+      "en": "total sleep time",
+      "zh": "总睡眠时间",
+      "abbreviations": [
+        "TST"
+      ],
+      "variants": [
+        "全部睡眠时间"
+      ]
+    },
+    {
+      "en": "trained male",
+      "zh": "训练有素男性",
+      "abbreviations": [],
+      "variants": [
+        "训练男性"
+      ]
+    },
+    {
       "en": "training cycle",
       "zh": "训练周期",
       "abbreviations": [],
       "variants": [
         "培训周期"
+      ]
+    },
+    {
+      "en": "training days",
+      "zh": "训练天数",
+      "abbreviations": [],
+      "variants": [
+        "培训天数"
+      ]
+    },
+    {
+      "en": "training diary",
+      "zh": "训练日记",
+      "abbreviations": [],
+      "variants": [
+        "培训日记"
       ]
     },
     {
@@ -7556,6 +8397,14 @@
       "variants": [
         "二型糖尿病",
         "第2型糖尿病"
+      ]
+    },
+    {
+      "en": "typical error",
+      "zh": "典型误差",
+      "abbreviations": [],
+      "variants": [
+        "典型错误"
       ]
     },
     {
@@ -7746,6 +8595,25 @@
       ]
     },
     {
+      "en": "visual analog",
+      "zh": "视觉模拟",
+      "abbreviations": [],
+      "variants": [
+        "视觉类比"
+      ]
+    },
+    {
+      "en": "visual analog scale",
+      "zh": "视觉模拟量表",
+      "abbreviations": [
+        "VAS"
+      ],
+      "variants": [
+        "视觉模拟评分法",
+        "视觉类比量表"
+      ]
+    },
+    {
       "en": "volleyball players",
       "zh": "排球运动员",
       "abbreviations": [],
@@ -7776,6 +8644,14 @@
       "variants": [
         "暖身",
         "预热"
+      ]
+    },
+    {
+      "en": "warm-up protocol",
+      "zh": "热身方案",
+      "abbreviations": [],
+      "variants": [
+        "暖身方案"
       ]
     },
     {
@@ -7835,6 +8711,14 @@
       "abbreviations": [],
       "variants": [
         "轮椅选手"
+      ]
+    },
+    {
+      "en": "work capacity",
+      "zh": "工作能力",
+      "abbreviations": [],
+      "variants": [
+        "功能力"
       ]
     },
     {

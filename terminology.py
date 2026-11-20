@@ -48,18 +48,73 @@ def _compiled():
 
 
 COMPILED = _compiled()
+WORD_SPLIT = re.compile(r"[\s‐‑‒–—-]+")
+# Titles keep punctuation attached to words ("muscle:", "strength,"), so index
+# keys are built from bare alphanumeric tokens instead of whitespace splits.
+WORD_TOKEN = re.compile(r"[a-z0-9]+")
+
+
+def _stem(word):
+    """Reduce a head word to a lookup key that survives plural forms.
+
+    A term like "muscle" must still be found in "muscles"; the compiled pattern
+    allows the plural, so the index key has to line up with the title's word.
+    """
+    if len(word) > 3 and word.endswith("s"):
+        return word[:-1]
+    return word
+
+
+def _first_word_index():
+    """Index terms by the stem of the first word of their English phrase.
+
+    A term can only match if its first word occurs in the title, so the scan
+    only has to test the terms whose head word is present. With a thousand
+    entries that turns a per-title full scan into a small lookup.
+    """
+    index = {}
+    with_acronym = []
+    for entry in COMPILED:
+        term, _, acronyms = entry
+        for phrase in (term["en"], *term.get("aliases", [])):
+            parts = [part for part in WORD_SPLIT.split(phrase.casefold()) if part]
+            if parts:
+                index.setdefault(_stem(parts[0]), []).append(entry)
+        if acronyms:
+            with_acronym.append(entry)
+    return index, with_acronym
+
+
+FIRST_WORD_INDEX, ACRONYM_TERMS = _first_word_index()
 
 
 def matched_terms(title):
     """All glossary terms that the English title actually mentions."""
     normalized = unicodedata.normalize("NFKC", title).casefold()
     original = unicodedata.normalize("NFKC", title)
-    hits = []
-    for term, phrases, acronyms in COMPILED:
-        if any(pattern.search(normalized) for pattern in phrases):
-            hits.append(term)
-        elif acronyms and any(pattern.search(original) for pattern in acronyms):
-            hits.append(term)
+    words = set(WORD_TOKEN.findall(normalized))
+    keys = set()
+    for word in words:
+        keys.add(_stem(word))
+        keys.add(word + "s")
+    candidates = []
+    seen = set()
+    for key in keys:
+        for entry in FIRST_WORD_INDEX.get(key, ()):
+            if id(entry) not in seen:
+                seen.add(id(entry))
+                candidates.append(entry)
+    hits = [entry[0] for entry in candidates
+            if any(pattern.search(normalized) for pattern in entry[1])]
+    # Acronyms are checked for every term that has one: a candidate whose phrase
+    # did not match can still be referred to by its acronym ("Post-COVID").
+    hit_names = {term["en"] for term in hits}
+    for entry in ACRONYM_TERMS:
+        if entry[0]["en"] in hit_names:
+            continue
+        if any(pattern.search(original) for pattern in entry[2]):
+            hits.append(entry[0])
+            hit_names.add(entry[0]["en"])
     return hits
 
 
