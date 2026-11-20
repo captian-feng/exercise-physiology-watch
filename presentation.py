@@ -230,6 +230,34 @@ def degenerate(text):
     return False
 
 
+# Legitimate Chinese reduplication; collapsing these would damage correct text.
+REDUPLICATION = {
+    "常常", "渐渐", "刚刚", "慢慢", "人人", "个个", "处处", "时时", "天天", "年年",
+    "纷纷", "屡屡", "恰恰", "偏偏", "往往", "稍稍", "微微", "略略", "统统", "本本",
+    "条条", "件件", "种种", "层层", "步步", "声声", "字字", "句句", "家家", "户户",
+    "村村", "默默", "悄悄", "偷偷", "牢牢", "紧紧", "死死", "好好", "多多", "大大",
+    "小小", "高高", "快快", "轻轻", "重重", "深深", "远远", "久久", "长长", "短短",
+    "满满", "空空", "看看", "想想", "试试", "说说", "走走", "坐坐", "谈谈",
+}
+REPEATED_UNIT = re.compile(r"([\u4e00-\u9fff]{2,3})\1")
+
+
+def collapse_repeats(text):
+    """Undo the decoder's local word doubling ('运动运动特征', '断层断层断层').
+
+    Phrases like '常常' or '看看' are real Chinese and are left alone; anything
+    else repeated back to back is a decoding artifact.
+    """
+    def replace(match):
+        return match.group(0) if match.group(1) in REDUPLICATION else match.group(1)
+
+    previous = None
+    while previous != text:
+        previous = text
+        text = REPEATED_UNIT.sub(replace, text)
+    return text
+
+
 def polish(title, chinese):
     for before, after in SUBSTITUTIONS.items():
         chinese = chinese.replace(before, after)
@@ -242,7 +270,7 @@ def polish(title, chinese):
     # ASCII letters so Chinese text is never touched.
     for pattern, replacement in LEFTOVERS:
         chinese = pattern.sub(replacement, chinese)
-    return correct(title, chinese)
+    return collapse_repeats(correct(title, chinese))
 
 
 def truncated(title, chinese):
@@ -258,7 +286,8 @@ def truncated(title, chinese):
 
 def translations(db, records):
     db.execute("CREATE TABLE IF NOT EXISTS translations (title TEXT PRIMARY KEY, zh TEXT NOT NULL)")
-    cached = {title: correct(title, zh) for title, zh in db.execute("SELECT title, zh FROM translations")}
+    cached = {title: collapse_repeats(correct(title, zh))
+              for title, zh in db.execute("SELECT title, zh FROM translations")}
     # A cached title that ended in a decoding loop or stopped half-way is
     # dropped here so the next run translates it again instead of serving
     # broken text forever.
