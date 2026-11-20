@@ -4,6 +4,8 @@ from collections import defaultdict
 from pathlib import Path
 import re
 
+from terminology import correct
+
 MODEL = Path(__file__).resolve().parent / "models" / "translate-en_zh-1_9"
 TOPIC_PATTERNS = {
     "临界功率、耐力与氧摄取动力学": r"critical (?:power|speed|swimming speed)|oxygen uptake kinetics|vo[₂2] kinetics|\bw[′']|v[̇]?o[₂2] ?max|aerobic capacity|endurance performance|ventilatory threshold",
@@ -64,7 +66,7 @@ def grouped(items, journal_order=()):
 
 def translations(db, records):
     db.execute("CREATE TABLE IF NOT EXISTS translations (title TEXT PRIMARY KEY, zh TEXT NOT NULL)")
-    cached = dict(db.execute("SELECT title, zh FROM translations"))
+    cached = {title: correct(title, zh) for title, zh in db.execute("SELECT title, zh FROM translations")}
     pending = list(dict.fromkeys(
         item["title"] for item in records
         if item["title"] not in cached
@@ -91,6 +93,7 @@ def translations(db, records):
                     chinese = chinese.replace("循环者", "自行车运动员")
                 if "epigenetic" in title.lower():
                     chinese = chinese.replace("遗传学和遗传学", "遗传与表观遗传")
+                chinese = correct(title, chinese)
                 if re.search(r"[\u3400-\u9fff]", chinese):
                     cached[title] = chinese
                     db.execute("INSERT OR REPLACE INTO translations VALUES (?, ?)", (title, chinese))

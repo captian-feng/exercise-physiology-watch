@@ -9,7 +9,8 @@
 | 新增期刊或修正 ISSN | journals.txt |
 | 增加跨刊 PubMed 专题，或更新期刊 RSS | sources.json |
 | 调整纳入和排除规则 | screening.py |
-| 调整专题归类和翻译术语 | presentation.py |
+| 调整专题归类 | presentation.py |
+| 维护英中文全称、缩写和译法 | exercise_glossary.json |
 | 调整页面样式和筛选交互 | site-src/ |
 
 欢迎用 Issue 提出需求，或从自己的分支提交 Pull Request。增补期刊时请附期刊官方链接、ISSN 和纳入理由。调整筛选规则时请附几条应保留或应排除的示例题名。PR 会自动校验配置、检查网页脚本并离线重建基线。期刊、采集和站点配置合并到 main 后会触发更新，有权限的维护者也可以手动运行。请通过源码修改页面，并将 archive-state 留给自动更新流程。
@@ -40,3 +41,5 @@
     python -X utf8 cloud_refresh.py --render-only 2026-11-20
 
 完整采集需要 Python 3.12 或兼容版本、网络以及 requirements.txt 中的本地翻译依赖。模型首次使用时从 Argos 下载并验证文件哈希。
+
+词汇库按英文题名确认术语后，才对译文中的已知错误译法进行替换。缩写作为参考信息保存，具有多义性的缩写不会单独触发替换。保留原始英文标题供核对。
