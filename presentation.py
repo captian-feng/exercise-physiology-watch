@@ -164,6 +164,22 @@ SUBSTITUTIONS = {
     "定居行为": "久坐行为", "沉积行为": "久坐行为",
     "系统审查": "系统综述", "系统评价和荟萃分析": "系统综述与荟萃分析",
 }
+# Residual English the decoder leaves in an otherwise Chinese sentence. The
+# boundaries are ASCII so Chinese characters next to the fragment are kept.
+LEFTOVERS = [
+    (re.compile(r"(?<![A-Za-z])(?:versus|vs\.?)(?![A-Za-z])", re.IGNORECASE), "对比"),
+    (re.compile(r"(?<![A-Za-z])and(?![A-Za-z])", re.IGNORECASE), "与"),
+    (re.compile(r"(?<![A-Za-z])or(?![A-Za-z])"), "或"),
+    (re.compile(r"(?<![A-Za-z])the(?![A-Za-z])", re.IGNORECASE), ""),
+    (re.compile(r"(?<![A-Za-z])for(?![A-Za-z])", re.IGNORECASE), ""),
+    (re.compile(r"(?<![A-Za-z])meta[-\s]+", re.IGNORECASE), "荟萃"),
+    (re.compile(r"(?<![A-Za-z])max(?![A-Za-z])", re.IGNORECASE), "最大"),
+    (re.compile(r"(?<![A-Za-z])beyond(?![A-Za-z])", re.IGNORECASE), "超越"),
+    (re.compile(r"(?<![A-Za-z])analysis(?![A-Za-z])", re.IGNORECASE), "分析"),
+    (re.compile(r"(?<![A-Za-z])min(?![A-Za-z])", re.IGNORECASE), "分钟"),
+    (re.compile(r"\s{2,}"), " "),
+    (re.compile(r"\s+([,，。;；:：])"), r"\1"),
+]
 
 
 def topic_for(item):
@@ -221,15 +237,33 @@ def polish(title, chinese):
         chinese = chinese.replace("循环者", "自行车运动员")
     if "epigenetic" in title.lower():
         chinese = chinese.replace("遗传学和遗传学", "遗传与表观遗传")
+    # Function words and half-translated fragments the decoder leaves behind
+    # ("Blood Flow Restriction versus ...", "Network Meta-analysis"). Bounded by
+    # ASCII letters so Chinese text is never touched.
+    for pattern, replacement in LEFTOVERS:
+        chinese = pattern.sub(replacement, chinese)
     return correct(title, chinese)
+
+
+def truncated(title, chinese):
+    """True when the translation covers only a fragment of the title.
+
+    Chinese is denser than English, but a ratio this low means the decoder
+    stopped early -- e.g. a long title rendered as just "血管衰老?".
+    """
+    if len(title) < 40:
+        return False
+    return len(chinese) < len(title) * 0.20
 
 
 def translations(db, records):
     db.execute("CREATE TABLE IF NOT EXISTS translations (title TEXT PRIMARY KEY, zh TEXT NOT NULL)")
     cached = {title: correct(title, zh) for title, zh in db.execute("SELECT title, zh FROM translations")}
-    # A cached title that ended in a decoding loop is dropped here so the next
-    # run translates it again instead of serving broken text forever.
-    for title in [title for title, zh in cached.items() if degenerate(zh)]:
+    # A cached title that ended in a decoding loop or stopped half-way is
+    # dropped here so the next run translates it again instead of serving
+    # broken text forever.
+    for title in [title for title, zh in cached.items()
+                  if degenerate(zh) or truncated(title, zh)]:
         del cached[title]
     pending = list(dict.fromkeys(
         item["title"] for item in records
@@ -253,16 +287,18 @@ def translations(db, records):
                 no_repeat_ngram_size=4, repetition_penalty=1.15)
             for title, token, result in zip(titles, tokens, predictions):
                 chinese = sp.decode(result.hypotheses[0]).replace("▁", " ").strip()
-                if degenerate(chinese):
-                    # Retry once on its own with a stronger anti-loop setting.
+                if degenerate(chinese) or truncated(title, chinese):
+                    # Retry once on its own with a different decoding profile, so
+                    # a loop or an early stop gets a second, independent chance.
                     retry = engine.translate_batch(
-                        [token], beam_size=2, max_batch_size=1,
-                        max_decoding_length=max(24, len(token) * 3),
-                        replace_unknowns=True, no_repeat_ngram_size=3,
+                        [token], beam_size=6, max_batch_size=1,
+                        max_decoding_length=max(48, len(token) * 4),
+                        replace_unknowns=False, no_repeat_ngram_size=3,
                         repetition_penalty=1.3)
                     chinese = sp.decode(retry[0].hypotheses[0]).replace("▁", " ").strip()
                 chinese = polish(title, chinese)
-                if degenerate(chinese) or not re.search(r"[\u3400-\u9fff]", chinese):
+                if (degenerate(chinese) or truncated(title, chinese)
+                        or not re.search(r"[\u3400-\u9fff]", chinese)):
                     # Never cache a broken title; the English original is shown.
                     rejected += 1
                     continue
