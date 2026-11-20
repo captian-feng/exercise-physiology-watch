@@ -9,8 +9,12 @@ same way the journal list is validated.
 import json
 from pathlib import Path
 import re
+import sys
 
-CONFIG = Path(__file__).resolve().parents[1] / "exercise_glossary.json"
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+CONFIG = ROOT / "exercise_glossary.json"
 HAN = re.compile(r"[\u3400-\u9fff]")
 LATIN = re.compile(r"[A-Za-z]")
 # A few Latin acronyms are part of the accepted Chinese term itself.
@@ -60,6 +64,17 @@ def main():
                 raise ValueError(f"aliases 必须小写: {english} -> {alias}")
         if LATIN.search(ALLOWED_LATIN.sub("", chinese)):
             raise ValueError(f"zh 不应含拉丁字母: {english} -> {chinese}")
+
+    # Correction must be idempotent: applying it to the approved translation
+    # has to leave it untouched. This catches a variant that is a prefix of its
+    # own approved term, which would render "心率变异性" as "心率变异性性".
+    from terminology import correct
+    for term in terms:
+        result = correct(term["en"], term["zh"])
+        if result != term["zh"]:
+            raise ValueError(
+                f"术语修正不幂等: {term['en']} 的规范译名 {term['zh']!r} 被改成了 {result!r}"
+            )
 
     with_abbreviations = sum(1 for term in terms if term["abbreviations"])
     with_variants = sum(1 for term in terms if term["variants"])
