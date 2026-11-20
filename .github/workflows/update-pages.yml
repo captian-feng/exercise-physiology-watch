@@ -16,6 +16,11 @@ on:
       - "sources.json"
       - "exercise_glossary.json"
       - "requirements.txt"
+      # The committed site and the bootstrap archive are build outputs; a manual
+      # change to either should still rebuild and redeploy instead of going live
+      # unchecked.
+      - "dist/**"
+      - "catalog.sqlite.gz"
   workflow_dispatch:
 
 concurrency:

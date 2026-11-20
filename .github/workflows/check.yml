@@ -22,6 +22,8 @@ jobs:
           python-version: "3.12"
       - name: Validate journal configuration
         run: python scripts/check_journals.py
+      - name: Validate the terminology glossary
+        run: python scripts/check_glossary.py
       - name: Check the website script
         run: node --check site-src/app.js
       - name: Rebuild the baseline without external requests
