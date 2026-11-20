@@ -18,20 +18,35 @@ import unicodedata
 PATH = Path(__file__).resolve().parent / "exercise_glossary.json"
 TERMS = json.loads(PATH.read_text(encoding="utf-8-sig"))["terms"]
 JOINER = r"[\s‐‑‒–—-]+"
+# Python treats CJK characters as \w, so a plain (?<!\w) fails whenever an
+# English term sits directly after Chinese ("网络Meta-Analysis"). Bound the
+# match with ASCII word characters instead.
+BEFORE = r"(?<![A-Za-z0-9])"
+AFTER = r"(?![A-Za-z0-9])"
 
 
 def pattern_for(phrase):
     # Titles mix singular and plural ("inflammatory biomarker(s)"), so allow a
     # trailing s without letting the match run into the next word.
-    return r"(?<!\w)" + JOINER.join(
-        re.escape(part) for part in re.split(JOINER, phrase.casefold())
-    ) + r"s?(?!\w)"
+    core = JOINER.join(re.escape(part) for part in re.split(JOINER, phrase.casefold()))
+    if re.search(r"[A-Za-z]$", phrase) and not phrase.lower().endswith("s"):
+        core += "s?"
+    return BEFORE + core + AFTER
 
 
 def matches(title, term):
     normalized = unicodedata.normalize("NFKC", title).casefold()
     phrases = [term["en"], *term.get("aliases", [])]
-    return any(re.search(pattern_for(phrase), normalized) for phrase in phrases)
+    if any(re.search(pattern_for(phrase), normalized) for phrase in phrases):
+        return True
+    # A title may mention only the acronym ("Wearable IMU", "HIIT versus ...").
+    # Short acronyms are skipped; two letters are too ambiguous to key on.
+    original = unicodedata.normalize("NFKC", title)
+    for abbreviation in term.get("abbreviations", []):
+        if len(abbreviation) >= 3 and abbreviation.isupper():
+            if re.search(BEFORE + re.escape(abbreviation) + AFTER, original):
+                return True
+    return False
 
 
 def apply_variant(text, variant, preferred):
@@ -82,4 +97,18 @@ def correct(title, translation):
     )
     for phrase, preferred in leftovers:
         translation = re.sub(pattern_for(phrase), preferred, translation, flags=re.IGNORECASE)
+    # Acronyms the model leaves in English (IMU, ACL, HIIT) are unambiguous for
+    # this vocabulary, so replace them only when the exact casing appears and the
+    # acronym is genuinely part of the English title.
+    normalized = unicodedata.normalize("NFKC", title)
+    acronyms = sorted(
+        ((abbreviation, term["zh"]) for term in matched
+         for abbreviation in term.get("abbreviations", [])
+         if len(abbreviation) >= 2 and abbreviation.isupper()),
+        key=lambda pair: len(pair[0]), reverse=True,
+    )
+    for abbreviation, preferred in acronyms:
+        if re.search(BEFORE + re.escape(abbreviation) + AFTER, normalized):
+            translation = re.sub(BEFORE + re.escape(abbreviation) + AFTER,
+                                 preferred, translation)
     return translation
