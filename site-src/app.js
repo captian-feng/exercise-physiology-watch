@@ -2,7 +2,28 @@
   "use strict";
 
   const get = (id) => document.getElementById(id);
-  const data = JSON.parse(get("dataset").textContent);
+  // The payload stores venues, themes and tiers once and references them by
+  // index, and rebuilds DOI links in the browser, which keeps the page about a
+  // third smaller than storing the full strings on every record.
+  const raw = JSON.parse(get("dataset").textContent);
+  const data = {
+    journals: raw.journals,
+    topics: raw.topics,
+    updated: raw.updated,
+    records: raw.records.map((record) => ({
+      journal: raw.venues[record.j],
+      focused: record.f === 1,
+      tier: raw.tiers[record.r],
+      topic: raw.topics[record.t],
+      clinical: record.c === 1,
+      en: record.e,
+      zh: record.z || "",
+      doi: record.d,
+      url: record.u || (record.d ? "https://doi.org/" + record.d : ""),
+      published: record.p,
+      seen: record.s,
+    })),
+  };
   const journal = get("journal");
   const topic = get("topic");
   const clinicalTag = "clinical-study";
