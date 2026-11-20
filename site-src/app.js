@@ -5,6 +5,8 @@
   const data = JSON.parse(get("dataset").textContent);
   const journal = get("journal");
   const topic = get("topic");
+  const clinicalTag = "clinical-study";
+  const clinicalLabel = "临床与疾病相关";
   const dateField = get("date-field");
   const dateSingle = get("date-single");
   const dateStart = get("date-start");
@@ -70,6 +72,16 @@
     }
   }
 
+  function addExclusion(value, label) {
+    const option = node("label", "exclude-option");
+    const control = node("input");
+    control.type = "checkbox";
+    control.name = "exclude-topic";
+    control.value = value;
+    option.append(control, node("span", "", label));
+    get("excluded-topics").append(option);
+  }
+
   function setScope(value) {
     scope = value;
     for (const tab of tabs) {
@@ -91,6 +103,7 @@
     if (!grouped) {
       meta.append(node("span", "", record.journal), node("span", "topic", record.topic));
     }
+    if (record.clinical) meta.append(node("span", "clinical-tag", clinicalLabel));
     if (!record.focused) meta.append(node("span", "", "刊外补漏"));
     const title = node("div", "article-title");
     if (record.url) {
@@ -206,9 +219,15 @@
 
   function render() {
     const words = normal(query.value).trim().split(/\s+/u).filter(Boolean);
+    const exclusions = new Set(new FormData(form).getAll("exclude-topic"));
+    const badge = get("exclude-count");
+    badge.hidden = !exclusions.size;
+    badge.textContent = exclusions.size ? "已选 " + exclusions.size + " 项" : "";
     const candidates = records.filter(record =>
       (!journal.value || record.journal === journal.value)
       && (!topic.value || record.topic === topic.value)
+      && !exclusions.has(record.topic)
+      && !(record.clinical && exclusions.has(clinicalTag))
       && (!scope || record.focused === (scope === "focus"))
       && words.every(word => record.searchable.includes(word))
     );
@@ -246,7 +265,9 @@
     } else {
       const empty = node("div", "empty");
       empty.append(node("strong", "", "没有符合条件的论文"));
-      empty.append(node("p", "", "可以扩大日期范围或清除部分筛选条件。"));
+      empty.append(node("p", "", topic.value && exclusions.has(topic.value)
+        ? "「只看专题」中选中的专题已被排除，可取消对应排除项。"
+        : "可以扩大日期范围或清除部分筛选条件。"));
       articles.replaceChildren(empty);
     }
   }
@@ -265,6 +286,8 @@
 
   addOptions(journal, allJournals.sort(compareJournal));
   addOptions(topic, allTopics.sort(compareTopic));
+  addExclusion(clinicalTag, clinicalLabel + "（跨专题）");
+  for (const name of allTopics) addExclusion(name, name);
   get("total-articles").textContent = records.length.toLocaleString("zh-CN");
   get("total-journals").textContent = data.journals.length;
   get("updated").textContent = data.updated ? "最近检索 " + data.updated : "暂未收录";

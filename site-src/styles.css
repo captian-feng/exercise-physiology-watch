@@ -51,6 +51,13 @@ h1,h2,h3,h4,p,dl,dd { margin:0; }
 .filter-fields { display:grid; gap:.35rem; }
 .filter-fields label { font-size:.875rem; font-weight:650; }
 .filter-fields select + label { margin-top:.35rem; }
+.exclude-topics { border-top:1px solid var(--line); padding-top:.7rem; }
+.exclude-topics summary { cursor:pointer; font-size:.9rem; font-weight:650; }
+.exclude-count { margin-left:.5rem; color:var(--teal); font-size:.8rem; }
+#excluded-topics { display:grid; gap:.5rem; border:0; padding:.65rem 0 .2rem; margin:0; min-width:0; }
+.exclude-option { display:flex; align-items:flex-start; gap:.5rem; font-size:.86rem; cursor:pointer; }
+.exclude-option input { width:1rem; height:1rem; min-height:0; margin:.18rem 0 0; flex:none; accent-color:var(--teal); }
+.clinical-tag { padding:.05rem .4rem; border-radius:.25rem; background:#e9f1f4; color:#405a6c; }
 .date-section { min-width:0; margin:0; padding:.75rem 0 0; border:0; border-top:1px solid var(--line); }
 .date-section legend { padding:0 .4rem 0 0; font-weight:700; font-size:.9rem; }
 .date-section .field-note { margin:.45rem 0 .65rem; }

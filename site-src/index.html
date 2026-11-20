@@ -42,9 +42,15 @@
           <div class="filter-fields">
             <label for="journal">期刊</label>
             <select id="journal"><option value="">全部期刊</option></select>
-            <label for="topic">专题</label>
+            <label for="topic">只看专题</label>
             <select id="topic"><option value="">全部专题</option></select>
           </div>
+          <details class="exclude-topics">
+            <summary>排除专题<span id="exclude-count" class="exclude-count" hidden></span></summary>
+            <fieldset id="excluded-topics">
+              <legend class="visually-hidden">排除专题（可多选）</legend>
+            </fieldset>
+          </details>
           <fieldset class="date-section">
             <legend>日期</legend>
             <div class="filter-fields">

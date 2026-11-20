@@ -6,7 +6,7 @@ import re
 from urllib.parse import quote, urlsplit
 
 from presentation import OTHER, PATTERNS, PUBLICATION_NOTICE, topic_for, translations
-from screening import exclusion_reason
+from screening import exclusion_reason, is_clinical_study
 
 ROOT = Path(__file__).resolve().parent
 VALID_DATE = re.compile(r"[0-9]{4}(?:-(?:0[1-9]|1[0-2])(?:-(?:0[1-9]|[12][0-9]|3[01]))?)?")
@@ -33,6 +33,7 @@ def write_site(db, journals):
             "journal": item.get("journal") or item.get("venue") or "期刊待核实",
             "focused": bool(item.get("journal")),
             "topic": topic_for(item),
+            "clinical": is_clinical_study(item),
             "en": title,
             "zh": translated.get(title, ""),
             "doi": doi,
@@ -64,4 +65,3 @@ def write_site(db, journals):
     pending.write_text(page, encoding="utf-8")
     pending.replace(output / "index.html")
     print(f"{output / 'index.html'} | {len(records)} screened records")
-

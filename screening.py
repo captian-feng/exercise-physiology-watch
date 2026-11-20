@@ -30,6 +30,25 @@ CLINICAL = re.compile(
     r"alzheimer\w*|dementia|fibrosis|copd|chronic pain|osteo\w*itis|"
     r"hypertensi\w*|obesity|mortality|infection\w*|syndrom\w*|hfp[eE]f)\b", re.I,
 )
+CLINICAL_CONTEXT = re.compile(
+    r"\b(?:patients?|hospital\w*|outpatients?|inpatients?|clinical populations?|"
+    r"clinical rehabilitation|rehabilitation|cardiac rehab|pulmonary rehab|"
+    r"coronary (?:artery|heart) disease|heart failure|hfpef|hfref|"
+    r"diabetes|diabetic|prediabet\w*|glaucoma|cancer|tumou?rs?|"
+    r"osteoarthritis|rheumatoid arthritis|muscular dystroph\w*|"
+    r"chronic kidney disease|dialysis|copd|pulmonary disease|"
+    r"parkinson\w*|alzheimer\w*|multiple sclerosis|"
+    r"post[ -]stroke|stroke survivors?|people with disabilities|"
+    r"with hypertension|with obesity|with sarcopenia|chronic pain)\b", re.I,
+)
+
+
+def is_clinical_study(item):
+    mesh = set(item.get("mesh", ()))
+    return bool(CLINICAL_CONTEXT.search(item["title"]) or
+                mesh & {"Patients", "Inpatients", "Outpatients", "Hospitals"})
+
+
 EXERCISE = re.compile(
     r"\b(?:exercis\w*|physical activit\w*|physically active|sport(?:s|ing)?|"
     r"athlet\w*|fitness|resistance train\w*|strength train\w*|"
@@ -108,4 +127,3 @@ def exclusion_reason(item):
     ):
         return "疾病、损伤或康复为主"
     return None
-
