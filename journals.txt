@@ -1,0 +1,25 @@
+# title|print/electronic ISSNs
+British Journal of Sports Medicine|0306-3674,1473-0480
+Journal of Sport and Health Science|2095-2546,2213-2961
+Sports Medicine|0112-1642,1179-2035
+Biology of Sport|0860-021X,2083-1862
+Sports Medicine - Open|2199-1170
+The American Journal of Sports Medicine|0363-5465,1552-3365
+Exercise and Sport Sciences Reviews|0091-6331,1538-3008
+Journal of Science and Medicine in Sport|1440-2440,1878-1861
+Scandinavian Journal of Medicine & Science in Sports|0905-7188,1600-0838
+Journal of Strength and Conditioning Research|1064-8011,1533-4287
+International Journal of Sports Physiology and Performance|1555-0265,1555-0273
+Journal of Sports Science and Medicine|1303-2968
+Journal of Human Kinetics|1640-5544,1899-7562
+Journal of Exercise Science & Fitness|1728-869X,2213-3054
+Journal of Sports Sciences|0264-0414,1466-447X
+Journal of Applied Physiology|8750-7587,1522-1601
+Frontiers in Physiology|1664-042X
+Physiology|1548-9213,1548-9221
+Medicine & Science in Sports & Exercise|0195-9131,1530-0315
+European Journal of Applied Physiology|1439-6319,1439-6327
+European Journal of Sport Science|1746-1391,1536-7290
+Experimental Physiology|0958-0670,1469-445X
+The Journal of Physiology|0022-3751,1469-7793
+Applied Physiology, Nutrition, and Metabolism|1715-5312,1715-5320

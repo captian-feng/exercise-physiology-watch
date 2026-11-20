@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="按期刊、专题和日期浏览人体运动与运动生理研究。">
+<title>运动生理文献库</title>
+<style>/* SITE_STYLES */</style>
+</head>
+<body>
+<a class="skip" href="#results">跳到论文结果</a>
+<header class="masthead">
+  <div class="mast-inner shell">
+    <span class="brand"><span class="brand-mark" aria-hidden="true"></span>运动生理文献库</span>
+    <p class="update" id="updated"></p>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <div class="shell hero-inner">
+      <div>
+        <h1>人体运动研究</h1>
+        <p>追踪运动生理、训练适应与运动表现的新论文。</p>
+      </div>
+      <dl class="overview">
+        <div><dt>文章</dt><dd id="total-articles">—</dd></div>
+        <div><dt>重点追踪期刊</dt><dd id="total-journals">—</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="shell workspace">
+    <aside class="filters" aria-labelledby="filters-heading">
+      <div class="filter-head"><h2 id="filters-heading">筛选</h2><button type="button" id="clear" class="text-button">清除筛选</button></div>
+      <form id="filters">
+        <label for="journal">期刊</label>
+        <select id="journal"><option value="">全部期刊</option></select>
+        <label for="topic">专题</label>
+        <select id="topic"><option value="">全部专题</option></select>
+        <label for="date-field">日期类型</label>
+        <select id="date-field">
+          <option value="published">发表日期</option>
+          <option value="seen">收录日期</option>
+        </select>
+        <label for="date-start">起始日期</label>
+        <input id="date-start" type="date">
+        <label for="date-end">结束日期</label>
+        <input id="date-end" type="date">
+        <p id="date-error" class="error" hidden role="alert">结束日期需晚于或等于起始日期。</p>
+        <p id="date-help" class="field-note"></p>
+      </form>
+      <details class="coverage">
+        <summary>收录范围</summary>
+        <p>收录人体运动、训练表现和运动生理研究。根据题名及可用索引筛选，专题为自动归类。</p>
+      </details>
+    </aside>
+    <section id="results" class="results" aria-labelledby="results-heading">
+      <div class="results-head">
+        <h2 id="results-heading">论文</h2>
+        <span id="result-count" class="result-count" role="status" aria-live="polite"></span>
+      </div>
+      <div class="search-wrap">
+        <label class="visually-hidden" for="query">搜索中英文题名或 DOI</label>
+        <input id="query" type="search" placeholder="搜索中文题名、英文题名或 DOI" autocomplete="off">
+      </div>
+      <div class="results-tools">
+        <div class="tabs" role="group" aria-label="论文来源">
+          <button type="button" data-scope="" aria-pressed="true">全部</button>
+          <button type="button" data-scope="focus" aria-pressed="false">重点期刊</button>
+          <button type="button" data-scope="other" aria-pressed="false">刊外补漏</button>
+        </div>
+        <div class="sort">
+          <label for="sort">排序</label>
+          <select id="sort">
+            <option value="grouped">期刊与专题</option>
+            <option value="recent">日期从新到旧</option>
+          </select>
+        </div>
+      </div>
+      <div id="articles"></div>
+      <nav id="pagination" class="pagination" aria-label="论文分页" hidden>
+        <button type="button" id="prev">上一页</button>
+        <span id="page-status"></span>
+        <button type="button" id="next">下一页</button>
+      </nav>
+      <noscript><p>请启用 JavaScript 以使用筛选功能。</p></noscript>
+    </section>
+  </div>
+</main>
+<footer class="shell footer">中文标题为机器译文。英文原题和原文入口可用于核对。</footer>
+<script id="dataset" type="application/json">/* SITE_DATA */</script>
+<script>/* SITE_SCRIPT */</script>
+</body>
+</html>

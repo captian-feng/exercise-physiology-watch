@@ -1,0 +1,111 @@
+"""Screen the reading report for human exercise and sport physiology."""
+
+import re
+
+ANIMAL = re.compile(
+    r"\b(?:mice|mouse|murine|rodents?|rats?|wistar|sprague[ -]dawley|zebrafish|"
+    r"drosophila|rabbits?|piglets?|porcine|swine|canine|dogs?|"
+    r"chickens?|broilers?|quails?|horses?|equine|"
+    r"macaques?|non[ -]human primates?|ovine|sheep|"
+    r"cattle|cows?|goats?|ruminants?|animal models?)\b", re.I,
+)
+BENCH = re.compile(
+    r"\b(?:in vitro|organoids?|cell lines?|cultured cells?|cell culture|"
+    r"cadavers?|cadaveric|finite element models? of|molecular docking)\b", re.I,
+)
+ORTHOPEDIC = re.compile(
+    r"\b(?:arthroscop\w*|arthroplast\w*|orthop[ae]edic\w*|osteotom\w*|"
+    r"tenodesis|graft fixation|intra[ -]articular injections?|"
+    r"menisc\w* (?:repair|transplantation|tear)|rotator cuff (?:tear|repair)|"
+    r"anterior cruciate ligament (?:reconstruction|repair|tear|injury)|"
+    r"acl (?:reconstruction|repair|tear|injury)|"
+    r"osteochondr\w* (?:defect|lesion|repair)|tendon repair|operative|"
+    r"surgery|surgical|postoperative|post[ -]operative|preoperative|meniscectomy|"
+    r"femoroacetabular impingement|chondral lesions?)\b", re.I,
+)
+CLINICAL = re.compile(
+    r"\b(?:rehabilitat\w*|patients?|diseases?|disorders?|"
+    r"osteoarthritis|rheumatoid|tendinopath\w*|fractures?|concussions?|"
+    r"cancer|tumou?rs?|diabet\w*|dystroph\w*|heart failure|stroke|parkinson\w*|"
+    r"alzheimer\w*|dementia|fibrosis|copd|chronic pain|osteo\w*itis|"
+    r"hypertensi\w*|obesity|mortality|infection\w*|syndrom\w*|hfp[eE]f)\b", re.I,
+)
+EXERCISE = re.compile(
+    r"\b(?:exercis\w*|physical activit\w*|physically active|sport(?:s|ing)?|"
+    r"athlet\w*|fitness|resistance train\w*|strength train\w*|"
+    r"interval train\w*|aerobic train\w*|endurance train\w*|hiit|"
+    r"training (?:load|intensity|volume|adapt\w*|session|response)|"
+    r"training[- ]induced|detrain\w*|"
+    r"running|runners?|cyclists?|cycling|bicycl\w*|swim\w*|"
+    r"sprint\w*|rowers?|rowing|triathl\w*|marathon\w*|kayak\w*|"
+    r"weightlift\w*|powerlift\w*|soccer|football|basketball|volleyball|"
+    r"badminton|tennis|rugby|hockey|baseball|softball|gymnast\w*|"
+    r"handball|futsal|cricket|skiing|combat sport|judo|taekwondo|"
+    r"wrestl\w*|canoe\w*|ultramarathon\w*|"
+    r"critical (?:power|speed)|lactate threshold|lactate steady state|"
+    r"running economy|oxygen uptake kinetics|aerobic capacity|"
+    r"v[̇]?o[₂2] ?(?:max|peak)|ventilatory threshold|"
+    r"muscle (?:contraction|strength|fatigue)|muscular strength|"
+    r"grip strength|isometric|postural stability|motor (?:control|performance|adaptation)|"
+    r"gait|locomot\w*|jump\w*|single[ -]leg landing|movement (?:pattern|initiation)|"
+    r"work[ -]to[ -]rest|energy availability)\b", re.I,
+)
+EXERCISE_OUTCOME = re.compile(
+    r"\b(?:exercise (?:capacity|tolerance|performance|economy|response|test\w*|trial)|"
+    r"cardiorespiratory (?:fitness|capacity)|functional (?:capacity|performance|fitness)|"
+    r"maximal oxygen uptake|peak oxygen uptake|aerobic (?:capacity|fitness|performance)|"
+    r"v[̇]?o[₂2] ?(?:max|peak)|oxygen uptake kinetics|"
+    r"running economy|walking (?:distance|speed)|gait speed|"
+    r"physical activit\w* (?:levels?|pattern\w*|behavio\w*|assessment|measurement)|"
+    r"physically active|muscle strength|muscular strength|"
+    r"neuromuscular (?:function|performance|adapt\w*)|"
+    r"training (?:response|adapt\w*|load)|exercise[- ]induced)\b", re.I,
+)
+EXERCISE_INTERVENTION = re.compile(
+    r"\b(?:(?:aerobic|resistance|endurance|strength|interval|concurrent|"
+    r"combined|exercise) train\w*|physical activit\w* intervention\w*|"
+    r"exercise (?:intervention|program\w*|prescription)|"
+    r"exercise[ -]based (?:intervention|program\w*)|"
+    r"effects? of (?:acute )?(?:physical exercise|exercis\w*)|"
+    r"responses? to (?:acute )?exercis\w*)\b", re.I,
+)
+EXCLUDED_PUBLICATION = re.compile(
+    r"^(?:erratum|corrigendum|retraction notice|correction(?: to)?[:.]|"
+    r"editorial board|masthead|table of contents)(?=\W|$)|\bletter to the editor\b", re.I,
+)
+CELL_MECHANISM = re.compile(
+    r"\b(?:micrornas?|lncrnas?|lactylation|methylation|transcriptom\w*|"
+    r"signal(?:l)?ing pathways?|cell remodell?ing|mitochondrial remodell?ing|"
+    r"neural remodell?ing|renoprotection|molecular mechanisms?|epigenetic enzymes|"
+    r"single[ -]fib(?:re|er)|channel gating|candidate mechanism)\b", re.I,
+)
+HUMAN_CONTEXT = re.compile(
+    r"\b(?:humans?|athlet\w*|participants?|men|women|males?|females?|"
+    r"adults?|children|adolescents?|older people|cyclists?|runners?|"
+    r"randomi[sz]ed|cohort|trained individuals)\b", re.I,
+)
+NON_RESEARCH_TYPES = {"editorial", "published erratum", "retraction of publication", "news"}
+
+
+def exclusion_reason(item):
+    title = item["title"]
+    types = {kind.strip().casefold() for kind in item.get("type", "").split(",")}
+    mesh = set(item.get("mesh", ()))
+    if EXCLUDED_PUBLICATION.search(title) or types & NON_RESEARCH_TYPES:
+        return "编辑信息与勘误"
+    if ANIMAL.search(title) or ("Animals" in mesh and "Humans" not in mesh):
+        return "动物研究"
+    if BENCH.search(title):
+        return "体外、尸体或纯建模研究"
+    if ORTHOPEDIC.search(title):
+        return "临床骨科"
+    if CELL_MECHANISM.search(title) and "Humans" not in mesh and not HUMAN_CONTEXT.search(title):
+        return "人体运动证据不明确的机制研究"
+    if not EXERCISE.search(title):
+        return "题名未显示直接的运动关联"
+    if CLINICAL.search(title) and not (
+        EXERCISE_OUTCOME.search(title) or EXERCISE_INTERVENTION.search(title)
+    ):
+        return "疾病、损伤或康复为主"
+    return None
+

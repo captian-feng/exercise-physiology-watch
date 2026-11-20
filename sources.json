@@ -1,0 +1,23 @@
+{
+  "topics": {
+    "临界功率与速度": "\"critical power\" OR \"critical speed\" OR \"critical swimming speed\"",
+    "氧摄取动力学": "\"oxygen uptake kinetics\" OR \"VO2 kinetics\"",
+    "训练负荷": "\"training load\" OR \"training impulse\" OR \"session RPE\"",
+    "可穿戴运动监测": "(\"wearable sensor\" OR \"wearable sensors\" OR accelerometry) AND (exercise OR sport OR athlete OR training)"
+  },
+  "feeds": {
+    "British Journal of Sports Medicine": [
+      "https://bjsm.bmj.com/content/early/recent/rss",
+      "https://bjsm.bmj.com/current.rss"
+    ],
+    "Sports Medicine": [
+      "https://link.springer.com/search.rss?facet-journal-id=40279"
+    ],
+    "Sports Medicine - Open": [
+      "https://sportsmedicine-open.springeropen.com/articles/most-recent/rss.xml"
+    ],
+    "European Journal of Applied Physiology": [
+      "https://link.springer.com/search.rss?facet-journal-id=421"
+    ]
+  }
+}

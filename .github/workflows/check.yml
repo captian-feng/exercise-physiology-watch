@@ -1,0 +1,28 @@
+name: 检查协作改动
+
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - archive-state
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Validate journal configuration
+        run: python scripts/check_journals.py
+      - name: Check the website script
+        run: node --check site-src/app.js
+      - name: Rebuild the baseline without external requests
+        run: python -X utf8 cloud_refresh.py --render-only 2026-11-20
