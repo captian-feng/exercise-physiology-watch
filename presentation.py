@@ -193,15 +193,51 @@ def grouped(items, journal_order=()):
     ]
 
 
+def degenerate(text):
+    """Detect a decoding loop such as '与男性的活体活体活体活体...'.
+
+    A neural decoder occasionally locks onto one token and repeats it (classic
+    repetition collapse), which fills the rest of the sentence with one n-gram.
+    Such output is dominated by a short repeated fragment and easy to detect.
+    """
+    size = len(text)
+    if size < 12:
+        return False
+    for width in (2, 3, 4):
+        counts = {}
+        for index in range(size - width + 1):
+            gram = text[index:index + width]
+            counts[gram] = counts.get(gram, 0) + 1
+        gram, count = max(counts.items(), key=lambda pair: pair[1])
+        if count >= 4 and count * width / size > 0.35:
+            return True
+    return False
+
+
+def polish(title, chinese):
+    for before, after in SUBSTITUTIONS.items():
+        chinese = chinese.replace(before, after)
+    if "cyclist" in title.lower():
+        chinese = chinese.replace("循环者", "自行车运动员")
+    if "epigenetic" in title.lower():
+        chinese = chinese.replace("遗传学和遗传学", "遗传与表观遗传")
+    return correct(title, chinese)
+
+
 def translations(db, records):
     db.execute("CREATE TABLE IF NOT EXISTS translations (title TEXT PRIMARY KEY, zh TEXT NOT NULL)")
     cached = {title: correct(title, zh) for title, zh in db.execute("SELECT title, zh FROM translations")}
+    # A cached title that ended in a decoding loop is dropped here so the next
+    # run translates it again instead of serving broken text forever.
+    for title in [title for title, zh in cached.items() if degenerate(zh)]:
+        del cached[title]
     pending = list(dict.fromkeys(
         item["title"] for item in records
         if item["title"] not in cached
     ))
     if not pending:
         return cached, ""
+    rejected = 0
     try:
         import ctranslate2
         import sentencepiece
@@ -211,21 +247,29 @@ def translations(db, records):
         for start in range(0, len(pending), 64):
             titles = pending[start:start + 64]
             tokens = sp.encode(titles, out_type=str)
-            predictions = engine.translate_batch(tokens, beam_size=3, max_batch_size=32,
-                                                 max_input_length=160, max_decoding_length=160,
-                                                 replace_unknowns=True)
-            for title, result in zip(titles, predictions):
+            predictions = engine.translate_batch(
+                tokens, beam_size=4, max_batch_size=32, max_input_length=160,
+                max_decoding_length=96, replace_unknowns=True,
+                no_repeat_ngram_size=4, repetition_penalty=1.15)
+            for title, token, result in zip(titles, tokens, predictions):
                 chinese = sp.decode(result.hypotheses[0]).replace("▁", " ").strip()
-                for before, after in SUBSTITUTIONS.items():
-                    chinese = chinese.replace(before, after)
-                if "cyclist" in title.lower():
-                    chinese = chinese.replace("循环者", "自行车运动员")
-                if "epigenetic" in title.lower():
-                    chinese = chinese.replace("遗传学和遗传学", "遗传与表观遗传")
-                chinese = correct(title, chinese)
-                if re.search(r"[\u3400-\u9fff]", chinese):
-                    cached[title] = chinese
-                    db.execute("INSERT OR REPLACE INTO translations VALUES (?, ?)", (title, chinese))
+                if degenerate(chinese):
+                    # Retry once on its own with a stronger anti-loop setting.
+                    retry = engine.translate_batch(
+                        [token], beam_size=2, max_batch_size=1,
+                        max_decoding_length=max(24, len(token) * 3),
+                        replace_unknowns=True, no_repeat_ngram_size=3,
+                        repetition_penalty=1.3)
+                    chinese = sp.decode(retry[0].hypotheses[0]).replace("▁", " ").strip()
+                chinese = polish(title, chinese)
+                if degenerate(chinese) or not re.search(r"[\u3400-\u9fff]", chinese):
+                    # Never cache a broken title; the English original is shown.
+                    rejected += 1
+                    continue
+                cached[title] = chinese
+                db.execute("INSERT OR REPLACE INTO translations VALUES (?, ?)", (title, chinese))
+        if rejected:
+            print(f"Translation guard rejected {rejected} titles", flush=True)
         return cached, ""
     except (ImportError, OSError, RuntimeError, ValueError) as error:
         return cached, str(error)

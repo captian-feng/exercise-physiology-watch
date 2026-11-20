@@ -89,7 +89,12 @@ def publisher_articles(source):
     records = {}
 
     def load(page):
-        response = requests.get(page, timeout=(10, 30))
+        response = requests.get(page, timeout=(10, 30), headers={
+            "User-Agent": "Mozilla/5.0 (compatible; JournalWatch/1.0) "
+                          "academic-literature-monitoring",
+            "Accept-Language": "en",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        })
         response.raise_for_status()
         return BeautifulSoup(response.content, "html.parser")
 
