@@ -1,19 +1,18 @@
 """Screen the reading report for human exercise and sport physiology.
 
-The earlier rules matched only the article title and required an explicit
-exercise word such as "exercise", "training" or "sport" in it. Titles that
-describe exercise physiology without naming exercise -- "load-induced skeletal
-muscle hypertrophy", "muscle protein synthesis", "heat acclimation" -- were
-dropped even when they came from one of the curated journals.
+The original rules matched only the article title and demanded an explicit
+exercise word such as "exercise", "training" or "sport". Titles that describe
+exercise physiology without naming exercise -- "load-induced skeletal muscle
+hypertrophy", "muscle protein synthesis", "heat acclimation" -- were dropped
+even when they came from one of the curated journals.
 
 This module keeps the hard exclusions (editorial, animal, bench, orthopaedic)
 first, then uses three independent signals:
 
 1. an exercise keyword in the title (``EXERCISE`` plus ``EXERCISE_EXTRA``),
 2. an exercise-related MeSH heading supplied by PubMed (``EXERCISE_MESH``),
-3. a human exercise-physiology context in the title of a curated journal
-   (``EXERCISE_CONTEXT``), which promotes the record to the "related" tier
-   instead of dropping it.
+3. a human outcome in the title of a curated journal (``HUMAN_OUTCOME``),
+   which promotes the record to the "related" tier instead of dropping it.
 
 Signals 1 and 2 can produce a "core" record; signal 3 only ever produces a
 "related" record, so a wider net never dilutes the core list.
@@ -128,21 +127,47 @@ EXERCISE_MESH = {
     "Oxygen Consumption", "Energy Metabolism", "Running", "Walking",
     "Cardiorespiratory Fitness", "Athletes", "Body Composition",
 }
-# Broad human exercise-physiology context. Used only for records from the
-# curated journals and only to reach the "related" tier, never the core tier.
-EXERCISE_CONTEXT = re.compile(
-    r"\b(?:physiolog\w*|physiologic\w*|function\w*|capacity|performance|"
-    r"adaptation\w*|acclimat\w*|responses?|mechanism\w*|"
-    r"muscle\w*|skeletal|cardiac|cardiorespiratory|cardiovascular|vascular|"
-    r"endothelial|arterial|pulmonary|respirat\w*|ventilat\w*|oxygen|"
-    r"metabol\w*|mitochondri\w*|bioenergetic\w*|"
-    r"blood|plasma|serum|circulat\w*|ha?emodynamic\w*|perfusion|"
-    r"heat|cold|hypoxi\w*|altitude|environment\w*|"
-    r"fatigue|recovery|injur\w*|damage|stress|load\w*|"
-    r"body (?:composition|mass|weight)|adipos\w*|lean mass|bone density|"
-    r"health|fitness|activit\w*|behavio\w*|sleep|nutrition|diet\w*|"
-    r"ageing|aging|older|young|adult\w*|children|adolescen\w*)\b", re.I,
+# Human physiological / performance outcome vocabulary. A title from a curated
+# journal that matches this can reach the "related" tier; a title that also
+# carries an exercise signal reaches "core". The earlier version of this list
+# only accepted a handful of phrases, which pushed genuine exercise physiology
+# (bone density, muscle damage, body composition, sleep, injury risk) into the
+# related tier.
+HUMAN_OUTCOME = re.compile(
+    r"\b(?:performance|strength|power|endurance|fatigue\w*|fatigab\w*|recovery|"
+    r"soreness|readiness|athlet\w*|players?|elite|collegiate|professional|"
+    r"injur\w*|concussion\w*|illness|pain|"
+    r"sleep|cognition|cognitive|brain|mental health|mood|anxiety|depress\w*|"
+    r"bone|cartilage|tendon\w*|ligament\w*|fascia|connective tissue|"
+    r"body (?:fat|composition|mass|weight)|adipos\w*|fat mass|lean mass|obesity|"
+    r"insulin|glucose|glyc\w*|lipid\w*|cholesterol|triglycerid\w*|"
+    r"immun\w*|inflamm\w*|cytokine\w*|microbiome|gut|"
+    r"hepatic|liver|kidney|renal|"
+    r"menstrual|hormon\w*|testosterone|estrogen|cortisol|"
+    r"blood (?:flow|pressure|volume)|ha?emodynamic\w*|vascular|endothelial|"
+    r"arterial|respirat\w*|pulmonary|bronch\w*|asthma|"
+    r"cardiac|heart rate|cardiovascular|"
+    r"thermoregulat\w*|heat|cold|hypoxi\w*|altitude|hydration|dehydrat\w*|sweat\w*|"
+    r"aging|ageing|longevity|sarcopenia|frailty|"
+    r"fitness|capacity|function\w*|"
+    r"sedentary|wearable|acceleromet\w*|step count|"
+    r"exercise (?:capacity|tolerance|performance|economy|response|test\w*|trial)|"
+    r"cardiorespiratory|maximal oxygen uptake|peak oxygen uptake|"
+    r"aerobic|anaerobic|lactate|vo[\u0307₂2o\s_-]*2?\s*(?:max|peak)|"
+    r"running economy|oxygen uptake|energy expenditure|energy availability|"
+    r"body temperature|core temperature|"
+    r"muscle (?:strength|force|fatigue|activation|size|architect\w*|damage|"
+    r"protein synthesis|power|function|mass|thickness|cross-sectional area)|"
+    r"neuromuscul\w*|hypertroph\w*|electromyogra\w*|maximal voluntary contraction|"
+    r"grip strength|countermovement jump|jump height|peak power|power output|"
+    r"rate of perceived exertion|training (?:load|adaptation\w*|response\w*)|"
+    r"physiological (?:response\w*|adaptation\w*|demands|strain|recovery)|"
+    r"gait|balance|postural|locomot\w*|kinematic\w*|kinetic\w*|biomechanic\w*|"
+    r"range of motion|flexibility|mobility|proprioception|motor (?:control|learning)|"
+    r"quality of life|well-?being|health|mortality|morbidity|risk factors?)\b",
+    re.I,
 )
+PHYSIOLOGY_OR_PERFORMANCE = HUMAN_OUTCOME
 EXERCISE_OUTCOME = re.compile(
     r"\b(?:exercise (?:capacity|tolerance|performance|economy|response|test\w*|trial)|"
     r"cardiorespiratory (?:fitness|capacity)|functional (?:capacity|performance|fitness)|"
@@ -161,27 +186,6 @@ EXERCISE_INTERVENTION = re.compile(
     r"exercise[ -]based (?:intervention|program\w*)|"
     r"effects? of (?:acute )?(?:physical exercise|exercis\w*)|"
     r"responses? to (?:acute )?exercis\w*)\b", re.I,
-)
-# Require a physiological or physical-performance question in addition to sport context.
-PHYSIOLOGY_OR_PERFORMANCE = re.compile(
-    r"\b(?:exercise physiolog\w*|cardiorespiratory|oxygen (?:uptake|consumption|cost|"
-    r"delivery|saturation|extraction)|vo[\u0307₂2o\s_-]*2?\s*(?:max|peak)|"
-    r"heart rate|blood pressure|cardiac output|stroke volume|ha?emodynam\w*|"
-    r"vascular (?:function|response|reactivity)|autonomic responses?|ventilat\w*|"
-    r"pulmonary gas exchange|critical (?:power|speed)|lactate|anaerobic threshold|"
-    r"(?:running|walking|cycling|exercise) economy|aerobic capacity|aerobic fitness|"
-    r"exercise (?:capacity|tolerance|performance|response)|physical performance|"
-    r"(?:endurance|sprint|cycling|running|jump|swimming|strength) performance|"
-    r"time[ -]trial|energy expenditure|energy cost|oxygenation|thermoregulat\w*|"
-    r"heat (?:acclimati\w*|stress)|hypoxi\w*|glycogen|substrate oxidation|"
-    r"metaboli\w*|body composition|muscle (?:strength|force|fatigue|activation|"
-    r"size|architect\w*|damage|protein synthesis|power|function)|muscular strength|"
-    r"neuromuscul\w*|hypertrophy|fatigab\w*|force development|electromyogra\w*|"
-    r"maximal voluntary contraction|grip strength|countermovement jump|jump height|"
-    r"peak power|power output|rate of perceived exertion|"
-    r"polari[sz]ed (?:versus high[ -]intensity )?training|training (?:load|"
-    r"adaptation\w*|response\w*)|physiological (?:response\w*|adaptation\w*|"
-    r"demands|strain|recovery|effects)|exercise recovery)\b", re.I,
 )
 
 EXCLUDED_PUBLICATION = re.compile(
@@ -227,9 +231,9 @@ def exclusion_reason(item):
     if CELL_MECHANISM.search(title) and "Humans" not in mesh and not HUMAN_CONTEXT.search(title):
         return "人体运动证据不明确的机制研究"
     if not exercise_signal(item):
-        # Second chance: a curated journal writing about a human physiology topic
-        # is treated as related reading rather than dropped outright.
-        if item.get("journal") and EXERCISE_CONTEXT.search(title) and not (
+        # Second chance: a curated journal writing about a human outcome is
+        # treated as related reading rather than dropped outright.
+        if item.get("journal") and HUMAN_OUTCOME.search(title) and not (
             CLINICAL.search(title)
             and not (EXERCISE_OUTCOME.search(title) or EXERCISE_INTERVENTION.search(title))
         ):
@@ -239,7 +243,7 @@ def exclusion_reason(item):
         EXERCISE_OUTCOME.search(title) or EXERCISE_INTERVENTION.search(title)
     ):
         return "疾病、损伤或康复为主"
-    if not PHYSIOLOGY_OR_PERFORMANCE.search(title):
+    if not HUMAN_OUTCOME.search(title):
         return UNCERTAIN_RELEVANCE
     return None
 
