@@ -30,28 +30,52 @@
   </div>
   <div class="shell workspace">
     <aside class="filters" aria-labelledby="filters-heading">
-      <div class="filter-head"><h2 id="filters-heading">筛选</h2><button type="button" id="clear" class="text-button">清除筛选</button></div>
-      <form id="filters">
-        <label for="journal">期刊</label>
-        <select id="journal"><option value="">全部期刊</option></select>
-        <label for="topic">专题</label>
-        <select id="topic"><option value="">全部专题</option></select>
-        <label for="date-field">日期类型</label>
-        <select id="date-field">
-          <option value="published">发表日期</option>
-          <option value="seen">收录日期</option>
-        </select>
-        <label for="date-start">起始日期</label>
-        <input id="date-start" type="date">
-        <label for="date-end">结束日期</label>
-        <input id="date-end" type="date">
-        <p id="date-error" class="error" hidden role="alert">结束日期需晚于或等于起始日期。</p>
-        <p id="date-help" class="field-note"></p>
-      </form>
-      <details class="coverage">
-        <summary>收录范围</summary>
-        <p>收录人体运动、训练表现和运动生理研究。根据题名及可用索引筛选，专题为自动归类。</p>
-      </details>
+      <div class="filter-head">
+        <h2 id="filters-heading">筛选</h2>
+        <div class="filter-actions">
+          <button type="button" id="clear" class="text-button">清除筛选</button>
+          <button type="button" id="filter-toggle" class="text-button" aria-expanded="true" aria-controls="filter-body">收起</button>
+        </div>
+      </div>
+      <div id="filter-body">
+        <form id="filters">
+          <div class="filter-fields">
+            <label for="journal">期刊</label>
+            <select id="journal"><option value="">全部期刊</option></select>
+            <label for="topic">专题</label>
+            <select id="topic"><option value="">全部专题</option></select>
+          </div>
+          <fieldset class="date-section">
+            <legend>日期</legend>
+            <div class="filter-fields">
+              <label for="date-field">日期类型</label>
+              <select id="date-field">
+                <option value="published">发表日期</option>
+                <option value="seen">首次收录日期</option>
+              </select>
+            </div>
+            <p id="date-help" class="field-note"></p>
+            <div class="date-modes" role="group" aria-label="日期筛选方式">
+              <label><input type="radio" name="date-mode" value="point" checked><span>指定日期</span></label>
+              <label><input type="radio" name="date-mode" value="range"><span>日期区间</span></label>
+            </div>
+            <div class="filter-fields" id="date-point">
+              <label for="date-single">选择日期</label>
+              <select id="date-single" aria-describedby="date-help"></select>
+            </div>
+            <div class="filter-fields" id="date-range" hidden>
+              <label for="date-start">起始日期</label>
+              <select id="date-start" aria-describedby="date-help"></select>
+              <label for="date-end">结束日期</label>
+              <select id="date-end" aria-describedby="date-help"></select>
+            </div>
+          </fieldset>
+        </form>
+        <details class="coverage">
+          <summary>收录范围</summary>
+          <p>收录人体运动、训练表现和运动生理研究。根据题名及可用索引筛选，专题为自动归类。</p>
+        </details>
+      </div>
     </aside>
     <section id="results" class="results" aria-labelledby="results-heading">
       <div class="results-head">

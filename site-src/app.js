@@ -6,10 +6,12 @@
   const journal = get("journal");
   const topic = get("topic");
   const dateField = get("date-field");
+  const dateSingle = get("date-single");
   const dateStart = get("date-start");
   const dateEnd = get("date-end");
   const query = get("query");
   const sort = get("sort");
+  const form = get("filters");
   const articles = get("articles");
   const tabs = [...document.querySelectorAll("button[data-scope]")];
   const pageSize = 20;
@@ -148,25 +150,79 @@
     return Boolean(range && range[0] && (!start || range[1] >= start) && (!end || range[0] <= end));
   }
 
-  function render() {
-    const from = dateStart.value;
-    const to = dateEnd.value;
-    const invalid = Boolean(from && to && from > to);
-    get("date-error").hidden = !invalid;
-    dateStart.setAttribute("aria-invalid", String(invalid));
-    dateEnd.setAttribute("aria-invalid", String(invalid));
-    get("date-help").textContent = dateField.value === "seen"
-      ? "按系统首次收录的日期筛选。"
-      : "按数据库提供的发表日期筛选。";
+  function dateLabel(value) {
+    if (value.length === 4) return value + "（仅标注年份）";
+    if (value.length === 7) return value + "（仅标注年月）";
+    return value;
+  }
 
+  function setDateOptions(select, placeholder, options, current) {
+    const first = node("option", "", placeholder);
+    first.value = "";
+    const entries = options.map(([value, label]) => {
+      const option = node("option", "", label);
+      option.value = value;
+      return option;
+    });
+    select.replaceChildren(first, ...entries);
+    select.disabled = !entries.length;
+    select.value = options.some(([value]) => value === current) ? current : "";
+  }
+
+  function updateDates(candidates) {
+    const counts = new Map();
+    const field = dateField.value;
+    for (const record of candidates) {
+      const value = record[field];
+      if (value) counts.set(value, (counts.get(value) || 0) + 1);
+    }
+    const values = [...counts.keys()].sort();
+    const intervals = new Map(values.map(value => [value, bounds(value)]));
+    const dates = new Set(values);
+    const from = dates.has(dateStart.value) ? dateStart.value : "";
+    const to = dates.has(dateEnd.value) ? dateEnd.value : "";
+    const startDay = intervals.get(from)?.[0];
+    const endDay = intervals.get(to)?.[1];
+    const labels = values.map(value => [value, dateLabel(value)]);
+    const single = labels.map(([value, label]) => [value, label + " · " + counts.get(value) + " 篇"]);
+
+    setDateOptions(dateSingle, "全部日期", single.reverse(), dateSingle.value);
+    setDateOptions(dateStart, "不限起始日期", labels.filter(([value]) =>
+      !endDay || intervals.get(value)[0] <= endDay), from);
+    setDateOptions(dateEnd, "不限结束日期", labels.filter(([value]) =>
+      !startDay || intervals.get(value)[1] >= startDay), to);
+
+    const help = get("date-help");
+    if (!values.length) {
+      help.textContent = candidates.length ? "当前结果未记录所选类型的日期。" : "当前条件下没有可用日期。";
+    } else {
+      const first = values[0];
+      const last = values.reduce((latest, value) => intervals.get(value)[1] >= intervals.get(latest)[1] ? value : latest);
+      const span = first === last ? dateLabel(first) : dateLabel(first) + " 至 " + dateLabel(last);
+      const undated = candidates.length - [...counts.values()].reduce((sum, count) => sum + count, 0);
+      help.textContent = "有记录的日期：" + span + (undated ? " · " + undated + " 篇日期未标注" : "");
+    }
+  }
+
+  function render() {
     const words = normal(query.value).trim().split(/\s+/u).filter(Boolean);
-    const matches = invalid ? [] : records.filter(record =>
+    const candidates = records.filter(record =>
       (!journal.value || record.journal === journal.value)
       && (!topic.value || record.topic === topic.value)
       && (!scope || record.focused === (scope === "focus"))
-      && matchesDate(record, from, to)
       && words.every(word => record.searchable.includes(word))
     );
+    updateDates(candidates);
+
+    const rangeMode = form.elements["date-mode"].value === "range";
+    get("date-point").hidden = rangeMode;
+    get("date-range").hidden = !rangeMode;
+    const start = bounds(dateStart.value)?.[0];
+    const end = bounds(dateEnd.value)?.[1];
+    const matches = rangeMode
+      ? candidates.filter(record => matchesDate(record, start, end))
+      : candidates.filter(record => !dateSingle.value || record[dateField.value] === dateSingle.value);
+
     function newest(a, b) {
       return (b[dateField.value] || "").localeCompare(a[dateField.value] || "")
         || collator.compare(a.en, b.en);
@@ -189,8 +245,8 @@
       renderRows(matches.slice((page - 1) * pageSize, page * pageSize));
     } else {
       const empty = node("div", "empty");
-      empty.append(node("strong", "", invalid ? "请检查日期范围" : "没有符合条件的论文"));
-      if (!invalid) empty.append(node("p", "", "可以扩大日期范围或清除部分筛选条件。"));
+      empty.append(node("strong", "", "没有符合条件的论文"));
+      empty.append(node("p", "", "可以扩大日期范围或清除部分筛选条件。"));
       articles.replaceChildren(empty);
     }
   }
@@ -213,8 +269,23 @@
   get("total-journals").textContent = data.journals.length;
   get("updated").textContent = data.updated ? "最近检索 " + data.updated : "暂未收录";
   get("results-heading").tabIndex = -1;
-  get("filters").addEventListener("submit", event => event.preventDefault());
-  get("filters").addEventListener("input", refilter);
+  form.addEventListener("submit", event => event.preventDefault());
+  form.addEventListener("change", (event) => {
+    if (event.target === dateField) {
+      dateSingle.value = dateStart.value = dateEnd.value = "";
+    }
+    refilter();
+  });
+  const narrow = matchMedia("(max-width: 800px)");
+  const toggle = get("filter-toggle");
+  function showFilters(expanded) {
+    get("filter-body").hidden = !expanded;
+    toggle.setAttribute("aria-expanded", String(expanded));
+    toggle.textContent = expanded ? "收起" : "展开";
+  }
+  toggle.addEventListener("click", () => showFilters(get("filter-body").hidden));
+  narrow.addEventListener("change", () => showFilters(!narrow.matches));
+  showFilters(!narrow.matches);
   query.addEventListener("input", refilter);
   sort.addEventListener("change", refilter);
   for (const tab of tabs) {
@@ -224,7 +295,8 @@
     });
   }
   get("clear").addEventListener("click", () => {
-    get("filters").reset();
+    form.reset();
+    dateSingle.value = dateStart.value = dateEnd.value = "";
     query.value = "";
     setScope("");
     refilter();
@@ -233,4 +305,3 @@
   get("next").addEventListener("click", () => turnPage(1));
   render();
 })();
-

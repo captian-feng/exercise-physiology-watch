@@ -39,20 +39,33 @@ h1,h2,h3,h4,p,dl,dd { margin:0; }
 .overview dd { font-size:2rem; line-height:1.1; font-weight:750; font-variant-numeric:tabular-nums; }
 .overview dt { margin-top:.45rem; color:#d3e6e9; font-size:.9rem; }
 .workspace { display:grid; grid-template-columns: minmax(220px,255px) minmax(0,1fr); gap:clamp(1.2rem,3vw,2.8rem); padding-block:2.2rem 2.75rem; }
-.filters { align-self:start; min-width:0; background:var(--paper); border:1px solid var(--line); border-radius:.8rem; padding:1.15rem; }
+.filters { position:sticky; top:1rem; max-height:calc(100dvh - 2rem); overflow-y:auto; align-self:start; min-width:0; background:var(--paper); border:1px solid var(--line); border-radius:.8rem; padding:1.15rem; }
 .filter-head,.results-head,.results-tools { display:flex; align-items:center; justify-content:space-between; gap:.65rem 1rem; flex-wrap:wrap; }
-.filter-head { margin-bottom:1rem; }
+.filter-actions { display:flex; align-items:center; gap:.75rem; }
+#filter-toggle { display:none; }
+#filter-body { margin-top:.9rem; }
 .filter-head h2 { font-size:1.075rem; }
 .text-button { color:var(--teal); background:transparent; border:0; padding:.25rem 0; font-size:.88rem; }
 .text-button:hover { text-decoration:underline; }
-#filters { display:grid; gap:.45rem; }
-#filters label { font-size:.9rem; font-weight:650; margin-top:.45rem; }
+#filters { display:grid; gap:1rem; }
+.filter-fields { display:grid; gap:.35rem; }
+.filter-fields label { font-size:.875rem; font-weight:650; }
+.filter-fields select + label { margin-top:.35rem; }
+.date-section { min-width:0; margin:0; padding:.75rem 0 0; border:0; border-top:1px solid var(--line); }
+.date-section legend { padding:0 .4rem 0 0; font-weight:700; font-size:.9rem; }
+.date-section .field-note { margin:.45rem 0 .65rem; }
+.date-modes { display:grid; grid-template-columns:1fr 1fr; gap:.2rem; background:var(--wash); border-radius:.45rem; border:1px solid var(--line); padding:.2rem; margin-bottom:.65rem; }
+.date-modes label { position:relative; cursor:pointer; }
+.date-modes input { position:absolute; inset:0; width:100%; height:100%; min-height:0; padding:0; margin:0; opacity:0; cursor:pointer; }
+.date-modes span { display:block; padding:.35rem .2rem; border-radius:.28rem; text-align:center; font-size:.85rem; color:var(--muted); }
+.date-modes input:checked + span { background:#fff; color:var(--teal); box-shadow:0 1px 4px #1e394324; font-weight:650; }
+.date-modes input:focus-visible + span { outline:2px solid #117d74; }
+select:disabled { opacity:.65; cursor:not-allowed; }
 input, select { color:var(--ink); background:#fff; border:1px solid #aabecb; border-radius:.4rem; min-height:2.7rem; width:100%; min-width:0; padding:.45rem .65rem; }
 select { appearance:none; padding-right:1.8rem; background-image:linear-gradient(45deg,transparent 50%,#40596d 50%),linear-gradient(135deg,#40596d 50%,transparent 50%); background-position:calc(100% - 14px) 53%,calc(100% - 9px) 53%; background-size:5px 5px; background-repeat:no-repeat; text-overflow:ellipsis; }
 input:focus, select:focus { border-color:#117d74; }
-.field-note,.coverage p,.error { font-size:.875rem; color:var(--muted); line-height:1.55; }
-.field-note,.error { margin-top:.25rem; }
-.error { color:#9b221d; }
+.field-note,.coverage p { font-size:.875rem; color:var(--muted); line-height:1.55; }
+.field-note { margin-top:.25rem; }
 .coverage { border-top:1px solid var(--line); margin-top:1rem; padding-top:.9rem; }
 .coverage summary { cursor:pointer; font-size:.9rem; font-weight:650; }
 .coverage p { margin-top:.45rem; }
@@ -88,9 +101,10 @@ input:focus, select:focus { border-color:#117d74; }
 .footer { padding-block:1rem 2rem; color:var(--muted); border-top:1px solid var(--line); font-size:.85rem; }
 @media(max-width:800px) {
   .workspace { grid-template-columns:1fr; padding-top:1.25rem; }
-  #filters { grid-template-columns:minmax(6rem,.6fr) minmax(0,1fr); align-items:center; column-gap:.75rem; }
-  #filters label { margin:0; }
-  #date-help,#date-error { grid-column:1/-1; }
+  .filters { position:static; max-height:none; overflow:visible; padding:.85rem 1rem; }
+  #filter-toggle { display:block; }
+  .filter-fields { grid-template-columns:minmax(5rem,.42fr) minmax(0,1fr); align-items:center; column-gap:.7rem; }
+  .filter-fields select + label { margin:0; }
 }
 @media(max-width:520px) {
   .hero-inner { align-items:flex-start; flex-direction:column; }
