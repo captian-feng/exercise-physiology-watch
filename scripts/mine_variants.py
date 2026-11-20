@@ -33,7 +33,21 @@ def load_records(page):
     match = re.search(r'<script id="dataset" type="application/json">(.*?)</script>', html, re.S)
     if not match:
         raise ValueError("页面里没有 dataset，先运行一次完整采集")
-    return [record for record in json.loads(match.group(1))["records"] if record.get("zh")]
+    payload = json.loads(match.group(1))
+    # The published payload is compact: short keys, index references, and the
+    # Chinese title omitted when it is empty. Expand it to the reading shape.
+    venues, topics = payload["venues"], payload["topics"]
+    records = []
+    for row in payload["records"]:
+        if not row.get("z"):
+            continue
+        records.append({
+            "en": row["e"],
+            "zh": row["z"],
+            "journal": venues[row["j"]],
+            "topic": topics[row["t"]],
+        })
+    return records
 
 
 def grams(text):

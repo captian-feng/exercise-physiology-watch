@@ -70,7 +70,17 @@ def validate(db_path, site):
     data = json.loads(dataset)
     if not data["records"]:
         raise ValueError("Generated site is empty")
-    untranslated = sum(not row["zh"] for row in data["records"])
+    # The payload stores venues, themes and tiers once and references them by
+    # index, and leaves out the Chinese title when there is none. Check the shape
+    # here so a schema change fails with a clear message instead of a KeyError.
+    for key in ("venues", "topics", "tiers"):
+        if key not in data:
+            raise ValueError(f"Site payload is missing {key}")
+    for row in data["records"]:
+        missing = {"e", "j", "t", "r"} - row.keys()
+        if missing:
+            raise ValueError(f"Site record is missing {sorted(missing)}")
+    untranslated = sum(not row.get("z") for row in data["records"])
     with closing(sqlite3.connect(db_path)) as db:
         if db.execute("PRAGMA quick_check").fetchone() != ("ok",):
             raise ValueError("SQLite integrity check failed")
