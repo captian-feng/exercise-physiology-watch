@@ -20,6 +20,14 @@
       ]
     },
     {
+      "en": "accelerometer data",
+      "zh": "加速度计数据",
+      "abbreviations": [],
+      "variants": [
+        "加速度仪数据"
+      ]
+    },
+    {
       "en": "achilles tendon",
       "zh": "跟腱",
       "abbreviations": [],
@@ -44,6 +52,14 @@
       "variants": [
         "活动记录法",
         "动作记录仪"
+      ]
+    },
+    {
+      "en": "activity level",
+      "zh": "活动水平",
+      "abbreviations": [],
+      "variants": [
+        "活跃水平"
       ]
     },
     {
@@ -203,6 +219,14 @@
       ]
     },
     {
+      "en": "ankle dorsiflexion",
+      "zh": "踝背屈",
+      "abbreviations": [],
+      "variants": [
+        "踝关节背屈"
+      ]
+    },
+    {
       "en": "ankle instability",
       "zh": "踝关节不稳",
       "abbreviations": [],
@@ -263,6 +287,14 @@
       "variants": [
         "防氧化剂",
         "抗氧化物质"
+      ]
+    },
+    {
+      "en": "anxiety symptoms",
+      "zh": "焦虑症状",
+      "abbreviations": [],
+      "variants": [
+        "焦虑症状群"
       ]
     },
     {
@@ -330,6 +362,15 @@
       ]
     },
     {
+      "en": "back squat",
+      "zh": "后蹲",
+      "abbreviations": [],
+      "variants": [
+        "背蹲",
+        "背部深蹲"
+      ]
+    },
+    {
       "en": "balance",
       "zh": "平衡",
       "abbreviations": [],
@@ -344,6 +385,14 @@
       "abbreviations": [],
       "variants": [
         "平衡性能"
+      ]
+    },
+    {
+      "en": "bar velocity",
+      "zh": "杠铃速度",
+      "abbreviations": [],
+      "variants": [
+        "杆速度"
       ]
     },
     {
@@ -410,6 +459,15 @@
       "abbreviations": [],
       "variants": [
         "二头肌"
+      ]
+    },
+    {
+      "en": "biceps femoris",
+      "zh": "股二头肌",
+      "abbreviations": [],
+      "variants": [
+        "二头肌股肌",
+        "二胞胎女性长头肌"
       ]
     },
     {
@@ -503,11 +561,38 @@
       ]
     },
     {
+      "en": "body height",
+      "zh": "身高",
+      "abbreviations": [],
+      "variants": [
+        "身体高度"
+      ]
+    },
+    {
       "en": "body mass",
       "zh": "体重",
       "abbreviations": [],
       "variants": [
         "身体质量"
+      ]
+    },
+    {
+      "en": "body mass index",
+      "zh": "身体质量指数",
+      "abbreviations": [
+        "BMI"
+      ],
+      "variants": [
+        "体重指数",
+        "身体质量指标"
+      ]
+    },
+    {
+      "en": "body weight",
+      "zh": "体重",
+      "abbreviations": [],
+      "variants": [
+        "身体重量"
       ]
     },
     {
@@ -704,6 +789,14 @@
       ]
     },
     {
+      "en": "certainty of evidence",
+      "zh": "证据确定性",
+      "abbreviations": [],
+      "variants": [
+        "证据确定性程度"
+      ]
+    },
+    {
       "en": "change of direction",
       "zh": "变向",
       "abbreviations": [
@@ -732,6 +825,38 @@
       ],
       "variants": [
         "慢性踝不稳定"
+      ]
+    },
+    {
+      "en": "clinic",
+      "zh": "门诊",
+      "abbreviations": [],
+      "variants": [
+        "诊所的"
+      ]
+    },
+    {
+      "en": "clinical outcome",
+      "zh": "临床结局",
+      "abbreviations": [],
+      "variants": [
+        "临床结果"
+      ]
+    },
+    {
+      "en": "clinicaltrials.gov",
+      "zh": "美国临床试验注册库",
+      "abbreviations": [],
+      "variants": [
+        "临床试验网"
+      ]
+    },
+    {
+      "en": "cochrane library",
+      "zh": "考科蓝图书馆",
+      "abbreviations": [],
+      "variants": [
+        "科克伦图书馆"
       ]
     },
     {
@@ -792,6 +917,14 @@
       ]
     },
     {
+      "en": "commentary",
+      "zh": "评论",
+      "abbreviations": [],
+      "variants": [
+        "评注"
+      ]
+    },
+    {
       "en": "community-dwelling older adults",
       "zh": "社区老年人",
       "abbreviations": [],
@@ -806,6 +939,14 @@
       "variants": [
         "复杂训练",
         "综合训练法"
+      ]
+    },
+    {
+      "en": "computational fluid dynamics",
+      "zh": "计算流体力学",
+      "abbreviations": [],
+      "variants": [
+        "计算流体动力学"
       ]
     },
     {
@@ -843,6 +984,14 @@
       ]
     },
     {
+      "en": "consecutive days",
+      "zh": "连续天数",
+      "abbreviations": [],
+      "variants": [
+        "连续天"
+      ]
+    },
+    {
       "en": "constant work rate",
       "zh": "恒定作功率",
       "abbreviations": [],
@@ -865,6 +1014,12 @@
       "variants": [
         "核心温度"
       ]
+    },
+    {
+      "en": "correlation coefficient",
+      "zh": "相关系数",
+      "abbreviations": [],
+      "variants": []
     },
     {
       "en": "corticospinal excitability",
@@ -966,6 +1121,22 @@
       ],
       "variants": [
         "关键游泳速度"
+      ]
+    },
+    {
+      "en": "critique",
+      "zh": "评述",
+      "abbreviations": [],
+      "variants": [
+        "批评"
+      ]
+    },
+    {
+      "en": "cross-over design",
+      "zh": "交叉设计",
+      "abbreviations": [],
+      "variants": [
+        "交叉设计试验"
       ]
     },
     {
@@ -1122,11 +1293,35 @@
       ]
     },
     {
+      "en": "depressive symptoms",
+      "zh": "抑郁症状",
+      "abbreviations": [],
+      "variants": [
+        "抑郁症状群"
+      ]
+    },
+    {
+      "en": "derivative",
+      "zh": "导数",
+      "abbreviations": [],
+      "variants": [
+        "衍生物"
+      ]
+    },
+    {
       "en": "detraining",
       "zh": "停训",
       "abbreviations": [],
       "variants": [
         "去训练"
+      ]
+    },
+    {
+      "en": "diastolic",
+      "zh": "舒张压",
+      "abbreviations": [],
+      "variants": [
+        "舒张期的"
       ]
     },
     {
@@ -1197,6 +1392,16 @@
         "落下跳",
         "下落跳跃",
         "掉落跳"
+      ]
+    },
+    {
+      "en": "dual-energy x-ray absorptiometry",
+      "zh": "双能射线吸收法",
+      "abbreviations": [
+        "DXA"
+      ],
+      "variants": [
+        "双能量X光吸收"
       ]
     },
     {
@@ -1440,6 +1645,23 @@
       ]
     },
     {
+      "en": "exclusion criteria",
+      "zh": "排除标准",
+      "abbreviations": [],
+      "variants": [
+        "除外标准"
+      ]
+    },
+    {
+      "en": "executive function",
+      "zh": "执行功能",
+      "abbreviations": [],
+      "variants": [
+        "行政功能",
+        "执行机能"
+      ]
+    },
+    {
       "en": "exercise capacity",
       "zh": "运动能力",
       "abbreviations": [],
@@ -1504,6 +1726,14 @@
       "abbreviations": [],
       "variants": [
         "呼气的"
+      ]
+    },
+    {
+      "en": "external load",
+      "zh": "外部负荷",
+      "abbreviations": [],
+      "variants": [
+        "外部负载"
       ]
     },
     {
@@ -1638,6 +1868,22 @@
       ]
     },
     {
+      "en": "findings suggest",
+      "zh": "结果提示",
+      "abbreviations": [],
+      "variants": [
+        "发现建议"
+      ]
+    },
+    {
+      "en": "fixed-effects model",
+      "zh": "固定效应模型",
+      "abbreviations": [],
+      "variants": [
+        "固定效果模型"
+      ]
+    },
+    {
       "en": "flexibility",
       "zh": "柔韧性",
       "abbreviations": [],
@@ -1662,6 +1908,15 @@
       "abbreviations": [],
       "variants": [
         "流体摄入"
+      ]
+    },
+    {
+      "en": "follow-up",
+      "zh": "随访",
+      "abbreviations": [],
+      "variants": [
+        "跟进",
+        "追踪"
       ]
     },
     {
@@ -1822,6 +2077,14 @@
       ]
     },
     {
+      "en": "ground contact time",
+      "zh": "触地时间",
+      "abbreviations": [],
+      "variants": [
+        "地面接触时间"
+      ]
+    },
+    {
       "en": "ground reaction",
       "zh": "地面反作用",
       "abbreviations": [],
@@ -1873,7 +2136,19 @@
       "abbreviations": [],
       "variants": [
         "腿筋肌肉",
-        "绳肌"
+        "绳肌",
+        "二胞胎女性长头肌"
+      ]
+    },
+    {
+      "en": "handgrip strength",
+      "zh": "握力",
+      "abbreviations": [
+        "HGS"
+      ],
+      "variants": [
+        "手握力",
+        "握力强度"
       ]
     },
     {
@@ -1900,6 +2175,14 @@
       "abbreviations": [],
       "variants": [
         "健康成人"
+      ]
+    },
+    {
+      "en": "healthy controls",
+      "zh": "健康对照",
+      "abbreviations": [],
+      "variants": [
+        "健康对照组"
       ]
     },
     {
@@ -2024,6 +2307,14 @@
       ]
     },
     {
+      "en": "highly trained",
+      "zh": "高水平训练",
+      "abbreviations": [],
+      "variants": [
+        "高度训练的"
+      ]
+    },
+    {
       "en": "hip",
       "zh": "髋关节",
       "abbreviations": [],
@@ -2058,6 +2349,22 @@
       ]
     },
     {
+      "en": "hip extension",
+      "zh": "伸髋",
+      "abbreviations": [],
+      "variants": [
+        "髋伸展"
+      ]
+    },
+    {
+      "en": "hip flexion",
+      "zh": "屈髋",
+      "abbreviations": [],
+      "variants": [
+        "髋屈曲"
+      ]
+    },
+    {
       "en": "hip joint",
       "zh": "髋关节",
       "abbreviations": [],
@@ -2071,6 +2378,14 @@
       "abbreviations": [],
       "variants": [
         "荷尔蒙"
+      ]
+    },
+    {
+      "en": "hospitalization",
+      "zh": "住院",
+      "abbreviations": [],
+      "variants": [
+        "医院化"
       ]
     },
     {
@@ -2114,6 +2429,15 @@
       "abbreviations": [],
       "variants": [
         "免疫机能"
+      ]
+    },
+    {
+      "en": "inclusion criteria",
+      "zh": "纳入标准",
+      "abbreviations": [],
+      "variants": [
+        "包含标准",
+        "入选标准"
       ]
     },
     {
@@ -2213,6 +2537,14 @@
       "variants": [
         "间歇缺氧",
         "中断性低氧"
+      ]
+    },
+    {
+      "en": "internal load",
+      "zh": "内部负荷",
+      "abbreviations": [],
+      "variants": [
+        "内部负载"
       ]
     },
     {
@@ -2374,6 +2706,32 @@
       ]
     },
     {
+      "en": "knee angle",
+      "zh": "膝关节角度",
+      "abbreviations": [],
+      "variants": [
+        "膝角"
+      ]
+    },
+    {
+      "en": "knee extension",
+      "zh": "伸膝",
+      "abbreviations": [],
+      "variants": [
+        "膝伸展",
+        "膝关节伸展"
+      ]
+    },
+    {
+      "en": "knee flexion",
+      "zh": "屈膝",
+      "abbreviations": [],
+      "variants": [
+        "膝弯曲",
+        "膝关节屈曲"
+      ]
+    },
+    {
       "en": "knee osteoarthritis",
       "zh": "膝骨关节炎",
       "abbreviations": [],
@@ -2443,12 +2801,36 @@
       ]
     },
     {
+      "en": "left ventricular",
+      "zh": "左心室",
+      "abbreviations": [],
+      "variants": [
+        "左心室壁"
+      ]
+    },
+    {
       "en": "leg press",
       "zh": "腿举",
       "abbreviations": [],
       "variants": [
         "腿部出版社",
         "腿压机"
+      ]
+    },
+    {
+      "en": "leg stiffness",
+      "zh": "腿部刚度",
+      "abbreviations": [],
+      "variants": [
+        "腿僵硬"
+      ]
+    },
+    {
+      "en": "level of evidence",
+      "zh": "证据等级",
+      "abbreviations": [],
+      "variants": [
+        "证据水平"
       ]
     },
     {
@@ -2477,6 +2859,22 @@
       ]
     },
     {
+      "en": "linear mixed model",
+      "zh": "线性混合模型",
+      "abbreviations": [],
+      "variants": [
+        "线性混合模式"
+      ]
+    },
+    {
+      "en": "linear regression",
+      "zh": "线性回归",
+      "abbreviations": [],
+      "variants": [
+        "直线回归"
+      ]
+    },
+    {
       "en": "live high train low",
       "zh": "高住低练",
       "abbreviations": [
@@ -2493,6 +2891,15 @@
       "variants": [
         "负载速度",
         "负荷速度关系"
+      ]
+    },
+    {
+      "en": "logistic regression",
+      "zh": "逻辑回归",
+      "abbreviations": [],
+      "variants": [
+        "物流回归",
+        "逻辑回归法"
       ]
     },
     {
@@ -2552,6 +2959,16 @@
       ]
     },
     {
+      "en": "magnetic resonance imaging",
+      "zh": "磁共振成像",
+      "abbreviations": [
+        "MRI"
+      ],
+      "variants": [
+        "磁性共振成像"
+      ]
+    },
+    {
       "en": "male athletes",
       "zh": "男性运动员",
       "abbreviations": [],
@@ -2566,6 +2983,14 @@
       "variants": [
         "资深运动员",
         "老年运动员"
+      ]
+    },
+    {
+      "en": "mathematical model",
+      "zh": "数学模型",
+      "abbreviations": [],
+      "variants": [
+        "数学模式"
       ]
     },
     {
@@ -2633,6 +3058,14 @@
       ]
     },
     {
+      "en": "mechanical efficiency",
+      "zh": "机械效率",
+      "abbreviations": [],
+      "variants": [
+        "机械效能"
+      ]
+    },
+    {
       "en": "mechanical loading",
       "zh": "机械负荷",
       "abbreviations": [],
@@ -2642,12 +3075,28 @@
       ]
     },
     {
+      "en": "mechanisms underlying",
+      "zh": "潜在机制",
+      "abbreviations": [],
+      "variants": [
+        "底层机制"
+      ]
+    },
+    {
       "en": "medial",
       "zh": "内侧",
       "abbreviations": [],
       "variants": [
         "中间侧",
         "内侧的"
+      ]
+    },
+    {
+      "en": "medial gastrocnemius",
+      "zh": "内侧腓肠肌",
+      "abbreviations": [],
+      "variants": [
+        "中间腓肠肌"
       ]
     },
     {
@@ -2759,6 +3208,14 @@
       ]
     },
     {
+      "en": "missing data",
+      "zh": "缺失数据",
+      "abbreviations": [],
+      "variants": [
+        "遗漏数据"
+      ]
+    },
+    {
       "en": "mitochondria",
       "zh": "线粒体",
       "abbreviations": [],
@@ -2792,6 +3249,22 @@
       ]
     },
     {
+      "en": "mixed-effects model",
+      "zh": "混合效应模型",
+      "abbreviations": [],
+      "variants": [
+        "混合效果模型"
+      ]
+    },
+    {
+      "en": "modelling",
+      "zh": "建模",
+      "abbreviations": [],
+      "variants": [
+        "模型化"
+      ]
+    },
+    {
       "en": "moderate-intensity",
       "zh": "中等强度",
       "abbreviations": [],
@@ -2808,6 +3281,14 @@
       "variants": [
         "中等至剧烈身体活动",
         "中度到剧烈身体活动"
+      ]
+    },
+    {
+      "en": "motion capture",
+      "zh": "动作捕捉",
+      "abbreviations": [],
+      "variants": [
+        "运动捕捉"
       ]
     },
     {
@@ -2834,6 +3315,14 @@
       "abbreviations": [],
       "variants": [
         "运动行为模式"
+      ]
+    },
+    {
+      "en": "movement velocity",
+      "zh": "动作速度",
+      "abbreviations": [],
+      "variants": [
+        "运动速度"
       ]
     },
     {
@@ -2981,6 +3470,23 @@
       ]
     },
     {
+      "en": "muscle thickness",
+      "zh": "肌肉厚度",
+      "abbreviations": [],
+      "variants": [
+        "肌肉厚"
+      ]
+    },
+    {
+      "en": "muscle-tendon",
+      "zh": "肌肉-肌腱",
+      "abbreviations": [],
+      "variants": [
+        "肌肉-天线",
+        "肌肉肌腱"
+      ]
+    },
+    {
       "en": "muscle-tendon unit",
       "zh": "肌肉-肌腱单元",
       "abbreviations": [
@@ -3005,6 +3511,14 @@
       "abbreviations": [],
       "variants": [
         "全国大学体育协会"
+      ]
+    },
+    {
+      "en": "near infrared",
+      "zh": "近红外",
+      "abbreviations": [],
+      "variants": [
+        "近红外线"
       ]
     },
     {
@@ -3128,6 +3642,16 @@
       ]
     },
     {
+      "en": "one-repetition maximum",
+      "zh": "最大重复一次重量",
+      "abbreviations": [
+        "1RM"
+      ],
+      "variants": [
+        "一次最大重复"
+      ]
+    },
+    {
       "en": "osteoarthritis",
       "zh": "骨关节炎",
       "abbreviations": [
@@ -3136,6 +3660,14 @@
       "variants": [
         "骨性关节炎",
         "骨关节炎症"
+      ]
+    },
+    {
+      "en": "outcome measures",
+      "zh": "结局指标",
+      "abbreviations": [],
+      "variants": [
+        "结果措施"
       ]
     },
     {
@@ -3180,11 +3712,27 @@
       ]
     },
     {
+      "en": "oximeter",
+      "zh": "血氧仪",
+      "abbreviations": [],
+      "variants": [
+        "血氧测量计"
+      ]
+    },
+    {
       "en": "oxygen consumption",
       "zh": "耗氧量",
       "abbreviations": [],
       "variants": [
         "氧气消耗量"
+      ]
+    },
+    {
+      "en": "oxygen cost",
+      "zh": "氧耗",
+      "abbreviations": [],
+      "variants": [
+        "氧气成本"
       ]
     },
     {
@@ -3194,6 +3742,14 @@
       "variants": [
         "氧气缺乏",
         "氧缺乏"
+      ]
+    },
+    {
+      "en": "oxygen pulse",
+      "zh": "氧脉搏",
+      "abbreviations": [],
+      "variants": [
+        "氧气脉搏"
       ]
     },
     {
@@ -3302,6 +3858,24 @@
       ]
     },
     {
+      "en": "patient-reported outcome",
+      "zh": "患者报告结局",
+      "abbreviations": [
+        "PRO"
+      ],
+      "variants": [
+        "患者报告结果"
+      ]
+    },
+    {
+      "en": "peak force",
+      "zh": "峰值力",
+      "abbreviations": [],
+      "variants": [
+        "最大力值"
+      ]
+    },
+    {
       "en": "peak oxygen uptake",
       "zh": "峰值摄氧量",
       "abbreviations": [
@@ -3322,6 +3896,14 @@
       ]
     },
     {
+      "en": "peak torque",
+      "zh": "峰值力矩",
+      "abbreviations": [],
+      "variants": [
+        "最大扭矩"
+      ]
+    },
+    {
       "en": "pectoralis major",
       "zh": "胸大肌",
       "abbreviations": [],
@@ -3335,6 +3917,22 @@
       "abbreviations": [],
       "variants": [
         "羽化角"
+      ]
+    },
+    {
+      "en": "per day",
+      "zh": "每天",
+      "abbreviations": [],
+      "variants": [
+        "每日"
+      ]
+    },
+    {
+      "en": "per week",
+      "zh": "每周",
+      "abbreviations": [],
+      "variants": [
+        "每星期"
       ]
     },
     {
@@ -3361,6 +3959,14 @@
       "abbreviations": [],
       "variants": [
         "感知反应"
+      ]
+    },
+    {
+      "en": "performance outcome",
+      "zh": "表现结局",
+      "abbreviations": [],
+      "variants": [
+        "性能结果"
       ]
     },
     {
@@ -3448,6 +4054,14 @@
       ]
     },
     {
+      "en": "physically active",
+      "zh": "身体活动活跃",
+      "abbreviations": [],
+      "variants": [
+        "物理活跃"
+      ]
+    },
+    {
       "en": "physiological responses",
       "zh": "生理反应",
       "abbreviations": [],
@@ -3495,6 +4109,14 @@
       "variants": [
         "足底屈肌",
         "植物屈肌"
+      ]
+    },
+    {
+      "en": "plantar pressure",
+      "zh": "足底压力",
+      "abbreviations": [],
+      "variants": [
+        "脚底压力"
       ]
     },
     {
@@ -3554,6 +4176,14 @@
       ]
     },
     {
+      "en": "posttest",
+      "zh": "后测",
+      "abbreviations": [],
+      "variants": [
+        "后测试"
+      ]
+    },
+    {
       "en": "postural control",
       "zh": "姿势控制",
       "abbreviations": [],
@@ -3567,6 +4197,14 @@
       "abbreviations": [],
       "variants": [
         "输出功率值"
+      ]
+    },
+    {
+      "en": "power reserve",
+      "zh": "功率储备",
+      "abbreviations": [],
+      "variants": [
+        "电源储备"
       ]
     },
     {
@@ -3591,6 +4229,40 @@
       "abbreviations": [],
       "variants": [
         "学前儿童"
+      ]
+    },
+    {
+      "en": "pretest",
+      "zh": "前测",
+      "abbreviations": [],
+      "variants": [
+        "预测试"
+      ]
+    },
+    {
+      "en": "primary outcome",
+      "zh": "主要结局",
+      "abbreviations": [],
+      "variants": [
+        "主要结果"
+      ]
+    },
+    {
+      "en": "prisma guidelines",
+      "zh": "系统综述报告规范",
+      "abbreviations": [
+        "PRISMA"
+      ],
+      "variants": [
+        "棱镜指南"
+      ]
+    },
+    {
+      "en": "processing speed",
+      "zh": "加工速度",
+      "abbreviations": [],
+      "variants": [
+        "处理速度"
       ]
     },
     {
@@ -3729,6 +4401,14 @@
       ]
     },
     {
+      "en": "random-effects model",
+      "zh": "随机效应模型",
+      "abbreviations": [],
+      "variants": [
+        "随机效果模型"
+      ]
+    },
+    {
       "en": "randomized",
       "zh": "随机",
       "abbreviations": [],
@@ -3794,6 +4474,14 @@
       ]
     },
     {
+      "en": "rate of torque development",
+      "zh": "力矩发展速率",
+      "abbreviations": [],
+      "variants": [
+        "扭矩发展率"
+      ]
+    },
+    {
       "en": "rating of perceived exertion",
       "zh": "主观用力程度评分",
       "abbreviations": [
@@ -3807,6 +4495,14 @@
         "感知劳累评分",
         "感知努力评分",
         "感知运动评分"
+      ]
+    },
+    {
+      "en": "reaction time",
+      "zh": "反应时",
+      "abbreviations": [],
+      "variants": [
+        "反应时间"
       ]
     },
     {
@@ -3840,11 +4536,27 @@
       ]
     },
     {
+      "en": "rectus femoris",
+      "zh": "股直肌",
+      "abbreviations": [],
+      "variants": [
+        "直股肌"
+      ]
+    },
+    {
       "en": "regression",
       "zh": "回归",
       "abbreviations": [],
       "variants": [
         "回归分析"
+      ]
+    },
+    {
+      "en": "regression model",
+      "zh": "回归模型",
+      "abbreviations": [],
+      "variants": [
+        "回归模式"
       ]
     },
     {
@@ -3880,6 +4592,14 @@
       "variants": [
         "重复短跑能力",
         "反复冲刺能力"
+      ]
+    },
+    {
+      "en": "repetition",
+      "zh": "重复次数",
+      "abbreviations": [],
+      "variants": [
+        "重复"
       ]
     },
     {
@@ -3952,6 +4672,14 @@
       "variants": [
         "呼吸肌肉",
         "呼吸肌群"
+      ]
+    },
+    {
+      "en": "response to",
+      "zh": "答复",
+      "abbreviations": [],
+      "variants": [
+        "回应"
       ]
     },
     {
@@ -4028,6 +4756,14 @@
       ]
     },
     {
+      "en": "risk of bias",
+      "zh": "偏倚风险",
+      "abbreviations": [],
+      "variants": [
+        "偏差风险"
+      ]
+    },
+    {
       "en": "rugby union",
       "zh": "英式橄榄球",
       "abbreviations": [],
@@ -4071,6 +4807,23 @@
       ]
     },
     {
+      "en": "running speed",
+      "zh": "跑速",
+      "abbreviations": [],
+      "variants": [
+        "运行速度"
+      ]
+    },
+    {
+      "en": "sample size",
+      "zh": "样本量",
+      "abbreviations": [],
+      "variants": [
+        "样本大小",
+        "样品量"
+      ]
+    },
+    {
       "en": "sarcopenia",
       "zh": "肌少症",
       "abbreviations": [],
@@ -4102,6 +4855,14 @@
       "abbreviations": [],
       "variants": [
         "荧屏时间"
+      ]
+    },
+    {
+      "en": "secondary outcome",
+      "zh": "次要结局",
+      "abbreviations": [],
+      "variants": [
+        "次要结果"
       ]
     },
     {
@@ -4143,6 +4904,14 @@
       ]
     },
     {
+      "en": "session duration",
+      "zh": "训练课时长",
+      "abbreviations": [],
+      "variants": [
+        "会话持续时间"
+      ]
+    },
+    {
       "en": "session rating of perceived exertion",
       "zh": "训练课主观用力程度评分",
       "abbreviations": [
@@ -4150,6 +4919,14 @@
       ],
       "variants": [
         "会话感知努力评分"
+      ]
+    },
+    {
+      "en": "set",
+      "zh": "组",
+      "abbreviations": [],
+      "variants": [
+        "集合"
       ]
     },
     {
@@ -4166,6 +4943,22 @@
       "abbreviations": [],
       "variants": [
         "肩膀关节"
+      ]
+    },
+    {
+      "en": "significance level",
+      "zh": "显著性水平",
+      "abbreviations": [],
+      "variants": [
+        "重要水平"
+      ]
+    },
+    {
+      "en": "simulation",
+      "zh": "模拟",
+      "abbreviations": [],
+      "variants": [
+        "仿真模拟"
       ]
     },
     {
@@ -4347,6 +5140,14 @@
       ]
     },
     {
+      "en": "statistical power",
+      "zh": "统计效能",
+      "abbreviations": [],
+      "variants": [
+        "统计功率"
+      ]
+    },
+    {
       "en": "stem cell",
       "zh": "干细胞",
       "abbreviations": [],
@@ -4361,6 +5162,14 @@
       "abbreviations": [],
       "variants": [
         "步数计数"
+      ]
+    },
+    {
+      "en": "step rate",
+      "zh": "步频",
+      "abbreviations": [],
+      "variants": [
+        "步速率"
       ]
     },
     {
@@ -4400,6 +5209,14 @@
       ]
     },
     {
+      "en": "stride length",
+      "zh": "步幅",
+      "abbreviations": [],
+      "variants": [
+        "跨步长度"
+      ]
+    },
+    {
       "en": "stroke volume",
       "zh": "每搏输出量",
       "abbreviations": [
@@ -4408,6 +5225,14 @@
       "variants": [
         "中风量",
         "冲程体积"
+      ]
+    },
+    {
+      "en": "stroke work",
+      "zh": "每搏功",
+      "abbreviations": [],
+      "variants": [
+        "中风功"
       ]
     },
     {
@@ -4446,6 +5271,16 @@
       ]
     },
     {
+      "en": "surface electromyography",
+      "zh": "表面肌电图",
+      "abbreviations": [
+        "sEMG"
+      ],
+      "variants": [
+        "表面肌电描记术"
+      ]
+    },
+    {
       "en": "sweat rate",
       "zh": "出汗率",
       "abbreviations": [],
@@ -4469,6 +5304,14 @@
       "abbreviations": [],
       "variants": [
         "系统审查"
+      ]
+    },
+    {
+      "en": "systolic",
+      "zh": "收缩压",
+      "abbreviations": [],
+      "variants": [
+        "收缩期的"
       ]
     },
     {
@@ -4496,7 +5339,9 @@
       "abbreviations": [],
       "variants": [
         "腱",
-        "筋腱"
+        "筋腱",
+        "天线",
+        "肌腱组织"
       ]
     },
     {
@@ -4576,11 +5421,35 @@
       ]
     },
     {
+      "en": "thigh muscle",
+      "zh": "大腿肌肉",
+      "abbreviations": [],
+      "variants": [
+        "股部肌肉"
+      ]
+    },
+    {
       "en": "tibial",
       "zh": "胫骨",
       "abbreviations": [],
       "variants": [
         "胫骨的"
+      ]
+    },
+    {
+      "en": "tibialis anterior",
+      "zh": "胫骨前肌",
+      "abbreviations": [],
+      "variants": [
+        "前胫肌"
+      ]
+    },
+    {
+      "en": "time spent",
+      "zh": "时间花费",
+      "abbreviations": [],
+      "variants": [
+        "时间支出"
       ]
     },
     {
@@ -4611,6 +5480,14 @@
       "abbreviations": [],
       "variants": [
         "总血红素"
+      ]
+    },
+    {
+      "en": "training cycle",
+      "zh": "训练周期",
+      "abbreviations": [],
+      "variants": [
+        "培训周期"
       ]
     },
     {
@@ -4665,6 +5542,14 @@
       "variants": [
         "培训计划",
         "训练程序"
+      ]
+    },
+    {
+      "en": "training sessions",
+      "zh": "训练课",
+      "abbreviations": [],
+      "variants": [
+        "培训会议"
       ]
     },
     {
@@ -4766,6 +5651,14 @@
       ]
     },
     {
+      "en": "ultrasonography",
+      "zh": "超声检查",
+      "abbreviations": [],
+      "variants": [
+        "超声波检查法"
+      ]
+    },
+    {
       "en": "ultrasound",
       "zh": "超声",
       "abbreviations": [],
@@ -4800,12 +5693,36 @@
       ]
     },
     {
+      "en": "vascular conductance",
+      "zh": "血管传导",
+      "abbreviations": [],
+      "variants": [
+        "血管传导度"
+      ]
+    },
+    {
       "en": "vascular function",
       "zh": "血管功能",
       "abbreviations": [],
       "variants": [
         "脉管功能",
         "血管机能"
+      ]
+    },
+    {
+      "en": "vastus lateralis",
+      "zh": "股外侧肌",
+      "abbreviations": [],
+      "variants": [
+        "外侧股肌"
+      ]
+    },
+    {
+      "en": "velocity loss",
+      "zh": "速度损失",
+      "abbreviations": [],
+      "variants": [
+        "速度丢失"
       ]
     },
     {
@@ -4838,6 +5755,14 @@
       ]
     },
     {
+      "en": "ventricular",
+      "zh": "心室",
+      "abbreviations": [],
+      "variants": [
+        "心室壁"
+      ]
+    },
+    {
       "en": "vertical jump",
       "zh": "纵跳",
       "abbreviations": [
@@ -4846,6 +5771,14 @@
       "variants": [
         "垂直跳",
         "垂直跳跃"
+      ]
+    },
+    {
+      "en": "vertical stiffness",
+      "zh": "垂直刚度",
+      "abbreviations": [],
+      "variants": [
+        "垂直僵硬"
       ]
     },
     {
@@ -4908,6 +5841,14 @@
       ]
     },
     {
+      "en": "web of science",
+      "zh": "科学引文索引",
+      "abbreviations": [],
+      "variants": [
+        "科学网"
+      ]
+    },
+    {
       "en": "weight loss",
       "zh": "体重减轻",
       "abbreviations": [],
@@ -4930,6 +5871,14 @@
       "abbreviations": [],
       "variants": [
         "轮椅选手"
+      ]
+    },
+    {
+      "en": "work economy",
+      "zh": "作功经济性",
+      "abbreviations": [],
+      "variants": [
+        "工作效率经济"
       ]
     },
     {
