@@ -88,6 +88,28 @@ EXERCISE_INTERVENTION = re.compile(
     r"effects? of (?:acute )?(?:physical exercise|exercis\w*)|"
     r"responses? to (?:acute )?exercis\w*)\b", re.I,
 )
+# Require a physiological or physical-performance question in addition to sport context.
+PHYSIOLOGY_OR_PERFORMANCE = re.compile(
+    r"\b(?:exercise physiolog\w*|cardiorespiratory|oxygen (?:uptake|consumption|cost|"
+    r"delivery|saturation|extraction)|vo[\u0307₂2o\s_-]*2?\s*(?:max|peak)|"
+    r"heart rate|blood pressure|cardiac output|stroke volume|ha?emodynam\w*|"
+    r"vascular (?:function|response|reactivity)|autonomic responses?|ventilat\w*|"
+    r"pulmonary gas exchange|critical (?:power|speed)|lactate|anaerobic threshold|"
+    r"(?:running|walking|cycling|exercise) economy|aerobic capacity|aerobic fitness|"
+    r"exercise (?:capacity|tolerance|performance|response)|physical performance|"
+    r"(?:endurance|sprint|cycling|running|jump|swimming|strength) performance|"
+    r"time[ -]trial|energy expenditure|energy cost|oxygenation|thermoregulat\w*|"
+    r"heat (?:acclimati\w*|stress)|hypoxi\w*|glycogen|substrate oxidation|"
+    r"metaboli\w*|body composition|muscle (?:strength|force|fatigue|activation|"
+    r"size|architect\w*|damage|protein synthesis|power|function)|muscular strength|"
+    r"neuromuscul\w*|hypertrophy|fatigab\w*|force development|electromyogra\w*|"
+    r"maximal voluntary contraction|grip strength|countermovement jump|jump height|"
+    r"peak power|power output|rate of perceived exertion|"
+    r"polari[sz]ed (?:versus high[ -]intensity )?training|training (?:load|"
+    r"adaptation\w*|response\w*)|physiological (?:response\w*|adaptation\w*|"
+    r"demands|strain|recovery|effects)|exercise recovery)\b", re.I,
+)
+
 EXCLUDED_PUBLICATION = re.compile(
     r"^(?:erratum|corrigendum|retraction notice|correction(?: to)?[:.]|"
     r"editorial board|masthead|table of contents)(?=\W|$)|\bletter to the editor\b", re.I,
@@ -126,4 +148,6 @@ def exclusion_reason(item):
         EXERCISE_OUTCOME.search(title) or EXERCISE_INTERVENTION.search(title)
     ):
         return "疾病、损伤或康复为主"
+    if not PHYSIOLOGY_OR_PERFORMANCE.search(title):
+        return "题名未显示运动生理或身体表现结局"
     return None
