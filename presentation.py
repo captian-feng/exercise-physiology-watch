@@ -317,16 +317,22 @@ def assemble(parts, pieces):
 def translate_batch(engine, sp, titles):
     """Pick the best of several decoding attempts per title.
 
-    Three whole-title hypotheses plus one segmented attempt are decoded, then
-    ranked by quality_score. Long titles with a colon drift or stop early when
-    decoded in one pass, so the segmented candidate usually wins there, while
-    plain titles keep the whole-title hypothesis.
+    Beam search returns near-duplicate hypotheses, so a random-sampling pass is
+    decoded as well: it explores renderings beam search never reaches, and on the
+    measured corpus the union beats beam-only by a wide margin. One segmented
+    attempt is added for titles with a colon or dash, where a single pass drifts
+    or stops early. All candidates are ranked by quality_score.
     """
+    common = dict(max_input_length=160, max_decoding_length=96,
+                  no_repeat_ngram_size=4, repetition_penalty=1.15)
     tokens = sp.encode(titles, out_type=str)
     whole = engine.translate_batch(
         tokens, beam_size=4, num_hypotheses=3, max_batch_size=32,
-        max_input_length=160, max_decoding_length=96, replace_unknowns=True,
-        no_repeat_ngram_size=4, repetition_penalty=1.15)
+        replace_unknowns=True, **common)
+    sampled = engine.translate_batch(
+        tokens, beam_size=1, num_hypotheses=3, max_batch_size=32,
+        replace_unknowns=True, sampling_topk=10, sampling_temperature=1.0,
+        **common)
 
     segments = {}          # title index -> list of segments
     flat = []              # all segments across titles, for one batched decode
@@ -339,9 +345,8 @@ def translate_batch(engine, sp, titles):
     if flat:
         piece_tokens = sp.encode(flat, out_type=str)
         pieces = engine.translate_batch(
-            piece_tokens, beam_size=4, max_batch_size=32, max_input_length=160,
-            max_decoding_length=96, replace_unknowns=True,
-            no_repeat_ngram_size=4, repetition_penalty=1.15)
+            piece_tokens, beam_size=4, max_batch_size=32,
+            replace_unknowns=True, **common)
         pieces = [sp.decode(result.hypotheses[0]).replace("▁", " ").strip()
                   for result in pieces]
         cursor = 0
@@ -353,6 +358,8 @@ def translate_batch(engine, sp, titles):
     for index, title in enumerate(titles):
         candidates = [sp.decode(hypothesis).replace("▁", " ").strip()
                       for hypothesis in whole[index].hypotheses]
+        candidates += [sp.decode(hypothesis).replace("▁", " ").strip()
+                       for hypothesis in sampled[index].hypotheses]
         if index in translated_segments:
             candidates.append(translated_segments[index])
         polished = [polish(title, candidate) for candidate in candidates]
