@@ -40,14 +40,28 @@ HISTORY_BACKFILL = SOURCES.get("history_backfill")
 RATE_INTERVALS = {"api.crossref.org": 1.1, "eutils.ncbi.nlm.nih.gov": 0.4}
 RATE_LOCKS = {host: Lock() for host in RATE_INTERVALS}
 LAST_REQUEST = dict.fromkeys(RATE_INTERVALS, float("-inf"))
+DEFAULT_HEADERS = {
+    "User-Agent": "JournalWatch/1.0 (academic literature monitoring; "
+                  "+https://github.com/captian-feng/exercise-physiology-watch)",
+    "Accept-Language": "en",
+}
+# Publisher RSS endpoints answer 429 to a bare default user agent, so feeds get
+# an explicit reader-style agent and an XML accept header.
+FEED_HEADERS = {
+    **DEFAULT_HEADERS,
+    "User-Agent": "Mozilla/5.0 (compatible; JournalWatch/1.0; RSS reader) "
+                  "academic-literature-monitoring",
+    "Accept": "application/rss+xml, application/atom+xml, application/xml;q=0.9, "
+              "text/xml;q=0.8, */*;q=0.5",
+}
 
 
-def fetch(url, **params):
+def fetch(url, headers=None, **params):
     if params:
         url += "?" + urlencode(params)
     host = urlsplit(url).hostname
-    request = Request(url, headers={"User-Agent": "JournalWatch/1.0 (academic literature monitoring)"})
-    for attempt in range(3):
+    request = Request(url, headers={**DEFAULT_HEADERS, **(headers or {})})
+    for attempt in range(4):
         with RATE_LOCKS.get(host, nullcontext()):
             if host in RATE_INTERVALS:
                 pause = RATE_INTERVALS[host] - (time.monotonic() - LAST_REQUEST[host])
@@ -59,16 +73,16 @@ def fetch(url, **params):
                 with urlopen(request, timeout=15) as response:
                     return response.read()
             except HTTPError as error:
-                if error.code not in {429, 500, 502, 503, 504} or attempt == 2:
+                if error.code not in {403, 429, 500, 502, 503, 504} or attempt == 3:
                     raise
                 value = error.headers.get("Retry-After", "")
                 retry_after = int(value) if value.isdecimal() else 0
                 if retry_after > 60:
                     raise
             except (URLError, TimeoutError):
-                if attempt == 2:
+                if attempt == 3:
                     raise
-            time.sleep(max(retry_after, 2 ** (attempt + 1)))
+            time.sleep(max(retry_after, 2 ** (attempt + 2)))
 
 
 
@@ -186,7 +200,20 @@ def pubmed(query, since, until=None):
 
 
 def feed(url):
-    document = ElementTree.fromstring(fetch(url))
+    payload = fetch(url, headers=FEED_HEADERS)
+    try:
+        document = ElementTree.fromstring(payload)
+    except ElementTree.ParseError as error:
+        # Some feeds embed raw control characters, which the strict parser
+        # rejects at a random position. Strip them and try once more.
+        cleaned = re.sub(rb"[\x00-\x08\x0b\x0c\x0e-\x1f]", b"", payload)
+        try:
+            document = ElementTree.fromstring(cleaned)
+        except ElementTree.ParseError:
+            # A rate-limit or challenge page is not XML; say what came back so
+            # the run summary explains the failure instead of "invalid token".
+            snippet = re.sub(r"\s+", " ", payload[:160].decode("utf-8", "replace")).strip()
+            raise ValueError(f"RSS 不是合法 XML（{error}）：{snippet or '空响应'}") from None
     if document.tag.rsplit("}", 1)[-1].lower() not in {"rss", "feed", "rdf"}:
         raise ValueError("响应不是 RSS 或 Atom")
     for item in document.findall(".//{*}item") + document.findall(".//{*}entry"):
