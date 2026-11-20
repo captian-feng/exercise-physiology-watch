@@ -21,6 +21,7 @@ from urllib.request import Request, urlopen
 from xml.etree import ElementTree
 
 from presentation import grouped, translations
+from publisher_watch import publisher_articles
 from screening import exclusion_reason
 from static_site import write_site
 
@@ -31,6 +32,7 @@ NCBI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
 SOURCES = json.loads((ROOT / "sources.json").read_text(encoding="utf-8-sig"))
 TOPICS = SOURCES["topics"]
 FEEDS = SOURCES["feeds"]
+PUBLISHER_PAGES = SOURCES.get("publisher_pages", {})
 
 
 # Each host has its own lock and minimum interval between request starts.
@@ -77,10 +79,13 @@ def identity(text):
     return "".join(c for c in unicodedata.normalize("NFKC", text).casefold() if c.isalnum())
 
 
-def crossref(issns, since, baseline):
+def crossref(issns, since, baseline, issue_sweep=False):
     filters = ["issn:" + "|".join(issns)]
-    filters.append(("from-pub-date:" if baseline else "from-index-date:") + since)
-    if not baseline:
+    if issue_sweep:
+        filters.append("from-print-pub-date:" + since)
+    else:
+        filters.append(("from-pub-date:" if baseline else "from-index-date:") + since)
+    if not baseline and not issue_sweep:
         publication_floor = datetime.fromisoformat(since).date() - timedelta(days=90)
         filters.append("from-pub-date:" + publication_floor.isoformat())
     fields = "DOI,title,author,published-online,published,type,volume,issue,container-title,URL"
@@ -404,8 +409,15 @@ def main():
                     args = (*args, checkpoint is None)
             jobs.append((source, label, fn, args, journal))
 
+        journal_ids = dict(journals)
+        issue_start = (now.date() - timedelta(days=55)).isoformat()
         for name, issns in journals:
             enqueue("Crossref", name, crossref, (issns,), True)
+            for source in PUBLISHER_PAGES.get(name, []):
+                enqueue("官网 " + source["label"], name, publisher_articles, (source,), True, dated=False)
+            if not any(source["label"] == "当前卷期" for source in PUBLISHER_PAGES.get(name, [])):
+                # Published-print is the issue date. The article may have appeared online much earlier.
+                enqueue("Crossref 正式卷期补查", name, crossref, (issns, issue_start, True, True), True, dated=False)
             for index, url in enumerate(FEEDS.get(name, []), start=1):
                 enqueue(f"RSS {index}", name, feed, (url,), True, dated=False)
         issn_names = {issn: name for name, issns in journals for issn in issns}
@@ -422,10 +434,16 @@ def main():
                 history.append((source, label, len(items), error))
                 if error:
                     print(f"{source} | {label} | {error}", flush=True)
+                    if source == "官网 当前卷期":
+                        backup = "Crossref 正式卷期补查"
+                        items, fallback_error = pull(crossref, (journal_ids[label], issue_start, True, True))
+                        history.append((backup, label, len(items), fallback_error))
+                        if not fallback_error:
+                            completed.append((backup, label, items, True, False))
                     if source != "Crossref":
                         continue
                     fallback_since = (now.date() - timedelta(days=30)).isoformat()
-                    matching_issns = dict(journals)[label]
+                    matching_issns = journal_ids[label]
                     items, fallback_error = pull(openalex, (matching_issns, fallback_since))
                     history.append(("OpenAlex", label, len(items), fallback_error))
                     if fallback_error:

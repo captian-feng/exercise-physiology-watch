@@ -44,7 +44,20 @@ def main():
         if not isinstance(urls, list) or any(urlsplit(url).scheme != "https" or not urlsplit(url).hostname
                                             for url in urls):
             raise ValueError(f"Feed URLs must be valid HTTPS URLs: {journal}")
-    print(f"{len(journals)} journals, {len(identifiers)} ISSNs, {len(topics)} PubMed topics")
+    publisher_pages = sources.get("publisher_pages", {})
+    for journal, pages in publisher_pages.items():
+        if journal.casefold() not in journals or not isinstance(pages, list):
+            raise ValueError(f"Invalid publisher page configuration for {journal}")
+        labels = set()
+        for page in pages:
+            url = urlsplit(page["url"])
+            if url.scheme != "https" or not url.hostname or page["label"] in labels:
+                raise ValueError(f"Invalid or duplicate publisher page for {journal}")
+            if page["kind"] not in {"springer", "frontiers", "jssm", "termedia", "human-kinetics"}:
+                raise ValueError(f"Unrecognized publisher page type for {journal}")
+            labels.add(page["label"])
+    print(f"{len(journals)} journals, {len(identifiers)} ISSNs, {len(topics)} PubMed topics, "
+          f"{len(publisher_pages)} journals with direct publisher pages")
 
 
 if __name__ == "__main__":

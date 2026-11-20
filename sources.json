@@ -19,5 +19,105 @@
     "European Journal of Applied Physiology": [
       "https://link.springer.com/search.rss?facet-journal-id=421"
     ]
+  },
+  "publisher_pages": {
+    "European Journal of Applied Physiology": [
+      {
+        "kind": "springer",
+        "label": "最新文章",
+        "url": "https://link.springer.com/journal/421"
+      },
+      {
+        "kind": "springer",
+        "label": "在线首发",
+        "url": "https://link.springer.com/journal/421/online-first",
+        "paginate": true
+      },
+      {
+        "kind": "springer",
+        "label": "当前卷期",
+        "url": "https://link.springer.com/journal/421",
+        "current_issue": true,
+        "paginate": true
+      }
+    ],
+    "Sports Medicine": [
+      {
+        "kind": "springer",
+        "label": "最新文章",
+        "url": "https://link.springer.com/journal/40279"
+      },
+      {
+        "kind": "springer",
+        "label": "在线首发",
+        "url": "https://link.springer.com/journal/40279/online-first",
+        "paginate": true
+      },
+      {
+        "kind": "springer",
+        "label": "当前卷期",
+        "url": "https://link.springer.com/journal/40279",
+        "current_issue": true,
+        "paginate": true
+      }
+    ],
+    "Sports Medicine - Open": [
+      {
+        "kind": "springer",
+        "label": "最新文章",
+        "url": "https://link.springer.com/journal/40798/articles"
+      }
+    ],
+    "Frontiers in Physiology": [
+      {
+        "kind": "frontiers",
+        "label": "最新文章",
+        "url": "https://www.frontiersin.org/journals/physiology/articles"
+      }
+    ],
+    "Journal of Human Kinetics": [
+      {
+        "kind": "termedia",
+        "label": "当前卷期",
+        "url": "https://jhk.termedia.pl/"
+      },
+      {
+        "kind": "termedia",
+        "label": "在线首发",
+        "url": "https://jhk.termedia.pl/Online-first",
+        "paginate": true
+      }
+    ],
+    "Biology of Sport": [
+      {
+        "kind": "termedia",
+        "label": "当前卷期",
+        "url": "https://www.termedia.pl/Journal/Biology_of_Sport-78"
+      }
+    ],
+    "Journal of Sports Science and Medicine": [
+      {
+        "kind": "jssm",
+        "label": "当前卷期",
+        "url": "https://www.jssm.org/index.php"
+      },
+      {
+        "kind": "jssm",
+        "label": "在线首发",
+        "url": "https://www.jssm.org/newinpress.php"
+      }
+    ],
+    "International Journal of Sports Physiology and Performance": [
+      {
+        "kind": "human-kinetics",
+        "label": "当前卷期",
+        "url": "https://journals.humankinetics.com/view/journals/ijspp/ijspp-overview.xml"
+      },
+      {
+        "kind": "human-kinetics",
+        "label": "在线首发",
+        "url": "https://journals.humankinetics.com/view/journals/ijspp/aop/issue.xml"
+      }
+    ]
   }
 }

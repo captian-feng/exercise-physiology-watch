@@ -26,6 +26,7 @@
 - GitHub Actions 每天北京时间 08:17 运行。选择非整点可减少高负载时的排队，实际发布时间仍取决于 GitHub 和外部数据源。
 - 初次从仓库中的压缩 SQLite 起始快照恢复。此后读取 archive-state 分支，保留历史题录、已翻译标题和各来源的采集进度。任务串行运行，状态更新使用正常 Git 推送。只有 dist 作为 Pages 站点发布。
 - 每次运行的 Summary 列出失败来源和待译标题。单个来源失败时，保留其上次成功位置，后续继续补查。整次采集失败时，Pages 保留上次成功版本。恢复后可用 Run workflow 手动补跑。
+- 已配置的官网「最新文章／在线首发／当前卷期」按页面采集。文章的在线发表日期不影响这条采集路径，当前卷期有分页时会逐页读取。仍缺官网卷期入口的刊物用 Crossref 的正式出版日期补查，Crossref 和 PubMed 增量继续独立运行。官网入口在 sources.json 的 publisher_pages 中维护。
 - Crossref 和 PubMed 分别限速，暂时性错误会重试。PubMed 查询太大时，按入库日期拆分。期刊官网首发与正式目录仍需逐刊对账，来源状态不能替代覆盖率核验。
 - 可以设置默认分支合并需通过「检查协作改动」并经维护者审核。自动归档所用的 archive-state 分支需要允许 Actions 正常推送。
 - GitHub 会暂停长时间无活动的公开仓库定时工作流。更新停滞时可先检查 Actions 中该流程是否已停用。https://docs.github.com/en/actions/how-tos/manage-workflow-runs/disable-and-enable-workflows
@@ -39,4 +40,3 @@
     python -X utf8 cloud_refresh.py --render-only 2026-11-20
 
 完整采集需要 Python 3.12 或兼容版本、网络以及 requirements.txt 中的本地翻译依赖。模型首次使用时从 Argos 下载并验证文件哈希。
-

@@ -1,2 +1,4 @@
 ctranslate2==4.8.1
 sentencepiece==0.2.3
+beautifulsoup4==4.14.3
+requests==2.33.1
