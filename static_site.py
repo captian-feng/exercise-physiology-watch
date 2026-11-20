@@ -42,32 +42,45 @@ def write_site(db, journals):
     if error:
         print(f"Static site translations: {error}")
     records = []
+    venues = {}            # venue name -> index, keeps repeated strings out of every row
+    topic_names = [*PATTERNS, PUBLICATION_NOTICE, OTHER]
+    topic_index = {name: index for index, name in enumerate(topic_names)}
     for item, seen, tier in candidates:
         title = item["title"]
         doi = item.get("doi", "")
-        url = "https://doi.org/" + quote(doi, safe="/:") if doi else item.get("url", "")
-        if urlsplit(url).scheme not in {"http", "https"}:
-            url = ""
+        location = "https://doi.org/" + quote(doi, safe="/:") if doi else item.get("url", "")
+        if urlsplit(location).scheme not in {"http", "https"}:
+            location = ""
         published = item.get("date") or ""
-        records.append({
-            "journal": item.get("journal") or item.get("venue") or "期刊待核实",
-            "focused": bool(item.get("journal")),
-            "tier": tier,
-            "topic": topic_for(item),
-            "clinical": is_clinical_study(item),
-            "en": title,
-            "zh": translated.get(title, ""),
-            "doi": doi,
-            "url": url,
-            "published": published if VALID_DATE.fullmatch(published) else "",
-            "seen": seen,
-        })
+        name = item.get("journal") or item.get("venue") or "期刊待核实"
+        row = {
+            "j": venues.setdefault(name, len(venues)),
+            "f": 1 if item.get("journal") else 0,
+            "r": 0 if tier == "core" else 1,
+            "t": topic_index[topic_for(item)],
+            "c": 1 if is_clinical_study(item) else 0,
+            "e": title,
+            "d": doi,
+            "p": published if VALID_DATE.fullmatch(published) else "",
+            "s": seen,
+        }
+        # The browser rebuilds "https://doi.org/<doi>" itself; the URL only ships
+        # when it cannot be derived that way (no DOI, or a DOI needing escapes).
+        # That drops about 400 KB from the payload.
+        if not doi or location != "https://doi.org/" + doi:
+            row["u"] = location
+        chinese = translated.get(title)
+        if chinese:
+            row["z"] = chinese
+        records.append(row)
 
     updated = db.execute("SELECT MAX(day) FROM runs").fetchone()[0]
     data = {
         "records": records,
+        "venues": list(venues),
         "journals": [name for name in dict.fromkeys((*PRIORITY_JOURNALS, *journals)) if name in journals],
-        "topics": [*PATTERNS, PUBLICATION_NOTICE, OTHER],
+        "topics": topic_names,
+        "tiers": ["core", "related"],
         "updated": updated,
     }
     # Titles and journal metadata are untrusted text. Keep them inside the JSON script.
