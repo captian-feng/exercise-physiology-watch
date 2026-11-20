@@ -34,6 +34,35 @@ def pattern_for(phrase):
     return BEFORE + core + AFTER
 
 
+def _compiled():
+    """Precompile every term's patterns once; matching runs per title, not per term."""
+    table = []
+    for term in TERMS:
+        phrases = [re.compile(pattern_for(phrase))
+                   for phrase in (term["en"], *term.get("aliases", []))]
+        acronyms = [re.compile(BEFORE + re.escape(abbreviation) + AFTER)
+                    for abbreviation in term.get("abbreviations", [])
+                    if len(abbreviation) >= 3 and abbreviation.isupper()]
+        table.append((term, phrases, acronyms))
+    return table
+
+
+COMPILED = _compiled()
+
+
+def matched_terms(title):
+    """All glossary terms that the English title actually mentions."""
+    normalized = unicodedata.normalize("NFKC", title).casefold()
+    original = unicodedata.normalize("NFKC", title)
+    hits = []
+    for term, phrases, acronyms in COMPILED:
+        if any(pattern.search(normalized) for pattern in phrases):
+            hits.append(term)
+        elif acronyms and any(pattern.search(original) for pattern in acronyms):
+            hits.append(term)
+    return hits
+
+
 def matches(title, term):
     normalized = unicodedata.normalize("NFKC", title).casefold()
     phrases = [term["en"], *term.get("aliases", [])]
@@ -68,7 +97,7 @@ def apply_variant(text, variant, preferred):
 
 
 def correct(title, translation):
-    matched = [term for term in TERMS if matches(title, term)]
+    matched = matched_terms(title)
     approved = sorted({term["zh"] for term in matched}, key=len, reverse=True)
     # Longest variants first so "最大摄氧量" wins over a shorter substring.
     replacements = sorted(
@@ -91,12 +120,12 @@ def correct(title, translation):
         for marker, chinese in guards.items():
             translation = translation.replace(marker, chinese)
     leftovers = sorted(
-        ((phrase, term["zh"]) for term in matched
+        ((pattern_for(phrase), term["zh"]) for term in matched
          for phrase in (term["en"], *term.get("aliases", []))),
         key=lambda pair: len(pair[0]), reverse=True,
     )
-    for phrase, preferred in leftovers:
-        translation = re.sub(pattern_for(phrase), preferred, translation, flags=re.IGNORECASE)
+    for pattern, preferred in leftovers:
+        translation = re.sub(pattern, preferred, translation, flags=re.IGNORECASE)
     # Acronyms the model leaves in English (IMU, ACL, HIIT) are unambiguous for
     # this vocabulary, so replace them only when the exact casing appears and the
     # acronym is genuinely part of the English title.
