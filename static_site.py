@@ -6,9 +6,28 @@ import re
 from urllib.parse import quote, urlsplit
 
 from presentation import OTHER, PATTERNS, PUBLICATION_NOTICE, topic_for, translations
-from screening import exclusion_reason, is_clinical_study
+from screening import is_clinical_study, relevance_tier
 
 ROOT = Path(__file__).resolve().parent
+PRIORITY_JOURNALS = (
+    "Medicine & Science in Sports & Exercise",
+    "Journal of Applied Physiology",
+    "European Journal of Applied Physiology",
+    "International Journal of Sports Physiology and Performance",
+    "Sports Medicine",
+    "Journal of Strength and Conditioning Research",
+    "The Journal of Physiology",
+    "Experimental Physiology",
+    "Journal of Sport and Health Science",
+    "British Journal of Sports Medicine",
+    "Scandinavian Journal of Medicine & Science in Sports",
+    "European Journal of Sport Science",
+    "Journal of Science and Medicine in Sport",
+    "Journal of Sports Sciences",
+    "Applied Physiology, Nutrition, and Metabolism",
+    "Sports Medicine - Open",
+    "Biology of Sport",
+)
 VALID_DATE = re.compile(r"[0-9]{4}(?:-(?:0[1-9]|1[0-2])(?:-(?:0[1-9]|[12][0-9]|3[01]))?)?")
 
 
@@ -16,13 +35,14 @@ def write_site(db, journals):
     candidates = []
     for raw, seen in db.execute("SELECT data, first_seen FROM articles ORDER BY id"):
         item = json.loads(raw)
-        if not exclusion_reason(item):
-            candidates.append((item, seen))
-    translated, error = translations(db, [item for item, _ in candidates])
+        tier = relevance_tier(item)
+        if tier:
+            candidates.append((item, seen, tier))
+    translated, error = translations(db, [item for item, _, _ in candidates])
     if error:
         print(f"Static site translations: {error}")
     records = []
-    for item, seen in candidates:
+    for item, seen, tier in candidates:
         title = item["title"]
         doi = item.get("doi", "")
         url = "https://doi.org/" + quote(doi, safe="/:") if doi else item.get("url", "")
@@ -32,6 +52,7 @@ def write_site(db, journals):
         records.append({
             "journal": item.get("journal") or item.get("venue") or "期刊待核实",
             "focused": bool(item.get("journal")),
+            "tier": tier,
             "topic": topic_for(item),
             "clinical": is_clinical_study(item),
             "en": title,
@@ -45,7 +66,7 @@ def write_site(db, journals):
     updated = db.execute("SELECT MAX(day) FROM runs").fetchone()[0]
     data = {
         "records": records,
-        "journals": journals,
+        "journals": [name for name in dict.fromkeys((*PRIORITY_JOURNALS, *journals)) if name in journals],
         "topics": [*PATTERNS, PUBLICATION_NOTICE, OTHER],
         "updated": updated,
     }

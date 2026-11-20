@@ -23,7 +23,7 @@
         <p>追踪运动生理、训练适应与运动表现的新论文。</p>
       </div>
       <dl class="overview">
-        <div><dt>文章</dt><dd id="total-articles">—</dd></div>
+        <div><dt>核心文献</dt><dd id="total-articles">—</dd></div>
         <div><dt>重点追踪期刊</dt><dd id="total-journals">—</dd></div>
       </dl>
     </div>
@@ -93,10 +93,9 @@
         <input id="query" type="search" placeholder="搜索中文题名、英文题名或 DOI" autocomplete="off">
       </div>
       <div class="results-tools">
-        <div class="tabs" role="group" aria-label="论文来源">
-          <button type="button" data-scope="" aria-pressed="true">全部</button>
-          <button type="button" data-scope="focus" aria-pressed="false">重点期刊</button>
-          <button type="button" data-scope="other" aria-pressed="false">刊外补漏</button>
+        <div class="tabs" role="group" aria-label="论文相关性">
+          <button type="button" data-scope="core" aria-pressed="true">核心运动生理</button>
+          <button type="button" data-scope="related" aria-pressed="false">相关拓展</button>
         </div>
         <div class="sort">
           <label for="sort">排序</label>
@@ -106,6 +105,7 @@
           </select>
         </div>
       </div>
+      <p id="scope-note" class="scope-note"></p>
       <div id="articles"></div>
       <nav id="pagination" class="pagination" aria-label="论文分页" hidden>
         <button type="button" id="prev">上一页</button>

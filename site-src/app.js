@@ -23,7 +23,7 @@
   const allTopics = [...new Set(data.records.map(record => record.topic))];
   const allJournals = [...new Set([...data.journals, ...data.records.map(record => record.journal)])];
   let page = 1;
-  let scope = "";
+  let scope = "core";
 
   function normal(value) {
     return value.normalize("NFKC").toLowerCase();
@@ -228,9 +228,12 @@
       && (!topic.value || record.topic === topic.value)
       && !exclusions.has(record.topic)
       && !(record.clinical && exclusions.has(clinicalTag))
-      && (!scope || record.focused === (scope === "focus"))
+      && record.tier === scope
       && words.every(word => record.searchable.includes(word))
     );
+    get("scope-note").textContent = scope === "core"
+      ? "人体运动生理、训练适应与身体表现研究。"
+      : "含刊外文章。题名显示运动关联，生理或表现结局需进一步查看摘要。";
     updateDates(candidates);
 
     const rangeMode = form.elements["date-mode"].value === "range";
@@ -288,7 +291,7 @@
   addOptions(topic, allTopics.sort(compareTopic));
   addExclusion(clinicalTag, clinicalLabel + "（跨专题）");
   for (const name of allTopics) addExclusion(name, name);
-  get("total-articles").textContent = records.length.toLocaleString("zh-CN");
+  get("total-articles").textContent = records.filter(record => record.tier === "core").length.toLocaleString("zh-CN");
   get("total-journals").textContent = data.journals.length;
   get("updated").textContent = data.updated ? "最近检索 " + data.updated : "暂未收录";
   get("results-heading").tabIndex = -1;
@@ -321,7 +324,7 @@
     form.reset();
     dateSingle.value = dateStart.value = dateEnd.value = "";
     query.value = "";
-    setScope("");
+    setScope("core");
     refilter();
   });
   get("prev").addEventListener("click", () => turnPage(-1));

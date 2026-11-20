@@ -125,6 +125,7 @@ HUMAN_CONTEXT = re.compile(
     r"adults?|children|adolescents?|older people|cyclists?|runners?|"
     r"randomi[sz]ed|cohort|trained individuals)\b", re.I,
 )
+UNCERTAIN_RELEVANCE = "题名未显示运动生理或身体表现结局"
 NON_RESEARCH_TYPES = {"editorial", "published erratum", "retraction of publication", "news"}
 
 
@@ -149,5 +150,14 @@ def exclusion_reason(item):
     ):
         return "疾病、损伤或康复为主"
     if not PHYSIOLOGY_OR_PERFORMANCE.search(title):
-        return "题名未显示运动生理或身体表现结局"
+        return UNCERTAIN_RELEVANCE
+    return None
+
+
+def relevance_tier(item):
+    reason = exclusion_reason(item)
+    if reason is None:
+        return "core"
+    if reason == UNCERTAIN_RELEVANCE and not is_clinical_study(item):
+        return "related"
     return None

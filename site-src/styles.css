@@ -81,7 +81,8 @@ input:focus, select:focus { border-color:#117d74; }
 .result-count { font-size:.94rem; color:var(--muted); font-variant-numeric:tabular-nums; }
 .search-wrap { margin:.9rem 0 .8rem; }
 .search-wrap input { padding:.6rem .95rem; min-height:3rem; }
-.results-tools { margin-bottom:1.2rem; }
+.results-tools { margin-bottom:.45rem; }
+.scope-note { color:var(--muted); font-size:.875rem; margin-bottom:1rem; }
 .tabs { display:flex; gap:.25rem; padding:.25rem; border:1px solid var(--line); border-radius:.55rem; background:#e9f0f4; }
 .tabs button { min-height:2.2rem; padding:.35rem .72rem; border:0; background:transparent; color:var(--muted); border-radius:.33rem; font-size:.875rem; font-weight:650; }
 .tabs button[aria-pressed="true"] { background:#fff; color:var(--teal); box-shadow:0 1px 4px #1e394324; }
