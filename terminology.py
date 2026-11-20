@@ -119,6 +119,15 @@ def correct(title, translation):
         translation = apply_variant(translation, variant, preferred)
         for marker, chinese in guards.items():
             translation = translation.replace(marker, chinese)
+    # Defense in depth: a variant that sits inside a longer wrong rendering can
+    # leave the approved term doubled, because the model wrote the first
+    # characters itself ("随机" + "控制的审" -> "随机随机对照试验判").
+    for chinese in approved:
+        escaped = re.escape(chinese)
+        translation = re.sub(f"({escaped})\\1+", chinese, translation)
+        if len(chinese) >= 3:
+            head = re.escape(chinese[:2])
+            translation = re.sub(f"{head}({escaped})", chinese, translation)
     leftovers = sorted(
         ((pattern_for(phrase), term["zh"]) for term in matched
          for phrase in (term["en"], *term.get("aliases", []))),
