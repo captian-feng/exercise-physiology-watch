@@ -81,6 +81,17 @@ def validate(db_path, site):
         if missing:
             raise ValueError(f"Site record is missing {sorted(missing)}")
     untranslated = sum(not row.get("z") for row in data["records"])
+    # The same paper can arrive twice (journal version plus a preprint with its
+    # own DOI), so the published page must never show the same title twice.
+    seen_titles = set()
+    duplicates = []
+    for row in data["records"]:
+        key = "".join(char for char in row["e"].casefold() if char.isalnum())
+        if key in seen_titles:
+            duplicates.append(row["e"])
+        seen_titles.add(key)
+    if duplicates:
+        raise ValueError(f"Duplicate titles on the page: {duplicates[:3]}")
     with closing(sqlite3.connect(db_path)) as db:
         if db.execute("PRAGMA quick_check").fetchone() != ("ok",):
             raise ValueError("SQLite integrity check failed")

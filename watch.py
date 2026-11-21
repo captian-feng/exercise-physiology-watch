@@ -233,6 +233,17 @@ def pull(fn, args):
         return [], str(error)
 
 
+# DOI prefixes that identify a preprint or a study registration rather than the
+# published article. The same paper can arrive twice through these, once from the
+# journal and once from the repository, and the published version should win.
+PREPRINT_PREFIXES = ("10.17605", "10.21203", "10.1101", "10.31234",
+                     "10.26434", "10.20944", "10.31219")
+
+
+def is_preprint(doi):
+    return doi.startswith(PREPRINT_PREFIXES)
+
+
 def upsert(db, item, label, source, day, is_journal):
     title = item.get("title", "")
     if not title:
@@ -251,7 +262,11 @@ def upsert(db, item, label, source, day, is_journal):
     for candidate_id, raw in candidates:
         known = json.loads(raw)
         if doi and known.get("doi") and doi != known["doi"]:
-            continue
+            # Same journal and title but a different DOI is normally the
+            # preprint/registration of the published article; only a genuinely
+            # different pair of DOI types is treated as a separate record.
+            if not (is_preprint(doi) or is_preprint(known["doi"])):
+                continue
         if pmid and known.get("pmid") and pmid != known["pmid"]:
             continue
         first_author = identity(item.get("author", ""))
@@ -262,6 +277,9 @@ def upsert(db, item, label, source, day, is_journal):
         article_id, previous = candidate_id, known
         break
     merged = {**previous, **{key: value for key, value in item.items() if value}}
+    if previous.get("doi") and is_preprint(merged.get("doi", "")) \
+            and not is_preprint(previous["doi"]):
+        merged["doi"] = previous["doi"]
     if is_journal:
         merged["journal"] = label
         fingerprint = identity(label) + "|" + identity(title)
