@@ -52,6 +52,11 @@ def _compiled():
     return table
 
 
+ACRONYM_OWNERS = {}
+for _term in TERMS:
+    for _abbreviation in _term.get("abbreviations", []):
+        ACRONYM_OWNERS.setdefault(_abbreviation, set()).add(_term["en"])
+
 COMPILED = _compiled()
 WORD_SPLIT = re.compile(r"[\s‐‑‒–—-]+")
 # Titles keep punctuation attached to words ("muscle:", "strength,"), so index
@@ -204,7 +209,8 @@ def correct(title, translation):
     acronyms = sorted(
         ((abbreviation, term["zh"]) for term in matched
          for abbreviation in term.get("abbreviations", [])
-         if len(abbreviation) >= 2 and abbreviation.isupper()),
+         if len(abbreviation) >= 3 and abbreviation.isupper()
+         and len(ACRONYM_OWNERS[abbreviation]) == 1),
         key=lambda pair: len(pair[0]), reverse=True,
     )
     for abbreviation, preferred in acronyms:
