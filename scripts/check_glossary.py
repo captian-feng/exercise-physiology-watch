@@ -20,7 +20,9 @@ LATIN = re.compile(r"[A-Za-z]")
 # Domains let the library be audited per area (strength and conditioning,
 # training theory, physiology, ...) instead of as one flat list.
 DOMAINS = {"运动生理", "体能训练", "运动训练", "训练理论", "解剖与动作", "生物力学",
-           "运动医学", "研究方法", "营养代谢", "监测技术", "人群健康", "其他"}
+           "运动医学", "研究方法", "营养代谢", "监测技术", "人群健康",
+           "心血管", "神经与认知", "免疫与分子", "内分泌与代谢", "肾脏与体液",
+           "呼吸系统", "其他"}
 # A few Latin acronyms are part of the accepted Chinese term itself.
 ALLOWED_LATIN = re.compile(r"(?:RNA|DNA|ATP)")
 
