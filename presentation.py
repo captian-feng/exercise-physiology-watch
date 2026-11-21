@@ -164,6 +164,38 @@ SUBSTITUTIONS = {
     "定居行为": "久坐行为", "沉积行为": "久坐行为",
     "系统审查": "系统综述", "系统评价和荟萃分析": "系统综述与荟萃分析",
 }
+# Renderings the decoder produces that are always wrong in this corpus. Patterns
+# are ordered longest-first so a longer artifact is fixed before its shorter core,
+# and 体能表 carries a lookahead because 体能表现 is already correct.
+ALWAYS_WRONG = [
+    (re.compile("骨骼矿密度"), "骨密度"),
+    (re.compile("骨质炎"), "骨关节炎"),
+    (re.compile("热门环境"), "高温环境"),
+    (re.compile("下博迪"), "下肢"),
+    (re.compile("体能表(?!现)"), "体能表现"),
+    (re.compile("跑性能"), "跑步表现"),
+    (re.compile("脉僵硬性"), "动脉僵硬度"),
+    (re.compile("矿密度"), "骨密度"),
+    (re.compile("心血管适能|心血管适"), "心肺适能"),
+    (re.compile("动车组"), "运动单位"),
+]
+# Renderings that are wrong only for a given source word, so the English title
+# decides whether to touch them.
+WRONG_FOR = [
+    (re.compile(r"hypertroph", re.I), "超营养", "肥大"),
+    (re.compile(r"strength", re.I), "强项", "力量"),
+    (re.compile(r"concentric", re.I), "同心", "向心"),
+    (re.compile(r"altitude", re.I), "高空", "高海拔"),
+    (re.compile(r"horizontal", re.I), "横向", "水平"),
+    (re.compile(r"heat", re.I), "发热", "热应激"),
+    (re.compile(r"warm[-\s]?up", re.I), "温暖", "热身"),
+    (re.compile(r"bench press|chest press", re.I), "出版社", "卧推"),
+]
+# "training" is rendered 培训 (staff training) by the decoder. That is only correct
+# when the paper is about coaching education, so the substitution is conditional.
+TRAINING_AS_VOCATIONAL = re.compile(
+    r"coach|education|instructor|teacher|workforce|workshop|seminar|certif|"
+    r"curricul|teaching|pedagog", re.I)
 # Residual English the decoder leaves in an otherwise Chinese sentence. The
 # boundaries are ASCII so Chinese characters next to the fragment are kept.
 LEFTOVERS = [
@@ -266,6 +298,15 @@ def collapse_repeats(text):
 
 
 def polish(title, chinese):
+    # The decoder renders "training" as 培训 (vocational training) in this corpus;
+    # it is only right where the paper really is about coach education.
+    if "培训" in chinese and not TRAINING_AS_VOCATIONAL.search(title):
+        chinese = chinese.replace("培训练", "训练").replace("培训", "训练")
+    for pattern, after in ALWAYS_WRONG:
+        chinese = pattern.sub(after, chinese)
+    for pattern, before, after in WRONG_FOR:
+        if before in chinese and pattern.search(title):
+            chinese = chinese.replace(before, after)
     for before, after in SUBSTITUTIONS.items():
         chinese = chinese.replace(before, after)
     if "cyclist" in title.lower():
