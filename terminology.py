@@ -87,7 +87,7 @@ def _first_word_index():
     for entry in COMPILED:
         term, _, acronyms = entry
         for phrase in (term["en"], *term.get("aliases", [])):
-            parts = [part for part in WORD_SPLIT.split(phrase.casefold()) if part]
+            parts = WORD_TOKEN.findall(phrase.casefold())
             if parts:
                 index.setdefault(_stem(parts[0]), []).append(entry)
         if acronyms:

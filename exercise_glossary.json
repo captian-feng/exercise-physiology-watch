@@ -40,6 +40,18 @@
       "domain": "监测技术"
     },
     {
+      "en": "accentuated eccentric loading",
+      "zh": "强化离心负荷",
+      "abbreviations": [
+        "AEL"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41945297/"
+      ]
+    },
+    {
       "en": "accommodating resistance",
       "zh": "变阻训练",
       "abbreviations": [],
@@ -132,6 +144,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "active outdoor play",
+      "zh": "积极户外游戏",
+      "abbreviations": [
+        "AOP"
+      ],
+      "variants": [],
+      "domain": "人群健康",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41475528/"
+      ]
+    },
+    {
       "en": "activities of daily living",
       "zh": "日常生活活动",
       "abbreviations": [
@@ -189,6 +213,18 @@
         "急性锻炼"
       ],
       "domain": "运动训练"
+    },
+    {
+      "en": "acute mountain sickness",
+      "zh": "急性高原病",
+      "abbreviations": [
+        "AMS"
+      ],
+      "variants": [],
+      "domain": "环境生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42903699/"
+      ]
     },
     {
       "en": "acutely",
@@ -617,6 +653,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "approach vertical jump",
+      "zh": "助跑垂直跳",
+      "abbreviations": [
+        "AVJ"
+      ],
+      "variants": [],
+      "domain": "体能测试",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43054139/"
+      ]
+    },
+    {
       "en": "area under the curve",
       "zh": "曲线下面积",
       "abbreviations": [
@@ -636,6 +684,18 @@
         "动脉血液"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "arterial occlusion pressure",
+      "zh": "动脉阻断压",
+      "abbreviations": [
+        "AOP"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42713581/"
+      ]
     },
     {
       "en": "arterial oxygen saturation",
@@ -831,6 +891,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "b-type natriuretic peptide",
+      "zh": "B型利钠肽",
+      "abbreviations": [
+        "BNP"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42932898/"
+      ]
+    },
+    {
       "en": "back squat",
       "zh": "后蹲",
       "abbreviations": [],
@@ -916,6 +988,18 @@
       "domain": "心血管"
     },
     {
+      "en": "basal metabolic rate",
+      "zh": "基础代谢率",
+      "abbreviations": [
+        "BMR"
+      ],
+      "variants": [],
+      "domain": "营养代谢",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42926215/"
+      ]
+    },
+    {
       "en": "basketball players",
       "zh": "篮球运动员",
       "abbreviations": [],
@@ -968,6 +1052,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "berg balance scale",
+      "zh": "伯格平衡量表",
+      "abbreviations": [
+        "BBS"
+      ],
+      "variants": [],
+      "domain": "运动医学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43021848/"
+      ]
+    },
+    {
       "en": "beta-alanine",
       "zh": "β-丙氨酸",
       "abbreviations": [],
@@ -994,6 +1090,18 @@
         "二胞胎女性长头肌"
       ],
       "domain": "解剖与动作"
+    },
+    {
+      "en": "bioelectrical impedance analysis",
+      "zh": "生物电阻抗分析",
+      "abbreviations": [
+        "BIA"
+      ],
+      "variants": [],
+      "domain": "体成分",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43021929/"
+      ]
     },
     {
       "en": "biomechanical analysis",
@@ -1093,6 +1201,18 @@
         "血中乳酸"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "blood lactate concentration",
+      "zh": "血乳酸浓度",
+      "abbreviations": [
+        "BLa"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42894481/"
+      ]
     },
     {
       "en": "blood lipid",
@@ -1495,6 +1615,21 @@
       "domain": "运动生理"
     },
     {
+      "en": "cardiopulmonary exercise testing",
+      "zh": "心肺运动试验",
+      "abbreviations": [
+        "CPET"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42930922/"
+      ],
+      "aliases": [
+        "cardiopulmonary exercise test"
+      ]
+    },
+    {
       "en": "cardiorespiratory fitness",
       "zh": "心肺适能",
       "abbreviations": [
@@ -1571,6 +1706,18 @@
         "案例研究"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "central blood volume",
+      "zh": "中心血容量",
+      "abbreviations": [
+        "CBV"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41071721/"
+      ]
     },
     {
       "en": "central fatigue",
@@ -1716,6 +1863,18 @@
         "慢性肾脏疾病"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "chronic obstructive pulmonary disease",
+      "zh": "慢性阻塞性肺疾病",
+      "abbreviations": [
+        "COPD"
+      ],
+      "variants": [],
+      "domain": "临床医学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42363743/"
+      ]
     },
     {
       "en": "circadian rhythm",
@@ -1899,6 +2058,18 @@
       "domain": "其他"
     },
     {
+      "en": "combined training",
+      "zh": "组合训练",
+      "abbreviations": [
+        "CT"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42747199/"
+      ]
+    },
+    {
       "en": "commentary",
       "zh": "评论",
       "abbreviations": [],
@@ -1952,6 +2123,18 @@
         "计算流体动力学"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "concentric peak torque",
+      "zh": "向心峰力矩",
+      "abbreviations": [
+        "CPT"
+      ],
+      "variants": [],
+      "domain": "体能测试",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42565666/"
+      ]
     },
     {
       "en": "concurrent exercise",
@@ -2212,7 +2395,10 @@
         "反向运动跳跃",
         "反向动作跳跃"
       ],
-      "domain": "体能训练"
+      "domain": "体能训练",
+      "aliases": [
+        "counter movement jump"
+      ]
     },
     {
       "en": "countermovement jump height",
@@ -2316,6 +2502,18 @@
         "关键游泳速度"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "critical torque",
+      "zh": "临界扭矩",
+      "abbreviations": [
+        "CT"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42945539/"
+      ]
     },
     {
       "en": "critique",
@@ -2553,6 +2751,30 @@
       "domain": "其他"
     },
     {
+      "en": "decision tree",
+      "zh": "决策树",
+      "abbreviations": [
+        "DT"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42387005/"
+      ]
+    },
+    {
+      "en": "deep learning",
+      "zh": "深度学习",
+      "abbreviations": [
+        "DL"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42962209/"
+      ]
+    },
+    {
       "en": "dehydration",
       "zh": "脱水",
       "abbreviations": [],
@@ -2665,6 +2887,21 @@
         "舒张期的"
       ],
       "domain": "心血管"
+    },
+    {
+      "en": "diastolic blood pressure",
+      "zh": "舒张压",
+      "abbreviations": [
+        "DBP"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43016647/"
+      ],
+      "aliases": [
+        "diastolic BP"
+      ]
     },
     {
       "en": "dietary intake",
@@ -2853,6 +3090,18 @@
       "domain": "生物力学"
     },
     {
+      "en": "early sport specialization",
+      "zh": "过早运动专项化",
+      "abbreviations": [
+        "ESS"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42991856/"
+      ]
+    },
+    {
       "en": "eccentric exercise",
       "zh": "离心运动",
       "abbreviations": [],
@@ -2912,6 +3161,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "ecological momentary assessment",
+      "zh": "生态瞬时评估",
+      "abbreviations": [
+        "EMA"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42579880/"
+      ]
+    },
+    {
       "en": "eeg",
       "zh": "脑电图",
       "abbreviations": [
@@ -2968,6 +3229,18 @@
         "肘部关节"
       ],
       "domain": "解剖与动作"
+    },
+    {
+      "en": "electrical stimulation",
+      "zh": "电刺激",
+      "abbreviations": [
+        "ES"
+      ],
+      "variants": [],
+      "domain": "运动医学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42769172/"
+      ]
     },
     {
       "en": "electromyography",
@@ -3238,6 +3511,18 @@
       "domain": "其他"
     },
     {
+      "en": "euclidean norm minus one",
+      "zh": "欧几里得范数减一",
+      "abbreviations": [
+        "ENMO"
+      ],
+      "variants": [],
+      "domain": "监测技术",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42944515/"
+      ]
+    },
+    {
       "en": "excess post-exercise oxygen consumption",
       "zh": "运动后过量氧耗",
       "abbreviations": [
@@ -3247,6 +3532,18 @@
         "运动后超额氧消耗"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "excitation-contraction",
+      "zh": "兴奋-收缩耦联",
+      "abbreviations": [
+        "EC"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42696147/"
+      ]
     },
     {
       "en": "excitation-contraction coupling",
@@ -3479,6 +3776,18 @@
       "domain": "运动训练"
     },
     {
+      "en": "exercise-induced gastrointestinal syndrome",
+      "zh": "运动诱发胃肠综合征",
+      "abbreviations": [
+        "EIGS"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42496856/"
+      ]
+    },
+    {
       "en": "exertional heat stroke",
       "zh": "劳力性热射病",
       "abbreviations": [],
@@ -3561,6 +3870,18 @@
         "堕落风险"
       ],
       "domain": "人群健康"
+    },
+    {
+      "en": "false discovery rate",
+      "zh": "假发现率",
+      "abbreviations": [
+        "FDR"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42935843/"
+      ]
     },
     {
       "en": "fascia",
@@ -3691,6 +4012,18 @@
       "domain": "其他"
     },
     {
+      "en": "federated learning",
+      "zh": "联邦学习",
+      "abbreviations": [
+        "FL"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43058885/"
+      ]
+    },
+    {
       "en": "feedback",
       "zh": "反馈",
       "abbreviations": [],
@@ -3786,6 +4119,18 @@
         "发现建议"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "first lactate threshold",
+      "zh": "第一乳酸阈",
+      "abbreviations": [
+        "LT1"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42421206/"
+      ]
     },
     {
       "en": "fitness test",
@@ -4018,6 +4363,18 @@
       ]
     },
     {
+      "en": "forearm blood flow",
+      "zh": "前臂血流量",
+      "abbreviations": [
+        "FBF"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43052044/"
+      ]
+    },
+    {
       "en": "forearm vascular conductance",
       "zh": "前臂血管传导度",
       "abbreviations": [
@@ -4128,6 +4485,18 @@
       "domain": "训练理论"
     },
     {
+      "en": "functional threshold power",
+      "zh": "功能阈值功率",
+      "abbreviations": [
+        "FTP"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42947243/"
+      ]
+    },
+    {
       "en": "fundamental movement skills",
       "zh": "基本动作技能",
       "abbreviations": [],
@@ -4185,6 +4554,18 @@
         "气体互换"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "gas exchange threshold",
+      "zh": "气体交换阈值",
+      "abbreviations": [
+        "GET"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42097586/"
+      ]
     },
     {
       "en": "gastrocnemius",
@@ -4443,6 +4824,30 @@
       "domain": "研究方法"
     },
     {
+      "en": "head-down tilt",
+      "zh": "头低位倾斜",
+      "abbreviations": [
+        "HDT"
+      ],
+      "variants": [],
+      "domain": "环境生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42547499/"
+      ]
+    },
+    {
+      "en": "head-up tilt",
+      "zh": "头高位倾斜",
+      "abbreviations": [
+        "HUT"
+      ],
+      "variants": [],
+      "domain": "环境生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42764020/"
+      ]
+    },
+    {
       "en": "health monitoring",
       "zh": "健康监测",
       "abbreviations": [],
@@ -4693,6 +5098,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "high-density lipoprotein cholesterol",
+      "zh": "高密度脂蛋白胆固醇",
+      "abbreviations": [
+        "HDL-C"
+      ],
+      "variants": [],
+      "domain": "营养代谢",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42682396/"
+      ]
+    },
+    {
       "en": "high-intensity",
       "zh": "高强度",
       "abbreviations": [],
@@ -4711,6 +5128,18 @@
       "domain": "运动训练"
     },
     {
+      "en": "high-intensity functional training",
+      "zh": "高强度功能性训练",
+      "abbreviations": [
+        "HIFT"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43011794/"
+      ]
+    },
+    {
       "en": "high-intensity interval training",
       "zh": "高强度间歇训练",
       "abbreviations": [
@@ -4723,6 +5152,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "high-intensity multimodal training",
+      "zh": "高强度多模式训练",
+      "abbreviations": [
+        "HIMT"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42557131/"
+      ]
+    },
+    {
       "en": "high-speed running",
       "zh": "高速跑",
       "abbreviations": [],
@@ -4730,6 +5171,18 @@
         "高速运行"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "high-speed running distance",
+      "zh": "高速跑距离",
+      "abbreviations": [
+        "HSRD"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43024956/"
+      ]
     },
     {
       "en": "highly trained",
@@ -4892,6 +5345,18 @@
       "domain": "其他"
     },
     {
+      "en": "hypertrophy training",
+      "zh": "肌肥大训练",
+      "abbreviations": [
+        "HT"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42975894/"
+      ]
+    },
+    {
       "en": "hypoxia",
       "zh": "低氧",
       "abbreviations": [],
@@ -4910,6 +5375,18 @@
         "髂胫带"
       ],
       "domain": "解剖与动作"
+    },
+    {
+      "en": "immersive virtual reality",
+      "zh": "沉浸式虚拟现实",
+      "abbreviations": [
+        "VR"
+      ],
+      "variants": [],
+      "domain": "监测技术",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43019538/"
+      ]
     },
     {
       "en": "immune function",
@@ -4966,7 +5443,12 @@
       "variants": [
         "惯性测量装置"
       ],
-      "domain": "监测技术"
+      "domain": "监测技术",
+      "aliases": [
+        "inertial measurement units",
+        "wearable inertial measurement unit",
+        "wearable inertial measurement units"
+      ]
     },
     {
       "en": "inflammation",
@@ -5186,6 +5668,30 @@
       "domain": "运动训练"
     },
     {
+      "en": "international knee documentation committee",
+      "zh": "国际膝关节文献委员会",
+      "abbreviations": [
+        "IKDC"
+      ],
+      "variants": [],
+      "domain": "运动医学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42951020/"
+      ]
+    },
+    {
+      "en": "international physical activity questionnaire",
+      "zh": "国际体力活动问卷",
+      "abbreviations": [
+        "IPAQ"
+      ],
+      "variants": [],
+      "domain": "人群健康",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42387481/"
+      ]
+    },
+    {
       "en": "interval",
       "zh": "间歇",
       "abbreviations": [],
@@ -5338,6 +5844,18 @@
       "domain": "解剖与动作"
     },
     {
+      "en": "isometric resistance training",
+      "zh": "等长抗阻训练",
+      "abbreviations": [
+        "IRT"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41793431/"
+      ]
+    },
+    {
       "en": "isometric strength",
       "zh": "等长力量",
       "abbreviations": [],
@@ -5431,6 +5949,21 @@
         "跳性能"
       ],
       "domain": "体能训练"
+    },
+    {
+      "en": "k-nearest neighbors",
+      "zh": "k近邻算法",
+      "abbreviations": [
+        "KNN"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43029796/"
+      ],
+      "aliases": [
+        "k-nearest neighbours"
+      ]
     },
     {
       "en": "ketogenic",
@@ -5589,6 +6122,18 @@
       "domain": "运动医学"
     },
     {
+      "en": "knee injury and osteoarthritis outcome score",
+      "zh": "膝损伤与骨关节炎结局评分",
+      "abbreviations": [
+        "KOOS"
+      ],
+      "variants": [],
+      "domain": "运动医学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42951020/"
+      ]
+    },
+    {
       "en": "knee joint",
       "zh": "膝关节",
       "abbreviations": [],
@@ -5624,6 +6169,18 @@
         "乳酸盐浓度"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "lactate dehydrogenase",
+      "zh": "乳酸脱氢酶",
+      "abbreviations": [
+        "LDH"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42908735/"
+      ]
     },
     {
       "en": "lactate steady state",
@@ -5707,6 +6264,18 @@
       "domain": "运动医学"
     },
     {
+      "en": "lateral extra-articular tenodesis",
+      "zh": "外侧关节外肌腱固定术",
+      "abbreviations": [
+        "LET"
+      ],
+      "variants": [],
+      "domain": "运动医学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42852835/"
+      ]
+    },
+    {
       "en": "latissimus dorsi",
       "zh": "背阔肌",
       "abbreviations": [],
@@ -5737,6 +6306,18 @@
       "domain": "其他"
     },
     {
+      "en": "leave-one-subject-out",
+      "zh": "留一受试者交叉验证",
+      "abbreviations": [
+        "LOSO"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42293602/"
+      ]
+    },
+    {
       "en": "left ventricular",
       "zh": "左心室",
       "abbreviations": [],
@@ -5763,6 +6344,18 @@
         "腿僵硬"
       ],
       "domain": "生物力学"
+    },
+    {
+      "en": "leisure-time physical activity",
+      "zh": "休闲时间身体活动",
+      "abbreviations": [
+        "LTPA"
+      ],
+      "variants": [],
+      "domain": "人群健康",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41760385/"
+      ]
     },
     {
       "en": "level of evidence",
@@ -5951,6 +6544,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "long short-term memory",
+      "zh": "长短期记忆网络",
+      "abbreviations": [
+        "LSTM"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42666189/"
+      ]
+    },
+    {
       "en": "long term athlete development",
       "zh": "长期运动员发展",
       "abbreviations": [
@@ -6012,6 +6617,42 @@
         "低能耗"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "low-density lipoprotein cholesterol",
+      "zh": "低密度脂蛋白胆固醇",
+      "abbreviations": [
+        "LDL-C"
+      ],
+      "variants": [],
+      "domain": "营养代谢",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42820852/"
+      ]
+    },
+    {
+      "en": "low-load blood flow restriction training",
+      "zh": "低负荷血流限制训练",
+      "abbreviations": [
+        "LLBFRT"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41579021/"
+      ]
+    },
+    {
+      "en": "lower body negative pressure",
+      "zh": "下半身负压",
+      "abbreviations": [
+        "LBNP"
+      ],
+      "variants": [],
+      "domain": "环境生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43046776/"
+      ]
     },
     {
       "en": "lower limb",
@@ -6263,6 +6904,30 @@
       "domain": "运动生理"
     },
     {
+      "en": "maximal heart rate",
+      "zh": "最大心率",
+      "abbreviations": [
+        "HRmax"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42326995/"
+      ]
+    },
+    {
+      "en": "maximal intended velocity",
+      "zh": "最大意图速度",
+      "abbreviations": [
+        "MIV"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42487231/"
+      ]
+    },
+    {
       "en": "maximal isometric",
       "zh": "最大等长",
       "abbreviations": [],
@@ -6302,6 +6967,18 @@
         "最大氧气摄取"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "maximal power output",
+      "zh": "最大功率输出",
+      "abbreviations": [
+        "Pmax"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42873347/"
+      ]
     },
     {
       "en": "maximal strength",
@@ -6348,6 +7025,33 @@
       "domain": "运动生理",
       "evidence": [
         "https://pubmed.ncbi.nlm.nih.gov/42969341/"
+      ]
+    },
+    {
+      "en": "mean absolute error",
+      "zh": "平均绝对误差",
+      "abbreviations": [
+        "MAE"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42934732/"
+      ]
+    },
+    {
+      "en": "mean absolute percentage error",
+      "zh": "平均绝对百分比误差",
+      "abbreviations": [
+        "MAPE"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41120234/"
+      ],
+      "aliases": [
+        "mean absolute percent error"
       ]
     },
     {
@@ -6398,6 +7102,30 @@
       "domain": "体能训练"
     },
     {
+      "en": "mean propulsive velocity",
+      "zh": "平均推进速度",
+      "abbreviations": [
+        "MPV"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42829953/"
+      ]
+    },
+    {
+      "en": "mean velocity",
+      "zh": "平均速度",
+      "abbreviations": [
+        "MV"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42507001/"
+      ]
+    },
+    {
       "en": "measurement unit",
       "zh": "测量单位",
       "abbreviations": [],
@@ -6435,6 +7163,18 @@
       "domain": "运动训练"
     },
     {
+      "en": "mechanical power",
+      "zh": "机械功率",
+      "abbreviations": [
+        "MP"
+      ],
+      "variants": [],
+      "domain": "生物力学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42488613/"
+      ]
+    },
+    {
       "en": "mechanical properties",
       "zh": "力学特性",
       "abbreviations": [],
@@ -6470,6 +7210,18 @@
         "内侧的"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "medial collateral ligament",
+      "zh": "内侧副韧带",
+      "abbreviations": [
+        "MCL"
+      ],
+      "variants": [],
+      "domain": "解剖与动作",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42989880/"
+      ]
     },
     {
       "en": "medial gastrocnemius",
@@ -6700,6 +7452,33 @@
       "domain": "免疫与分子"
     },
     {
+      "en": "middle cerebral artery mean blood velocity",
+      "zh": "大脑中动脉平均血流速度",
+      "abbreviations": [
+        "MCAvmean"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41712306/"
+      ]
+    },
+    {
+      "en": "middle cerebral artery velocity",
+      "zh": "大脑中动脉血流速度",
+      "abbreviations": [
+        "MCAv"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42425140/"
+      ],
+      "aliases": [
+        "middle cerebral artery blood velocity"
+      ]
+    },
+    {
       "en": "minimal clinically important difference",
       "zh": "最小临床重要差异",
       "abbreviations": [
@@ -6847,6 +7626,18 @@
       "domain": "研究方法"
     },
     {
+      "en": "moderate physical activity",
+      "zh": "中等强度身体活动",
+      "abbreviations": [
+        "MPA"
+      ],
+      "variants": [],
+      "domain": "人群健康",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42824331/"
+      ]
+    },
+    {
       "en": "moderate-intensity",
       "zh": "中等强度",
       "abbreviations": [],
@@ -6854,6 +7645,18 @@
         "中等强度度"
       ],
       "domain": "研究方法"
+    },
+    {
+      "en": "moderate-intensity continuous training",
+      "zh": "中等强度持续训练",
+      "abbreviations": [
+        "MICT"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41999477/"
+      ]
     },
     {
       "en": "moderate-to-vigorous physical activity",
@@ -6898,6 +7701,18 @@
         "运动捕捉"
       ],
       "domain": "生物力学"
+    },
+    {
+      "en": "motor competence",
+      "zh": "运动能力",
+      "abbreviations": [
+        "MC"
+      ],
+      "variants": [],
+      "domain": "运动控制",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42471916/"
+      ]
     },
     {
       "en": "motor control",
@@ -7186,6 +8001,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "muscle oxygen saturation",
+      "zh": "肌氧饱和度",
+      "abbreviations": [
+        "SmO2"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42079719/"
+      ]
+    },
+    {
       "en": "muscle oxygenation",
       "zh": "肌肉氧合",
       "abbreviations": [],
@@ -7275,6 +8102,18 @@
       "abbreviations": [],
       "variants": [],
       "domain": "体能训练"
+    },
+    {
+      "en": "muscle sympathetic nerve activity",
+      "zh": "肌交感神经活动",
+      "abbreviations": [
+        "MSNA"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41392360/"
+      ]
     },
     {
       "en": "muscle thickness",
@@ -7439,6 +8278,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "neuromuscular training",
+      "zh": "神经肌肉训练",
+      "abbreviations": [
+        "NMT"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43049859/"
+      ]
+    },
+    {
       "en": "nfl",
       "zh": "美国职业橄榄球联盟",
       "abbreviations": [
@@ -7479,6 +8330,18 @@
         "夜间下降"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "non-exercise activity thermogenesis",
+      "zh": "非运动性活动产热",
+      "abbreviations": [
+        "NEAT"
+      ],
+      "variants": [],
+      "domain": "营养代谢",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42670949/"
+      ]
     },
     {
       "en": "nordic hamstring exercise",
@@ -7571,6 +8434,21 @@
       "domain": "其他"
     },
     {
+      "en": "obstructive sleep apnea",
+      "zh": "阻塞性睡眠呼吸暂停",
+      "abbreviations": [
+        "OSA"
+      ],
+      "variants": [],
+      "domain": "睡眠与恢复",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41273777/"
+      ],
+      "aliases": [
+        "sleep apnoea"
+      ]
+    },
+    {
       "en": "odds ratio",
       "zh": "比值比",
       "abbreviations": [
@@ -7624,6 +8502,18 @@
         "一次最大重复"
       ],
       "domain": "体能训练"
+    },
+    {
+      "en": "open-water swimming",
+      "zh": "公开水域游泳",
+      "abbreviations": [
+        "OWS"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42912416/"
+      ]
     },
     {
       "en": "osteoarthritis",
@@ -7942,6 +8832,18 @@
       "domain": "研究方法"
     },
     {
+      "en": "peak expiratory flow",
+      "zh": "呼气峰流速",
+      "abbreviations": [
+        "PEF"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42609269/"
+      ]
+    },
+    {
       "en": "peak force",
       "zh": "峰值力",
       "abbreviations": [],
@@ -8098,6 +9000,18 @@
       "domain": "其他"
     },
     {
+      "en": "perceived recovery",
+      "zh": "主观恢复感受",
+      "abbreviations": [
+        "TQR"
+      ],
+      "variants": [],
+      "domain": "睡眠与恢复",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42713266/"
+      ]
+    },
+    {
       "en": "perceptual cognitive skill",
       "zh": "知觉认知技能",
       "abbreviations": [],
@@ -8171,6 +9085,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "peripheral oxygen saturation",
+      "zh": "外周血氧饱和度",
+      "abbreviations": [
+        "SpO2"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42935557/"
+      ]
+    },
+    {
       "en": "phd academy award",
       "zh": "博士学院奖",
       "abbreviations": [],
@@ -8205,6 +9131,21 @@
         "生理活动"
       ],
       "domain": "运动训练"
+    },
+    {
+      "en": "physical activity energy expenditure",
+      "zh": "身体活动能量消耗",
+      "abbreviations": [
+        "PAEE"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41988505/"
+      ],
+      "aliases": [
+        "physical activity-related energy expenditure"
+      ]
     },
     {
       "en": "physical activity levels",
@@ -8352,6 +9293,18 @@
       "domain": "其他"
     },
     {
+      "en": "pittsburgh sleep quality index",
+      "zh": "匹兹堡睡眠质量指数",
+      "abbreviations": [
+        "PSQI"
+      ],
+      "variants": [],
+      "domain": "睡眠与恢复",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41015574/"
+      ]
+    },
+    {
       "en": "placebo",
       "zh": "安慰剂",
       "abbreviations": [],
@@ -8418,6 +9371,18 @@
         "等离子体"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "plasma volume",
+      "zh": "血浆容量",
+      "abbreviations": [
+        "PV"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41872731/"
+      ]
     },
     {
       "en": "players",
@@ -8521,6 +9486,18 @@
       "domain": "运动训练"
     },
     {
+      "en": "positive predictive value",
+      "zh": "阳性预测值",
+      "abbreviations": [
+        "PPV"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41823309/"
+      ]
+    },
+    {
       "en": "positively associated",
       "zh": "正相关",
       "abbreviations": [],
@@ -8571,6 +9548,18 @@
         "激活后强化"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "posterior condylar axis",
+      "zh": "后髁轴",
+      "abbreviations": [
+        "PCA"
+      ],
+      "variants": [],
+      "domain": "解剖与动作",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42116605/"
+      ]
     },
     {
       "en": "postmenopausal women",
@@ -8676,7 +9665,23 @@
       "variants": [
         "系统评价首选报告项目"
       ],
-      "domain": "研究方法"
+      "domain": "研究方法",
+      "aliases": [
+        "preferred reporting items for systematic reviews and meta-analyses",
+        "preferred reporting items for systematic reviews and meta-analysis"
+      ]
+    },
+    {
+      "en": "preferred reporting items for systematic reviews and meta-analyses extension for scoping reviews",
+      "zh": "系统综述和荟萃分析优先报告条目扩展版（范围综述）",
+      "abbreviations": [
+        "PRISMA-ScR"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42135015/"
+      ]
     },
     {
       "en": "pregnancy",
@@ -8716,6 +9721,21 @@
       "domain": "运动医学"
     },
     {
+      "en": "pressure pain threshold",
+      "zh": "压力痛阈",
+      "abbreviations": [
+        "PPT"
+      ],
+      "variants": [],
+      "domain": "运动医学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41848720/"
+      ],
+      "aliases": [
+        "pain pressure threshold"
+      ]
+    },
+    {
       "en": "pretest",
       "zh": "前测",
       "abbreviations": [],
@@ -8741,6 +9761,18 @@
         "主要结果"
       ],
       "domain": "研究方法"
+    },
+    {
+      "en": "principal component analysis",
+      "zh": "主成分分析",
+      "abbreviations": [
+        "PCA"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42980791/"
+      ]
     },
     {
       "en": "prisma guidelines",
@@ -8922,6 +9954,18 @@
       "domain": "解剖与动作"
     },
     {
+      "en": "pulmonary capillary blood volume",
+      "zh": "肺毛细血管血容量",
+      "abbreviations": [
+        "VC"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41367392/"
+      ]
+    },
+    {
       "en": "pulmonary function",
       "zh": "肺功能",
       "abbreviations": [],
@@ -8929,6 +9973,18 @@
         "肺部功能"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "pulmonary rehabilitation",
+      "zh": "肺康复",
+      "abbreviations": [
+        "PR"
+      ],
+      "variants": [],
+      "domain": "运动医学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41343041/"
+      ]
     },
     {
       "en": "pulse wave velocity",
@@ -8941,6 +9997,18 @@
         "脉冲波速率"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "purdue pegboard test",
+      "zh": "普渡钉板测试",
+      "abbreviations": [
+        "PPT"
+      ],
+      "variants": [],
+      "domain": "运动控制",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42528632/"
+      ]
     },
     {
       "en": "push-up",
@@ -8969,6 +10037,18 @@
         "四方"
       ],
       "domain": "解剖与动作"
+    },
+    {
+      "en": "quadriceps tendon",
+      "zh": "股四头肌腱",
+      "abbreviations": [
+        "QT"
+      ],
+      "variants": [],
+      "domain": "解剖与动作",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42136071/"
+      ]
     },
     {
       "en": "quality control",
@@ -9053,7 +10133,8 @@
         "RCT"
       ],
       "aliases": [
-        "randomised controlled trial"
+        "randomised controlled trial",
+        "randomized controlled trials"
       ],
       "variants": [
         "随机控制试验",
@@ -9250,6 +10331,30 @@
       "domain": "其他"
     },
     {
+      "en": "red blood cell",
+      "zh": "红细胞",
+      "abbreviations": [
+        "RBC"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42111347/"
+      ]
+    },
+    {
+      "en": "reduced-exertion high-intensity interval training",
+      "zh": "低运动量高强度间歇训练",
+      "abbreviations": [
+        "REHIT"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41743231/"
+      ]
+    },
+    {
       "en": "regression",
       "zh": "回归",
       "abbreviations": [],
@@ -9327,6 +10432,18 @@
       "domain": "其他"
     },
     {
+      "en": "relative maximal strength",
+      "zh": "相对最大力量",
+      "abbreviations": [
+        "RMS"
+      ],
+      "variants": [],
+      "domain": "体能测试",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43050046/"
+      ]
+    },
+    {
       "en": "relative strength",
       "zh": "相对力量",
       "abbreviations": [],
@@ -9374,6 +10491,30 @@
         "反复冲刺能力"
       ],
       "domain": "体能训练"
+    },
+    {
+      "en": "repeated-sprint training",
+      "zh": "重复冲刺训练",
+      "abbreviations": [
+        "RST"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42259356/"
+      ]
+    },
+    {
+      "en": "repeated-sprint training in hypoxia",
+      "zh": "低氧重复冲刺训练",
+      "abbreviations": [
+        "RSH"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42994407/"
+      ]
     },
     {
       "en": "repetition",
@@ -9606,6 +10747,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "restricted cubic spline",
+      "zh": "限制性立方样条",
+      "abbreviations": [
+        "RCS"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42991259/"
+      ]
+    },
+    {
       "en": "retest",
       "zh": "重测",
       "abbreviations": [],
@@ -9701,6 +10854,18 @@
       "domain": "研究方法"
     },
     {
+      "en": "risk ratio",
+      "zh": "风险比",
+      "abbreviations": [
+        "RR"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41956204/"
+      ]
+    },
+    {
       "en": "risk stratification",
       "zh": "风险分层",
       "abbreviations": [],
@@ -9722,6 +10887,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "root mean square",
+      "zh": "均方根",
+      "abbreviations": [
+        "RMS"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42962545/"
+      ]
+    },
+    {
       "en": "root mean square error",
       "zh": "均方根误差",
       "abbreviations": [
@@ -9734,6 +10911,21 @@
       "domain": "研究方法",
       "evidence": [
         "https://pubmed.ncbi.nlm.nih.gov/41783455/"
+      ]
+    },
+    {
+      "en": "root mean square of successive differences",
+      "zh": "相邻RR间期差值的均方根",
+      "abbreviations": [
+        "RMSSD"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41561154/"
+      ],
+      "aliases": [
+        "root-mean-square-of-successive-difference"
       ]
     },
     {
@@ -10058,6 +11250,57 @@
       "domain": "人群健康"
     },
     {
+      "en": "sex hormone-binding globulin",
+      "zh": "性激素结合球蛋白",
+      "abbreviations": [
+        "SHBG"
+      ],
+      "variants": [],
+      "domain": "营养代谢",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42954080/"
+      ]
+    },
+    {
+      "en": "shear wave elastography",
+      "zh": "剪切波弹性成像",
+      "abbreviations": [
+        "SWE"
+      ],
+      "variants": [],
+      "domain": "监测技术",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42812042/"
+      ],
+      "aliases": [
+        "shear-wave elastography"
+      ]
+    },
+    {
+      "en": "shear wave velocity",
+      "zh": "剪切波速度",
+      "abbreviations": [
+        "SWV"
+      ],
+      "variants": [],
+      "domain": "监测技术",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42751881/"
+      ]
+    },
+    {
+      "en": "short physical performance battery",
+      "zh": "简短体能测验",
+      "abbreviations": [
+        "SPPB"
+      ],
+      "variants": [],
+      "domain": "体能测试",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42048290/"
+      ]
+    },
+    {
       "en": "short-term",
       "zh": "短期",
       "abbreviations": [],
@@ -10149,6 +11392,18 @@
       "domain": "监测技术"
     },
     {
+      "en": "single leg countermovement jump",
+      "zh": "单腿反向跳",
+      "abbreviations": [
+        "SLCMJ"
+      ],
+      "variants": [],
+      "domain": "体能测试",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41961006/"
+      ]
+    },
+    {
       "en": "single-leg",
       "zh": "单腿",
       "abbreviations": [],
@@ -10198,6 +11453,30 @@
         "骨骼肌肉质量"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "skeletal muscle oxidative capacity",
+      "zh": "骨骼肌氧化能力",
+      "abbreviations": [
+        "SMOC"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41691600/"
+      ]
+    },
+    {
+      "en": "skeletal muscle tissue oxygenation",
+      "zh": "骨骼肌组织氧合",
+      "abbreviations": [
+        "StO2"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42947995/"
+      ]
     },
     {
       "en": "skill acquisition",
@@ -10263,6 +11542,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "sleep onset latency",
+      "zh": "入睡潜伏期",
+      "abbreviations": [
+        "SOL"
+      ],
+      "variants": [],
+      "domain": "睡眠与恢复",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42906892/"
+      ]
+    },
+    {
       "en": "sleep quality",
       "zh": "睡眠质量",
       "abbreviations": [],
@@ -10290,6 +11581,18 @@
         "睡觉时间"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "sleep-disordered breathing",
+      "zh": "睡眠呼吸障碍",
+      "abbreviations": [
+        "SDB"
+      ],
+      "variants": [],
+      "domain": "睡眠与恢复",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41953462/"
+      ]
     },
     {
       "en": "slow wave sleep",
@@ -10385,6 +11688,18 @@
         "英式足球运动员"
       ],
       "domain": "运动训练"
+    },
+    {
+      "en": "sodium bicarbonate",
+      "zh": "碳酸氢钠",
+      "abbreviations": [
+        "SB"
+      ],
+      "variants": [],
+      "domain": "营养代谢",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42788859/"
+      ]
     },
     {
       "en": "software",
@@ -10500,6 +11815,18 @@
         "全速跑"
       ],
       "domain": "体能训练"
+    },
+    {
+      "en": "sprint distance",
+      "zh": "冲刺距离",
+      "abbreviations": [
+        "SprD"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42076604/"
+      ]
     },
     {
       "en": "sprint interval training",
@@ -10628,6 +11955,18 @@
       "domain": "体能测试",
       "evidence": [
         "https://pubmed.ncbi.nlm.nih.gov/43021892/"
+      ]
+    },
+    {
+      "en": "static stretching",
+      "zh": "静态拉伸",
+      "abbreviations": [
+        "SS"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42690430/"
       ]
     },
     {
@@ -10890,6 +12229,18 @@
         "超组"
       ],
       "domain": "体能训练"
+    },
+    {
+      "en": "support vector machine",
+      "zh": "支持向量机",
+      "abbreviations": [
+        "SVM"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43005425/"
+      ]
     },
     {
       "en": "surface electromyography",
@@ -11381,6 +12732,21 @@
       "domain": "体能训练"
     },
     {
+      "en": "timed up and go",
+      "zh": "起立-行走计时测试",
+      "abbreviations": [
+        "TUG"
+      ],
+      "variants": [],
+      "domain": "体能测试",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42668502/"
+      ],
+      "aliases": [
+        "timed up and go test"
+      ]
+    },
+    {
       "en": "tissue properties",
       "zh": "组织特性",
       "abbreviations": [],
@@ -11400,6 +12766,30 @@
       "domain": "生物力学"
     },
     {
+      "en": "total antioxidant capacity",
+      "zh": "总抗氧化能力",
+      "abbreviations": [
+        "TAC"
+      ],
+      "variants": [],
+      "domain": "免疫与分子",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42908635/"
+      ]
+    },
+    {
+      "en": "total cholesterol",
+      "zh": "总胆固醇",
+      "abbreviations": [
+        "TC"
+      ],
+      "variants": [],
+      "domain": "营养代谢",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41298153/"
+      ]
+    },
+    {
       "en": "total distance",
       "zh": "总距离",
       "abbreviations": [],
@@ -11407,6 +12797,18 @@
         "总路程"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "total energy expenditure",
+      "zh": "总能量消耗",
+      "abbreviations": [
+        "TEE"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41760574/"
+      ]
     },
     {
       "en": "total hemoglobin",
@@ -11427,6 +12829,18 @@
         "全部睡眠时间"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "traditional percentage-based training",
+      "zh": "传统百分比训练",
+      "abbreviations": [
+        "PBT"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42454076/"
+      ]
     },
     {
       "en": "trainability",
@@ -11519,6 +12933,18 @@
         "培训强度"
       ],
       "domain": "运动训练"
+    },
+    {
+      "en": "training intensity distribution",
+      "zh": "训练强度分布",
+      "abbreviations": [
+        "TID"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43010990/"
+      ]
     },
     {
       "en": "training load",
@@ -11625,6 +13051,18 @@
         "培训量"
       ],
       "domain": "运动训练"
+    },
+    {
+      "en": "training weekly load",
+      "zh": "每周训练负荷",
+      "abbreviations": [
+        "TWL"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41682641/"
+      ]
     },
     {
       "en": "transcranial magnetic stimulation",
@@ -11840,6 +13278,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "variable resistance training",
+      "zh": "可变阻力训练",
+      "abbreviations": [
+        "VRT"
+      ],
+      "variants": [],
+      "domain": "运动训练",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41460711/"
+      ]
+    },
+    {
       "en": "vascular",
       "zh": "血管",
       "abbreviations": [],
@@ -11893,6 +13343,18 @@
         "外侧股肌"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "vastus medialis",
+      "zh": "股内侧肌",
+      "abbreviations": [
+        "VM"
+      ],
+      "variants": [],
+      "domain": "解剖与动作",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41668959/"
+      ]
     },
     {
       "en": "velocity",
@@ -12007,6 +13469,18 @@
       "domain": "研究方法"
     },
     {
+      "en": "vigorous intermittent lifestyle physical activity",
+      "zh": "高强度间歇性生活身体活动",
+      "abbreviations": [
+        "VILPA"
+      ],
+      "variants": [],
+      "domain": "人群健康",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42786495/"
+      ]
+    },
+    {
       "en": "vigorous physical activity",
       "zh": "剧烈体力活动",
       "abbreviations": [],
@@ -12023,6 +13497,18 @@
         "剧烈强度"
       ],
       "domain": "运动训练"
+    },
+    {
+      "en": "virtual reality",
+      "zh": "虚拟现实",
+      "abbreviations": [
+        "VR"
+      ],
+      "variants": [],
+      "domain": "监测技术",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43044114/"
+      ]
     },
     {
       "en": "visceral adipose tissue",
@@ -12077,6 +13563,45 @@
         "自愿激活"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "waist circumference",
+      "zh": "腰围",
+      "abbreviations": [
+        "WC"
+      ],
+      "variants": [],
+      "domain": "体成分",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42318268/"
+      ]
+    },
+    {
+      "en": "waist-to-hip ratio",
+      "zh": "腰臀比",
+      "abbreviations": [
+        "WHR"
+      ],
+      "variants": [],
+      "domain": "体成分",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43016647/"
+      ]
+    },
+    {
+      "en": "wake after sleep onset",
+      "zh": "入睡后觉醒时间",
+      "abbreviations": [
+        "WASO"
+      ],
+      "variants": [],
+      "domain": "睡眠与恢复",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42906971/"
+      ],
+      "aliases": [
+        "wakefulness after sleep onset"
+      ]
     },
     {
       "en": "walking speed",
@@ -12211,6 +13736,18 @@
       "domain": "人群健康"
     },
     {
+      "en": "white blood cell",
+      "zh": "白细胞",
+      "abbreviations": [
+        "WBC"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41489916/"
+      ]
+    },
+    {
       "en": "whole body vibration",
       "zh": "全身振动",
       "abbreviations": [
@@ -12222,6 +13759,30 @@
         "整体振动"
       ],
       "domain": "体能训练"
+    },
+    {
+      "en": "whole-body cryotherapy",
+      "zh": "全身冷冻疗法",
+      "abbreviations": [
+        "WBC"
+      ],
+      "variants": [],
+      "domain": "运动医学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42564251/"
+      ]
+    },
+    {
+      "en": "woman and/or girl athlete injury prevention",
+      "zh": "女性和女童运动员损伤预防",
+      "abbreviations": [
+        "FAIR"
+      ],
+      "variants": [],
+      "domain": "运动医学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41330629/"
+      ]
     },
     {
       "en": "work capacity",
@@ -12278,6 +13839,18 @@
         "手腕关节"
       ],
       "domain": "解剖与动作"
+    },
+    {
+      "en": "y-balance test",
+      "zh": "Y平衡测试",
+      "abbreviations": [
+        "YBT"
+      ],
+      "variants": [],
+      "domain": "体能测试",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43047412/"
+      ]
     },
     {
       "en": "young adult",
