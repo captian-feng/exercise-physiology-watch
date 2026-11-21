@@ -109,11 +109,6 @@
     "International Journal of Sports Physiology and Performance": [
       {
         "kind": "human-kinetics",
-        "label": "当前卷期",
-        "url": "https://journals.humankinetics.com/view/journals/ijspp/ijspp-overview.xml"
-      },
-      {
-        "kind": "human-kinetics",
         "label": "在线首发",
         "url": "https://journals.humankinetics.com/view/journals/ijspp/aop/issue.xml"
       }
