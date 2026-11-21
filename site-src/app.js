@@ -315,6 +315,15 @@
   get("total-articles").textContent = records.filter(record => record.tier === "core").length.toLocaleString("zh-CN");
   get("total-journals").textContent = data.journals.length;
   get("updated").textContent = data.updated ? "最近检索 " + data.updated : "暂未收录";
+  // A daily workflow refreshes the page. If the data is more than two days old
+  // the automation has stopped, and the reader should know before trusting it.
+  if (data.updated) {
+    const age = Math.floor((Date.now() - new Date(data.updated + "T00:00:00Z")) / 86400000);
+    const stale = !Number.isFinite(age) ? "" : age > 2
+      ? `（数据已 ${age} 天未更新，自动抓取可能已停止）`
+      : "";
+    if (stale) get("updated").textContent += stale;
+  }
   get("results-heading").tabIndex = -1;
   form.addEventListener("submit", event => event.preventDefault());
   form.addEventListener("change", (event) => {
