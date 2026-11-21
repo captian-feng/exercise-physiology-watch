@@ -576,6 +576,15 @@
       ]
     },
     {
+      "en": "barbell",
+      "zh": "杠铃",
+      "abbreviations": [],
+      "variants": [
+        "棒铃",
+        "杠钟"
+      ]
+    },
+    {
       "en": "baroreflex sensitivity",
       "zh": "压力反射敏感性",
       "abbreviations": [],
@@ -624,7 +633,10 @@
         "长凳推举",
         "卧式推举",
         "板凳",
-        "法官"
+        "法官",
+        "出版社",
+        "Beach出版社",
+        "Beach Press出版社"
       ]
     },
     {
@@ -907,6 +919,14 @@
       "abbreviations": [],
       "variants": [
         "胸部癌症"
+      ]
+    },
+    {
+      "en": "cable machine",
+      "zh": "绳索器械",
+      "abbreviations": [],
+      "variants": [
+        "电缆机"
       ]
     },
     {
@@ -1986,6 +2006,37 @@
       ]
     },
     {
+      "en": "dumbbell",
+      "zh": "哑铃",
+      "abbreviations": [],
+      "variants": [
+        "笨贝格",
+        "笨贝勒",
+        "邓贝尔",
+        "笨蛋座椅",
+        "傻瓜座椅",
+        "大铃"
+      ]
+    },
+    {
+      "en": "dumbbell bench press",
+      "zh": "哑铃卧推",
+      "abbreviations": [],
+      "variants": [
+        "哑铃长凳推举"
+      ]
+    },
+    {
+      "en": "dumbbell fly",
+      "zh": "哑铃飞鸟",
+      "abbreviations": [],
+      "variants": [
+        "哑铃飞翔",
+        "哑铃弹琴",
+        "哑铃飞"
+      ]
+    },
+    {
       "en": "dynamic balance",
       "zh": "动态平衡",
       "abbreviations": [],
@@ -2078,6 +2129,19 @@
       ],
       "variants": [
         "肌电描记术"
+      ]
+    },
+    {
+      "en": "elicit",
+      "zh": "引起",
+      "abbreviations": [],
+      "aliases": [
+        "elicit",
+        "elict"
+      ],
+      "variants": [
+        "引出",
+        "诱发"
       ]
     },
     {
@@ -2833,6 +2897,14 @@
       ],
       "variants": [
         "自由脂肪酸"
+      ]
+    },
+    {
+      "en": "free weight",
+      "zh": "自由重量",
+      "abbreviations": [],
+      "variants": [
+        "免费重量"
       ]
     },
     {
@@ -3875,6 +3947,15 @@
       ]
     },
     {
+      "en": "kettlebell",
+      "zh": "壶铃",
+      "abbreviations": [],
+      "variants": [
+        "水壶铃",
+        "炊具铃"
+      ]
+    },
+    {
       "en": "key points",
       "zh": "要点",
       "abbreviations": [],
@@ -4017,6 +4098,14 @@
         "乳酸门槛",
         "乳酸阈值",
         "乳酸盐阈值"
+      ]
+    },
+    {
+      "en": "lat pulldown",
+      "zh": "高位下拉",
+      "abbreviations": [],
+      "variants": [
+        "背阔肌下拉"
       ]
     },
     {
@@ -4309,6 +4398,14 @@
       "abbreviations": [],
       "variants": [
         "机器研究"
+      ]
+    },
+    {
+      "en": "machine-based",
+      "zh": "器械",
+      "abbreviations": [],
+      "variants": [
+        "基于机器的"
       ]
     },
     {
@@ -5073,7 +5170,10 @@
       "variants": [
         "肌肉增生",
         "肌肉肥厚",
-        "肌肉超营"
+        "肌肉超营",
+        "肌肉超营养",
+        "超营养",
+        "肌肉肥大养"
       ]
     },
     {
@@ -5176,6 +5276,12 @@
         "肌肉强度",
         "肌力强度"
       ]
+    },
+    {
+      "en": "muscle strength and hypertrophy",
+      "zh": "肌肉力量与肥大",
+      "abbreviations": [],
+      "variants": []
     },
     {
       "en": "muscle thickness",
@@ -5733,11 +5839,25 @@
       ]
     },
     {
+      "en": "pec deck",
+      "zh": "蝴蝶机夹胸",
+      "abbreviations": [],
+      "variants": [
+        "啄木鸟甲板"
+      ]
+    },
+    {
       "en": "pectoralis major",
       "zh": "胸大肌",
       "abbreviations": [],
       "variants": [
-        "胸肌大块"
+        "胸肌大块",
+        "主肌肉",
+        "主要肌肉",
+        "胸大肌肉"
+      ],
+      "aliases": [
+        "pectoralis"
       ]
     },
     {
@@ -6649,7 +6769,26 @@
       "zh": "休闲运动人群",
       "abbreviations": [],
       "variants": [
-        "娱乐活跃"
+        "娱乐活跃",
+        "娱乐性活动"
+      ]
+    },
+    {
+      "en": "recreationally trained",
+      "zh": "休闲训练人群",
+      "abbreviations": [],
+      "variants": [
+        "娱乐训练",
+        "娱乐性训练",
+        "娱乐训练的男子"
+      ]
+    },
+    {
+      "en": "recreationally trained men",
+      "zh": "休闲训练男性",
+      "abbreviations": [],
+      "variants": [
+        "娱乐训练的男子"
       ]
     },
     {
@@ -6788,6 +6927,14 @@
         "抵抗运动",
         "阻力运动",
         "演习"
+      ]
+    },
+    {
+      "en": "resistance machine",
+      "zh": "力量器械",
+      "abbreviations": [],
+      "variants": [
+        "抗性机器"
       ]
     },
     {
@@ -7259,6 +7406,14 @@
       "abbreviations": [],
       "variants": [
         "肩膀不稳定"
+      ]
+    },
+    {
+      "en": "shoulder press",
+      "zh": "肩推",
+      "abbreviations": [],
+      "variants": [
+        "肩膀出版社"
       ]
     },
     {
