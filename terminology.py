@@ -201,10 +201,15 @@ def correct(title, translation):
     # this vocabulary, so replace them only when the exact casing appears and the
     # acronym is genuinely part of the English title.
     normalized = unicodedata.normalize("NFKC", title)
+    acronym_owners = {}
+    for term in TERMS:
+        for abbreviation in term.get("abbreviations", []):
+            acronym_owners.setdefault(abbreviation, set()).add(term["en"])
     acronyms = sorted(
         ((abbreviation, term["zh"]) for term in matched
          for abbreviation in term.get("abbreviations", [])
-         if len(abbreviation) >= 2 and abbreviation.isupper()),
+         if len(abbreviation) >= 3 and abbreviation.isupper()
+         and len(acronym_owners[abbreviation]) == 1),
         key=lambda pair: len(pair[0]), reverse=True,
     )
     for abbreviation, preferred in acronyms:
