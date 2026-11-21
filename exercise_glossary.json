@@ -563,7 +563,7 @@
       "variants": [
         "预判"
       ],
-      "domain": "其他"
+      "domain": "神经与认知"
     },
     {
       "en": "antioxidant",
@@ -573,7 +573,7 @@
         "防氧化剂",
         "抗氧化物质"
       ],
-      "domain": "其他"
+      "domain": "免疫与分子"
     },
     {
       "en": "anxiety symptoms",
@@ -582,7 +582,7 @@
       "variants": [
         "焦虑症状群"
       ],
-      "domain": "其他"
+      "domain": "神经与认知"
     },
     {
       "en": "apnea",
@@ -843,7 +843,7 @@
       "variants": [
         "气压反射灵敏度"
       ],
-      "domain": "其他"
+      "domain": "心血管"
     },
     {
       "en": "basketball players",
@@ -1980,7 +1980,7 @@
       "variants": [
         "冠状動脈"
       ],
-      "domain": "其他"
+      "domain": "心血管"
     },
     {
       "en": "correlation coefficient",
@@ -2026,7 +2026,7 @@
         "考的索",
         "皮质酮"
       ],
-      "domain": "其他"
+      "domain": "免疫与分子"
     },
     {
       "en": "countermovement jump",
@@ -2491,7 +2491,7 @@
       "variants": [
         "舒张期的"
       ],
-      "domain": "其他"
+      "domain": "心血管"
     },
     {
       "en": "dietary intake",
@@ -2538,7 +2538,7 @@
       "variants": [
         "去氧核糖核酸"
       ],
-      "domain": "其他"
+      "domain": "免疫与分子"
     },
     {
       "en": "dorsiflexion",
@@ -2766,7 +2766,7 @@
       "variants": [
         "喷射分数"
       ],
-      "domain": "其他"
+      "domain": "心血管"
     },
     {
       "en": "elastography",
@@ -2856,7 +2856,7 @@
       "variants": [
         "内皮细胞群"
       ],
-      "domain": "其他"
+      "domain": "心血管"
     },
     {
       "en": "endothelial dysfunction",
@@ -3009,7 +3009,7 @@
         "后天遗传学",
         "遗传学"
       ],
-      "domain": "其他"
+      "domain": "免疫与分子"
     },
     {
       "en": "erector spinae",
@@ -3336,7 +3336,7 @@
       "variants": [
         "外部效度验证"
       ],
-      "domain": "其他"
+      "domain": "免疫与分子"
     },
     {
       "en": "extracellular vesicle",
@@ -4317,7 +4317,8 @@
       "abbreviations": [],
       "variants": [
         "热适应",
-        "热适应化"
+        "热适应化",
+        "发热"
       ],
       "domain": "运动生理"
     },
@@ -4396,7 +4397,8 @@
       "zh": "高海拔",
       "abbreviations": [],
       "variants": [
-        "高高度"
+        "高高度",
+        "高空"
       ],
       "domain": "运动生理"
     },
@@ -4979,7 +4981,8 @@
       "zh": "等速",
       "abbreviations": [],
       "variants": [
-        "等动"
+        "等动",
+        "同心"
       ],
       "domain": "生物力学"
     },
@@ -5338,7 +5341,8 @@
       "abbreviations": [],
       "variants": [
         "侧向",
-        "外侧的"
+        "外侧的",
+        "横向"
       ],
       "domain": "其他"
     },
@@ -5385,7 +5389,7 @@
       "variants": [
         "左心室壁"
       ],
-      "domain": "其他"
+      "domain": "心血管"
     },
     {
       "en": "leg press",
@@ -5647,7 +5651,8 @@
         "LEA"
       ],
       "variants": [
-        "低能量可用性"
+        "低能量可用性",
+        "低能耗"
       ],
       "domain": "运动生理"
     },
@@ -6266,7 +6271,7 @@
         "微小RNA",
         "微型RNA"
       ],
-      "domain": "其他"
+      "domain": "免疫与分子"
     },
     {
       "en": "minimal clinically important difference",
@@ -6501,7 +6506,7 @@
         "车组",
         "动车组"
       ],
-      "domain": "其他"
+      "domain": "神经与认知"
     },
     {
       "en": "movement behaviors",
@@ -7226,7 +7231,7 @@
       "variants": [
         "氧化压力"
       ],
-      "domain": "其他"
+      "domain": "免疫与分子"
     },
     {
       "en": "oximeter",
@@ -7860,7 +7865,9 @@
       "abbreviations": [],
       "variants": [
         "足底的",
-        "跖部"
+        "跖部",
+        "平原",
+        "原弹"
       ],
       "domain": "运动训练"
     },
@@ -8274,7 +8281,8 @@
         "预期性队列",
         "预期队列",
         "未来队列",
-        "来队列"
+        "来队列",
+        "前景队列"
       ],
       "domain": "研究方法"
     },
@@ -9515,7 +9523,7 @@
       "variants": [
         "信号路径"
       ],
-      "domain": "其他"
+      "domain": "免疫与分子"
     },
     {
       "en": "signaling pathways",
@@ -9524,7 +9532,7 @@
       "variants": [
         "信号路径"
       ],
-      "domain": "其他"
+      "domain": "免疫与分子"
     },
     {
       "en": "significance level",
@@ -10303,7 +10311,7 @@
       "variants": [
         "收缩期的"
       ],
-      "domain": "其他"
+      "domain": "心血管"
     },
     {
       "en": "systolic blood pressure",
@@ -11233,7 +11241,9 @@
       "zh": "速度损失",
       "abbreviations": [],
       "variants": [
-        "速度丢失"
+        "速度丢失",
+        "速损",
+        "高速损"
       ],
       "domain": "体能训练"
     },
@@ -11285,7 +11295,7 @@
       "variants": [
         "心室壁"
       ],
-      "domain": "其他"
+      "domain": "心血管"
     },
     {
       "en": "vertical jump",
