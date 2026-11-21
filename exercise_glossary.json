@@ -363,6 +363,16 @@
       "domain": "其他"
     },
     {
+      "en": "altitude acclimatization",
+      "zh": "高原适应",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "海拔适应"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "altitude training",
       "zh": "高原训练",
       "abbreviations": [],
@@ -434,6 +444,18 @@
       "abbreviations": [],
       "variants": [
         "厌氧功率"
+      ],
+      "domain": "体能训练"
+    },
+    {
+      "en": "anaerobic speed reserve",
+      "zh": "无氧速度储备",
+      "abbreviations": [
+        "ASR"
+      ],
+      "aliases": [],
+      "variants": [
+        "厌氧速度储备"
       ],
       "domain": "体能训练"
     },
@@ -635,6 +657,18 @@
       "domain": "生物力学"
     },
     {
+      "en": "arteriovenous oxygen difference",
+      "zh": "动静脉氧差",
+      "abbreviations": [
+        "a-vO2diff"
+      ],
+      "aliases": [],
+      "variants": [
+        "动脉静脉氧差"
+      ],
+      "domain": "体能训练"
+    },
+    {
       "en": "artificial intelligence",
       "zh": "人工智能",
       "abbreviations": [
@@ -669,6 +703,18 @@
       "abbreviations": [],
       "variants": [
         "辅助短跑"
+      ],
+      "domain": "体能训练"
+    },
+    {
+      "en": "assisted sprint training",
+      "zh": "助力冲刺训练",
+      "abbreviations": [
+        "AST"
+      ],
+      "aliases": [],
+      "variants": [
+        "辅助短跑训练"
       ],
       "domain": "体能训练"
     },
@@ -1044,6 +1090,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "blood pressure variability",
+      "zh": "血压变异性",
+      "abbreviations": [
+        "BPV"
+      ],
+      "aliases": [],
+      "variants": [
+        "血压变异率"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "blood sample",
       "zh": "血样",
       "abbreviations": [],
@@ -1215,6 +1273,16 @@
         "连续跨步跳"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "brachial artery",
+      "zh": "肱动脉",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "臂动脉"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "brain-derived neurotrophic factor",
@@ -1468,6 +1536,16 @@
       "domain": "其他"
     },
     {
+      "en": "central fatigue",
+      "zh": "中枢疲劳",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "中央疲劳"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "cerebral blood flow",
       "zh": "脑血流",
       "abbreviations": [],
@@ -1529,6 +1607,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "change of direction deficit",
+      "zh": "变向能力缺陷",
+      "abbreviations": [
+        "COD deficit"
+      ],
+      "aliases": [],
+      "variants": [
+        "方向改变缺陷"
+      ],
+      "domain": "体能训练"
+    },
+    {
       "en": "change of direction speed",
       "zh": "变向速度",
       "abbreviations": [],
@@ -1585,6 +1675,16 @@
       ],
       "variants": [
         "慢性肾脏疾病"
+      ],
+      "domain": "运动生理"
+    },
+    {
+      "en": "circadian rhythm",
+      "zh": "昼夜节律",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "生物钟节律"
       ],
       "domain": "运动生理"
     },
@@ -1911,6 +2011,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "continuous glucose monitoring",
+      "zh": "连续血糖监测",
+      "abbreviations": [
+        "CGM"
+      ],
+      "aliases": [],
+      "variants": [
+        "持续血糖监测"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "continuous monitoring",
       "zh": "连续监测",
       "abbreviations": [],
@@ -1954,6 +2066,18 @@
         "冷却方案"
       ],
       "domain": "运动训练"
+    },
+    {
+      "en": "copenhagen adduction exercise",
+      "zh": "哥本哈根内收练习",
+      "abbreviations": [
+        "CAE"
+      ],
+      "aliases": [],
+      "variants": [
+        "哥本哈根内收训练"
+      ],
+      "domain": "解剖与动作"
     },
     {
       "en": "core exercise",
@@ -2690,6 +2814,16 @@
       "domain": "运动训练"
     },
     {
+      "en": "eccentric hamstring strength",
+      "zh": "离心腘绳肌力量",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "离心腿筋力量"
+      ],
+      "domain": "解剖与动作"
+    },
+    {
       "en": "eccentric muscle action",
       "zh": "离心肌肉动作",
       "abbreviations": [],
@@ -3115,6 +3249,18 @@
       "domain": "研究方法"
     },
     {
+      "en": "exercise induced muscle damage",
+      "zh": "运动性肌肉损伤",
+      "abbreviations": [
+        "EIMD"
+      ],
+      "aliases": [],
+      "variants": [
+        "运动诱导肌肉损伤"
+      ],
+      "domain": "解剖与动作"
+    },
+    {
       "en": "exercise intensity",
       "zh": "运动强度",
       "abbreviations": [],
@@ -3396,6 +3542,18 @@
       "domain": "营养代谢"
     },
     {
+      "en": "fat free mass",
+      "zh": "去脂体重",
+      "abbreviations": [
+        "FFM"
+      ],
+      "aliases": [],
+      "variants": [
+        "无脂体重"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "fat mass",
       "zh": "脂肪量",
       "abbreviations": [],
@@ -3633,6 +3791,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "flow mediated dilation",
+      "zh": "血流介导的血管扩张",
+      "abbreviations": [
+        "FMD"
+      ],
+      "aliases": [],
+      "variants": [
+        "血流介导扩张"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "flow-mediated dilation",
       "zh": "血流介导舒张",
       "abbreviations": [
@@ -3821,6 +3991,18 @@
         "功能性能力"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "functional movement screen",
+      "zh": "功能动作筛查",
+      "abbreviations": [
+        "FMS"
+      ],
+      "aliases": [],
+      "variants": [
+        "功能运动筛查"
+      ],
+      "domain": "运动医学"
     },
     {
       "en": "functional near-infrared spectroscopy",
@@ -4139,6 +4321,18 @@
         "腿筋拉伤"
       ],
       "domain": "训练理论"
+    },
+    {
+      "en": "hamstring strain injury",
+      "zh": "腘绳肌拉伤",
+      "abbreviations": [
+        "HSI"
+      ],
+      "aliases": [],
+      "variants": [
+        "腿筋拉伤"
+      ],
+      "domain": "解剖与动作"
     },
     {
       "en": "handgrip strength",
@@ -4751,6 +4945,16 @@
       "domain": "运动医学"
     },
     {
+      "en": "injury risk profile",
+      "zh": "损伤风险特征",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "伤害风险概况"
+      ],
+      "domain": "运动医学"
+    },
+    {
       "en": "inspiratory",
       "zh": "吸气",
       "abbreviations": [],
@@ -4853,6 +5057,18 @@
         "中断性低氧"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "intermittent pneumatic compression",
+      "zh": "间歇性气压压迫",
+      "abbreviations": [
+        "IPC"
+      ],
+      "aliases": [],
+      "variants": [
+        "间歇气动压缩"
+      ],
+      "domain": "体能训练"
     },
     {
       "en": "intermittent recovery test",
@@ -5063,6 +5279,18 @@
         "关节位"
       ],
       "domain": "运动训练"
+    },
+    {
+      "en": "joint position sense",
+      "zh": "关节位置觉",
+      "abbreviations": [
+        "JPS"
+      ],
+      "aliases": [],
+      "variants": [
+        "关节位置感觉"
+      ],
+      "domain": "解剖与动作"
     },
     {
       "en": "joint torque",
@@ -5318,6 +5546,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "landing error scoring system",
+      "zh": "落地错误评分系统",
+      "abbreviations": [
+        "LESS"
+      ],
+      "aliases": [],
+      "variants": [
+        "着陆错误评分系统"
+      ],
+      "domain": "解剖与动作"
+    },
+    {
       "en": "landing mechanics",
       "zh": "落地力学",
       "abbreviations": [],
@@ -5372,6 +5612,18 @@
         "阔背肌"
       ],
       "domain": "监测技术"
+    },
+    {
+      "en": "lean body mass",
+      "zh": "瘦体重",
+      "abbreviations": [
+        "LBM"
+      ],
+      "aliases": [],
+      "variants": [
+        "瘦体质量"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "lean mass",
@@ -5882,6 +6134,18 @@
       "domain": "运动训练"
     },
     {
+      "en": "maximal fat oxidation",
+      "zh": "最大脂肪氧化",
+      "abbreviations": [
+        "MFO"
+      ],
+      "aliases": [],
+      "variants": [
+        "最大脂肪氧化率"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "maximal isometric",
       "zh": "最大等长",
       "abbreviations": [],
@@ -5968,6 +6232,18 @@
       "abbreviations": [],
       "variants": [
         "均值功率"
+      ],
+      "domain": "体能训练"
+    },
+    {
+      "en": "mean power output",
+      "zh": "平均功率输出",
+      "abbreviations": [
+        "MPO"
+      ],
+      "aliases": [],
+      "variants": [
+        "平均功率"
       ],
       "domain": "体能训练"
     },
@@ -6294,6 +6570,18 @@
         "最小可检测改变"
       ],
       "domain": "体能训练"
+    },
+    {
+      "en": "minimal important difference",
+      "zh": "最小重要差异",
+      "abbreviations": [
+        "MID"
+      ],
+      "aliases": [],
+      "variants": [
+        "最小重要差别"
+      ],
+      "domain": "研究方法"
     },
     {
       "en": "mirna",
@@ -6924,6 +7212,19 @@
       "domain": "运动训练"
     },
     {
+      "en": "network meta analysis",
+      "zh": "网状荟萃分析",
+      "abbreviations": [
+        "NMA"
+      ],
+      "aliases": [],
+      "variants": [
+        "网络元分析",
+        "网络荟萃分析"
+      ],
+      "domain": "研究方法"
+    },
+    {
       "en": "network meta-analysis",
       "zh": "网状荟萃分析",
       "abbreviations": [
@@ -7014,6 +7315,28 @@
         "氮均衡"
       ],
       "domain": "生物力学"
+    },
+    {
+      "en": "nocturnal dipping",
+      "zh": "夜间血压下降",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "夜间下降"
+      ],
+      "domain": "运动生理"
+    },
+    {
+      "en": "nordic hamstring exercise",
+      "zh": "北欧腘绳肌练习",
+      "abbreviations": [
+        "NHE"
+      ],
+      "aliases": [],
+      "variants": [
+        "北欧腿筋练习"
+      ],
+      "domain": "解剖与动作"
     },
     {
       "en": "normobaric hypoxia",
@@ -7507,6 +7830,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "peak power output",
+      "zh": "峰值功率输出",
+      "abbreviations": [
+        "PPO"
+      ],
+      "aliases": [],
+      "variants": [
+        "最大功率输出"
+      ],
+      "domain": "体能训练"
+    },
+    {
       "en": "peak torque",
       "zh": "峰值力矩",
       "abbreviations": [],
@@ -7668,6 +8003,16 @@
         "周期化训练"
       ],
       "domain": "训练理论"
+    },
+    {
+      "en": "peripheral fatigue",
+      "zh": "外周疲劳",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "周边疲劳"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "phd academy award",
@@ -7968,6 +8313,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "plyometric jump training",
+      "zh": "超等长跳跃训练",
+      "abbreviations": [
+        "PJT"
+      ],
+      "aliases": [],
+      "variants": [
+        "增强式跳跃训练"
+      ],
+      "domain": "体能训练"
+    },
+    {
       "en": "plyometric training",
       "zh": "增强式训练",
       "abbreviations": [],
@@ -8015,6 +8372,18 @@
         "正相关联"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "post activation potentiation",
+      "zh": "激活后增强",
+      "abbreviations": [
+        "PAP"
+      ],
+      "aliases": [],
+      "variants": [
+        "激活后增强作用"
+      ],
+      "domain": "体能训练"
     },
     {
       "en": "post hoc",
@@ -8084,6 +8453,16 @@
         "姿态稳定"
       ],
       "domain": "生物力学"
+    },
+    {
+      "en": "postural sway",
+      "zh": "姿势摆动",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "姿势摇晃"
+      ],
+      "domain": "解剖与动作"
     },
     {
       "en": "power output",
@@ -8169,6 +8548,16 @@
         "学前儿童"
       ],
       "domain": "人群健康"
+    },
+    {
+      "en": "preseason screening",
+      "zh": "赛季前筛查",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "季前筛查"
+      ],
+      "domain": "运动医学"
     },
     {
       "en": "pretest",
@@ -8761,6 +9150,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "relative energy deficiency in sport",
+      "zh": "运动相对能量不足",
+      "abbreviations": [
+        "RED-S"
+      ],
+      "aliases": [],
+      "variants": [
+        "运动相对能量缺乏"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "relative humidity",
       "zh": "相对湿度",
       "abbreviations": [],
@@ -8928,6 +9329,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "resisted sprint training",
+      "zh": "阻力冲刺训练",
+      "abbreviations": [
+        "RST"
+      ],
+      "aliases": [],
+      "variants": [
+        "抗阻短跑训练"
+      ],
+      "domain": "体能训练"
+    },
+    {
       "en": "resonance imaging",
       "zh": "共振成像",
       "abbreviations": [],
@@ -8944,6 +9357,18 @@
         "呼吸作用"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "respiratory compensation point",
+      "zh": "呼吸补偿点",
+      "abbreviations": [
+        "RCP"
+      ],
+      "aliases": [],
+      "variants": [
+        "呼吸代偿点"
+      ],
+      "domain": "体能训练"
     },
     {
       "en": "respiratory exchange ratio",
@@ -9677,6 +10102,16 @@
       "domain": "运动生理"
     },
     {
+      "en": "sleep restriction",
+      "zh": "睡眠限制",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "限制睡眠"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "sleep time",
       "zh": "睡眠时间",
       "abbreviations": [],
@@ -9684,6 +10119,30 @@
         "睡觉时间"
       ],
       "domain": "运动生理"
+    },
+    {
+      "en": "slow wave sleep",
+      "zh": "慢波睡眠",
+      "abbreviations": [
+        "SWS"
+      ],
+      "aliases": [],
+      "variants": [
+        "慢波睡眠期"
+      ],
+      "domain": "运动生理"
+    },
+    {
+      "en": "small sided game",
+      "zh": "小场地比赛",
+      "abbreviations": [
+        "SSG"
+      ],
+      "aliases": [],
+      "variants": [
+        "小场地对抗"
+      ],
+      "domain": "体能训练"
     },
     {
       "en": "small sided games",
@@ -9881,6 +10340,16 @@
         "冲刺间隔训练",
         "跑间歇训练",
         "短跑间歇训练"
+      ],
+      "domain": "体能训练"
+    },
+    {
+      "en": "sprint mechanical variables",
+      "zh": "冲刺力学指标",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "短跑力学变量"
       ],
       "domain": "体能训练"
     },
@@ -11054,6 +11523,18 @@
       "domain": "解剖与动作"
     },
     {
+      "en": "twitch interpolation",
+      "zh": "抽搐插入技术",
+      "abbreviations": [
+        "ITT"
+      ],
+      "aliases": [],
+      "variants": [
+        "单刺激插入"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "type 1 diabetes",
       "zh": "1型糖尿病",
       "abbreviations": [
@@ -11385,6 +11866,18 @@
       "domain": "运动训练"
     },
     {
+      "en": "voluntary activation",
+      "zh": "随意激活",
+      "abbreviations": [
+        "VA"
+      ],
+      "aliases": [],
+      "variants": [
+        "自愿激活"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "walking speed",
       "zh": "步行速度",
       "abbreviations": [],
@@ -11517,6 +12010,19 @@
       "domain": "人群健康"
     },
     {
+      "en": "whole body vibration",
+      "zh": "全身振动",
+      "abbreviations": [
+        "WBV"
+      ],
+      "aliases": [],
+      "variants": [
+        "全身震动",
+        "整体振动"
+      ],
+      "domain": "体能训练"
+    },
+    {
       "en": "work capacity",
       "zh": "工作能力",
       "abbreviations": [],
@@ -11647,6 +12153,164 @@
         "青年足球运动员"
       ],
       "domain": "人群健康"
+    }
+  ],
+  "corrections": [
+    {
+      "from": "骨骼矿密度",
+      "to": "骨密度"
+    },
+    {
+      "from": "心血管适能",
+      "to": "心肺适能"
+    },
+    {
+      "from": "系统评价和荟萃分析",
+      "to": "系统综述与荟萃分析"
+    },
+    {
+      "from": "遗传学和遗传学",
+      "to": "遗传与表观遗传",
+      "when": "epigenetic"
+    },
+    {
+      "from": "培训练",
+      "to": "训练",
+      "unless": "coach|education|instructor|teacher|workforce|workshop|seminar|certif|curricul|teaching|pedagog"
+    },
+    {
+      "from": "培训",
+      "to": "训练",
+      "unless": "coach|education|instructor|teacher|workforce|workshop|seminar|certif|curricul|teaching|pedagog"
+    },
+    {
+      "from_re": "体能表(?!现)",
+      "to": "体能表现"
+    },
+    {
+      "from": "骨质炎",
+      "to": "骨关节炎"
+    },
+    {
+      "from": "热门环境",
+      "to": "高温环境"
+    },
+    {
+      "from": "下博迪",
+      "to": "下肢"
+    },
+    {
+      "from": "跑性能",
+      "to": "跑步表现"
+    },
+    {
+      "from": "脉僵硬性",
+      "to": "动脉僵硬度"
+    },
+    {
+      "from": "矿密度",
+      "to": "骨密度"
+    },
+    {
+      "from": "心血管适",
+      "to": "心肺适能"
+    },
+    {
+      "from": "动车组",
+      "to": "运动单位"
+    },
+    {
+      "from": "关键功率",
+      "to": "临界功率"
+    },
+    {
+      "from": "关键力量",
+      "to": "临界功率"
+    },
+    {
+      "from": "临界电力",
+      "to": "临界功率"
+    },
+    {
+      "from": "关键速度",
+      "to": "临界速度"
+    },
+    {
+      "from": "氧吸收动力学",
+      "to": "氧摄取动力学"
+    },
+    {
+      "from": "吸氧动力学",
+      "to": "氧摄取动力学"
+    },
+    {
+      "from": "随机控制试验",
+      "to": "随机对照试验"
+    },
+    {
+      "from": "随机受控试验",
+      "to": "随机对照试验"
+    },
+    {
+      "from": "间隔训练",
+      "to": "间歇训练"
+    },
+    {
+      "from": "定居行为",
+      "to": "久坐行为"
+    },
+    {
+      "from": "沉积行为",
+      "to": "久坐行为"
+    },
+    {
+      "from": "系统审查",
+      "to": "系统综述"
+    },
+    {
+      "from": "循环者",
+      "to": "自行车运动员",
+      "when": "cyclist"
+    },
+    {
+      "from": "超营养",
+      "to": "肥大",
+      "when": "hypertroph"
+    },
+    {
+      "from": "强项",
+      "to": "力量",
+      "when": "strength"
+    },
+    {
+      "from": "同心",
+      "to": "向心",
+      "when": "concentric"
+    },
+    {
+      "from": "高空",
+      "to": "高海拔",
+      "when": "altitude"
+    },
+    {
+      "from": "横向",
+      "to": "水平",
+      "when": "horizontal"
+    },
+    {
+      "from": "发热",
+      "to": "热应激",
+      "when": "heat"
+    },
+    {
+      "from": "温暖",
+      "to": "热身",
+      "when": "warm[-\\s]?up"
+    },
+    {
+      "from": "出版社",
+      "to": "卧推",
+      "when": "bench press|chest press"
     }
   ]
 }

@@ -9,12 +9,34 @@ the catch-all bucket.
 """
 
 from collections import defaultdict
+import json
 from pathlib import Path
 import re
 
-from terminology import correct, matched_terms
+from terminology import PATH as GLOSSARY_PATH, correct, matched_terms
 
 MODEL = Path(__file__).resolve().parent / "models" / "translate-en_zh-1_9"
+# Chinese->Chinese fixes live in the glossary next to the terms, so there is a
+# single data file to edit instead of rules scattered through this module.
+CORRECTIONS = json.loads(GLOSSARY_PATH.read_text(encoding="utf-8-sig")).get("corrections", [])
+CORRECTIONS = [(re.compile(rule.get("from_re") or re.escape(rule["from"])),
+                re.compile(rule["when"], re.I) if rule.get("when") else None,
+                re.compile(rule["unless"], re.I) if rule.get("unless") else None,
+                rule["to"]) for rule in CORRECTIONS]
+
+
+def apply_corrections(title, chinese):
+    """Swap the decoder's known wrong renderings for the approved Chinese."""
+    for pattern, when, unless, replacement in CORRECTIONS:
+        if not pattern.search(chinese):
+            continue
+        if when and not when.search(title):
+            continue
+        if unless and unless.search(title):
+            continue
+        chinese = pattern.sub(replacement, chinese)
+    return chinese
+
 TOPIC_PATTERNS = {
     "临界功率、耐力与氧摄取动力学": (
         r"critical (?:power|speed)|oxygen uptake kinetics|vo[₂2]\s?kinetics|"
@@ -156,46 +178,6 @@ NOTICE_PATTERN = re.compile(
     r"commentary on|letter)\b",
     re.IGNORECASE,
 )
-SUBSTITUTIONS = {
-    "关键功率": "临界功率", "关键力量": "临界功率", "临界电力": "临界功率",
-    "关键速度": "临界速度", "氧吸收动力学": "氧摄取动力学",
-    "随机控制试验": "随机对照试验", "随机受控试验": "随机对照试验",
-    "吸氧动力学": "氧摄取动力学", "间隔训练": "间歇训练",
-    "定居行为": "久坐行为", "沉积行为": "久坐行为",
-    "系统审查": "系统综述", "系统评价和荟萃分析": "系统综述与荟萃分析",
-}
-# Renderings the decoder produces that are always wrong in this corpus. Patterns
-# are ordered longest-first so a longer artifact is fixed before its shorter core,
-# and 体能表 carries a lookahead because 体能表现 is already correct.
-ALWAYS_WRONG = [
-    (re.compile("骨骼矿密度"), "骨密度"),
-    (re.compile("骨质炎"), "骨关节炎"),
-    (re.compile("热门环境"), "高温环境"),
-    (re.compile("下博迪"), "下肢"),
-    (re.compile("体能表(?!现)"), "体能表现"),
-    (re.compile("跑性能"), "跑步表现"),
-    (re.compile("脉僵硬性"), "动脉僵硬度"),
-    (re.compile("矿密度"), "骨密度"),
-    (re.compile("心血管适能|心血管适"), "心肺适能"),
-    (re.compile("动车组"), "运动单位"),
-]
-# Renderings that are wrong only for a given source word, so the English title
-# decides whether to touch them.
-WRONG_FOR = [
-    (re.compile(r"hypertroph", re.I), "超营养", "肥大"),
-    (re.compile(r"strength", re.I), "强项", "力量"),
-    (re.compile(r"concentric", re.I), "同心", "向心"),
-    (re.compile(r"altitude", re.I), "高空", "高海拔"),
-    (re.compile(r"horizontal", re.I), "横向", "水平"),
-    (re.compile(r"heat", re.I), "发热", "热应激"),
-    (re.compile(r"warm[-\s]?up", re.I), "温暖", "热身"),
-    (re.compile(r"bench press|chest press", re.I), "出版社", "卧推"),
-]
-# "training" is rendered 培训 (staff training) by the decoder. That is only correct
-# when the paper is about coaching education, so the substitution is conditional.
-TRAINING_AS_VOCATIONAL = re.compile(
-    r"coach|education|instructor|teacher|workforce|workshop|seminar|certif|"
-    r"curricul|teaching|pedagog", re.I)
 # Residual English the decoder leaves in an otherwise Chinese sentence. The
 # boundaries are ASCII so Chinese characters next to the fragment are kept.
 LEFTOVERS = [
@@ -313,30 +295,20 @@ def polish(title, chinese):
 
 
 def _polish_once(title, chinese):
-    for before, after in SUBSTITUTIONS.items():
-        chinese = chinese.replace(before, after)
-    if "cyclist" in title.lower():
-        chinese = chinese.replace("循环者", "自行车运动员")
-    if "epigenetic" in title.lower():
-        chinese = chinese.replace("遗传学和遗传学", "遗传与表观遗传")
-    # Function words and half-translated fragments the decoder leaves behind
-    # ("Blood Flow Restriction versus ...", "Network Meta-analysis"). Bounded by
-    # ASCII letters so Chinese text is never touched.
+    # 1. the decoder's known wrong renderings, from the glossary
+    chinese = apply_corrections(title, chinese)
+    # 2. function words and half-translated fragments it leaves behind
+    #    ("Blood Flow Restriction versus ...", "Network Meta-analysis").
+    #    Bounded by ASCII letters so Chinese text is never touched.
     for pattern, replacement in LEFTOVERS:
         chinese = pattern.sub(replacement, chinese)
+    # 3. glossary terms: swap leftover English for the approved Chinese and
+    #    replace the variants the model produced for that same term
     chinese = correct(title, chinese)
-    # Term replacement runs after the fragment cleanup and can put a wrong
-    # rendering back (running -> 运行, then the variant makes 运行性能 -> 跑性能),
-    # so the corrective rules run again on its output. Both passes are idempotent.
-    if "培训" in chinese and not TRAINING_AS_VOCATIONAL.search(title):
-        chinese = chinese.replace("培训练", "训练").replace("培训", "训练")
-    for pattern, after in ALWAYS_WRONG:
-        chinese = pattern.sub(after, chinese)
-    for pattern, before, after in WRONG_FOR:
-        if before in chinese and pattern.search(title):
-            chinese = chinese.replace(before, after)
-    # Joining characters can expose a doubled word the space was hiding, so run
-    # both cleanups twice; both are idempotent.
+    # 4. term replacement can put a wrong rendering back (running -> 运行, and its
+    #    variant then makes 运行性能 -> 跑性能), so correct again afterwards
+    chinese = apply_corrections(title, chinese)
+    # 5. joining characters can expose a doubled word the space was hiding
     for _ in range(2):
         chinese = CJK_SPACE.sub("", collapse_repeats(chinese))
     return chinese
