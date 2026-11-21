@@ -32,8 +32,15 @@ def article(card, title_node, link, page_url, doi_link=None, kind=""):
     if not title:
         return None
     url = urljoin(page_url, link)
-    match = DOI.search(unquote(doi_link or url))
+    raw = unquote(doi_link or url)
+    match = DOI.search(raw)
     doi = match.group() if match else ""
+    if not doi and kind == "human-kinetics":
+        # Links carry the DOI with a hyphen instead of a slash:
+        #   /aop/article-10.1123-ijspp.2026-0270/article-...xml
+        value = re.search(r"10\.\d{4,9}-[\w.-]+", raw)
+        if value:
+            doi = value.group().removesuffix(".xml").replace("-", "/", 1)
     if kind == "frontiers":
         doi = doi.removesuffix("/full").removesuffix("/abstract")
     issue = ISSUE.search(urlsplit(page_url).path)
@@ -69,10 +76,17 @@ def read_cards(soup, page_url, kind):
     elif kind == "human-kinetics":
         journal_path = re.match(r"(/view/journals/[^/]+/)", urlsplit(page_url).path)
         if journal_path:
-            for link in soup.select("main a[href*='/article-']"):
+            seen = set()
+            for link in soup.select("a[href*='article-']"):
                 url = urljoin(page_url, link["href"])
-                if urlsplit(url).path.startswith(journal_path[1]):
-                    yield article(link.parent, link, link["href"], page_url)
+                if not urlsplit(url).path.startswith(journal_path[1]):
+                    continue
+                if url in seen:
+                    continue
+                title = link.get_text(" ", strip=True)
+                if title:
+                    seen.add(url)
+                    yield article(link, link, link["href"], page_url, kind="human-kinetics")
     else:
         raise ValueError(f"Unrecognized publisher page format: {kind}")
 
