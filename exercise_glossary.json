@@ -617,6 +617,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "area under the curve",
+      "zh": "曲线下面积",
+      "abbreviations": [
+        "AUC"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43045958/"
+      ]
+    },
+    {
       "en": "arterial blood",
       "zh": "动脉血",
       "abbreviations": [],
@@ -1316,6 +1328,18 @@
         "胸部癌症"
       ],
       "domain": "人群健康"
+    },
+    {
+      "en": "c-reactive protein",
+      "zh": "C反应蛋白",
+      "abbreviations": [
+        "CRP"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42929456/"
+      ]
     },
     {
       "en": "cable machine",
@@ -2043,6 +2067,18 @@
         "持续监测"
       ],
       "domain": "监测技术"
+    },
+    {
+      "en": "continuous relative phase",
+      "zh": "连续相对相位",
+      "abbreviations": [
+        "CRP"
+      ],
+      "variants": [],
+      "domain": "生物力学",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42728211/"
+      ]
     },
     {
       "en": "continuous training",
@@ -3700,6 +3736,18 @@
       "domain": "其他"
     },
     {
+      "en": "femoral vascular conductance",
+      "zh": "股动脉血管传导度",
+      "abbreviations": [
+        "FVC"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42973080/"
+      ]
+    },
+    {
       "en": "femoroacetabular impingement",
       "zh": "股骨髋臼撞击综合征",
       "abbreviations": [
@@ -3956,6 +4004,30 @@
         "力量速度曲线"
       ],
       "domain": "体能训练"
+    },
+    {
+      "en": "forced vital capacity",
+      "zh": "用力肺活量",
+      "abbreviations": [
+        "FVC"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42609269/"
+      ]
+    },
+    {
+      "en": "forearm vascular conductance",
+      "zh": "前臂血管传导度",
+      "abbreviations": [
+        "FVC"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43010635/"
+      ]
     },
     {
       "en": "formation",
@@ -4769,6 +4841,18 @@
         "医院化"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "human activity recognition",
+      "zh": "人体活动识别",
+      "abbreviations": [
+        "HAR"
+      ],
+      "variants": [],
+      "domain": "监测技术",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42748053/"
+      ]
     },
     {
       "en": "hurdle hop",
@@ -6135,6 +6219,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "maximal aerobic power",
+      "zh": "最大有氧功率",
+      "abbreviations": [
+        "MAP"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42994407/"
+      ]
+    },
+    {
       "en": "maximal aerobic speed",
       "zh": "最大有氧速度",
       "abbreviations": [
@@ -6237,6 +6333,36 @@
       "domain": "其他",
       "aliases": [
         "maximum voluntary contraction"
+      ]
+    },
+    {
+      "en": "maximal voluntary isometric contraction",
+      "zh": "最大随意等长收缩",
+      "abbreviations": [
+        "MVIC"
+      ],
+      "aliases": [
+        "maximum voluntary isometric contraction"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42969341/"
+      ]
+    },
+    {
+      "en": "mean arterial pressure",
+      "zh": "平均动脉压",
+      "abbreviations": [
+        "MAP"
+      ],
+      "aliases": [
+        "mean arterial blood pressure"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43016647/"
       ]
     },
     {
@@ -9596,6 +9722,21 @@
       "domain": "运动生理"
     },
     {
+      "en": "root mean square error",
+      "zh": "均方根误差",
+      "abbreviations": [
+        "RMSE"
+      ],
+      "aliases": [
+        "root mean squared error"
+      ],
+      "variants": [],
+      "domain": "研究方法",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/41783455/"
+      ]
+    },
+    {
       "en": "rotator cuff",
       "zh": "肩袖",
       "abbreviations": [],
@@ -10475,6 +10616,18 @@
       "domain": "其他",
       "aliases": [
         "standardised mean difference"
+      ]
+    },
+    {
+      "en": "standing long jump",
+      "zh": "立定跳远",
+      "abbreviations": [
+        "SLJ"
+      ],
+      "variants": [],
+      "domain": "体能测试",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/43021892/"
       ]
     },
     {
