@@ -34,7 +34,7 @@ def article_type_for(item):
 
     if EDITORIAL.search(combined):
         return "评论、社论与勘误"
-    if CONFERENCE.search(combined):
+    if CONFERENCE.search(title) or any(token in source for token in ("conference", "congress", "meeting", "proceedings", "poster")):
         return "会议摘要、海报与会议论文"
     if GUIDANCE.search(combined):
         return "指南、共识与立场文件"
