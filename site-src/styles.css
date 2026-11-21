@@ -89,6 +89,8 @@ input:focus, select:focus { border-color:#117d74; }
 .sort { display:flex; align-items:center; gap:.55rem; font-size:.875rem; }
 .sort label { flex:none; color:var(--muted); }
 .sort select { min-height:2.55rem; }
+.focus-only { display:flex; align-items:center; gap:.4rem; font-size:.875rem; color:var(--muted); cursor:pointer; }
+.focus-only input { min-height:0; width:1rem; height:1rem; flex:none; }
 .journal-group + .journal-group { margin-top:1.2rem; }
 .journal-heading { border-left:4px solid #188479; padding:.2rem .65rem; margin-bottom:.55rem; font-size:1.1rem; line-height:1.4; overflow-wrap:anywhere; }
 .topic-heading { font-size:.886rem; color:var(--teal); margin:.55rem 0 .35rem; }

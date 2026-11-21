@@ -34,6 +34,7 @@
   const dateEnd = get("date-end");
   const query = get("query");
   const sort = get("sort");
+  const focusedOnly = get("focused-only");
   const form = get("filters");
   const articles = get("articles");
   const tabs = [...document.querySelectorAll("button[data-scope]")];
@@ -250,6 +251,7 @@
       && !exclusions.has(record.topic)
       && !(record.clinical && exclusions.has(clinicalTag))
       && record.tier === scope
+      && (!focusedOnly.checked || record.focused)
       && words.every(word => record.searchable.includes(word))
     );
     get("scope-note").textContent = scope === "core"
@@ -344,6 +346,7 @@
   showFilters(!narrow.matches);
   query.addEventListener("input", refilter);
   sort.addEventListener("change", refilter);
+  focusedOnly.addEventListener("change", refilter);
   for (const tab of tabs) {
     tab.addEventListener("click", () => {
       setScope(tab.dataset.scope);
