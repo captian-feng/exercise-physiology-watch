@@ -179,6 +179,9 @@ LEFTOVERS = [
     (re.compile(r"(?<![A-Za-z])min(?![A-Za-z])", re.IGNORECASE), "分钟"),
     (re.compile(r"\s{2,}"), " "),
     (re.compile(r"\s+([,，。;；:：])"), r"\1"),
+    # Term replacement inserts Chinese where English stood, and the decoder also
+    # drops spaces mid-sentence; Chinese does not use a space between characters.
+    (re.compile(r"(?<=[\u4e00-\u9fff])[ \t]+(?=[\u4e00-\u9fff])"), ""),
 ]
 
 
