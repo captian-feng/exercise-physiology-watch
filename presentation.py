@@ -179,10 +179,10 @@ LEFTOVERS = [
     (re.compile(r"(?<![A-Za-z])min(?![A-Za-z])", re.IGNORECASE), "分钟"),
     (re.compile(r"\s{2,}"), " "),
     (re.compile(r"\s+([,，。;；:：])"), r"\1"),
-    # Term replacement inserts Chinese where English stood, and the decoder also
-    # drops spaces mid-sentence; Chinese does not use a space between characters.
-    (re.compile(r"(?<=[\u4e00-\u9fff])[ \t]+(?=[\u4e00-\u9fff])"), ""),
 ]
+# Term replacement inserts Chinese where English stood, so the stray space is
+# only created by correct(); join the characters once that has run.
+CJK_SPACE = re.compile(r"(?<=[\u4e00-\u9fff])[ \t]+(?=[\u4e00-\u9fff])")
 
 
 def topic_for(item):
@@ -277,7 +277,12 @@ def polish(title, chinese):
     # ASCII letters so Chinese text is never touched.
     for pattern, replacement in LEFTOVERS:
         chinese = pattern.sub(replacement, chinese)
-    return collapse_repeats(correct(title, chinese))
+    # Joining characters can expose a doubled word the space was hiding, so run
+    # both cleanups twice; both are idempotent.
+    chinese = correct(title, chinese)
+    for _ in range(2):
+        chinese = CJK_SPACE.sub("", collapse_repeats(chinese))
+    return chinese
 
 
 def truncated(title, chinese):
@@ -374,7 +379,10 @@ def translate_batch(engine, sp, titles):
 def translations(db, records):
     db.execute("CREATE TABLE IF NOT EXISTS translations (title TEXT PRIMARY KEY, zh TEXT NOT NULL)")
     db.execute("CREATE TABLE IF NOT EXISTS retranslated (title TEXT PRIMARY KEY)")
-    cached = {title: collapse_repeats(correct(title, zh))
+    # Cached titles go through the whole post-processing chain, not just the
+    # term correction: leftover English, stray spaces and doubled words were
+    # added later and only reached newly decoded titles otherwise.
+    cached = {title: polish(title, zh)
               for title, zh in db.execute("SELECT title, zh FROM translations")}
     # A cached title that ended in a decoding loop or stopped half-way is
     # dropped here so the next run translates it again instead of serving
