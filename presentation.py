@@ -298,15 +298,21 @@ def collapse_repeats(text):
 
 
 def polish(title, chinese):
-    # The decoder renders "training" as 培训 (vocational training) in this corpus;
-    # it is only right where the paper really is about coach education.
-    if "培训" in chinese and not TRAINING_AS_VOCATIONAL.search(title):
-        chinese = chinese.replace("培训练", "训练").replace("培训", "训练")
-    for pattern, after in ALWAYS_WRONG:
-        chinese = pattern.sub(after, chinese)
-    for pattern, before, after in WRONG_FOR:
-        if before in chinese and pattern.search(title):
-            chinese = chinese.replace(before, after)
+    """Apply the post-processing chain, iterating until the text stops changing.
+
+    One pass is not always enough: term replacement can expose a rendering a
+    later rule fixes (running -> 运行 -> 跑性能 -> 跑步表现), so the chain is
+    repeated to a fixed point. Each pass is cheap and the loop is capped.
+    """
+    for _ in range(4):
+        updated = _polish_once(title, chinese)
+        if updated == chinese:
+            break
+        chinese = updated
+    return chinese
+
+
+def _polish_once(title, chinese):
     for before, after in SUBSTITUTIONS.items():
         chinese = chinese.replace(before, after)
     if "cyclist" in title.lower():
@@ -318,9 +324,19 @@ def polish(title, chinese):
     # ASCII letters so Chinese text is never touched.
     for pattern, replacement in LEFTOVERS:
         chinese = pattern.sub(replacement, chinese)
+    chinese = correct(title, chinese)
+    # Term replacement runs after the fragment cleanup and can put a wrong
+    # rendering back (running -> 运行, then the variant makes 运行性能 -> 跑性能),
+    # so the corrective rules run again on its output. Both passes are idempotent.
+    if "培训" in chinese and not TRAINING_AS_VOCATIONAL.search(title):
+        chinese = chinese.replace("培训练", "训练").replace("培训", "训练")
+    for pattern, after in ALWAYS_WRONG:
+        chinese = pattern.sub(after, chinese)
+    for pattern, before, after in WRONG_FOR:
+        if before in chinese and pattern.search(title):
+            chinese = chinese.replace(before, after)
     # Joining characters can expose a doubled word the space was hiding, so run
     # both cleanups twice; both are idempotent.
-    chinese = correct(title, chinese)
     for _ in range(2):
         chinese = CJK_SPACE.sub("", collapse_repeats(chinese))
     return chinese
