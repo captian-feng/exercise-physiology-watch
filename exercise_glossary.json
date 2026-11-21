@@ -689,6 +689,18 @@
       "domain": "运动训练"
     },
     {
+      "en": "aspartate aminotransferase",
+      "zh": "天冬氨酸氨基转移酶",
+      "abbreviations": [
+        "AST"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42929456/"
+      ]
+    },
+    {
       "en": "assistance exercise",
       "zh": "辅助练习",
       "abbreviations": [],
@@ -1558,7 +1570,9 @@
     {
       "en": "cerebral palsy",
       "zh": "脑性瘫痪",
-      "abbreviations": [],
+      "abbreviations": [
+        "CP"
+      ],
       "variants": [
         "大脑性麻痹"
       ],
@@ -7837,7 +7851,9 @@
     {
       "en": "peak power",
       "zh": "峰值功率",
-      "abbreviations": [],
+      "abbreviations": [
+        "PP"
+      ],
       "variants": [
         "最大功率峰值"
       ],
@@ -11127,6 +11143,18 @@
         "前胫肌"
       ],
       "domain": "解剖与动作"
+    },
+    {
+      "en": "tidal volume",
+      "zh": "潮气量",
+      "abbreviations": [
+        "VT"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42596082/"
+      ]
     },
     {
       "en": "time course",
