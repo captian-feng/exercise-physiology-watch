@@ -31,6 +31,35 @@ PRIORITY_JOURNALS = (
 VALID_DATE = re.compile(r"[0-9]{4}(?:-(?:0[1-9]|1[0-2])(?:-(?:0[1-9]|[12][0-9]|3[01]))?)?")
 
 
+def identity(text):
+    """Normalize a title so near-identical titles compare equal."""
+    import unicodedata
+    return "".join(char for char in unicodedata.normalize("NFKC", text).casefold()
+                   if char.isalnum())
+
+
+PREPRINT_PREFIXES = ("10.17605", "10.21203", "10.1101", "10.31234",
+                     "10.26434", "10.20944", "10.31219")
+
+
+def row_rank(entry):
+    """Score a candidate record when two rows share a title; higher wins."""
+    item, seen, tier = entry
+    doi = (item.get("doi") or "").lower()
+    score = 0
+    if doi and not doi.startswith(PREPRINT_PREFIXES):
+        score += 4          # published version beats a preprint or registration
+    elif doi:
+        score -= 2
+    if item.get("date"):
+        score += 2          # a dated record beats an undated one
+    if item.get("journal"):
+        score += 1          # curated journal beats an out-of-list venue
+    if tier == "core":
+        score += 1
+    return score
+
+
 def write_site(db, journals):
     candidates = []
     for raw, seen in db.execute("SELECT data, first_seen FROM articles ORDER BY id"):
@@ -38,6 +67,20 @@ def write_site(db, journals):
         tier = relevance_tier(item)
         if tier:
             candidates.append((item, seen, tier))
+    # The same paper can reach us twice - the journal version plus a preprint or
+    # study registration with a different DOI. The site shows one row per title.
+    best = {}
+    order = []
+    for entry in candidates:
+        key = identity(entry[0]["title"])
+        if key not in best:
+            best[key] = entry
+            order.append(key)
+        elif row_rank(entry) > row_rank(best[key]):
+            best[key] = entry
+    if len(order) != len(candidates):
+        print(f"Merged {len(candidates) - len(order)} duplicate titles", flush=True)
+    candidates = [best[key] for key in order]
     translated, error = translations(db, [item for item, _, _ in candidates])
     if error:
         print(f"Static site translations: {error}")
