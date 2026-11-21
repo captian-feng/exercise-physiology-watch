@@ -1034,7 +1034,8 @@
       "en": "blood flow restriction training",
       "zh": "血流限制训练",
       "abbreviations": [
-        "BFR"
+        "BFR",
+        "BFRT"
       ],
       "variants": [
         "血液流动限制训练"
@@ -1718,9 +1719,7 @@
     {
       "en": "clinically meaningful",
       "zh": "临床有意义",
-      "abbreviations": [
-        "MCID"
-      ],
+      "abbreviations": [],
       "variants": [
         "临床上有意义的"
       ],

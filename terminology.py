@@ -37,12 +37,17 @@ def pattern_for(phrase):
 def _compiled():
     """Precompile every term's patterns once; matching runs per title, not per term."""
     table = []
+    acronym_owners = {}
+    for term in TERMS:
+        for abbreviation in term.get("abbreviations", []):
+            acronym_owners.setdefault(abbreviation, set()).add(term["en"])
     for term in TERMS:
         phrases = [re.compile(pattern_for(phrase))
                    for phrase in (term["en"], *term.get("aliases", []))]
         acronyms = [re.compile(BEFORE + re.escape(abbreviation) + AFTER)
                     for abbreviation in term.get("abbreviations", [])
-                    if len(abbreviation) >= 3 and abbreviation.isupper()]
+                    if len(abbreviation) >= 3 and abbreviation.isupper()
+                    and len(acronym_owners[abbreviation]) == 1]
         table.append((term, phrases, acronyms))
     return table
 
@@ -126,8 +131,10 @@ def matches(title, term):
     # A title may mention only the acronym ("Wearable IMU", "HIIT versus ...").
     # Short acronyms are skipped; two letters are too ambiguous to key on.
     original = unicodedata.normalize("NFKC", title)
+    ambiguous = {abbr for other in TERMS if other is not term
+                 for abbr in other.get("abbreviations", [])}
     for abbreviation in term.get("abbreviations", []):
-        if len(abbreviation) >= 3 and abbreviation.isupper():
+        if len(abbreviation) >= 3 and abbreviation.isupper() and abbreviation not in ambiguous:
             if re.search(BEFORE + re.escape(abbreviation) + AFTER, original):
                 return True
     return False
