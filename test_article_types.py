@@ -10,6 +10,10 @@ class ArticleTypeTests(unittest.TestCase):
         self.assertEqual(article_type_for({"title": "Poster abstract: sprint performance", "type": "journal-article"}),
                          "会议摘要、海报与会议论文")
 
+    def test_crossref_conference_type_is_recognised(self):
+        self.assertEqual(article_type_for({"title": "Wearable sensor study", "type": "conference-paper"}),
+                         "会议摘要、海报与会议论文")
+
     def test_source_type_beats_title_appearance(self):
         self.assertEqual(article_type_for({"title": "Effects of training", "type": "Editorial, Journal Article"}),
                          "评论、社论与勘误")
