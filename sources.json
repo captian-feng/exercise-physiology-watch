@@ -7,8 +7,7 @@
   },
   "feeds": {
     "British Journal of Sports Medicine": [
-      "https://bjsm.bmj.com/content/early/recent/rss",
-      "https://bjsm.bmj.com/current.rss"
+      "https://bjsm.bmj.com/content/early/recent/rss"
     ],
     "Sports Medicine": [
       "https://link.springer.com/search.rss?facet-journal-id=40279"
