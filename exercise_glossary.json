@@ -58,6 +58,18 @@
       "domain": "其他"
     },
     {
+      "en": "ace",
+      "zh": "血管紧张素转换酶",
+      "abbreviations": [
+        "ACE"
+      ],
+      "aliases": [],
+      "variants": [
+        "转换酶"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "achilles tendon",
       "zh": "跟腱",
       "abbreviations": [],
@@ -87,6 +99,18 @@
         "前十字韧带重建术"
       ],
       "domain": "运动医学"
+    },
+    {
+      "en": "acsm",
+      "zh": "美国运动医学会",
+      "abbreviations": [
+        "ACSM"
+      ],
+      "aliases": [],
+      "variants": [
+        "美国运动医学会指南"
+      ],
+      "domain": "人群健康"
     },
     {
       "en": "actigraphy",
@@ -386,6 +410,16 @@
       "domain": "其他"
     },
     {
+      "en": "anaerobic",
+      "zh": "无氧",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "厌氧"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "anaerobic capacity",
       "zh": "无氧能力",
       "abbreviations": [],
@@ -551,6 +585,16 @@
       "domain": "其他"
     },
     {
+      "en": "apnea",
+      "zh": "呼吸暂停",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "窒息"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "arterial blood",
       "zh": "动脉血",
       "abbreviations": [],
@@ -655,6 +699,18 @@
         "运动者"
       ],
       "domain": "运动训练"
+    },
+    {
+      "en": "atp",
+      "zh": "三磷酸腺苷",
+      "abbreviations": [
+        "ATP"
+      ],
+      "aliases": [],
+      "variants": [
+        "腺苷三磷酸"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "atrial fibrillation",
@@ -769,6 +825,16 @@
         "杠钟"
       ],
       "domain": "体能训练"
+    },
+    {
+      "en": "baroreflex",
+      "zh": "压力反射",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "气压反射"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "baroreflex sensitivity",
@@ -1184,9 +1250,14 @@
       "zh": "咖啡因",
       "abbreviations": [],
       "variants": [
-        "咖啡硷"
+        "咖啡硷",
+        "咖啡因含量",
+        "咖啡碱"
       ],
-      "domain": "营养代谢"
+      "domain": "营养代谢",
+      "aliases": [
+        "cafeine"
+      ]
     },
     {
       "en": "calf",
@@ -1465,6 +1536,26 @@
         "方向改变速度"
       ],
       "domain": "体能训练"
+    },
+    {
+      "en": "chewing",
+      "zh": "咀嚼",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "嚼"
+      ],
+      "domain": "运动生理"
+    },
+    {
+      "en": "chewing gum",
+      "zh": "口香糖",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "嚼口香糖"
+      ],
+      "domain": "其他"
     },
     {
       "en": "children",
@@ -1908,6 +1999,16 @@
       "domain": "研究方法"
     },
     {
+      "en": "corticospinal",
+      "zh": "皮质脊髓",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "皮层脊髓"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "corticospinal excitability",
       "zh": "皮质脊髓兴奋性",
       "abbreviations": [],
@@ -1970,7 +2071,10 @@
       "variants": [
         "肌酸补充剂"
       ],
-      "domain": "营养代谢"
+      "domain": "营养代谢",
+      "aliases": [
+        "creatine kinase"
+      ]
     },
     {
       "en": "creatine kinase",
@@ -2611,6 +2715,18 @@
         "偏心训练"
       ],
       "domain": "运动训练"
+    },
+    {
+      "en": "ecg",
+      "zh": "心电图",
+      "abbreviations": [
+        "ECG"
+      ],
+      "aliases": [],
+      "variants": [
+        "心电图记录"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "eeg",
@@ -3270,6 +3386,16 @@
       "domain": "生物力学"
     },
     {
+      "en": "fat",
+      "zh": "脂肪",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "肥肉"
+      ],
+      "domain": "营养代谢"
+    },
+    {
       "en": "fat mass",
       "zh": "脂肪量",
       "abbreviations": [],
@@ -3545,6 +3671,18 @@
       "domain": "体能训练"
     },
     {
+      "en": "fnirs",
+      "zh": "功能性近红外光谱",
+      "abbreviations": [
+        "fNIRS"
+      ],
+      "aliases": [],
+      "variants": [
+        "功能性近红外"
+      ],
+      "domain": "监测技术"
+    },
+    {
       "en": "foam roller",
       "zh": "泡沫轴",
       "abbreviations": [],
@@ -3811,6 +3949,16 @@
       "domain": "训练理论"
     },
     {
+      "en": "glenoid",
+      "zh": "关节盂",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "肩胛盂"
+      ],
+      "domain": "解剖与动作"
+    },
+    {
       "en": "global positioning system",
       "zh": "全球定位系统",
       "abbreviations": [
@@ -3822,6 +3970,18 @@
         "全球定位"
       ],
       "domain": "监测技术"
+    },
+    {
+      "en": "glp-1",
+      "zh": "胰高血糖素样肽-1",
+      "abbreviations": [
+        "GLP-1"
+      ],
+      "aliases": [],
+      "variants": [
+        "胰升糖素样肽-1"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "glucose monitoring",
@@ -4218,6 +4378,18 @@
         "不均匀性"
       ],
       "domain": "研究方法"
+    },
+    {
+      "en": "hif",
+      "zh": "缺氧诱导因子",
+      "abbreviations": [
+        "HIF"
+      ],
+      "aliases": [],
+      "variants": [
+        "低氧诱导因子"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "high altitude",
@@ -4928,6 +5100,16 @@
       "domain": "体能训练"
     },
     {
+      "en": "ketogenic",
+      "zh": "生酮",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "生酮性"
+      ],
+      "domain": "营养代谢"
+    },
+    {
       "en": "ketogenic diet",
       "zh": "生酮饮食",
       "abbreviations": [
@@ -4938,6 +5120,16 @@
         "酮体饮食"
       ],
       "domain": "营养代谢"
+    },
+    {
+      "en": "ketone",
+      "zh": "酮",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "酮体"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "kettlebell",
@@ -5228,9 +5420,14 @@
       "zh": "韧带",
       "abbreviations": [],
       "variants": [
-        "结缔韧带"
+        "结缔韧带",
+        "韧帶",
+        "韧带组织"
       ],
-      "domain": "运动医学"
+      "domain": "运动医学",
+      "aliases": [
+        "legament"
+      ]
     },
     {
       "en": "ligament injury",
@@ -6094,6 +6291,19 @@
       "domain": "体能训练"
     },
     {
+      "en": "mirna",
+      "zh": "微小核糖核酸",
+      "abbreviations": [
+        "miRNA"
+      ],
+      "aliases": [],
+      "variants": [
+        "微小RNA",
+        "微型RNA"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "missing data",
       "zh": "缺失数据",
       "abbreviations": [],
@@ -6222,6 +6432,16 @@
         "分子机理"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "mood",
+      "zh": "情绪",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "心情"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "motion capture",
@@ -6759,6 +6979,18 @@
       "domain": "运动生理"
     },
     {
+      "en": "nfl",
+      "zh": "美国职业橄榄球联盟",
+      "abbreviations": [
+        "NFL"
+      ],
+      "aliases": [],
+      "variants": [
+        "国家橄榄球联盟"
+      ],
+      "domain": "运动训练"
+    },
+    {
       "en": "nitric oxide",
       "zh": "一氧化氮",
       "abbreviations": [
@@ -6796,6 +7028,18 @@
         "记法分析"
       ],
       "domain": "运动训练"
+    },
+    {
+      "en": "nrf2",
+      "zh": "核因子红细胞系2相关因子2",
+      "abbreviations": [
+        "Nrf2"
+      ],
+      "aliases": [],
+      "variants": [
+        "Nrf2转录因子"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "nutrition periodization",
@@ -7656,6 +7900,16 @@
         "脚底压力"
       ],
       "domain": "体能训练"
+    },
+    {
+      "en": "plasma",
+      "zh": "血浆",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "等离子体"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "players",
@@ -8526,6 +8780,16 @@
       "domain": "研究方法"
     },
     {
+      "en": "renal",
+      "zh": "肾",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "肾脏的"
+      ],
+      "domain": "运动生理"
+    },
+    {
       "en": "repeated measures",
       "zh": "重复测量",
       "abbreviations": [],
@@ -8855,6 +9119,18 @@
         "风险分层法"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "rna",
+      "zh": "核糖核酸",
+      "abbreviations": [
+        "RNA"
+      ],
+      "aliases": [],
+      "variants": [
+        "核糖核蛋白"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "rotator cuff",
@@ -9277,6 +9553,28 @@
         "单肢"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "sirt1",
+      "zh": "去乙酰化酶1",
+      "abbreviations": [
+        "SIRT1"
+      ],
+      "aliases": [],
+      "variants": [
+        "沉默调节蛋白1"
+      ],
+      "domain": "运动生理"
+    },
+    {
+      "en": "sirtuin",
+      "zh": "去乙酰化酶",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "沉默调节蛋白"
+      ],
+      "domain": "运动生理"
     },
     {
       "en": "skeletal muscle",
@@ -10417,6 +10715,16 @@
       "domain": "其他"
     },
     {
+      "en": "torque",
+      "zh": "力矩",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "扭矩"
+      ],
+      "domain": "生物力学"
+    },
+    {
       "en": "total distance",
       "zh": "总距离",
       "abbreviations": [],
@@ -10816,6 +11124,16 @@
       "domain": "训练理论"
     },
     {
+      "en": "valgus",
+      "zh": "外翻",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "外偏"
+      ],
+      "domain": "解剖与动作"
+    },
+    {
       "en": "validity",
       "zh": "效度",
       "abbreviations": [],
@@ -10888,6 +11206,16 @@
         "外侧股肌"
       ],
       "domain": "其他"
+    },
+    {
+      "en": "velocity",
+      "zh": "速度",
+      "abbreviations": [],
+      "aliases": [],
+      "variants": [
+        "速率"
+      ],
+      "domain": "生物力学"
     },
     {
       "en": "velocity based training",
