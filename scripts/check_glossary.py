@@ -17,6 +17,10 @@ sys.path.insert(0, str(ROOT))
 CONFIG = ROOT / "exercise_glossary.json"
 HAN = re.compile(r"[\u3400-\u9fff]")
 LATIN = re.compile(r"[A-Za-z]")
+# Domains let the library be audited per area (strength and conditioning,
+# training theory, physiology, ...) instead of as one flat list.
+DOMAINS = {"运动生理", "体能训练", "运动训练", "训练理论", "解剖与动作", "生物力学",
+           "运动医学", "研究方法", "营养代谢", "监测技术", "人群健康", "其他"}
 # A few Latin acronyms are part of the accepted Chinese term itself.
 ALLOWED_LATIN = re.compile(r"(?:RNA|DNA|ATP)")
 
@@ -65,6 +69,10 @@ def main():
         if LATIN.search(ALLOWED_LATIN.sub("", chinese)):
             raise ValueError(f"zh 不应含拉丁字母: {english} -> {chinese}")
 
+        domain = term.get("domain")
+        if domain is not None and domain not in DOMAINS:
+            raise ValueError(f"未知领域 {domain!r}: {english}")
+
     # Correction must be idempotent: applying it to the approved translation
     # has to leave it untouched. This catches a variant that is a prefix of its
     # own approved term, which would render "心率变异性" as "心率变异性性".
@@ -76,9 +84,14 @@ def main():
                 f"术语修正不幂等: {term['en']} 的规范译名 {term['zh']!r} 被改成了 {result!r}"
             )
 
+    counts = {}
+    for term in terms:
+        counts[term.get("domain", "未分类")] = counts.get(term.get("domain", "未分类"), 0) + 1
     with_abbreviations = sum(1 for term in terms if term["abbreviations"])
     with_variants = sum(1 for term in terms if term["variants"])
     print(f"{len(terms)} 条术语，{with_abbreviations} 条带缩写，{with_variants} 条带错译变体")
+    summary = "  ".join(f"{name}{count}" for name, count in sorted(counts.items(), key=lambda pair: -pair[1]))
+    print(summary)
 
 
 if __name__ == "__main__":
