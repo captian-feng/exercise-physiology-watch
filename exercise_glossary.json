@@ -689,6 +689,18 @@
       "domain": "运动训练"
     },
     {
+      "en": "aspartate aminotransferase",
+      "zh": "天冬氨酸氨基转移酶",
+      "abbreviations": [
+        "AST"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42929456/"
+      ]
+    },
+    {
       "en": "assistance exercise",
       "zh": "辅助练习",
       "abbreviations": [],
@@ -1558,7 +1570,9 @@
     {
       "en": "cerebral palsy",
       "zh": "脑性瘫痪",
-      "abbreviations": [],
+      "abbreviations": [
+        "CP"
+      ],
       "variants": [
         "大脑性麻痹"
       ],
@@ -5174,13 +5188,18 @@
     {
       "en": "ischemic preconditioning",
       "zh": "缺血预处理",
-      "abbreviations": [],
+      "abbreviations": [
+        "IPC"
+      ],
       "variants": [
         "局部缺血预处理",
         "预置",
         "先决"
       ],
-      "domain": "体能训练"
+      "domain": "体能训练",
+      "aliases": [
+        "ischaemic preconditioning"
+      ]
     },
     {
       "en": "isoinertial",
@@ -5702,7 +5721,10 @@
       "variants": [
         "光体力活动"
       ],
-      "domain": "运动训练"
+      "domain": "运动训练",
+      "aliases": [
+        "light-intensity physical activity"
+      ]
     },
     {
       "en": "limb",
@@ -6212,7 +6234,10 @@
       "variants": [
         "最大自愿收缩"
       ],
-      "domain": "其他"
+      "domain": "其他",
+      "aliases": [
+        "maximum voluntary contraction"
+      ]
     },
     {
       "en": "mean difference",
@@ -6714,7 +6739,11 @@
         "中等至剧烈身体活动",
         "中度到剧烈身体活动"
       ],
-      "domain": "研究方法"
+      "domain": "研究方法",
+      "aliases": [
+        "moderate-to-vigorous intensity physical activity",
+        "moderate-vigorous physical activity"
+      ]
     },
     {
       "en": "molecular mechanisms",
@@ -7822,7 +7851,9 @@
     {
       "en": "peak power",
       "zh": "峰值功率",
-      "abbreviations": [],
+      "abbreviations": [
+        "PP"
+      ],
       "variants": [
         "最大功率峰值"
       ],
@@ -10441,7 +10472,10 @@
       "variants": [
         "标准化平均差"
       ],
-      "domain": "其他"
+      "domain": "其他",
+      "aliases": [
+        "standardised mean difference"
+      ]
     },
     {
       "en": "statistical analysis",
@@ -11109,6 +11143,18 @@
         "前胫肌"
       ],
       "domain": "解剖与动作"
+    },
+    {
+      "en": "tidal volume",
+      "zh": "潮气量",
+      "abbreviations": [
+        "VT"
+      ],
+      "variants": [],
+      "domain": "运动生理",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/42596082/"
+      ]
     },
     {
       "en": "time course",
@@ -11853,7 +11899,10 @@
         "视觉模拟评分法",
         "视觉类比量表"
       ],
-      "domain": "其他"
+      "domain": "其他",
+      "aliases": [
+        "visual analogue scale"
+      ]
     },
     {
       "en": "volleyball players",
