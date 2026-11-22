@@ -65,5 +65,30 @@ class ArticleTypeTests(unittest.TestCase):
         self.assertEqual(article_type_for(item), "类型待确认")
 
 
+    def test_reply_titles_are_editorial_whatever_the_addressee(self):
+        titles = [
+            "Response to Lolli: Context-Specific Variability in Elite Sport",
+            "Reply to Marciano and Rossiter: Balancing muscle oxygen consumption",
+            "Response to Horvath Comment on Leo and Mujika: Agreement Between",
+        ]
+        for title in titles:
+            with self.subTest(title=title):
+                self.assertEqual(
+                    article_type_for({"title": title, "type": "Journal Article"}),
+                    "评论、社论与勘误")
+
+    def test_response_words_in_a_study_title_are_not_editorial(self):
+        titles = [
+            "Responders and non-responders to exercise training",
+            "Responses of heart rate to incremental exercise",
+            "Reply time and reaction performance in sprinters",
+        ]
+        for title in titles:
+            with self.subTest(title=title):
+                self.assertEqual(
+                    article_type_for({"title": title, "type": "Journal Article"}),
+                    "类型待确认")
+
+
 if __name__ == "__main__":
     unittest.main()

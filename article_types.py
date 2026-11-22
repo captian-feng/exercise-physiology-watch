@@ -17,7 +17,7 @@ ARTICLE_TYPES = (
 )
 
 EDITORIAL = re.compile(r"\b(?:editorial|commentary|comment|letter|correction|erratum|corrigendum|retraction|reply|response)\b", re.I)
-EDITORIAL_TITLE = re.compile(r"^(?:editorial|commentary|comment on|letter to|correction(?: to)?|erratum|corrigendum|retraction|reply to|response to (?:the )?(?:editor|comment|letter))\b", re.I)
+EDITORIAL_TITLE = re.compile(r"^(?:editorial|commentary|comment on|letter to|correction(?: to)?|erratum|corrigendum|retraction|reply to|response to (?:the )?(?:editor|comment|letter))\b|^(?:response|reply)\s+to\b", re.I)
 CONFERENCE = re.compile(r"\b(?:conference|congress|meeting)\s+(?:abstract|paper|proceedings?)\b|\b(?:poster|abstracts? of (?:the )?(?:annual )?(?:meeting|conference|congress))\b", re.I)
 GUIDANCE = re.compile(r"\b(?:guideline|consensus|position statement|recommendation|practice statement)\b", re.I)
 PROTOCOL = re.compile(r"\b(?:study |trial )?protocol\b|\bprotocol for\b|\btrial registration\b", re.I)
