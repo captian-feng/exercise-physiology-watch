@@ -279,9 +279,24 @@ def upsert(db, item, label, source, day, is_journal):
         article_id, previous = candidate_id, known
         break
     merged = {**previous, **{key: value for key, value in item.items() if value}}
-    if previous.get("doi") and is_preprint(merged.get("doi", "")) \
-            and not is_preprint(previous["doi"]):
-        merged["doi"] = previous["doi"]
+    previous_doi = previous.get("doi", "")
+    incoming_doi = item.get("doi", "")
+    if previous_doi and incoming_doi and previous_doi != incoming_doi:
+        # A preprint and the journal article can share a title, but their
+        # publication dates belong to different DOIs.
+        if is_preprint(incoming_doi) and not is_preprint(previous_doi):
+            merged["doi"] = previous_doi
+            for date_key in ("date", "online_date"):
+                if previous.get(date_key):
+                    merged[date_key] = previous[date_key]
+                else:
+                    merged.pop(date_key, None)
+        elif is_preprint(previous_doi) and not is_preprint(incoming_doi):
+            for date_key in ("date", "online_date"):
+                if item.get(date_key):
+                    merged[date_key] = item[date_key]
+                else:
+                    merged.pop(date_key, None)
     if is_journal:
         merged["journal"] = label
         fingerprint = identity(label) + "|" + identity(title)
