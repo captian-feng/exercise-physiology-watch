@@ -18,12 +18,15 @@ class ArticleTypeTests(unittest.TestCase):
         self.assertEqual(article_type_for({"title": "Effects of training", "type": "Editorial, Journal Article"}),
                          "评论、社论与勘误")
 
+    def test_generic_journal_type_is_unknown(self):
+        self.assertEqual(article_type_for({"title": "Exercise and performance", "type": "Journal Article"}), "类型待确认")
+
     def test_categories(self):
         cases = {
             "系统综述与证据整合": {"title": "Exercise training: a systematic review and meta-analysis"},
             "方案与注册": {"title": "Protocol for a randomized controlled trial"},
             "指南、共识与立场文件": {"title": "Consensus statement on athlete monitoring"},
-            "原创研究或常规期刊论文": {"title": "A randomized controlled trial of interval training"},
+            "原创研究": {"title": "A randomized controlled trial of interval training"},
             "类型待确认": {"title": "New perspectives on exercise"},
         }
         for expected, item in cases.items():
