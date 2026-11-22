@@ -25,7 +25,9 @@ EVIDENCE = re.compile(r"\b(?:systematic review|meta[- ]analysis|scoping review|u
 ORIGINAL = re.compile(r"\b(?:randomi[sz]ed|controlled trial|cohort|cross-sectional|case-control|pilot study|feasibility study|validation study|reliability|accuracy|experimental study|observational study)\b", re.I)
 # Meeting proceedings are published as a supplemental issue ("S1", "10S", "Suppl 2")
 # with no page range, which is how APS and ACSM print their annual meeting abstracts.
-SUPPLEMENT_ISSUE = re.compile(r"^(?:s\d+|suppl(?:ement)?\.?\s*\d*|\d+s)$", re.I)
+SUPPLEMENT_ISSUE = re.compile(r"^(?:s\d+|sup\d*|suppl(?:ement)?\.?\s*\d*|\d+s)$", re.I)
+# Meeting abstract codes such as "D2.S1.1(3)" or "P14" in a supplement's title.
+ABSTRACT_CODE = re.compile(r"^D\d\.[SP]\d", re.I)
 
 
 OVERRIDES_PATH = Path(__file__).resolve().parent / "article_type_overrides.json"
@@ -41,17 +43,25 @@ def _is_supplement_issue(item):
 
     Two guarantees are required before a record is called a meeting abstract:
       * the issue label looks like S1/10S/Suppl 2, and
-      * the record carries no page range.
-    PubMed records often omit the page field entirely, so "no page" is only
-    trusted when the page key is present and empty; a missing key could equally
-    mean an ordinary article whose page range PubMed simply did not publish.
+      * the record does not occupy more than a single page.
+
+    A meeting abstract is printed as one page ("40-40", "111-111"); a real article
+    spans a range. PubMed records often omit the page field entirely, so a missing
+    key is not trusted as "no page" — it may simply mean the source published no
+    page range. A missing key is still accepted when the title carries a
+    conference abstract code such as "D2.S1.1(3)", which is unambiguous.
     """
     issue = str(item.get("issue") or "").strip()
     if not issue or not SUPPLEMENT_ISSUE.match(issue):
         return False
+    pages = str(item.get("page") or "").strip()
+    if pages:
+        parts = [p.strip() for p in pages.split("-") if p.strip()]
+        return len(parts) == 2 and parts[0] == parts[1]
     if "page" not in item:
-        return False
-    return not str(item.get("page") or "").strip()
+        # No page information at all: only a conference code in the title decides.
+        return bool(ABSTRACT_CODE.match(str(item.get("title") or "").strip()))
+    return True
 
 
 def article_type_for(item):
