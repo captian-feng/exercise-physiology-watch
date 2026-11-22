@@ -1,6 +1,8 @@
 """Export the screened archive as a self-contained offline static site."""
 
 import json
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 import re
 from urllib.parse import quote, urlsplit
@@ -86,6 +88,7 @@ def write_site(db, journals):
     if error:
         print(f"Static site translations: {error}")
     records = []
+    today = datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
     overlay_path = ROOT / "pubmed_online_dates.json"
     online_dates = json.loads(overlay_path.read_text(encoding="utf-8")) if overlay_path.exists() else {}
     crossref_path = ROOT / "crossref_online_dates.json"
@@ -112,6 +115,8 @@ def write_site(db, journals):
                 overlay_date = doi_candidate.get("date", "")
         crossref_date = crossref_dates.get(known_doi, {}).get("date", "") if tier == "core" and known_doi else ""
         online = item.get("online_date") or overlay_date or crossref_date
+        if online and online > today:
+            online = ""
         published = online or item.get("date") or ""
         name = item.get("journal") or item.get("venue") or "期刊待核实"
         row = {
