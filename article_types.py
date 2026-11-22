@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 
 ARTICLE_TYPES = (
-    "原创研究或常规期刊论文",
+    "原创研究",
     "系统综述与证据整合",
     "方案与注册",
     "指南、共识与立场文件",
@@ -18,7 +18,7 @@ EDITORIAL = re.compile(r"\b(?:editorial|commentary|comment|letter|correction|err
 CONFERENCE = re.compile(r"\b(?:conference|congress|meeting)\s+(?:abstract|paper|proceedings?)\b|\b(?:poster|abstracts? of (?:the )?(?:annual )?(?:meeting|conference|congress))\b", re.I)
 GUIDANCE = re.compile(r"\b(?:guideline|consensus|position statement|recommendation|practice statement)\b", re.I)
 PROTOCOL = re.compile(r"\b(?:study |trial )?protocol\b|\bprotocol for\b|\btrial registration\b", re.I)
-EVIDENCE = re.compile(r"\b(?:systematic review|meta[- ]analysis|scoping review|umbrella review|narrative review|evidence synthesis)\b", re.I)
+EVIDENCE = re.compile(r"\b(?:systematic review|meta[- ]analysis|scoping review|umbrella review|narrative review|evidence synthesis|review)\b", re.I)
 ORIGINAL = re.compile(r"\b(?:randomi[sz]ed|controlled trial|cohort|cross-sectional|case-control|pilot study|feasibility study|validation study|reliability|accuracy|experimental study|observational study)\b", re.I)
 
 
@@ -42,6 +42,6 @@ def article_type_for(item):
         return "方案与注册"
     if EVIDENCE.search(combined):
         return "系统综述与证据整合"
-    if ORIGINAL.search(combined) or "journal article" in source or "journal-article" in source:
+    if ORIGINAL.search(combined):
         return "原创研究或常规期刊论文"
     return "类型待确认"
