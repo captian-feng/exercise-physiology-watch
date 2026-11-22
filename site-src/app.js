@@ -9,12 +9,14 @@
   const data = {
     journals: raw.journals,
     topics: raw.topics,
+    articleTypes: raw.articleTypes || ["类型待确认"],
     updated: raw.updated,
     records: raw.records.map((record) => ({
       journal: raw.venues[record.j],
       focused: record.f === 1,
       tier: raw.tiers[record.r],
       topic: raw.topics[record.t],
+      articleType: (raw.articleTypes || ["类型待确认"])[record.a] || "类型待确认",
       clinical: record.c === 1,
       en: record.e,
       zh: record.z || "",
@@ -26,6 +28,7 @@
   };
   const journal = get("journal");
   const topic = get("topic");
+  const articleType = get("article-type");
   const clinicalTag = "clinical-study";
   const clinicalLabel = "临床与疾病相关";
   const dateField = get("date-field");
@@ -125,6 +128,7 @@
     if (!grouped) {
       meta.append(node("span", "", record.journal), node("span", "topic", record.topic));
     }
+    meta.append(node("span", "article-type", record.articleType));
     if (record.clinical) meta.append(node("span", "clinical-tag", clinicalLabel));
     if (!record.focused) meta.append(node("span", "", "刊外补漏"));
     const title = node("div", "article-title");
@@ -248,6 +252,7 @@
     const candidates = records.filter(record =>
       (!journal.value || record.journal === journal.value)
       && (!topic.value || record.topic === topic.value)
+      && (!articleType.value || (articleType.value === "default" ? ["原创研究","系统综述与证据整合"].includes(record.articleType) : record.articleType === articleType.value))
       && !exclusions.has(record.topic)
       && !(record.clinical && exclusions.has(clinicalTag))
       && record.tier === scope
@@ -312,6 +317,7 @@
 
   addOptions(journal, allJournals.sort(compareJournal));
   addOptions(topic, allTopics.sort(compareTopic));
+  addOptions(articleType, data.articleTypes);
   addExclusion(clinicalTag, clinicalLabel + "（跨专题）");
   for (const name of allTopics) addExclusion(name, name);
   get("total-articles").textContent = records.filter(record => record.tier === "core").length.toLocaleString("zh-CN");

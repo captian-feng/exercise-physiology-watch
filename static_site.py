@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 from urllib.parse import quote, urlsplit
 
+from article_types import ARTICLE_TYPES, article_type_for
 from presentation import OTHER, PATTERNS, PUBLICATION_NOTICE, topic_for, translations
 from screening import is_clinical_study, relevance_tier
 
@@ -88,6 +89,7 @@ def write_site(db, journals):
     venues = {}            # venue name -> index, keeps repeated strings out of every row
     topic_names = [*PATTERNS, PUBLICATION_NOTICE, OTHER]
     topic_index = {name: index for index, name in enumerate(topic_names)}
+    article_type_index = {name: index for index, name in enumerate(ARTICLE_TYPES)}
     for item, seen, tier in candidates:
         title = item["title"]
         doi = item.get("doi", "")
@@ -102,6 +104,7 @@ def write_site(db, journals):
             "r": 0 if tier == "core" else 1,
             "t": topic_index[topic_for(item)],
             "c": 1 if is_clinical_study(item) else 0,
+            "a": article_type_index[article_type_for(item)],
             "e": title,
             "d": doi,
             "p": published if VALID_DATE.fullmatch(published) else "",
@@ -123,6 +126,7 @@ def write_site(db, journals):
         "venues": list(venues),
         "journals": [name for name in dict.fromkeys((*PRIORITY_JOURNALS, *journals)) if name in journals],
         "topics": topic_names,
+        "articleTypes": ARTICLE_TYPES,
         "tiers": ["core", "related"],
         "updated": updated,
     }
