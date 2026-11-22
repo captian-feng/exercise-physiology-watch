@@ -130,7 +130,26 @@
     if (!grouped) {
       meta.append(node("span", "", record.journal), node("span", "topic", record.topic));
     }
-    meta.append(node("span", "article-type", record.articleType));
+    if (record.articleType === "类型待确认" && record.doi) {
+      const select = node("select", "article-type-review");
+      select.setAttribute("aria-label", "建议这篇论文的类型");
+      const prompt = node("option", "", "类型待确认 · 建议分类");
+      prompt.value = "";
+      select.append(prompt);
+      addOptions(select, data.articleTypes.filter(value => value !== "类型待确认"));
+      select.addEventListener("change", () => {
+        if (!select.value) return;
+        const subject = "[论文分类] " + record.doi;
+        const body = "DOI: " + record.doi + "\n英文标题: " + record.en
+          + "\n建议类型: " + select.value + "\n依据: 请填写论文官网或数据库的文献类型";
+        const params = new URLSearchParams({title: subject, body});
+        window.open("https://github.com/captian-feng/exercise-physiology-watch/issues/new?" + params.toString(), "_blank", "noopener,noreferrer");
+        select.value = "";
+      });
+      meta.append(select);
+    } else {
+      meta.append(node("span", "article-type", record.articleType));
+    }
     if (record.clinical) meta.append(node("span", "clinical-tag", clinicalLabel));
     if (!record.focused) meta.append(node("span", "", "刊外补漏"));
     const title = node("div", "article-title");
