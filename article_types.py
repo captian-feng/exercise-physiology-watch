@@ -39,12 +39,17 @@ def _source_text(item):
 def _is_supplement_issue(item):
     """True when the record sits in a meeting-supplement issue rather than an article slot.
 
-    Both conditions are required so a normal paper that merely shares a supplement
-    volume is not swept in: the issue label must look like S1/10S/Suppl 2, and the
-    record must carry no page range.
+    Two guarantees are required before a record is called a meeting abstract:
+      * the issue label looks like S1/10S/Suppl 2, and
+      * the record carries no page range.
+    PubMed records often omit the page field entirely, so "no page" is only
+    trusted when the page key is present and empty; a missing key could equally
+    mean an ordinary article whose page range PubMed simply did not publish.
     """
     issue = str(item.get("issue") or "").strip()
     if not issue or not SUPPLEMENT_ISSUE.match(issue):
+        return False
+    if "page" not in item:
         return False
     return not str(item.get("page") or "").strip()
 
