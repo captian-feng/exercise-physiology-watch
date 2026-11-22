@@ -54,6 +54,16 @@ class ArticleTypeTests(unittest.TestCase):
         item = {"title": "Exercise and performance", "issue": "10", "page": ""}
         self.assertEqual(article_type_for(item), "类型待确认")
 
+    def test_missing_page_key_does_not_imply_a_meeting_abstract(self):
+        # PubMed records omit the page field, so an absent key must not be read
+        # as an empty page range (Sports Medicine publishes paged S1 articles).
+        item = {"title": "Fueling Women's Football: practical nutrition strategies", "issue": "S1"}
+        self.assertEqual(article_type_for(item), "类型待确认")
+
+    def test_paged_supplement_article_is_not_a_meeting_abstract(self):
+        item = {"title": "Physical activity after therapy", "issue": "S2", "page": "1873-1881"}
+        self.assertEqual(article_type_for(item), "类型待确认")
+
 
 if __name__ == "__main__":
     unittest.main()
