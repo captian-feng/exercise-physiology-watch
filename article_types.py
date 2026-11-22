@@ -36,7 +36,8 @@ def _source_text(item):
 def article_type_for(item):
     """Return one public display category using source metadata before title clues."""
     doi = (item.get("doi") or "").strip().casefold()
-    override = OVERRIDES.get(doi)
+    pmid = str(item.get("pmid") or "").strip()
+    override = OVERRIDES.get(doi) or (OVERRIDES.get("pmid:" + pmid) if pmid.isdigit() else None)
     if override in ARTICLE_TYPES and override != "类型待确认":
         return override
     title = item.get("title", "")
