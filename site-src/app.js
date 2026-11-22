@@ -21,6 +21,7 @@
       en: record.e,
       zh: record.z || "",
       doi: record.d,
+      pmid: record.m || "",
       url: record.u || (record.d ? "https://doi.org/" + record.d : ""),
       published: record.p,
       onlineDate: record.od === 1,
@@ -130,7 +131,7 @@
     if (!grouped) {
       meta.append(node("span", "", record.journal), node("span", "topic", record.topic));
     }
-    if (record.articleType === "类型待确认" && record.doi) {
+    if (record.articleType === "类型待确认" && (record.doi || record.pmid)) {
       const select = node("select", "article-type-review");
       select.setAttribute("aria-label", "建议这篇论文的类型");
       const prompt = node("option", "", "类型待确认 · 建议分类");
@@ -139,8 +140,8 @@
       addOptions(select, data.articleTypes.filter(value => value !== "类型待确认"));
       select.addEventListener("change", () => {
         if (!select.value) return;
-        const subject = "[论文分类] " + record.doi;
-        const body = "DOI: " + record.doi + "\n英文标题: " + record.en
+        const subject = "[论文分类] " + (record.doi || "PMID:" + record.pmid);
+        const body = "DOI: " + (record.doi || "无") + "\nPMID: " + (record.pmid || "无") + "\n英文标题: " + record.en
           + "\n建议类型: " + select.value + "\n依据: 请填写论文官网或数据库的文献类型";
         const params = new URLSearchParams({title: subject, body});
         window.open("https://github.com/captian-feng/exercise-physiology-watch/issues/new?" + params.toString(), "_blank", "noopener,noreferrer");
