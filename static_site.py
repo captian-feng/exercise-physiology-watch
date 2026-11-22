@@ -93,6 +93,8 @@ def write_site(db, journals):
     online_dates = json.loads(overlay_path.read_text(encoding="utf-8")) if overlay_path.exists() else {}
     crossref_path = ROOT / "crossref_online_dates.json"
     crossref_dates = json.loads(crossref_path.read_text(encoding="utf-8")) if crossref_path.exists() else {}
+    publisher_path = ROOT / "publisher_online_dates.json"
+    publisher_dates = json.loads(publisher_path.read_text(encoding="utf-8")) if publisher_path.exists() else {}
     venues = {}            # venue name -> index, keeps repeated strings out of every row
     topic_names = [*PATTERNS, PUBLICATION_NOTICE, OTHER]
     topic_index = {name: index for index, name in enumerate(topic_names)}
@@ -114,7 +116,8 @@ def write_site(db, journals):
             if not known_pmid or not source_pmid or known_pmid == source_pmid:
                 overlay_date = doi_candidate.get("date", "")
         crossref_date = crossref_dates.get(known_doi, {}).get("date", "") if tier == "core" and known_doi else ""
-        online = next((date for date in (item.get("online_date"), overlay_date, crossref_date)
+        publisher_date = publisher_dates.get(known_doi, {}).get("date", "") if tier == "core" and known_doi else ""
+        online = next((date for date in (item.get("online_date"), overlay_date, crossref_date, publisher_date)
                        if date and VALID_DATE.fullmatch(date) and date <= today), "")
         published = online or item.get("date") or ""
         name = item.get("journal") or item.get("venue") or "期刊待核实"
