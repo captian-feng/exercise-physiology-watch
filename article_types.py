@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import re
+import json
+from pathlib import Path
 
 ARTICLE_TYPES = (
     "原创研究",
@@ -22,12 +24,20 @@ EVIDENCE = re.compile(r"\b(?:systematic review|meta[- ]analysis|scoping review|u
 ORIGINAL = re.compile(r"\b(?:randomi[sz]ed|controlled trial|cohort|cross-sectional|case-control|pilot study|feasibility study|validation study|reliability|accuracy|experimental study|observational study)\b", re.I)
 
 
+OVERRIDES_PATH = Path(__file__).resolve().parent / "article_type_overrides.json"
+OVERRIDES = json.loads(OVERRIDES_PATH.read_text(encoding="utf-8")) if OVERRIDES_PATH.exists() else {}
+
+
 def _source_text(item):
     return " ".join(part.strip().casefold() for part in str(item.get("type", "")).split(",") if part.strip())
 
 
 def article_type_for(item):
     """Return one public display category using source metadata before title clues."""
+    doi = (item.get("doi") or "").strip().casefold()
+    override = OVERRIDES.get(doi)
+    if override in ARTICLE_TYPES and override != "类型待确认":
+        return override
     title = item.get("title", "")
     source = _source_text(item)
     combined = f"{source} {title}"
