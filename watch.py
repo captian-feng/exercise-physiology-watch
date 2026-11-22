@@ -181,7 +181,7 @@ def pubmed(query, since, until=None):
             identifiers = {node.get("IdType"): node.text
                            for node in citation.findall("./PubmedData/ArticleIdList/ArticleId")}
             title = article.find("ArticleTitle")
-            online = article.find("ArticleDate")
+            online = article.find('ArticleDate[@DateType="Electronic"]')
             date_parts = [online.findtext(part, "") for part in ("Year", "Month", "Day")] if online is not None else []
             yield {
                 "pmid": pmid, "doi": (identifiers.get("doi") or "").lower(),
