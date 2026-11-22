@@ -120,6 +120,7 @@ def write_site(db, journals):
             "a": article_type_index[article_type_for(item)],
             "e": title,
             "d": doi,
+            "m": str(item.get("pmid") or ""),
             "p": published if VALID_DATE.fullmatch(published) else "",
             "od": 1 if online and VALID_DATE.fullmatch(online) else 0,
             "s": seen,
