@@ -121,7 +121,7 @@ def main():
     options = parser.parse_args()
     with TemporaryDirectory(prefix="journal-watch-") as scratch:
         work = Path(scratch)
-        for name in ("watch.py", "presentation.py", "screening.py", "static_site.py", "article_types.py", "article_type_overrides.json", "pubmed_online_dates.json", "publisher_watch.py", "terminology.py", "exercise_glossary.json", "journals.txt", "sources.json"):
+        for name in ("watch.py", "presentation.py", "screening.py", "static_site.py", "article_types.py", "article_type_overrides.json", "pubmed_online_dates.json", "crossref_online_dates.json", "publisher_watch.py", "terminology.py", "exercise_glossary.json", "journals.txt", "sources.json"):
             copy2(ROOT / name, work / name)
         copytree(ROOT / "site-src", work / "site-src")
         db_path = work / "catalog.sqlite"
