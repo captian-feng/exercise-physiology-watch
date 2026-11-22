@@ -23,6 +23,9 @@ GUIDANCE = re.compile(r"\b(?:guideline|consensus|position statement|recommendati
 PROTOCOL = re.compile(r"\b(?:study |trial )?protocol\b|\bprotocol for\b|\btrial registration\b", re.I)
 EVIDENCE = re.compile(r"\b(?:systematic review|meta[- ]analysis|scoping review|umbrella review|narrative review|evidence synthesis|review)\b", re.I)
 ORIGINAL = re.compile(r"\b(?:randomi[sz]ed|controlled trial|cohort|cross-sectional|case-control|pilot study|feasibility study|validation study|reliability|accuracy|experimental study|observational study)\b", re.I)
+# Meeting proceedings are published as a supplemental issue ("S1", "10S", "Suppl 2")
+# with no page range, which is how APS and ACSM print their annual meeting abstracts.
+SUPPLEMENT_ISSUE = re.compile(r"^(?:s\d+|suppl(?:ement)?\.?\s*\d*|\d+s)$", re.I)
 
 
 OVERRIDES_PATH = Path(__file__).resolve().parent / "article_type_overrides.json"
@@ -31,6 +34,19 @@ OVERRIDES = json.loads(OVERRIDES_PATH.read_text(encoding="utf-8")) if OVERRIDES_
 
 def _source_text(item):
     return " ".join(part.strip().casefold() for part in str(item.get("type", "")).split(",") if part.strip())
+
+
+def _is_supplement_issue(item):
+    """True when the record sits in a meeting-supplement issue rather than an article slot.
+
+    Both conditions are required so a normal paper that merely shares a supplement
+    volume is not swept in: the issue label must look like S1/10S/Suppl 2, and the
+    record must carry no page range.
+    """
+    issue = str(item.get("issue") or "").strip()
+    if not issue or not SUPPLEMENT_ISSUE.match(issue):
+        return False
+    return not str(item.get("page") or "").strip()
 
 
 def article_type_for(item):
@@ -47,6 +63,10 @@ def article_type_for(item):
     if EDITORIAL.search(source) or EDITORIAL_TITLE.search(title.strip()):
         return "评论、社论与勘误"
     if CONFERENCE.search(title) or any(token in source for token in ("conference", "congress", "meeting", "proceedings", "poster")):
+        return "会议摘要、海报与会议论文"
+    if _is_supplement_issue(item):
+        # Supplemental issues carry meeting abstracts; only an explicit override
+        # above can claim otherwise.
         return "会议摘要、海报与会议论文"
     if GUIDANCE.search(combined):
         return "指南、共识与立场文件"

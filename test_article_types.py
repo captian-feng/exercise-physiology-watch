@@ -40,6 +40,20 @@ class ArticleTypeTests(unittest.TestCase):
             with self.subTest(expected=expected):
                 self.assertEqual(article_type_for(item), expected)
 
+    def test_supplement_issue_without_pages_is_a_meeting_abstract(self):
+        for issue in ("S1", "10S", "Suppl 2"):
+            with self.subTest(issue=issue):
+                item = {"title": "Sprint performance in elite athletes", "issue": issue, "page": ""}
+                self.assertEqual(article_type_for(item), "会议摘要、海报与会议论文")
+
+    def test_paged_article_in_a_supplement_stays_uncertain(self):
+        item = {"title": "Effects of training on strength", "issue": "S1", "page": "100-108"}
+        self.assertEqual(article_type_for(item), "类型待确认")
+
+    def test_regular_issue_is_not_a_meeting_abstract(self):
+        item = {"title": "Exercise and performance", "issue": "10", "page": ""}
+        self.assertEqual(article_type_for(item), "类型待确认")
+
 
 if __name__ == "__main__":
     unittest.main()
