@@ -17,6 +17,7 @@ ARTICLE_TYPES = (
 )
 
 EDITORIAL = re.compile(r"\b(?:editorial|commentary|comment|letter|correction|erratum|corrigendum|retraction|reply|response)\b", re.I)
+EDITORIAL_TITLE = re.compile(r"^(?:editorial|commentary|comment on|letter to|correction(?: to)?|erratum|corrigendum|retraction|reply to|response to (?:the )?(?:editor|comment|letter))\b", re.I)
 CONFERENCE = re.compile(r"\b(?:conference|congress|meeting)\s+(?:abstract|paper|proceedings?)\b|\b(?:poster|abstracts? of (?:the )?(?:annual )?(?:meeting|conference|congress))\b", re.I)
 GUIDANCE = re.compile(r"\b(?:guideline|consensus|position statement|recommendation|practice statement)\b", re.I)
 PROTOCOL = re.compile(r"\b(?:study |trial )?protocol\b|\bprotocol for\b|\btrial registration\b", re.I)
@@ -42,7 +43,7 @@ def article_type_for(item):
     source = _source_text(item)
     combined = f"{source} {title}"
 
-    if EDITORIAL.search(combined):
+    if EDITORIAL.search(source) or EDITORIAL_TITLE.search(title.strip()):
         return "评论、社论与勘误"
     if CONFERENCE.search(title) or any(token in source for token in ("conference", "congress", "meeting", "proceedings", "poster")):
         return "会议摘要、海报与会议论文"
