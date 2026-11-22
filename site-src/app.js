@@ -252,7 +252,7 @@
     const candidates = records.filter(record =>
       (!journal.value || record.journal === journal.value)
       && (!topic.value || record.topic === topic.value)
-      && (!articleType.value || record.articleType === articleType.value)
+      && (!articleType.value || (articleType.value === "default" ? ["原创研究","系统综述与证据整合"].includes(record.articleType) : record.articleType === articleType.value))
       && !exclusions.has(record.topic)
       && !(record.clinical && exclusions.has(clinicalTag))
       && record.tier === scope
