@@ -90,5 +90,22 @@ class ArticleTypeTests(unittest.TestCase):
                     "类型待确认")
 
 
+    def test_single_page_in_a_supplement_is_a_meeting_abstract(self):
+        # JSS prints its conference abstracts one per page, e.g. 40-40.
+        item = {"title": "D2.S1.1(3) Does hip abductor strength training change running biomechanics",
+                "issue": "sup1", "page": "40-40"}
+        self.assertEqual(article_type_for(item), "会议摘要、海报与会议论文")
+
+    def test_multi_page_article_in_a_supplement_is_not_a_meeting_abstract(self):
+        item = {"title": "Eccentric exercise and muscle damage", "issue": "sup1", "page": "40-48"}
+        self.assertEqual(article_type_for(item), "类型待确认")
+
+    def test_conference_code_decides_when_pages_are_absent(self):
+        with_code = {"title": "D2.P4 Small steps, big gains", "issue": "sup1"}
+        self.assertEqual(article_type_for(with_code), "会议摘要、海报与会议论文")
+        without_code = {"title": "Effects of training on strength", "issue": "sup1"}
+        self.assertEqual(article_type_for(without_code), "类型待确认")
+
+
 if __name__ == "__main__":
     unittest.main()
