@@ -21,6 +21,7 @@ on:
       - "article_type_overrides.json"
       - "pubmed_online_dates.json"
       - "crossref_online_dates.json"
+      - "publisher_online_dates.json"
       - "requirements.txt"
       # The committed site and the bootstrap archive are build outputs; a manual
       # change to either should still rebuild and redeploy instead of going live
