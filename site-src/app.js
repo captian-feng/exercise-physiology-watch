@@ -23,6 +23,7 @@
       doi: record.d,
       url: record.u || (record.d ? "https://doi.org/" + record.d : ""),
       published: record.p,
+      onlineDate: record.od === 1,
       seen: record.s,
     })),
   };
@@ -124,7 +125,8 @@
     const row = node("li", "article");
     const meta = node("div", "article-meta");
     const shownDate = record[dateField.value];
-    meta.append(shownDate ? time(shownDate) : node("span", "", "发表日期未记录"));
+    meta.append(node("span", "", dateField.value === "seen" ? "本站首次收录" : record.onlineDate ? "在线发表" : "发表日期（上线时间待核）"));
+    meta.append(shownDate ? time(shownDate) : node("span", "", "日期未记录"));
     if (!grouped) {
       meta.append(node("span", "", record.journal), node("span", "topic", record.topic));
     }
