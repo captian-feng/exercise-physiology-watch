@@ -96,7 +96,7 @@ def write_site(db, journals):
         location = "https://doi.org/" + quote(doi, safe="/:") if doi else item.get("url", "")
         if urlsplit(location).scheme not in {"http", "https"}:
             location = ""
-        published = item.get("date") or ""
+        published = item.get("online_date") or item.get("date") or ""
         name = item.get("journal") or item.get("venue") or "期刊待核实"
         row = {
             "j": venues.setdefault(name, len(venues)),
@@ -108,6 +108,7 @@ def write_site(db, journals):
             "e": title,
             "d": doi,
             "p": published if VALID_DATE.fullmatch(published) else "",
+            "od": 1 if item.get("online_date") and VALID_DATE.fullmatch(item["online_date"]) else 0,
             "s": seen,
         }
         # The browser rebuilds "https://doi.org/<doi>" itself; the URL only ships
