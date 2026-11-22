@@ -133,19 +133,19 @@
     if (!record.focused) meta.append(node("span", "", "刊外补漏"));
     const title = node("div", "article-title");
     if (record.url) {
-      const link = node("a", "", record.zh || record.en);
+      const link = node("a", "", record.en);
       link.href = record.url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       title.append(link);
     } else {
-      title.textContent = record.zh || record.en;
+      title.textContent = record.en;
     }
     row.append(meta, title);
     if (record.zh) {
-      const original = node("p", "english", record.en);
-      original.lang = "en";
-      row.append(original);
+      const translation = node("p", "english", record.zh);
+      translation.lang = "zh-CN";
+      row.append(translation);
     }
     return row;
   }
