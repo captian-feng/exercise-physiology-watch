@@ -114,9 +114,8 @@ def write_site(db, journals):
             if not known_pmid or not source_pmid or known_pmid == source_pmid:
                 overlay_date = doi_candidate.get("date", "")
         crossref_date = crossref_dates.get(known_doi, {}).get("date", "") if tier == "core" and known_doi else ""
-        online = item.get("online_date") or overlay_date or crossref_date
-        if online and online > today:
-            online = ""
+        online = next((date for date in (item.get("online_date"), overlay_date, crossref_date)
+                       if date and VALID_DATE.fullmatch(date) and date <= today), "")
         published = online or item.get("date") or ""
         name = item.get("journal") or item.get("venue") or "期刊待核实"
         row = {
