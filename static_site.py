@@ -98,10 +98,16 @@ def write_site(db, journals):
         location = "https://doi.org/" + quote(doi, safe="/:") if doi else item.get("url", "")
         if urlsplit(location).scheme not in {"http", "https"}:
             location = ""
-        candidate = online_dates.get(str(item.get("pmid") or ""), {})
+        known_pmid = str(item.get("pmid") or "")
         known_doi = (item.get("doi") or "").strip().casefold()
+        candidate = online_dates.get(known_pmid, {})
         source_doi = (candidate.get("doi") or "").strip().casefold()
         overlay_date = candidate.get("date", "") if not (known_doi and source_doi and known_doi != source_doi) else ""
+        if not overlay_date and tier == "core" and known_doi:
+            doi_candidate = online_dates.get("doi:" + known_doi, {})
+            source_pmid = str(doi_candidate.get("pmid") or "")
+            if not known_pmid or not source_pmid or known_pmid == source_pmid:
+                overlay_date = doi_candidate.get("date", "")
         online = item.get("online_date") or overlay_date
         published = online or item.get("date") or ""
         name = item.get("journal") or item.get("venue") or "期刊待核实"
