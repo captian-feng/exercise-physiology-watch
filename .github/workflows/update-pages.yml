@@ -19,6 +19,7 @@ on:
       - "sources.json"
       - "exercise_glossary.json"
       - "article_type_overrides.json"
+      - "pubmed_online_dates.json"
       - "requirements.txt"
       # The committed site and the bootstrap archive are build outputs; a manual
       # change to either should still rebuild and redeploy instead of going live

@@ -86,6 +86,8 @@ def write_site(db, journals):
     if error:
         print(f"Static site translations: {error}")
     records = []
+    overlay_path = ROOT / "pubmed_online_dates.json"
+    online_dates = json.loads(overlay_path.read_text(encoding="utf-8")) if overlay_path.exists() else {}
     venues = {}            # venue name -> index, keeps repeated strings out of every row
     topic_names = [*PATTERNS, PUBLICATION_NOTICE, OTHER]
     topic_index = {name: index for index, name in enumerate(topic_names)}
@@ -96,7 +98,12 @@ def write_site(db, journals):
         location = "https://doi.org/" + quote(doi, safe="/:") if doi else item.get("url", "")
         if urlsplit(location).scheme not in {"http", "https"}:
             location = ""
-        published = item.get("online_date") or item.get("date") or ""
+        candidate = online_dates.get(str(item.get("pmid") or ""), {})
+        known_doi = (item.get("doi") or "").strip().casefold()
+        source_doi = (candidate.get("doi") or "").strip().casefold()
+        overlay_date = candidate.get("date", "") if not (known_doi and source_doi and known_doi != source_doi) else ""
+        online = item.get("online_date") or overlay_date
+        published = online or item.get("date") or ""
         name = item.get("journal") or item.get("venue") or "期刊待核实"
         row = {
             "j": venues.setdefault(name, len(venues)),
@@ -108,7 +115,7 @@ def write_site(db, journals):
             "e": title,
             "d": doi,
             "p": published if VALID_DATE.fullmatch(published) else "",
-            "od": 1 if item.get("online_date") and VALID_DATE.fullmatch(item["online_date"]) else 0,
+            "od": 1 if online and VALID_DATE.fullmatch(online) else 0,
             "s": seen,
         }
         # The browser rebuilds "https://doi.org/<doi>" itself; the URL only ships
