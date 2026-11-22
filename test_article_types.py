@@ -21,6 +21,13 @@ class ArticleTypeTests(unittest.TestCase):
     def test_generic_journal_type_is_unknown(self):
         self.assertEqual(article_type_for({"title": "Exercise and performance", "type": "Journal Article"}), "类型待确认")
 
+    def test_physiological_response_is_not_an_editorial(self):
+        item = {"title": "Cardiovascular response to exercise: a randomized controlled trial", "type": "Journal Article"}
+        self.assertEqual(article_type_for(item), "原创研究")
+
+    def test_letter_response_is_editorial(self):
+        self.assertEqual(article_type_for({"title": "Response to the editor"}), "评论、社论与勘误")
+
     def test_categories(self):
         cases = {
             "系统综述与证据整合": {"title": "Exercise training: a systematic review and meta-analysis"},
