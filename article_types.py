@@ -43,5 +43,5 @@ def article_type_for(item):
     if EVIDENCE.search(combined):
         return "系统综述与证据整合"
     if ORIGINAL.search(combined):
-        return "原创研究或常规期刊论文"
+        return "原创研究"
     return "类型待确认"
