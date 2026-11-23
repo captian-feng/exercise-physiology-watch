@@ -30,6 +30,20 @@ h1,h2,h3,h4,p,dl,dd { margin:0; }
 .brand { display:flex; align-items:center; gap:.65rem; font-size:1rem; font-weight:700; }
 .brand-mark { width:1.1rem; height:1rem; border-left:3px solid #77d0ba; border-block:3px solid #77d0ba; transform:skewY(-13deg); }
 .update { color:#c8dce5; font-size:.88rem; font-variant-numeric:tabular-nums; }
+/* "参与维护": a small disclosure so the invitation is visible without taking
+   space from the two overview numbers. */
+.contribute { position:relative; margin-left:auto; }
+.contribute summary { list-style:none; cursor:pointer; color:#d6e8ef; font-size:.85rem; padding:.3rem .75rem; border:1px solid #4b6b7d; border-radius:999px; white-space:nowrap; }
+.contribute summary::-webkit-details-marker { display:none; }
+.contribute summary:hover, .contribute summary:focus-visible { color:#fff; border-color:#77d0ba; }
+.contribute summary:focus-visible { outline:2px solid #77d0ba; outline-offset:2px; }
+.contribute-body { position:absolute; right:0; top:calc(100% + .55rem); z-index:20; width:min(23rem,calc(100vw - 2.5rem)); padding:.85rem 1rem; border:1px solid #c9d8e0; border-radius:.55rem; background:#fff; color:#142d40; box-shadow:0 12px 28px rgba(16,38,56,.24); font-size:.85rem; line-height:1.55; }
+.contribute-body p + p { margin-top:.6rem; }
+.contribute-actions { display:flex; gap:.6rem; flex-wrap:wrap; }
+.contribute-actions a { display:inline-block; padding:.35rem .85rem; border-radius:999px; background:#0b6a63; color:#fff; text-decoration:none; font-weight:600; }
+.contribute-actions a:hover { background:#095b55; }
+.contribute-actions a:focus-visible { outline:2px solid #0b6a63; outline-offset:2px; }
+.contribute-note { color:#4c6273; font-size:.8rem; }
 .hero { color:#fff; background:linear-gradient(110deg,#132c42 52%,#173e4b); }
 .hero-inner { min-height:6rem; display:flex; align-items:center; justify-content:space-between; gap:1.5rem 2.5rem; padding-block:clamp(.8rem,2vw,1.25rem); }
 .hero h1 { font-size:clamp(1.5rem,2.7vw,2.15rem); letter-spacing:.045em; line-height:1.2; font-weight:750; }

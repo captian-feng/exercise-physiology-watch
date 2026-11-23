@@ -391,4 +391,38 @@
   get("prev").addEventListener("click", () => turnPage(-1));
   get("next").addEventListener("click", () => turnPage(1));
   render();
+
+  // "参与维护" opens a pre-filled GitHub issue so a report or an idea arrives
+  // with the context a maintainer needs, without the visitor filling a form.
+  const REPO_ISSUES = "https://github.com/captian-feng/exercise-physiology-watch/issues/new";
+  const link = (base, params) => base + "?" + new URLSearchParams(params).toString();
+
+  get("contribute-fix").href = link(REPO_ISSUES, {
+    title: "[纠错] ",
+    body: [
+      "请描述发现的问题，以下几类都欢迎：",
+      "",
+      "1. 文献类型判错（如把综述标成原创研究）",
+      "2. 不该收录的研究被收录（如动物实验、细胞分子机制、纯心理学研究）",
+      "3. 该收录的研究被漏掉",
+      "",
+      "---",
+      "论文 DOI 或 PMID：",
+      "当前显示的文献类型或专题：",
+      "建议改为：",
+      "核对依据（期刊官网或数据库链接）：",
+    ].join("\n"),
+  });
+
+  get("contribute-idea").href = link(REPO_ISSUES, {
+    title: "[建议] ",
+    body: [
+      "请写下你的想法，例如希望增加的期刊、筛选维度或功能。",
+      "",
+      "---",
+      "建议内容：",
+      "使用场景（为什么需要）：",
+      "补充说明：",
+    ].join("\n"),
+  });
 })();
