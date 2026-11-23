@@ -44,3 +44,5 @@ International Journal of Sports Science & Coaching|1747-9541,2048-397X
 Pediatric Exercise Science|0899-8493,1543-2920
 Sports Health|1941-7381,1941-0921
 The Journal of Sports Medicine and Physical Fitness|0022-4707,1827-1928
+# Occupational and military exercise physiology
+Military Medicine|0026-4075,1930-613X
