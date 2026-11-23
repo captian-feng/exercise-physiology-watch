@@ -25,7 +25,7 @@ jobs:
       - name: Validate the terminology glossary
         run: python scripts/check_glossary.py
       - name: Check article classification and publication dates
-        run: python -m unittest -v test_article_types test_publication_dates
+        run: python -m unittest -v test_article_types test_publication_dates test_screening test_scope_verify
       - name: Check the website script
         run: node --check site-src/app.js
       - name: Rebuild the baseline without external requests

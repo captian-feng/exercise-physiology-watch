@@ -9,6 +9,8 @@ from urllib.parse import quote, urlsplit
 
 from article_types import ARTICLE_TYPES, article_type_for
 from presentation import OTHER, PATTERNS, PUBLICATION_NOTICE, topic_for, translations
+import screening
+import scope_verify
 from screening import is_clinical_study, relevance_tier
 
 ROOT = Path(__file__).resolve().parent
@@ -65,11 +67,22 @@ def row_rank(entry):
 
 def write_site(db, journals):
     candidates = []
+    # Titles that are ambiguous between human exercise physiology and, say, a
+    # cell study are checked against their abstract once and cached, so a
+    # rebuild never repeats a lookup.
+    verifier = scope_verify.Verifier()
+    verified_in = 0
     for raw, seen in db.execute("SELECT data, first_seen FROM articles ORDER BY id"):
         item = json.loads(raw)
         tier = relevance_tier(item)
+        if tier is None and screening.needs_verification(item):
+            tier = verifier.verify(item)
+            verified_in += bool(tier)
         if tier:
             candidates.append((item, seen, tier))
+    verifier.flush()
+    if verifier.lookups or verified_in:
+        print(f"Scope verification: {verifier.lookups} lookups, {verified_in} admitted", flush=True)
     # The same paper can reach us twice - the journal version plus a preprint or
     # study registration with a different DOI. The site shows one row per title.
     best = {}

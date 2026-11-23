@@ -203,8 +203,121 @@ HUMAN_CONTEXT = re.compile(
     r"adults?|children|adolescents?|older people|cyclists?|runners?|"
     r"randomi[sz]ed|cohort|trained individuals)\b", re.I,
 )
+
+# ---------------------------------------------------------------------------
+# Scope of the library: human exercise physiology, meaning studies that record a
+# physiological or physical-performance measurement in people who exercise.
+#
+# Three families of work are out of scope even when the title mentions exercise.
+# They used to leak into the core list because HUMAN_OUTCOME contained terms such
+# as "mental health", "brain", "immune" and EXERCISE_EXTRA contained "skeletal
+# muscle" and "mitochondria":
+#
+#   1. psychosocial and behavioural sport science,
+#   2. molecular, cellular and tissue-level work,
+#   3. single-omics / bioinformatics analyses of athletes' samples.
+#
+# A record is dropped only when it matches one of those families *and* reports no
+# whole-body measurement, so a training study that also measured anxiety is kept.
+# ---------------------------------------------------------------------------
+PSYCHOSOCIAL = re.compile(
+    r"\b(?:psycholog\w*|psychometric\w*|mental health|mental fatigue|"
+    r"well-?being|quality of life|anxiety|depress\w*|burnout|motivation\w*|"
+    r"self[- ](?:efficacy|regulation|determination|confidence|compassion|talk)|"
+    r"perception\w*|perspectives?|attitudes?|beliefs?|expectations?|knowledge|"
+    r"coach(?:es|ing)?|leadership|career|talent (?:development|identification)|"
+    r"enjoyment|mood|emotion\w*|resilience|thriving|coping|"
+    r"satisfaction|adherence|compliance|behavio(?:u)?r(?:al)? change|"
+    r"questionnaire\w*|survey\w*|interview\w*|qualitative|ethnograph\w*|"
+    r"cognit\w* (?:function|performance|testing|training|impairment|decline)|"
+    r"academic (?:performance|achievement)|executive function\w*|"
+    r"memory|attention|decision[- ]making|"
+    r"social (?:support|media|network|determinants|inclusion)|socioeconomic\w*|"
+    r"athlete (?:thriving|burnout|identity)|narrative|discourse|"
+    r"reinvestment|learning methods?|motor learning|self[- ]report)\b", re.I,
+)
+# A title that opens with a psychosocial subject is about that subject, even when
+# the outcome is a performance score ("Psychological Self-Report Questionnaires
+# Are Not Associated With Decrements in Physical Performance").
+PSYCHOSOCIAL_HEAD = re.compile(
+    r"^(?:psychological|psychosocial|psychometric|mental\b|motivation\w*|"
+    r"perception\w*|perspectives?\b|attitudes?\b|coach(?:es|ing)?\b|"
+    r"self[- ](?:efficacy|regulation|determination|report)|"
+    r"the role of (?:psychological|motivation|perception))", re.I,
+)
+MOLECULAR_LEVEL = re.compile(
+    r"\b(?:gene(?:s|tic|tics)?|genom\w*|polymorphism\w*|allele\w*|genotype\w*|"
+    r"epigenet\w*|methylation|histone\w*|micrornas?|mirnas?|lncrnas?|mrna|"
+    r"transcriptom\w*|proteom\w*|metabolom\w*|lipidom\w*|single[- ]cell\w*|"
+    # "inflammation" itself is a routine human outcome (CRP, IL-6 after
+    # exercise), so only the clearly molecular markers are listed here.
+    r"cytokine\w*|chemokine\w*|interleukin\w*|tnf|nf-?kb|"
+    r"inflammasom\w*|ferroptosis|apoptosis|autophagy|senescence|"
+    r"signal(?:l)?ing (?:pathway|cascade)|molecular\w*|"
+    r"pentose phosphate|oxidative stress|reactive oxygen|"
+    r"cxcl\d*|ilm\d*|rs\d{3,}|actn3|epas1|furin|aldh2|apoe|"
+    r"nrf2|mtor|ampk|sirtuin\w*|pgc-1|hif-\d|mapk|pi3k|akt\b|"
+    r"knock(?:down|out)|overexpress\w*|transfect\w*|"
+    r"cell culture|cultured (?:cells?|myotubes?)|in vitro|ex vivo|"
+    r"myotubes?|organoids?|fibroblast\w*|endothelial cells?|stem cells?|"
+    r"exosom\w*|extracellular vesicle\w*|western blot|pcr|"
+    r"immunohistochem\w*|histolog\w*|biops(?:y|ies)|single[- ]fib(?:re|er)|"
+    r"mitochondrial (?:respiration|dysfunction|biogenesis|density)|"
+    r"oxidative phosphorylation|respiratory chain|sarcomere[- ]level)\b", re.I,
+)
+# A whole-body physiological or physical-performance measurement. Titles that
+# carry one stay in scope even when they also mention a psychosocial or
+# molecular term.
+WHOLE_BODY_MEASURE = re.compile(
+    r"\b(?:vo[\u0307₂2o\s_-]*2?\s*(?:max|peak)|maximal oxygen uptake|"
+    r"peak oxygen uptake|oxygen uptake kinetics|heart rate|"
+    r"blood lactate|lactate (?:threshold|concentration|steady state)|"
+    r"ventilatory threshold|critical (?:power|speed)|"
+    r"time to exhaustion|time trial|endurance performance|"
+    r"aerobic (?:capacity|performance|power)|anaerobic (?:capacity|power|performance)|"
+    r"sprint (?:speed|time|performance|mechanics|kinematics)|"
+    r"jump (?:height|performance|kinetics|kinematics)|"
+    r"power output|peak power|mean power|"
+    r"muscle (?:strength|power|thickness|cross-sectional area|volume|"
+    r"activation|oxygenation)|muscular strength|"
+    r"one[- ]repetition maximum|1[- ]rm|"
+    r"force[- ]velocity|load[- ]velocity|torque|"
+    r"running economy|energy expenditure|substrate oxidation|"
+    r"body composition|lean mass|fat mass|"
+    r"core temperature|skin temperature|sweat rate|"
+    r"arterial (?:stiffness|pressure)|blood pressure|"
+    r"pulmonary function\w*|lung function\w*|"
+    r"cardiorespiratory fitness|physical fitness|physical performance|muscle damage|"
+    r"postural (?:control|stability)|balance (?:control|performance)|"
+    r"gait (?:speed|kinematics|analysis)|"
+    # Whole-body regulatory physiology: these are measurements of the person,
+    # not of a cell or a molecule, so a paper reporting one stays in scope even
+    # when its title also mentions emotion, a gene or a signalling pathway.
+    r"autonomic|neuroendocrine|cortisol|heart rate variability|"
+    r"vascular|arterial|brachial|flow[- ]mediated dilation|"
+    r"blood flow|cardiac output|stroke volume|"
+    r"thermoregulat\w*|sweat\w*|hydration|hypohydration|"
+    r"heat acclimat\w*|"
+    r"oxygen saturation|arterial oxygen|muscle oxygenation|"
+    r"sleep (?:efficiency|quality|duration)|nocturnal)\b", re.I,
+)
 UNCERTAIN_RELEVANCE = "题名未显示运动生理或身体表现结局"
 RECOVERED_CONTEXT = "题名未直接出现运动字样，但属运动生理相关主题"
+# Reasons that a title alone cannot settle. A record dropped for one of these is
+# handed to scope_verify, which reads the abstract before giving a final answer.
+SCOPE_AMBIGUOUS = {"心理学、社会科学或教练研究", "纯分子、细胞或组织层面研究"}
+# Exercising people, as opposed to a patient group.
+ATHLETE_CONTEXT = re.compile(
+    r"\b(?:athletes?|players?|runners?|cyclists?|swimmers?|weightlifters?"
+    r"|healthy (?:men|women|adults|volunteers|participants|subjects)"
+    r"|trained (?:men|women|males|females|individuals|participants|subjects)"
+    r"|recreationally active|physically active)\b", re.I,
+)
+
+
+def needs_verification(item):
+    """True when the title is ambiguous and the abstract should decide."""
+    return exclusion_reason(item) in SCOPE_AMBIGUOUS
 NON_RESEARCH_TYPES = {"editorial", "published erratum", "retraction of publication", "news"}
 
 
@@ -213,6 +326,26 @@ def exercise_signal(item):
     if EXERCISE.search(item["title"]) or EXERCISE_EXTRA.search(item["title"]):
         return True
     return bool(set(item.get("mesh", ())) & EXERCISE_MESH)
+
+
+def out_of_scope_reason(title):
+    """Return a drop reason when research is not human exercise physiology.
+
+    Only fires when the title shows no whole-body physiological or performance
+    measurement, so an exercise study that also reports anxiety or a gene
+    variant is retained. A title that *opens* with a psychosocial subject is
+    dropped regardless, because the paper is about that subject even when the
+    outcome is a performance score.
+    """
+    if PSYCHOSOCIAL_HEAD.match(title):
+        return "心理学、社会科学或教练研究"
+    if WHOLE_BODY_MEASURE.search(title):
+        return None
+    if PSYCHOSOCIAL.search(title):
+        return "心理学、社会科学或教练研究"
+    if MOLECULAR_LEVEL.search(title):
+        return "纯分子、细胞或组织层面研究"
+    return None
 
 
 def exclusion_reason(item):
@@ -228,6 +361,9 @@ def exclusion_reason(item):
         return "体外、尸体或纯建模研究"
     if ORTHOPEDIC.search(title):
         return "临床骨科"
+    out_of_scope = out_of_scope_reason(title)
+    if out_of_scope:
+        return out_of_scope
     if CELL_MECHANISM.search(title) and "Humans" not in mesh and not HUMAN_CONTEXT.search(title):
         return "人体运动证据不明确的机制研究"
     if not exercise_signal(item):
