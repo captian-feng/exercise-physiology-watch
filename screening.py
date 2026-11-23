@@ -388,6 +388,13 @@ def exercise_signal(item):
     return bool(set(item.get("mesh", ())) & EXERCISE_MESH)
 
 
+# A paper whose subject is the dataset itself, not a finding from it.
+DATA_PAPER = re.compile(
+    r"(?:\bdataset\b|data descriptor|ground-truth validation dataset"
+    r"|open (?:dataset|data\b)|benchmark(?:ing)? (?:dataset|data)|corpus\b)", re.I,
+)
+
+
 def out_of_scope_reason(title):
     """Return a drop reason when research is not human exercise physiology.
 
@@ -399,6 +406,10 @@ def out_of_scope_reason(title):
     """
     if PSYCHOSOCIAL_HEAD.match(title):
         return "心理学、社会科学或教练研究"
+    # A data descriptor reports a corpus even when the corpus is about gait or
+    # physical activity, so it is checked before the whole-body whitelist.
+    if DATA_PAPER.search(title):
+        return "数据集或方法学资源论文"
     if WHOLE_BODY_MEASURE.search(title):
         return None
     if PSYCHOSOCIAL.search(title):
