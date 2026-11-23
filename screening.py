@@ -239,7 +239,12 @@ PSYCHOSOCIAL = re.compile(
     r"algorithm\w*|machine learning|deep learning|neural network|classifier\w*|"
     r"predictive model\w*|prediction model\w*|sensor[- ]based|"
     r"wearable (?:sensor|device) (?:design|development)|"
-    r"data[- ]driven (?:approach|model))\b", re.I,
+    r"data[- ]driven (?:approach|model)"
+    # A dataset or benchmark paper reports no physiological finding.
+    r"|\bdataset\b|\bdata descriptor\b|benchmark|"
+    r"multi-?dataset framework|labelled (?:laboratory )?data|"
+    r"physics-informed|federated learning|explainable (?:artificial intelligence|ai)|"
+    r"\bultra-mocap\b|network framework)\b", re.I,
 )
 # A title that opens with a psychosocial subject is about that subject, even when
 # the outcome is a performance score ("Psychological Self-Report Questionnaires
