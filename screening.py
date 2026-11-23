@@ -332,6 +332,8 @@ WHOLE_BODY_MEASURE = re.compile(
     r"muscle (?:strength|power|thickness|cross-sectional area|volume|"
     r"activation|oxygenation)|muscular strength|"
     r"one[- ]repetition maximum|1[- ]rm|"
+    r"(?:fat|weight|body[- ]mass) loss|fat[- ]mass|lean (?:mass|body mass)|"
+    r"change in body composition|"
     r"force[- ]velocity|load[- ]velocity|torque|"
     r"running economy|energy expenditure|substrate oxidation|"
     r"body composition|lean mass|fat mass|"
