@@ -1,0 +1,5702 @@
+{
+ "doi:10.1001/jamanetworkopen.2026.1194": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1002/alz.71555": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1002/ejsc.70081": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1002/ejsc.70093": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1002/ejsc.70094": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1002/ejsc.70102": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1002/ejsc.70104": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1002/ejsc.70106": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1002/ejsc.70113": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1002/ejsc.70118": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1002/ejsc.70120": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1002/ejsc.70122": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1002/ejsc.70124": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1002/ejsc.70128": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1002/ejsc.70131": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1002/ejsc.70178": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/ejsc.70194": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1002/ejsc.70203": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/ejsc.70213": {
+  "include": false,
+  "why": "clinical population rather than exercisers"
+ },
+ "doi:10.1002/ejsc.70214": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1002/ejsc.70220": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1002/ejsc.70221": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1002/ejsc.70222": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1002/ejsc.70229": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1002/ejsc.70242": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/ejsc.70248": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1002/ejsc.70272": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1002/ejsc.70286": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/jcsm.70127": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1002/jcsm.70148": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1002/jcsm.70160": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1002/jcsm.70170": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/jcsm.70175": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/jcsm.70184": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1002/jcsm.70188": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1002/jcsm.70197": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/jcsm.70213": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1002/jcsm.70219": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1002/jcsm.70222": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1002/jcsm.70223": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/jcsm.70235": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1002/jcsm.70240": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1002/jcsm.70250": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/jcsm.70261": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/jcsm.70267": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/jcsm.70285": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1002/jcsm.70347": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1002/jcsm.70349": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1002/jcsm.70350": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1002/jcsm.70385": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1002/jcsm.70391": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1002/jcsm.70394": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1002/jcsm.70409": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1002/jcsm.70410": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1002/jcsm.70416": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1002/jcsm.70418": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1002/jfa2.70170": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1007/s00421-025-05851-w": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1007/s00421-025-05877-0": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1007/s00421-025-05889-w": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s00421-025-05895-y": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1007/s00421-025-05973-1": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1007/s00421-025-05976-y": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1007/s00421-025-05987-9": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1007/s00421-025-05989-7": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1007/s00421-025-05992-y": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1007/s00421-025-06042-3": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1007/s00421-025-06056-x": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1007/s00421-025-06064-x": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s00421-025-06105-5": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1007/s00421-026-06195-9": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1007/s00421-026-06200-1": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1007/s00421-026-06204-x": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1007/s00421-026-06224-7": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1007/s00421-026-06228-3": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s00421-026-06285-8": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s00421-026-06367-7": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1007/s00421-026-06369-5": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1007/s00421-026-06382-8": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1007/s00421-026-06410-7": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1007/s00421-026-06435-y": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s00421-026-06457-6": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s00421-026-06461-w": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1007/s00421-026-06487-0": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1007/s00421-026-06493-2": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s10865-025-00606-6": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1007/s10865-025-00627-1": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1007/s11517-026-03562-8": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1007/s13668-026-00765-1": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-025-02262-x": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-025-02307-1": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1007/s40279-025-02315-1": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-025-02324-0": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-025-02340-0": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-025-02368-2": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-025-02372-6": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-025-02376-2": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-025-02379-z": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-025-02380-6": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-025-02382-4": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1007/s40279-025-02383-3": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-025-02387-z": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02400-z": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1007/s40279-026-02406-7": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02417-4": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02426-3": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02431-6": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02434-3": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1007/s40279-026-02449-w": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02455-y": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02458-9": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1007/s40279-026-02459-8": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1007/s40279-026-02480-x": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1007/s40279-026-02491-8": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02492-7": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1007/s40279-026-02508-2": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02511-7": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.1007/s40279-026-02512-6": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.1007/s40279-026-02514-4": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02517-1": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.1007/s40279-026-02519-z": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.1007/s40279-026-02532-2": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02544-y": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1007/s40279-026-02546-w": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02548-8": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.1007/s40279-026-02557-7": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02578-2": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02580-8": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s40279-026-02584-4": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s42978-025-00359-3": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1007/s42978-025-00368-2": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1007/s42978-025-00370-8": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s42978-026-00374-y": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1007/s42978-026-00402-x": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1007/s44192-026-00513-5": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1016/j.actpsy.2026.106690": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.aei.2026.105063": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1016/j.archger.2025.106095": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.exger.2025.112979": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.exger.2026.113284": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1016/j.gene.2025.149957": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.gerinurse.2026.104171": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1016/j.jaac.2025.03.018": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1016/j.jaccas.2026.110650": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1016/j.jad.2025.120980": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jelekin.2026.103134": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jelekin.2026.103207": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1016/j.jelekin.2026.103218": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jesf.2025.200436": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1016/j.jesf.2026.200502": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jesf.2026.200515": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jesf.2026.200524": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jesf.2026.200531": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1016/j.jesf.2026.200532": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jesf.2026.200544": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jsams.2025.06.005": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2025.08.001": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jsams.2025.08.004": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1016/j.jsams.2025.08.014": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jsams.2025.09.014": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1016/j.jsams.2025.09.017": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jsams.2025.10.001": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2025.10.004": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2025.10.009": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jsams.2025.11.002": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jsams.2025.11.006": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2025.11.009": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2025.11.018": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2025.12.010": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.02.004": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1016/j.jsams.2026.02.006": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1016/j.jsams.2026.03.011": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1016/j.jsams.2026.03.013": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1016/j.jsams.2026.03.014": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.03.018": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.04.002": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jsams.2026.05.014": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.06.004": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jsams.2026.06.013": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jsams.2026.06.016": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1016/j.jsams.2026.07.005": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1016/j.jsams.2026.07.007": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.07.010": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1016/j.jsams.2026.07.011": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1016/j.jsams.2026.07.018": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.08.005": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.08.010": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.08.064": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1016/j.jsams.2026.08.068": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.08.070": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1016/j.jsams.2026.08.071": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1016/j.jsams.2026.08.103": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.08.112": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1016/j.jsams.2026.08.117": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1016/j.jsams.2026.08.140": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.08.145": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1016/j.jsams.2026.08.146": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.08.149": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1016/j.jsams.2026.08.164": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1016/j.jsams.2026.08.173": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1016/j.jsams.2026.08.198": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.08.207": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1016/j.jsams.2026.08.213": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.09.006": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1016/j.jsams.2026.09.010": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.09.021": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1016/j.jsams.2026.10.002": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jsams.2026.10.003": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jshs.2024.100992": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jshs.2024.101015": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jshs.2025.101023": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jshs.2025.101027": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.jshs.2025.101029": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1016/j.jshs.2025.101032": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jshs.2025.101034": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1016/j.jshs.2025.101049": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jshs.2025.101061": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1016/j.jshs.2025.101065": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1016/j.jshs.2025.101072": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jshs.2025.101074": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jshs.2025.101082": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1016/j.jshs.2025.101085": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jshs.2025.101103": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jshs.2025.101108": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jshs.2026.101150": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1016/j.jshs.2026.101157": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.jshs.2026.101159": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.maturitas.2026.108930": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.psychres.2026.117242": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1016/j.psychsport.2025.103002": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.psychsport.2025.103015": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.puhe.2025.106063": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.smhs.2025.03.011": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.smhs.2025.07.001": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1016/j.smhs.2025.07.006": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1016/j.smhs.2025.07.007": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1016/j.smhs.2025.07.008": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.smhs.2025.07.011": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.smhs.2025.08.004": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.smhs.2026.03.003": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.smhs.2026.03.005": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.smhs.2026.03.006": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.smhs.2026.07.001": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1016/j.smhs.2026.07.004": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.smhs.2026.07.006": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1016/j.smhs.2026.07.007": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1016/j.smhs.2026.10.001": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1016/j.socscimed.2026.119411": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1016/j.soncn.2025.152064": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1016/j.spinee.2025.10.021": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1017/s0033291726105406": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1038/s41562-026-02427-2": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1038/s41598-025-25226-7": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1038/s41598-025-34470-w": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1038/s41598-025-34573-4": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1038/s41598-026-44729-5": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1038/s41598-026-47012-9": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1038/s41598-026-55559-w": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1038/s41598-026-55769-2": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1038/s41598-026-58229-z": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1038/s41598-026-63222-7": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1055/a-2674-4030": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1055/a-2702-4789": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1055/a-2709-6847": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1055/a-2722-7414": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1055/a-2785-7470": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1055/a-2799-1026": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1055/a-2972-5240": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/00913847.2026.2644839": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2025.2486884": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2025.2536892": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2025.2540216": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1080/02640414.2025.2540661": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/02640414.2025.2542588": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1080/02640414.2025.2557724": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2025.2568250": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/02640414.2025.2569233": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2025.2569238": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2025.2569267": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2025.2570032": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2025.2570061": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2025.2573575": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1080/02640414.2025.2574192": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/02640414.2025.2574260": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/02640414.2025.2575415": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/02640414.2025.2575417": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2025.2576311": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/02640414.2025.2577487": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/02640414.2025.2578583": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2025.2585588": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/02640414.2025.2590942": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/02640414.2025.2595408": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/02640414.2025.2598159": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2025.2598171": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/02640414.2025.2600807": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1080/02640414.2025.2604931": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2025.2604935": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1080/02640414.2025.2604953": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2025.2604958": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2025.2605424": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2619321": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2619327": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2619338": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2620207": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2633812": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/02640414.2026.2637043": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2640330": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2645423": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2645490": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1080/02640414.2026.2653301": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2668811": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2668823": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2668826": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2668837": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/02640414.2026.2668910": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2668913": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2668920": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2668928": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2668931": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2668932": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2668940": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2668950": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2668964": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2668965": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670101": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670104": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670114": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2670115": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670116": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670125": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670126": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670127": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2670168": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670172": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2670178": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2670180": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2670188": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670208": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670210": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670211": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670212": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2670219": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1080/02640414.2026.2673237": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1080/02640414.2026.2673241": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/02640414.2026.2673248": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2689276": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/02640414.2026.2692300": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/02640414.2026.2698229": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2698238": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2702737": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1080/02640414.2026.2702741": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/02640414.2026.2703346": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1080/02640414.2026.2703352": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1080/02640414.2026.2703386": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2705709": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2705719": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1080/02640414.2026.2715216": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2717025": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2717030": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2717031": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/02640414.2026.2717966": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2722778": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/02640414.2026.2722784": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/02640414.2026.2728790": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1080/02640414.2026.2735708": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2741479": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/02640414.2026.2743314": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1080/02640414.2026.2743408": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2750646": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/02640414.2026.2750668": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02640414.2026.2759985": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/02640414.2026.2765995": {
+  "include": false,
+  "why": "no online abstract found"
+ },
+ "doi:10.1080/02701367.2025.2494266": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/02701367.2026.2619085": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1080/07853890.2026.2658879": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/08870446.2025.2496239": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/09297049.2025.2509911": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/09593985.2025.2573021": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1080/09593985.2026.2618078": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1080/14763141.2025.2552179": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/14763141.2026.2762026": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1080/15438627.2026.2673038": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2025.2459090": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2025.2477060": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/15502783.2025.2495879": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/15502783.2025.2496448": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1080/15502783.2025.2496450": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/15502783.2025.2498485": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/15502783.2025.2509674": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2025.2519517": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/15502783.2025.2533504": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2025.2536139": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1080/15502783.2025.2536146": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1080/15502783.2025.2541010": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1080/15502783.2025.2550317": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2025.2551213": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1080/15502783.2025.2555249": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/15502783.2025.2565385": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/15502783.2025.2566371": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2025.2576238": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2025.2579815": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/15502783.2025.2591783": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2026.2638903": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2026.2646628": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1080/15502783.2026.2662625": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1080/15502783.2026.2671429": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2026.2671431": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2026.2677647": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2026.2691213": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1080/15502783.2026.2696421": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2026.2711032": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1080/15502783.2026.2715064": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1080/15502783.2026.2721836": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1080/15502783.2026.2728354": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1093/biostatistics/kxaf013": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1093/bmb/ldag037": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1093/jpepsy/jsaf116": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1096/fj.202504084rr": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1097/jnc.0000000000000617": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1097/md.0000000000049444": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1111/aphw.70147": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1111/cch.70239": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1111/cch.70255": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1111/cch.70263": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1111/josh.70198": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1111/sms.70178": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1111/sms.70204": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1111/sms.70213": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1111/sms.70220": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1111/sms.70228": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1111/sms.70250": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1111/sms.70256": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1111/sms.70262": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1111/sms.70277": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1111/sms.70295": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1111/sms.70299": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1111/sms.70329": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1111/sms.70331": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1111/sms.70334": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1111/sms.70339": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1111/sms.70349": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1111/sms.70364": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.1111/sms.70386": {
+  "include": false,
+  "why": "clinical population rather than exercisers"
+ },
+ "doi:10.1113/ep091527": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/ep092669": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/ep092711": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/ep092792": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1113/ep092907": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/ep092957": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1113/ep092963": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/ep092977": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1113/ep093300": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/ep093301": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/ep093342": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1113/ep093374": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1113/ep093383": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1113/ep093387": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1113/ep093434": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/ep093500": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1113/ep093524": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1113/ep093541": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/ep093600": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/ep093607": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/ep093660": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1113/ep093699": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1113/ep093857": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/ep093983": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/ep093999": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1113/ep094096": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1113/ep094109": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/ep094252": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1113/jp285667": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/jp286755": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp287204": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp287358": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/jp287636": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/jp287656": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp287770": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/jp287886": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp288038": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp288598": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1113/jp289233": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1113/jp289417": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1113/jp289445": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp289491": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1113/jp289538": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1113/jp289594": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1113/jp289765": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1113/jp289900": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1113/jp289946": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp290082": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1113/jp290241": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1113/jp290243": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp290312": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1113/jp290346": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp290421": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp290604": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.1113/jp290722": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1113/jp290807": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp290966": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1113/jp291172": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1113/jp291212": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1113/jp291588": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp291849": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1113/jp292044": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1113/jp292141": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1113/jp292187": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1123/ijsnem.2026-0058": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1123/ijsnem.2026-0098": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1123/ijspp.2025-0317": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1123/ijspp.2025-0341": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1123/ijspp.2025-0363": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1123/ijspp.2025-0394": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1123/ijspp.2025-0468": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1123/ijspp.2025-0475": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1123/ijspp.2025-0489": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1123/ijspp.2025-0571": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1123/ijspp.2025-0638": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1123/ijspp.2025-0668": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1123/ijspp.2025-0689": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1123/ijspp.2026-0015": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1123/ijspp.2026-0042": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1123/ijspp.2026-0148": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1123/ijspp.2026-0183": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1123/ijspp.2026-0240": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1123/ijspp.2026-0254": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1123/japa.2025-0005": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1123/jpah.2025-0407": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1123/jpah.2025-0935": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1123/jsep.2025-0146": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1136/bjsports-2024-108953": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-109646": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1136/bjsports-2025-109787": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1136/bjsports-2025-109806": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-110064": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1136/bjsports-2025-110203": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1136/bjsports-2025-110301": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-110327": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-110456": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-110491": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-110611": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-110879": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-110881": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1136/bjsports-2025-110977": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-110988": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1136/bjsports-2025-111247": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.1136/bjsports-2025-111408": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1136/bjsports-2025-111429": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-111432": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-111479": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1136/bjsports-2025-111514": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2025-111515": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2026-111569": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2026-111709": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bjsports-2026-111763": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1136/bjsports-2026-111832": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1136/bjsports-2026-112132": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1136/bjsports-2026-112190": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1136/bjsports-2026-112294": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1136/bmjopen-2025-109130": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1136/bmjsem-2025-002583": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bmjsem-2025-002688": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bmjsem-2025-002709": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bmjsem-2025-002783": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bmjsem-2025-002788": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1136/bmjsem-2025-002821": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1136/bmjsem-2025-002827": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bmjsem-2025-002831": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1136/bmjsem-2025-003078": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1136/bmjsem-2025-003082": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bmjsem-2025-003132": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bmjsem-2025-003157": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1136/bmjsem-2025-003171": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1136/bmjsem-2025-003181": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1136/bmjsem-2025-003189": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bmjsem-2026-003239": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1136/bmjsem-2026-003274": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bmjsem-2026-003318": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1136/bmjsem-2026-003332": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1136/bmjsem-2026-003416": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1136/bmjsem-2026-003422": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1136/heartjnl-2025-326217": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1136/military-2024-002672": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1139/apnm-2025-0213": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1139/apnm-2025-0250": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1139/apnm-2025-0302": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1139/apnm-2025-0329": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1139/apnm-2025-0344": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1139/apnm-2025-0346": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1139/apnm-2025-0371": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1139/apnm-2025-0380": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1139/apnm-2025-0401": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1139/apnm-2025-0446": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1139/apnm-2025-0473": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1139/apnm-2026-0058": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1139/apnm-2026-0182": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1139/apnm-2026-0242": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1139/apnm-2026-0247": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1152/japplphysiol.00119.2025": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1152/japplphysiol.00181.2026": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/japplphysiol.00258.2026": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1152/japplphysiol.00282.2026": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1152/japplphysiol.00284.2026": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/japplphysiol.00291.2026": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/japplphysiol.00343.2025": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1152/japplphysiol.00357.2026": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/japplphysiol.00463.2026": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1152/japplphysiol.00657.2025": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.1152/japplphysiol.00659.2025": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.1152/japplphysiol.00692.2025": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.1152/japplphysiol.00941.2025": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/japplphysiol.01017.2025": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/japplphysiol.01029.2025": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1152/physiol.00021.2025": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2272556": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2284499": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2293197": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2293297": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2294204": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2294470": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2294621": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2294850": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2294878": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2294915": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2295028": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2295782": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2296096": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2296749": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2296867": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2297304": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2297724": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2297752": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2297787": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2297802": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2297909": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2297927": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2297928": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2298081": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2298144": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2298149": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2298217": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2298287": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299140": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299189": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299207": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299208": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299263": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299271": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299326": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299351": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299398": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299560": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299561": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299700": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299794": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299825": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299921": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2299966": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300016": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300017": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300025": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300085": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300143": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300173": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300344": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300470": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300476": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300562": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300585": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300614": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300708": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300731": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300792": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300878": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300888": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2300980": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301011": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301028": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301043": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301102": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301120": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301136": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301230": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301270": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301293": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301311": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301366": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301385": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301494": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301508": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2301549": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2320431": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2320503": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2323680": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2334153": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2341472": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2343970": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2344262": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2344747": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2346162": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2346255": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2346433": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2346734": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2346939": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2346971": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2346982": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1152/physiol.2026.41.s1.2347066": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1155/da/6881070": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1159/000549207": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1159/000551090": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1161/circulationaha.125.077117": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1161/jaha.125.043217": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/03635465251390549": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/03635465251391709": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1177/03635465251407113": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/03635465261434222": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/03635465261448236": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/03635465261470174": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/03635465261492535": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/09287329261419297": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1177/10901981251411240": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1177/15248399251316517": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17455057261455275": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541251356807": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541251383105": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541251389527": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541251390501": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541251393813": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541251393917": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541251395165": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541251395228": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541251395888": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541251397467": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541251398249": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541251399639": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541251400621": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541251401295": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541251403493": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541251403877": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541251406259": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541251406503": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541251406864": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541251406903": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541251407498": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541251407845": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541251407997": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541251407999": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541251408003": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541251408007": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541251408666": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541251409330": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541251411196": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541251411311": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541251413086": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541251413704": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541251414997": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261416773": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261418574": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261420207": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261420331": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261420682": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261420683": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261421009": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261421100": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261421423": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261421589": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261421771": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261422226": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261422519": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261425239": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261425363": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261426350": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261426460": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261426716": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261426924": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261426925": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261427004": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261427009": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261427130": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261428255": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261428790": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261429879": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261430313": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261430599": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261431223": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261431543": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261432097": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261432364": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261433209": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261434081": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261434502": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261435125": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261435455": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261435571": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261436711": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261436804": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261436978": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261436984": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261437119": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261439723": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261439786": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261440230": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261440448": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261440466": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261441404": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261441416": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261441429": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261441668": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261441809": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261443098": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261443292": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261443383": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261443624": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261444151": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261444715": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261445521": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261445840": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261446432": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261446927": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261446935": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261448393": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261448863": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261449737": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261451126": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261451716": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261452433": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261453694": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261454337": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261454338": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261455131": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261455226": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261455244": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261455245": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261455251": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261455344": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261455504": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261456104": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261457430": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261457556": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261458102": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261458208": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261459407": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261459424": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261459445": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261459563": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261459975": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1177/17479541261460374": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261460816": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261461184": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261461871": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261462364": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261462826": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261463675": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261466493": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261466495": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261467863": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261467868": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261467876": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261467946": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261468141": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261468551": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261470030": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261470067": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261471817": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261471822": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261471826": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261472281": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261474763": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261474795": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261474868": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261475274": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261476171": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261476916": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261476945": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261478039": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261478055": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261478077": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261478750": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261478839": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261479639": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261479936": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261480372": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261483235": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261483634": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261484578": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261485198": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261485282": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261485459": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261485992": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261486246": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261486600": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261487015": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261488005": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261488177": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261488682": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261489180": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261489185": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261489696": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261492155": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261492185": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261492679": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261494267": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261494280": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261494925": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261496197": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261498569": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261498574": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261498583": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261498615": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261498675": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261498762": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261499703": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261500044": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261500394": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/17479541261500540": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261501798": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261503127": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/17479541261503436": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261503463": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/17479541261503583": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261503586": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261503587": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/17479541261504645": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1177/17479541261506886": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1177/17479541261507319": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1177/19417381251350693": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1177/19417381251385590": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1177/19417381261486286": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1177/21501319261434134": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1183/23120541.01496-2025": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s11556-026-00413-1": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1186/s11671-026-04633-3": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1186/s12883-026-05055-5": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s12887-025-06420-y": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s12887-026-06961-w": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1186/s12887-026-07090-0": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1186/s12888-026-07906-4": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1186/s12889-025-25497-9": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1186/s12889-026-26469-3": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s12889-026-26959-4": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s12889-026-28494-8": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1186/s12966-026-01907-y": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1186/s12966-026-01911-2": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1186/s12966-026-01932-x": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1186/s12966-026-01950-9": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1186/s13063-026-09771-8": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s13102-026-01647-3": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s13102-026-01663-3": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1186/s13102-026-01695-9": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1186/s13102-026-01866-8": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s13395-026-00425-6": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s13395-026-00433-6": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1186/s13395-026-00442-5": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s13395-026-00457-y": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.1186/s40359-026-04299-7": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1186/s40359-026-05800-y": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1186/s40798-025-00919-5": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1186/s40798-025-00941-7": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1186/s40798-025-00950-6": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1186/s40798-025-00957-z": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-025-00960-4": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-025-00968-w": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1186/s40798-025-00973-z": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-00978-2": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1186/s40798-026-00997-z": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01000-5": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01003-2": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1186/s40798-026-01007-y": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01015-y": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01044-7": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01062-5": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1186/s40798-026-01077-y": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1186/s40798-026-01098-7": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01103-z": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1186/s40798-026-01107-9": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01114-w": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01120-y": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01121-x": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01126-6": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1186/s40798-026-01130-w": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01139-1": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1186/s40798-026-01143-5": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01145-3": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01149-z": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1186/s40798-026-01151-5": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1186/s44167-026-00104-3": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1249/01.mss.0001258824.08131.1b": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001258836.11621.52": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001258960.37833.30": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001258964.46976.a7": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001258980.56656.57": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001258992.22040.ee": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1249/01.mss.0001259008.99680.0b": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259024.48781.33": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1249/01.mss.0001259044.51853.0e": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1249/01.mss.0001259056.25387.9c": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259068.89808.c1": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259076.34807.91": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259080.07926.4d": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259128.18062.34": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259152.10126.db": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259316.12766.5b": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259356.18415.16": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259368.61516.9a": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259384.39176.ba": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259480.08624.66": {
+  "include": false,
+  "why": "clinical population rather than exercisers"
+ },
+ "doi:10.1249/01.mss.0001259524.79986.f1": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259604.65511.aa": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259620.54243.ea": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259628.48617.54": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259740.01145.7d": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259876.53111.a0": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259924.36498.70": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001259940.80433.e7": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/01.mss.0001260076.27623.70": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260116.76657.5e": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260300.92299.e6": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260304.76384.68": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260348.82265.28": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/01.mss.0001260408.65971.5e": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260420.71335.d6": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260424.32053.89": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260624.16943.6d": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260652.85977.32": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260928.22453.8e": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260936.10779.06": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260980.76015.fa": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1249/01.mss.0001260992.45921.ae": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001260996.48811.18": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001261000.83571.08": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001261036.97681.04": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001261324.83952.2b": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001261328.39987.d4": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001261388.01790.e8": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001261536.26998.ac": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001261628.80987.49": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001261632.32886.9f": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001261640.26943.8a": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001261848.69687.61": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262048.43141.fc": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262072.10870.6d": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262084.15599.9e": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262092.07290.3d": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262236.56408.79": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262248.19604.37": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262252.62572.f1": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262256.09205.82": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/01.mss.0001262260.60580.72": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262264.67126.b6": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262272.81311.76": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262276.65838.aa": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262280.04144.e8": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1249/01.mss.0001262284.62698.ad": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262288.51033.e2": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1249/01.mss.0001262292.79864.a2": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262296.07452.17": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262308.28184.21": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262328.53325.b9": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262408.57877.0c": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/01.mss.0001262468.09982.30": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262528.38636.73": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262820.17955.f5": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001262896.94192.96": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263300.79331.ec": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263348.65793.0f": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263364.66342.e8": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263388.85277.1c": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263392.98686.ff": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263396.35187.0a": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263408.83979.e3": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/01.mss.0001263412.62418.fc": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263424.38546.9f": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263428.96191.ff": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263432.53233.12": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263440.68439.bc": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263464.88482.69": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/01.mss.0001263472.97615.d4": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263484.37460.b1": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/01.mss.0001263500.20082.9f": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263512.02003.27": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263516.17784.c7": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263596.68814.f1": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1249/01.mss.0001263620.51573.8d": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1249/01.mss.0001263628.46584.b4": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263700.09819.5a": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263724.37755.48": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263748.98530.5e": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263752.06518.d3": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001263764.81651.4d": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1249/01.mss.0001263768.95456.93": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264184.17008.00": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264232.31142.90": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264248.78596.40": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264312.68940.93": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/01.mss.0001264316.34664.1c": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264324.07434.b5": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264340.39955.da": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264344.90698.e3": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264356.38597.8b": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264380.19215.36": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264396.98102.79": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264816.08084.d6": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264836.89971.c5": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264868.38418.74": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264904.63277.99": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264928.95608.4f": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001264936.21826.9f": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1249/01.mss.0001264992.86782.70": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001265044.78529.0c": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001265052.13884.90": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001265076.33584.f9": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001265084.21436.74": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/01.mss.0001265124.15327.fe": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001265164.73501.dc": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001265184.89399.a1": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1249/01.mss.0001265300.74088.ef": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001265360.89102.99": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001265596.46666.f0": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1249/01.mss.0001265696.34906.06": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001265744.36454.28": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001265748.58685.ac": {
+  "include": false,
+  "why": "clinical population rather than exercisers"
+ },
+ "doi:10.1249/01.mss.0001265752.23557.37": {
+  "include": false,
+  "why": "clinical population rather than exercisers"
+ },
+ "doi:10.1249/01.mss.0001265816.18067.bd": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1249/01.mss.0001265824.55236.c2": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001265980.18791.e1": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266020.65049.7a": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1249/01.mss.0001266024.72440.ae": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266028.27925.3c": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266116.05178.3f": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266120.87579.e1": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266136.97728.18": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266144.97071.ec": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1249/01.mss.0001266160.32861.40": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266176.22556.c8": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266220.22042.c2": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266288.45505.64": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266324.19921.11": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/01.mss.0001266340.07774.05": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266356.64533.30": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1249/01.mss.0001266400.61776.e6": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266576.20293.d8": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266844.56634.a7": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266920.51717.74": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266944.00169.e2": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1249/01.mss.0001266952.68042.20": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001266960.86759.3d": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/01.mss.0001267004.12858.b3": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.1249/jes.0000000000000384": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/jes.0000000000000386": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/jes.0000000000000394": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/jes.0000000000000403": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1249/mss.0000000000003797": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1249/mss.0000000000003801": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1249/mss.0000000000003815": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000003816": {
+  "include": false,
+  "why": "clinical population rather than exercisers"
+ },
+ "doi:10.1249/mss.0000000000003852": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1249/mss.0000000000003861": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1249/mss.0000000000003878": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000003898": {
+  "include": false,
+  "why": "clinical population rather than exercisers"
+ },
+ "doi:10.1249/mss.0000000000003923": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000003928": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1249/mss.0000000000003935": {
+  "include": false,
+  "why": "clinical population rather than exercisers"
+ },
+ "doi:10.1249/mss.0000000000003937": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000003945": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1249/mss.0000000000003950": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/mss.0000000000003956": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/mss.0000000000003963": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000003980": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1249/mss.0000000000004009": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/mss.0000000000004019": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000004024": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000004092": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1249/mss.0000000000004119": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000004120": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.1249/mss.0000000000004136": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000004138": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000004165": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1249/mss.0000000000004183": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000004184": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1249/mss.0000000000004201": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1249/mss.0000000000004202": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1249/mss.0000000000004211": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.12659/msm.953567": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1371/journal.pone.0340261": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1371/journal.pone.0344087": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1371/journal.pone.0350144": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.14814/phy2.70682": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.14814/phy2.70737": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.14814/phy2.70811": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.14814/phy2.70874": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.14814/phy2.70894": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.14814/phy2.70928": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.14814/phy2.70937": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.14814/phy2.71040": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.14814/phy2.71094": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.14814/phy2.71141": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.14814/phy2.71143": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.14814/phy2.71160": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.14814/phy2.71162": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.14814/phy2.71209": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1519/jsc.0000000000005241": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1519/jsc.0000000000005248": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1519/jsc.0000000000005249": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1519/jsc.0000000000005255": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1519/jsc.0000000000005261": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1519/jsc.0000000000005278": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1519/jsc.0000000000005309": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1519/jsc.0000000000005310": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1519/jsc.0000000000005318": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1519/jsc.0000000000005355": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1519/jsc.0000000000005358": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1519/jsc.0000000000005373": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1519/jsc.0000000000005391": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1519/jsc.0000000000005400": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.1519/jsc.0000000000005416": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.1519/jsc.0000000000005436": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1519/jsc.0000000000005447": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.1519/jsc.0000000000005453": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1519/jsc.0000000000005463": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1519/jsc.0000000000005490": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1519/jsc.0000000000005537": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1519/jsc.0000000000005568": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.1519/jsc.0000000000005606": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1519/jsc.0000000000005613": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.1519/jsc.0000000000005687": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.1519/jsc.0000000000005692": {
+  "include": false,
+  "why": "abstract too short to judge"
+ },
+ "doi:10.2188/jea.je20250185": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.2196/79432": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.2196/80584": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.2196/81502": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.2196/90140": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.2196/93692": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.23736/s0022-4707.26.17448-9": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.2471/blt.25.295087": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.26603/001c.155478": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fnut.2026.1901299": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fnut.2026.1921086": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fnut.2026.1937687": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.3389/fphys.2025.1620737": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2025.1643371": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2025.1680485": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2025.1687895": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.3389/fphys.2025.1701689": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2025.1705821": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2025.1708783": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2025.1713588": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fphys.2025.1719853": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.3389/fphys.2025.1729596": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2025.1733458": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2025.1739427": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.3389/fphys.2025.1744254": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1715312": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1717237": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1728736": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1746298": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1753385": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1753526": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.3389/fphys.2026.1755356": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1755772": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2026.1757576": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.3389/fphys.2026.1760238": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1761135": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.3389/fphys.2026.1763453": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2026.1763837": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1770955": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2026.1773221": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2026.1775444": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1775461": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.3389/fphys.2026.1778157": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1787735": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1788828": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.3389/fphys.2026.1788999": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1791522": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1791778": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2026.1792689": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1794531": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1797234": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1807624": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1811456": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1822139": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1823430": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1825414": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1826306": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1830278": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1836341": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1837579": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1838020": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.3389/fphys.2026.1844142": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1845286": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fphys.2026.1852791": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fphys.2026.1853244": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1857141": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1860064": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.3389/fphys.2026.1861013": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1864411": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1865475": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1868102": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fphys.2026.1871149": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1872652": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1875283": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1876163": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1876988": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1877799": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1879388": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2026.1882530": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1886108": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fphys.2026.1888004": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1892485": {
+  "include": false,
+  "why": "animal or cell study"
+ },
+ "doi:10.3389/fphys.2026.1894474": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1899817": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1901594": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1902675": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1905347": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1906184": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1911923": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1912453": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.3389/fphys.2026.1914022": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1923970": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2026.1926423": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1928208": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1931453": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1932608": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1932916": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2026.1943543": {
+  "include": false,
+  "why": "clinical population rather than exercisers"
+ },
+ "doi:10.3389/fphys.2026.1945161": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1947873": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1948763": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1957316": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1958213": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2026.1964642": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1968012": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2026.1976652": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1982731": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.3389/fphys.2026.1989299": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fphys.2026.1990423": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fphys.2026.1994918": {
+  "include": false,
+  "why": "no online abstract found"
+ },
+ "doi:10.3389/fphys.2026.2037816": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.3389/fpsyg.2026.1739010": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fpsyg.2026.1770781": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fpsyg.2026.1810709": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fpsyg.2026.1813784": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fpsyg.2026.1835056": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fpsyg.2026.1893721": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fpsyg.2026.1910446": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fpsyt.2026.1900022": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fpubh.2026.1813735": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fpubh.2026.1822194": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fpubh.2026.1839833": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fpubh.2026.1874706": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3389/fspor.2026.1812920": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.3389/fspor.2026.1821452": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3389/fspor.2026.1866960": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fspor.2026.1906206": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/fspor.2026.1925319": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.3389/fspor.2026.1930728": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.3389/fspor.2026.1945833": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3389/ijph.2026.1609200": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3390/bioengineering13040473": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/bios16020097": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/children13010135": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3390/clinpract16100195": {
+  "include": false,
+  "why": "editorial or correction"
+ },
+ "doi:10.3390/healthcare14060733": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.3390/healthcare14193285": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/ijms27020792": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/ijms27104415": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/jcm15103892": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/jfmk11010106": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/jfmk11030245": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/jfmk11030369": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3390/jfmk11040375": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3390/metabo16070483": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/nu18010059": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/nu18030502": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/sports14010033": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.3390/sports14030093": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/sports14040152": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.3390/sports14070282": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.3390/sports14070289": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.3791/68599": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.3899/jrheum.2025-0784": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.4085/1062-6050-0016.25": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.4085/1062-6050-0034.25": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.4085/1062-6050-0092.26": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.4085/1062-6050-0456.25": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.4085/1062-6050-0581.25": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.4085/1062-6050-0603.24": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.4085/1062-6050-0609.24": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.4085/1062-6050-0624.25": {
+  "include": false,
+  "why": "psychosocial subject"
+ },
+ "doi:10.5114/biolsport.2025.151660": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.5114/biolsport.2026.152346": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.5114/biolsport.2026.153332": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.5114/biolsport.2026.156228": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.5114/biolsport.2026.158303": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.5114/biolsport.2026.161098": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.5114/biolsport.2027.165696": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.5114/biolsport.2027.166193": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.5114/jhk/202057": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.5114/jhk/204776": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.5114/jhk/204828": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.5114/jhk/208288": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.5114/jhk/209808": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.5114/jhk/210194": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.5114/jhk/210496": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.5114/jhk/215978": {
+  "include": false,
+  "why": "no human participants in abstract"
+ },
+ "doi:10.5114/jhk/216685": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.5114/jhk/218076": {
+  "include": false,
+  "why": "no exercise stimulus"
+ },
+ "doi:10.5114/jhk/218100": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.5114/jhk/218951": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.5114/jhk/219084": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.5114/jhk/219655": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ },
+ "doi:10.5114/jhk/226252": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.5114/jhk/226267": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.5114/jhk/236265": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.52082/jssm.2025.910": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.52082/jssm.2026.381": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.52082/jssm.2026.446": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.52082/jssm.2026.58": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.52082/jssm.2026.84": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.52082/jssm.2026.892": {
+  "include": false,
+  "why": "molecular or psychosocial topic without a whole-body measurement"
+ },
+ "doi:10.5644/ama2006-124.504": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.70252/ijes2026505": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.7554/elife.109461": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "doi:10.7717/peerj.21490": {
+  "include": false,
+  "why": "not a primary study (review, survey or protocol)"
+ },
+ "doi:10.7717/peerj.21871": {
+  "include": false,
+  "why": "no physiological outcome"
+ },
+ "pmid:42830064": {
+  "include": true,
+  "why": "abstract reports exercising humans with a physiological outcome"
+ }
+}
