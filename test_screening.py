@@ -62,5 +62,35 @@ class ScopeTests(unittest.TestCase):
         self.assertEqual(relevance_tier(item), "core")
 
 
+    def test_training_method_studies_reach_core(self):
+        # A training stimulus is the subject of exercise physiology even when the
+        # title names no measured outcome.
+        titles = [
+            "Biceps femoris long-head motor unit discharge rates during eccentric exercise",
+            "Cluster vs. rest-redistribution set configurations on training volume",
+            "Effects of lower-leg inclination on the efficacy of the Nordic hamstring exercise",
+            "Resistance Training for Cyclists: Scientific Evidence and Practical Recommendations",
+            "The Duration of the Repeated-Bout Effect After Eccentric Exercise",
+            "Assisted Sprint Training: Individual Adaptations Linked to Force-Velocity",
+            "Association Between Hormone Variability and Anaerobic Performance",
+            "Anaerobic speed or power reserve as a key determinant of repeatability",
+            "Comparison of lower limb muscle activity in water vs. land plyometric exercise",
+            "Determination of swimming training intensity zones",
+        ]
+        for title in titles:
+            with self.subTest(title=title):
+                self.assertEqual(
+                    relevance_tier({"title": title, "type": "", "mesh": ()}), "core")
+
+    def test_training_rule_does_not_resurrect_excluded_work(self):
+        for title in [
+            "Correction to: Sprint training and performance",
+            "Sprint training and skeletal muscle gene expression in mice",
+            "Arthroscopic rotator cuff repair in overhead athletes",
+        ]:
+            with self.subTest(title=title):
+                self.assertIsNone(relevance_tier({"title": title, "type": "", "mesh": ()}))
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -265,6 +265,31 @@ MOLECULAR_LEVEL = re.compile(
     r"mitochondrial (?:respiration|dysfunction|biogenesis|density)|"
     r"oxidative phosphorylation|respiratory chain|sarcomere[- ]level)\b", re.I,
 )
+# A training stimulus is itself the central event of exercise physiology: a study
+# of resistance, endurance, interval, sprint or plyometric training is about how
+# the body adapts, even when its title names no measured outcome ("Biceps femoris
+# motor unit discharge rates ...", "Cluster vs. rest-redistribution set
+# configurations"). Records whose title states one of these reach the core tier
+# instead of the related tier.
+TRAINING_STIMULUS = re.compile(
+    r"\b(?:resistance training|strength training|weight training|"
+    r"endurance training|aerobic training|anaerobic training|"
+    r"interval training|hiit|sprint interval training|repeated[- ]sprint training|"
+    r"speed training|sprint training|velocity[- ]based training|"
+    r"concurrent training|combined training|complex training|cluster (?:set|sets)|"
+    r"plyometric(?:\s+(?:training|exercise|drill|jump\w*|protocol))?|power training|jump training|ballistic training|"
+    r"eccentric (?:training|exercise)|nordic hamstring|blood flow restriction|"
+    r"occlusion training|thermal training|heat training|hypoxic training|"
+    r"electromyostimulation|whole[- ]body vibration|stretching|foam rolling|"
+    r"autoregulat\w* training|periodi[sz]ation|training (?:volume|frequency|"
+    r"intensity|density|distribution|program\w*|intervention\w*|period|block\w*)"
+    r"|exercise (?:training|program\w*|intervention\w*|protocol)|"
+    r"anaerobic (?:power|capacity|performance|speed|test\w*|threshold)|"
+    r"aerobic (?:power|capacity|performance|test\w*)|"
+    r"physical fitness|fitness test\w*|performance test\w*|incremental test|"
+    r"maximal (?:strength|power|speed) test\w*|time to (?:failure|exhaustion))\b",
+    re.I,
+)
 # A whole-body physiological or physical-performance measurement. Titles that
 # carry one stay in scope even when they also mention a psychosocial or
 # molecular term.
@@ -325,6 +350,8 @@ def exercise_signal(item):
     """True when the title or a PubMed MeSH heading marks an exercise record."""
     if EXERCISE.search(item["title"]) or EXERCISE_EXTRA.search(item["title"]):
         return True
+    if TRAINING_STIMULUS.search(item["title"]):
+        return True
     return bool(set(item.get("mesh", ())) & EXERCISE_MESH)
 
 
@@ -379,6 +406,10 @@ def exclusion_reason(item):
         EXERCISE_OUTCOME.search(title) or EXERCISE_INTERVENTION.search(title)
     ):
         return "疾病、损伤或康复为主"
+    if TRAINING_STIMULUS.search(title):
+        # A training study is exercise physiology even when the title states no
+        # measured outcome: the intervention is the subject.
+        return None
     if not HUMAN_OUTCOME.search(title):
         return UNCERTAIN_RELEVANCE
     return None
