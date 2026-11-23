@@ -4907,6 +4907,10 @@
   "include": false,
   "why": "not a primary study (review, survey or protocol)"
  },
+ "doi:10.2196/101438": {
+  "include": false,
+  "why": "psychosocial subject (emotion and exergame)"
+ },
  "doi:10.2196/79432": {
   "include": false,
   "why": "not a primary study (review, survey or protocol)"
