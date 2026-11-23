@@ -234,7 +234,12 @@ PSYCHOSOCIAL = re.compile(
     r"memory|attention|decision[- ]making|"
     r"social (?:support|media|network|determinants|inclusion)|socioeconomic\w*|"
     r"athlete (?:thriving|burnout|identity)|narrative|discourse|"
-    r"reinvestment|learning methods?|motor learning|self[- ]report)\b", re.I,
+    r"reinvestment|learning methods?|motor learning|self[- ]report|"
+    # Tool-building work: the contribution is a model, not a physiological finding.
+    r"algorithm\w*|machine learning|deep learning|neural network|classifier\w*|"
+    r"predictive model\w*|prediction model\w*|sensor[- ]based|"
+    r"wearable (?:sensor|device) (?:design|development)|"
+    r"data[- ]driven (?:approach|model))\b", re.I,
 )
 # A title that opens with a psychosocial subject is about that subject, even when
 # the outcome is a performance score ("Psychological Self-Report Questionnaires
@@ -287,7 +292,18 @@ TRAINING_STIMULUS = re.compile(
     r"anaerobic (?:power|capacity|performance|speed|test\w*|threshold)|"
     r"aerobic (?:power|capacity|performance|test\w*)|"
     r"physical fitness|fitness test\w*|performance test\w*|incremental test|"
-    r"maximal (?:strength|power|speed) test\w*|time to (?:failure|exhaustion))\b",
+    r"maximal (?:strength|power|speed) test\w*|time to (?:failure|exhaustion)|"
+    # Sports-medicine assessments made on exercising populations: a screening
+    # programme or injury-surveillance study of athletes is about the athlete, even
+    # when the title names no physiological outcome.
+    r"pre-?participation (?:screening|evaluation|assessment)|"
+    r"(?:cardiac|cardiovascular|ecg|electrocardiograph\w*|medical) screening|"
+    r"athlete (?:screening|screening programme|health assessment)|"
+    r"screening (?:in|of|among) (?:elite |competitive |professional |young )?"
+    r"(?:athletes?|footballers?|players?|runners?|swimmers?)|"
+    r"injury (?:surveillance|incidence|epidemiology|patterns?|rates?)"
+    r"(?: in| of| among)? (?:elite |professional |competitive )?"
+    r"(?:athletes?|players?|footballers?|rugby|soccer|football))\b",
     re.I,
 )
 # A whole-body physiological or physical-performance measurement. Titles that
