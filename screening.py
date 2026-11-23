@@ -293,10 +293,20 @@ TRAINING_STIMULUS = re.compile(
     r"aerobic (?:power|capacity|performance|test\w*)|"
     r"physical fitness|fitness test\w*|performance test\w*|incremental test|"
     r"maximal (?:strength|power|speed) test\w*|time to (?:failure|exhaustion)|"
-    # Sports-medicine assessments made on exercising populations: a screening
-    # programme or injury-surveillance study of athletes is about the athlete, even
-    # when the title names no physiological outcome.
-    r"pre-?participation (?:screening|evaluation|assessment)|"
+    # Strength-training laboratory vocabulary that names the exercise or the
+    # loading variable without the word "training" ("load-velocity relationship
+    # in the bench press", "1RM prediction", "muscle forces during the squat").
+    r"load[- ]velocity (?:relationship|profile\w*)|force[- ]velocity (?:relationship|profile\w*)"
+    r"|velocity[- ]based|one[- ]repetition maximum|1[- ]rm|repetition maximum"
+    r"|(?:back|front|split|hack|goblet) squat|bench press|deadlift|power ?clean"
+    r"|snatch|clean and jerk|overhead press|lunge|hip thrust|leg press"
+    r"|resisted sprint|assisted sprint|exoskeleton|weighted vest\w*"
+    r"|metabolic costs? (?:of|during) (?:walking|running|cycling)"
+    r"|costs? of (?:walking|running|cycling)|energy cost\w* of"
+    r"|muscle (?:activity|activation|forces?|morphology|architecture|thickness|"
+    r"cross[- ]sectional area) (?:during|in|across|at|and|of)"
+    r"|torque[- ]velocity|electromagnetic resistance|blood flow restriction"
+    r"|pre-?participation (?:screening|evaluation|assessment)|"
     r"(?:cardiac|cardiovascular|ecg|electrocardiograph\w*|medical) screening|"
     r"athlete (?:screening|screening programme|health assessment)|"
     r"screening (?:in|of|among) (?:elite |competitive |professional |young )?"
