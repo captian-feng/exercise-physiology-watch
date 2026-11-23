@@ -40,3 +40,7 @@ Journal of the International Society of Sports Nutrition|1550-2783
 Sports Biomechanics|1476-3141,1752-6116
 Journal of Electromyography and Kinesiology|1050-6411
 International Journal of Sports Science & Coaching|1747-9541,2048-397X
+# Paediatric exercise physiology and sports medicine
+Pediatric Exercise Science|0899-8493,1543-2920
+Sports Health|1941-7381,1941-0921
+The Journal of Sports Medicine and Physical Fitness|0022-4707,1827-1928
