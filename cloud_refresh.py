@@ -140,7 +140,8 @@ def main():
             arguments += ["--render-only", options.render_only]
         else:
             install_model(work)
-        run(arguments, cwd=work, check=True, timeout=1500)
+        run_timeout = 21000 if os.environ.get("DEEPSEEK_FULL") == "1" else 1500
+        run(arguments, cwd=work, check=True, timeout=run_timeout)
         site = work / "site" / "index.html"
         validate(db_path, site)
         if options.render_only:

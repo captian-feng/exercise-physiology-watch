@@ -40,11 +40,22 @@ class TestEnrichment(unittest.TestCase):
 
     def test_pubmed_failure_uses_publisher_abstract(self):
         class Page(Response):
-            def geturl(self): return 'https://www.frontiersin.org/example'
-        page = b'<meta name="citation_doi" content="10.3389/fphys.2026.123"><meta name="citation_abstract" content="Human exercise study.">'
-        with patch.object(module, 'get_abstract', side_effect=OSError('offline')), patch.object(module.urllib.request, 'urlopen', return_value=Page(page)):
+            def __init__(self, payload, url):
+                super().__init__(payload); self._url = url
+            def geturl(self): return self._url
+            @property
+            def status(self): return 200
+        page = b'<meta name="citation_doi" content="10.3389/fphys.2026.123"><meta name="citation_abstract" content="Human exercise study with physiological outcomes in trained athletes.">'
+        def fake_urlopen(request, *args, **kwargs):
+            if isinstance(request, str):
+                raise OSError('offline')
+            target = request.full_url
+            if 'frontiersin.org' in target:
+                return Page(page, 'https://www.frontiersin.org/example')
+            return Page(b'not json', 'https://api.example.org/')
+        with patch.object(module, 'get_abstract', side_effect=OSError('offline')), patch.object(module.urllib.request, 'urlopen', side_effect=fake_urlopen):
             text, source = module.find_abstract({'pmid':'123','doi':'10.3389/fphys.2026.123'})
-        self.assertEqual(text, 'Human exercise study.')
+        self.assertEqual(text, 'Human exercise study with physiological outcomes in trained athletes.')
         self.assertIn('frontiersin.org', source)
 
     def test_bad_record_does_not_stop_next(self):
@@ -90,6 +101,23 @@ class TestEnrichment(unittest.TestCase):
         finally:
             if old is None: path.unlink()
             else: path.write_text(old, encoding='utf-8')
+
+    def test_full_pass_fills_missing_summary_and_checkpoints(self):
+        db = sqlite3.connect(':memory:')
+        db.execute('CREATE TABLE deepseek_cache (identity TEXT PRIMARY KEY, title TEXT NOT NULL, zh TEXT NOT NULL, summary TEXT NOT NULL, day TEXT NOT NULL, abstract_source TEXT NOT NULL DEFAULT "")')
+        db.execute("INSERT INTO deepseek_cache VALUES ('10.1/old','Old title','旧标题','','2026-11-24','')")
+        answer = {'usage': {}, 'choices': [{'message': {'content': json.dumps({'zh': '人体运动研究', 'summary': '摘要简介'})}}]}
+        rows = [({'doi': '10.1/old', 'title': 'Old title'}, '2025-01-01', 'core'),
+                ({'doi': '10.1/new', 'title': 'New title'}, '2025-01-01', 'core')]
+        env = {'DEEPSEEK_API_KEY': 'test', 'DEEPSEEK_FULL': '1', 'DEEPSEEK_FULL_WORKERS': '2'}
+        with patch.dict(os.environ, env), patch.object(module, 'find_abstract', side_effect=[('a sufficiently long abstract text', 'https://example.org/1'), ('', '')]), patch.object(module.urllib.request, 'urlopen', return_value=Response(json.dumps(answer).encode())) as request:
+            result = module.enrich(db, rows, None)
+        self.assertEqual(result['10.1/old'][1], '摘要简介')
+        self.assertEqual(request.call_count, 1)
+        self.assertEqual(db.execute('SELECT COUNT(*) FROM deepseek_full_attempts').fetchone()[0], 2)
+        with patch.dict(os.environ, env), patch.object(module.urllib.request, 'urlopen') as request:
+            module.enrich(db, rows, None)
+            request.assert_not_called()
 
 if __name__ == '__main__':
     unittest.main()
