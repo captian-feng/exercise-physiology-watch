@@ -131,7 +131,9 @@ def write_site(db, journals):
         elif re.fullmatch(r"10[.]3389/[a-z0-9.-]+", doi, re.I):
             location = "https://www.frontiersin.org/articles/" + quote(doi, safe="/") + "/full"
         else:
-            location = "https://doi.org/" + quote(doi, safe="/:") if doi else item.get("url", "")
+            location = ("https://doi.org/" + quote(doi, safe="/:") if doi else
+                        item.get("url") or ("https://pubmed.ncbi.nlm.nih.gov/" + str(item["pmid"]) + "/"
+                        if str(item.get("pmid") or "").isdigit() else ""))
         if urlsplit(location).scheme not in {"http", "https"}:
             location = ""
         known_pmid = str(item.get("pmid") or "")
