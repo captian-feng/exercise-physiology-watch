@@ -281,6 +281,17 @@ def upsert(db, item, label, source, day, is_journal):
     merged = {**previous, **{key: value for key, value in item.items() if value}}
     previous_doi = previous.get("doi", "")
     incoming_doi = item.get("doi", "")
+    # Preserve the article page from the journal's own listing/feed even when
+    # later PubMed or Crossref metadata supplies its own URL for the same work.
+    incoming_url = item.get("url", "") or ""
+    parsed_url = urlsplit(incoming_url)
+    source_host = (parsed_url.hostname or "").lower()
+    if ((source.startswith("官网 ") or source.startswith("RSS ")) and is_journal
+            and parsed_url.scheme == "https" and source_host
+            and source_host not in {"doi.org", "dx.doi.org", "pubmed.ncbi.nlm.nih.gov", "europepmc.org"}
+            and parsed_url.path not in ("", "/")
+            and (not previous_doi or not incoming_doi or previous_doi == incoming_doi)):
+        merged["publisher_url"] = incoming_url
     if previous_doi and incoming_doi and previous_doi != incoming_doi:
         # A preprint and the journal article can share a title, but their
         # publication dates belong to different DOIs.
@@ -571,6 +582,7 @@ if __name__ == "__main__":
                     traceback.print_exc()
                     raise SystemExit(1)
     raise SystemExit(main())
+
 
 
 
