@@ -57,7 +57,24 @@ class TestEnrichment(unittest.TestCase):
         self.assertNotIn('10.1/one', result)
         self.assertEqual(result['10.1/two'][0], '译文')
 
+    def test_approved_trial_allows_old_record_and_tracks_budget(self):
+        db = sqlite3.connect(':memory:')
+        now = datetime.datetime(2026,11,24,7,30,tzinfo=ZoneInfo('Asia/Shanghai'))
+        candidate = [({'doi':'10.1/trial','title':'trial'}, '2025-01-01', 'core')]
+        answer = {'choices':[{'message':{'content':json.dumps({'zh':'译文','summary':'简介'})}}]}
+        path = module.Path(__file__).resolve().parent.parent / 'deepseek_top100.json'
+        old = path.read_text(encoding='utf-8') if path.exists() else None
+        try:
+            path.write_text(json.dumps(['10.1/trial']), encoding='utf-8')
+            with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test'}), patch.object(module, 'find_abstract', return_value=('text', 'https://pubmed.ncbi.nlm.nih.gov/1/')), patch.object(module.urllib.request, 'urlopen', return_value=Response(json.dumps(answer).encode())):
+                self.assertEqual(module.enrich(db, candidate, now)['10.1/trial'][0], '译文')
+            self.assertEqual(db.execute('SELECT COUNT(*) FROM deepseek_trial_attempts').fetchone()[0], 1)
+        finally:
+            if old is None: path.unlink()
+            else: path.write_text(old, encoding='utf-8')
+
 if __name__ == '__main__':
     unittest.main()
+
 
 

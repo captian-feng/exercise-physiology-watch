@@ -14,6 +14,11 @@ from zoneinfo import ZoneInfo
 ZONE = ZoneInfo('Asia/Shanghai')
 START_DATE = '2026-11-24'
 DAILY_LIMIT = 30
+TRIAL_LIMIT = 120
+TRIAL_PER_RUN = 40
+
+def identity_for(item):
+    return (item.get('doi') or '').strip().lower() or ('pmid:' + str(item.get('pmid') or ''))
 
 def glossary_hint(text):
     path = Path(__file__).resolve().parent / 'exercise_glossary.json'
@@ -102,16 +107,28 @@ def enrich(db, candidates, now=None):
     if 'abstract_source' not in columns:
         db.execute("ALTER TABLE deepseek_cache ADD COLUMN abstract_source TEXT NOT NULL DEFAULT ''")
     db.execute('CREATE TABLE IF NOT EXISTS deepseek_attempts (day TEXT NOT NULL, identity TEXT NOT NULL)')
+    db.execute('CREATE TABLE IF NOT EXISTS deepseek_trial_attempts (day TEXT NOT NULL, identity TEXT NOT NULL)')
+    trial_path = Path(__file__).resolve().parent / 'deepseek_top100.json'
+    trial = json.loads(trial_path.read_text(encoding='utf-8')) if trial_path.exists() else []
+    trial_rank = {value: index for index, value in enumerate(trial)}
+    trial_used = db.execute('SELECT COUNT(*) FROM deepseek_trial_attempts').fetchone()[0]
+    trial_run_used = 0
+    candidates = sorted(candidates, key=lambda entry: trial_rank.get(identity_for(entry[0]), len(trial_rank)))
     key = os.environ.get('DEEPSEEK_API_KEY', '')
     fixed_now = now
     now = now or datetime.datetime.now(ZONE)
     day = now.astimezone(ZONE).date().isoformat()
     used = db.execute('SELECT COUNT(*) FROM deepseek_attempts WHERE day=?', (day,)).fetchone()[0]
     for item, seen, tier in candidates:
-        if not key or not off_peak(fixed_now or datetime.datetime.now(ZONE)) or used >= DAILY_LIMIT:
+        if not key or not off_peak(fixed_now or datetime.datetime.now(ZONE)):
             break
-        identity = (item.get('doi') or '').strip().lower() or ('pmid:' + str(item.get('pmid') or ''))
-        if identity == 'pmid:' or not seen or seen < START_DATE:
+        identity = identity_for(item)
+        is_trial = identity in trial_rank
+        if is_trial and (trial_used >= TRIAL_LIMIT or trial_run_used >= TRIAL_PER_RUN or db.execute('SELECT COUNT(*) FROM deepseek_trial_attempts WHERE identity=?', (identity,)).fetchone()[0] >= 2):
+            continue
+        if not is_trial and (used >= DAILY_LIMIT or not seen or seen < START_DATE):
+            continue
+        if identity == 'pmid:':
             continue
         cached = db.execute('SELECT summary FROM deepseek_cache WHERE identity=?', (identity,)).fetchone()
         if cached and cached[0]:
@@ -130,6 +147,10 @@ def enrich(db, candidates, now=None):
             body = json.dumps({'model':'deepseek-flash','messages':[{'role':'user','content':prompt}], 'response_format':{'type':'json_object'}, 'thinking':{'type':'disabled'}, 'max_tokens':800, 'temperature':0.1}).encode('utf-8')
             req = urllib.request.Request('https://api.deepseek.com/chat/completions', data=body, headers={'Authorization':'Bearer '+key, 'Content-Type':'application/json'}, method='POST')
             db.execute('INSERT INTO deepseek_attempts VALUES (?,?)', (day, identity))
+            if is_trial:
+                db.execute('INSERT INTO deepseek_trial_attempts VALUES (?,?)', (day, identity))
+                trial_used += 1
+                trial_run_used += 1
             db.commit()
             used += 1
             stage = 'api response'
@@ -150,5 +171,6 @@ def enrich(db, candidates, now=None):
                 break
             continue
     return {row[0]: (row[1], row[2], row[3]) for row in db.execute('SELECT identity, zh, summary, abstract_source FROM deepseek_cache')}
+
 
 
