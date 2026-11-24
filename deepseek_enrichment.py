@@ -115,16 +115,19 @@ def enrich(db, candidates, now=None):
     trial_run_used = 0
     candidates = sorted(candidates, key=lambda entry: trial_rank.get(identity_for(entry[0]), len(trial_rank)))
     key = os.environ.get('DEEPSEEK_API_KEY', '')
+    peak_trial = os.environ.get('DEEPSEEK_PEAK_TRIAL') == '1'
     fixed_now = now
     now = now or datetime.datetime.now(ZONE)
     day = now.astimezone(ZONE).date().isoformat()
     used = db.execute('SELECT COUNT(*) FROM deepseek_attempts WHERE day=?', (day,)).fetchone()[0]
     for item, seen, tier in candidates:
-        if not key or not off_peak(fixed_now or datetime.datetime.now(ZONE)):
+        if not key:
             break
         identity = identity_for(item)
         is_trial = identity in trial_rank
-        if is_trial and (trial_used >= TRIAL_LIMIT or trial_run_used >= TRIAL_PER_RUN or db.execute('SELECT COUNT(*) FROM deepseek_trial_attempts WHERE identity=?', (identity,)).fetchone()[0] >= 2):
+        if not off_peak(fixed_now or datetime.datetime.now(ZONE)) and not (peak_trial and is_trial):
+            continue
+        if is_trial and (trial_used >= TRIAL_LIMIT or trial_run_used >= (100 if peak_trial else TRIAL_PER_RUN) or db.execute('SELECT COUNT(*) FROM deepseek_trial_attempts WHERE identity=?', (identity,)).fetchone()[0] >= 2):
             continue
         if not is_trial and (used >= DAILY_LIMIT or not seen or seen < START_DATE):
             continue
@@ -156,6 +159,8 @@ def enrich(db, candidates, now=None):
             stage = 'api response'
             with urllib.request.urlopen(req, timeout=45) as response:
                 payload = json.loads(response.read())
+            usage = payload.get('usage', {})
+            print('DeepSeek usage:', json.dumps({k: usage.get(k, 0) for k in ('prompt_tokens', 'completion_tokens', 'prompt_cache_hit_tokens', 'prompt_cache_miss_tokens')}), flush=True)
             choice = payload['choices'][0]
             content = choice['message']['content']
             stage = 'model JSON (finish_reason=' + str(choice.get('finish_reason', 'unknown')) + ', length=' + str(len(content or '')) + ')'
