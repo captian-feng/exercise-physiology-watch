@@ -235,8 +235,16 @@ def _full_worker(item, key):
     req = urllib.request.Request('https://api.deepseek.com/chat/completions', data=body,
                                  headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'},
                                  method='POST')
-    with urllib.request.urlopen(req, timeout=60) as response:
-        payload = json.loads(response.read())
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as response:
+                payload = json.loads(response.read())
+            break
+        except urllib.error.HTTPError as exc:
+            if exc.code in (429, 500, 502, 503, 504) and attempt < 2:
+                time.sleep(2 ** attempt)
+                continue
+            raise
     usage = payload.get('usage', {})
     print('DeepSeek usage:', json.dumps({k: usage.get(k, 0) for k in
           ('prompt_tokens', 'completion_tokens', 'prompt_cache_hit_tokens', 'prompt_cache_miss_tokens')}), flush=True)
@@ -258,7 +266,9 @@ def enrich_full(db, candidates, key, day, now=None):
     from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
     db.execute('CREATE TABLE IF NOT EXISTS deepseek_full_attempts (identity TEXT PRIMARY KEY, day TEXT NOT NULL)')
     cached = {row[0] for row in db.execute('SELECT identity FROM deepseek_cache WHERE length(summary) > 0')}
-    done = {row[0] for row in db.execute('SELECT identity FROM deepseek_full_attempts')}
+    # Error-marked identities stay retryable: a transient HTTP failure must not
+    # permanently exclude a paper that has a usable abstract.
+    done = {row[0] for row in db.execute("SELECT identity FROM deepseek_full_attempts WHERE day NOT LIKE '%:error'")}
     pending = [entry for entry in candidates if identity_for(entry[0]) not in cached and identity_for(entry[0]) not in done]
     workers = _positive_int('DEEPSEEK_FULL_WORKERS', 20)
     deadline_seconds = _positive_int('DEEPSEEK_RUN_SECONDS', 1800)
