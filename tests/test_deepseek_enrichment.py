@@ -119,6 +119,28 @@ class TestEnrichment(unittest.TestCase):
             module.enrich(db, rows, None)
             request.assert_not_called()
 
+    def test_full_pass_deadline_stops_submitting_new_work(self):
+        class Clock:
+            def __init__(self):
+                self.calls = 0
+            def monotonic(self):
+                self.calls += 1
+                return 0 if self.calls <= 2 else 1801
+
+        db = sqlite3.connect(':memory:')
+        rows = [({'doi': '10.2/%d' % i, 'title': 'Title %d' % i}, '2025-01-01', 'core') for i in range(80)]
+        calls = []
+        def fake_worker(item, key):
+            identity = module.identity_for(item)
+            calls.append(identity)
+            return identity, ('zh', 'summary', item['title'], '', False)
+        env = {'DEEPSEEK_API_KEY': 'test', 'DEEPSEEK_FULL': '1', 'DEEPSEEK_FULL_WORKERS': '2'}
+        with patch.dict(os.environ, env), patch.object(module, 'time', Clock()), patch.object(module, '_full_worker', side_effect=fake_worker):
+            module.enrich(db, rows, None)
+        self.assertLess(len(calls), 20, 'deadline should cancel queued work instead of submitting every record')
+        self.assertGreater(len(calls), 0)
+        self.assertLessEqual(db.execute('SELECT COUNT(*) FROM deepseek_full_attempts').fetchone()[0], len(calls))
+
 if __name__ == '__main__':
     unittest.main()
 
