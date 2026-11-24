@@ -11,6 +11,7 @@ from article_types import ARTICLE_TYPES, article_type_for
 from presentation import OTHER, PATTERNS, PUBLICATION_NOTICE, topic_for, translations
 import screening
 import scope_verify
+import deepseek_enrichment
 from screening import is_clinical_study, relevance_tier
 
 ROOT = Path(__file__).resolve().parent
@@ -98,6 +99,7 @@ def write_site(db, journals):
         print(f"Merged {len(candidates) - len(order)} duplicate titles", flush=True)
     candidates = [best[key] for key in order]
     translated, error = translations(db, [item for item, _, _ in candidates])
+    enriched = deepseek_enrichment.enrich(db, candidates)
     if error:
         print(f"Static site translations: {error}")
     records = []
@@ -153,9 +155,13 @@ def write_site(db, journals):
         # That drops about 400 KB from the payload.
         if not doi or location != "https://doi.org/" + doi:
             row["u"] = location
-        chinese = translated.get(title)
+        enrichment_key = known_doi or ('pmid:' + known_pmid)
+        enriched_title, summary = enriched.get(enrichment_key, ('', ''))
+        chinese = enriched_title or translated.get(title)
         if chinese:
             row["z"] = chinese
+        if summary:
+            row["summary"] = summary
         records.append(row)
 
     updated = db.execute("SELECT MAX(day) FROM runs").fetchone()[0]
@@ -184,3 +190,4 @@ def write_site(db, journals):
     pending.write_text(page, encoding="utf-8")
     pending.replace(output / "index.html")
     print(f"{output / 'index.html'} | {len(records)} screened records")
+
