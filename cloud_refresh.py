@@ -140,7 +140,15 @@ def main():
             arguments += ["--render-only", options.render_only]
         else:
             install_model(work)
-        run_timeout = 21000 if os.environ.get("DEEPSEEK_FULL") == "1" else 1500
+        unlimited = os.environ.get("DEEPSEEK_FULL") == "1"
+        if not unlimited:
+            for setting in ("DEEPSEEK_BACKFILL_BATCH", "DEEPSEEK_BACKFILL_BUDGET"):
+                try:
+                    if int(os.environ.get(setting, "") or 0) < 0:
+                        unlimited = True
+                except ValueError:
+                    pass
+        run_timeout = 21000 if unlimited else 1500
         run(arguments, cwd=work, check=True, timeout=run_timeout)
         site = work / "site" / "index.html"
         validate(db_path, site)
