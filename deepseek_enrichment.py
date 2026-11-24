@@ -109,8 +109,8 @@ def enrich(db, candidates, now=None):
     db.execute('CREATE TABLE IF NOT EXISTS deepseek_attempts (day TEXT NOT NULL, identity TEXT NOT NULL)')
     db.execute('CREATE TABLE IF NOT EXISTS deepseek_trial_attempts (day TEXT NOT NULL, identity TEXT NOT NULL)')
     trial_path = Path(__file__).resolve().parent / 'deepseek_top100.json'
-    # The approved one-time trial is complete; keep its list only for audit.
-    trial = []
+    # The completed trial remains disabled unless explicitly enabled again.
+    trial = json.loads(trial_path.read_text(encoding='utf-8')) if trial_path.exists() and os.environ.get('DEEPSEEK_TRIAL_ENABLED') == '1' else []
     trial_rank = {value: index for index, value in enumerate(trial)}
     trial_used = db.execute('SELECT COUNT(*) FROM deepseek_trial_attempts').fetchone()[0]
     trial_run_used = 0
