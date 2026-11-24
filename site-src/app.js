@@ -166,24 +166,6 @@
       title.textContent = record.en;
     }
     row.append(meta, title);
-    if (record.pmid) {
-      const backup = node("p", "article-backup");
-      const link = node("a", "", "数据库备用入口（PubMed）");
-      link.href = "https://pubmed.ncbi.nlm.nih.gov/" + encodeURIComponent(record.pmid) + "/";
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      backup.append(link);
-      row.append(backup);
-    }
-    if (record.doi && record.url && !record.url.startsWith("https://doi.org/")) {
-      const backup = node("p", "article-backup");
-      const link = node("a", "", "DOI 备用入口");
-      link.href = "https://doi.org/" + encodeURI(record.doi);
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      backup.append(link);
-      row.append(backup);
-    }
     if (record.zh) {
       const translation = node("p", "english", record.zh);
       translation.lang = "zh-CN";
