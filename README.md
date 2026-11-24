@@ -53,7 +53,7 @@
 
 在 Actions 中手动运行「更新运动生理文献库」时勾选 `deepseek_backfill`，可设置本次调用上限 `backfill_batch`（默认 300）和累计预算 `backfill_budget`（默认 1200）。回填只在 DeepSeek 官方非高峰时段发出请求，忙时的运行会安全跳过；已翻译或已尝试过的题录不会重复调用，失败项也会被记录以免反复重试。用完预算后必须手动提高上限才会继续。实际请求数、输入/输出 token 与估算费用见每次运行日志；账单以 DeepSeek 账户为准。
 
-如需**无限制全量补齐简介**，手动运行时勾选 `deepseek_backfill`，并把 `backfill_batch` 和 `backfill_budget` 都填 **-1**（负数=取消所有上限；`deepseek_full` 开关待工作流权限开放后也可直接使用）。该模式遍历所有网站已收录、尚缺简介的题录，不设调用次数、累计预算和非高峰时段限制；摘要按 PubMed → Europe PMC → Crossref → OpenAlex → Europe PMC(DOI) → Frontiers → 期刊页面 meta 的顺序逐条查找，任一来源拿到摘要即用，单个来源失败不影响下一条；Semantic Scholar 仅在配置了 `S2_API_KEY` 时启用（匿名访问会被限流）。已有简介的题录会跳过，避免重复调用。并发数由 `DEEPSEEK_FULL_WORKERS` 控制（默认 20）。
+如需**无限制全量补齐简介**，手动运行时勾选 `deepseek_backfill`，并把 `backfill_batch` 和 `backfill_budget` 都填 **-1**（负数=取消所有上限；`deepseek_full` 开关待工作流权限开放后也可直接使用）。该模式遍历所有网站已收录、尚缺简介的题录，不设调用次数、累计预算和非高峰时段限制；摘要按 PubMed → Europe PMC → Crossref → OpenAlex → Europe PMC(DOI) → Frontiers → 期刊页面 meta 的顺序逐条查找，任一来源拿到摘要即用，单个来源失败不影响下一条；Semantic Scholar 仅在配置了 `S2_API_KEY` 时启用（匿名访问会被限流）。已有简介的题录会跳过，避免重复调用；瞬时 HTTP 429/5xx 会重试 3 次，标记为错误的题录在后续运行中会重试而不是永久跳过。并发数由 `DEEPSEEK_FULL_WORKERS` 控制（默认 20）。
 
 全量模式为避免被 GitHub 单次作业 50 分钟硬上限中断而丢失进度，内部设置 1800 秒（30 分钟）运行窗口，并在到点时取消尚未开始的请求、把已完成结果写回归档；外层子进程超时为 21000 秒，仅作为兜底。重新运行同一开关即可续跑，不会重头开始。实际请求数、输入/输出 token 与估算费用见每次运行日志；账单以 DeepSeek 账户为准。
 
