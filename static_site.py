@@ -119,7 +119,7 @@ def write_site(db, journals):
         doi = item.get("doi", "")
         # Frontiers publishes article pages before some DOI records resolve.
         # Its official article route accepts the DOI and redirects to the page.
-        if re.fullmatch(r"10\\.3389/[a-z0-9.\\-]+", doi, re.I):
+        if re.fullmatch(r"10[.]3389/[a-z0-9.-]+", doi, re.I):
             location = "https://www.frontiersin.org/articles/" + quote(doi, safe="/") + "/full"
         else:
             location = "https://doi.org/" + quote(doi, safe="/:") if doi else item.get("url", "")
