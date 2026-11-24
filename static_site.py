@@ -117,7 +117,12 @@ def write_site(db, journals):
     for item, seen, tier in candidates:
         title = item["title"]
         doi = item.get("doi", "")
-        location = "https://doi.org/" + quote(doi, safe="/:") if doi else item.get("url", "")
+        # Frontiers publishes article pages before some DOI records resolve.
+        # Its official article route accepts the DOI and redirects to the page.
+        if re.fullmatch(r"10[.]3389/[a-z0-9.-]+", doi, re.I):
+            location = "https://www.frontiersin.org/articles/" + quote(doi, safe="/") + "/full"
+        else:
+            location = "https://doi.org/" + quote(doi, safe="/:") if doi else item.get("url", "")
         if urlsplit(location).scheme not in {"http", "https"}:
             location = ""
         known_pmid = str(item.get("pmid") or "")
