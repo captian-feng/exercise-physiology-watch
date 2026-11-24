@@ -83,8 +83,14 @@ class JudgeTests(unittest.TestCase):
 
 class NeedsVerificationTests(unittest.TestCase):
     def test_ambiguous_title_asks_for_verification(self):
-        item = {"title": "Gene expression after exercise in trained men"}
+        # No named population and no exercise stimulus: still needs a look.
+        item = {"title": "Gene expression and metabolic regulation"}
         self.assertTrue(needs_verification(item))
+
+    def test_human_population_with_exercise_needs_no_verification(self):
+        # A marker measured in named participants after exercise is a human study.
+        item = {"title": "Gene expression after exercise in trained men"}
+        self.assertFalse(needs_verification(item))
 
     def test_clear_exercise_title_needs_no_verification(self):
         item = {"title": "Sprint interval training improves running economy"}

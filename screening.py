@@ -395,6 +395,21 @@ def exercise_signal(item):
     return bool(set(item.get("mesh", ())) & EXERCISE_MESH)
 
 
+# Named human participants: a molecular marker measured in them is a human response.
+HUMAN_SUBJECTS = re.compile(
+    r"\b(?:recreationally active|physically active|active (?:adults|men|women)"
+    r"|healthy (?:adults|men|women|participants|volunteers|untrained|trained)"
+    r"|trained (?:men|women|athletes|cyclists|runners|individuals|participants)"
+    r"|young adults|older adults|endurance[- ]trained|strength[- ]trained"
+    r"|elite athletes|soccer players|in (?:men|women) (?:and|vs)\b)", re.I,
+)
+# An exercise stimulus present alongside a measured marker.
+EXERCISE_CONTEXT = re.compile(
+    r"\b(?:exercise|training|sprint\w*|hiit|interval|running|cycling|swimming"
+    r"|resistance|endurance|treadmill|ergomet\w*)\b", re.I,
+)
+
+
 # A paper whose subject is the dataset itself, not a finding from it.
 DATA_PAPER = re.compile(
     r"(?:\bdataset\b|data descriptor|ground-truth validation dataset"
@@ -422,6 +437,10 @@ def out_of_scope_reason(title):
     if PSYCHOSOCIAL.search(title):
         return "心理学、社会科学或教练研究"
     if MOLECULAR_LEVEL.search(title):
+        # A cytokine or signalling study in named human participants with an
+        # exercise stimulus is a human response study, not a bench experiment.
+        if EXERCISE_CONTEXT.search(title) and HUMAN_SUBJECTS.search(title):
+            return None
         return "纯分子、细胞或组织层面研究"
     return None
 
