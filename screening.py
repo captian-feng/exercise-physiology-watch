@@ -291,6 +291,7 @@ TRAINING_STIMULUS = re.compile(
     r"interval training|hiit|sprint interval training|repeated[- ]sprint training|"
     r"speed training|sprint training|velocity[- ]based training|"
     r"concurrent training|combined training|complex training|cluster (?:set|sets)|"
+    r"multimodal training|multi[- ]modal training|functional training|"
     r"plyometric(?:\s+(?:training|exercise|drill|jump\w*|protocol))?|power training|jump training|ballistic training|"
     r"eccentric (?:training|exercise)|nordic hamstring|blood flow restriction|"
     r"occlusion training|thermal training|heat training|hypoxic training|"
