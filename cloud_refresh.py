@@ -121,7 +121,7 @@ def main():
     options = parser.parse_args()
     with TemporaryDirectory(prefix="journal-watch-") as scratch:
         work = Path(scratch)
-        for name in ("watch.py", "presentation.py", "screening.py", "static_site.py", "article_types.py", "scope_verify.py", "article_type_overrides.json", "pubmed_online_dates.json", "crossref_online_dates.json", "publisher_online_dates.json", "publisher_watch.py", "terminology.py", "exercise_glossary.json", "journals.txt", "sources.json"):
+        for name in ("watch.py", "presentation.py", "screening.py", "static_site.py", "deepseek_enrichment.py", "article_types.py", "scope_verify.py", "article_type_overrides.json", "pubmed_online_dates.json", "crossref_online_dates.json", "publisher_online_dates.json", "publisher_watch.py", "terminology.py", "exercise_glossary.json", "journals.txt", "sources.json"):
             copy2(ROOT / name, work / name)
         # The scope-verification cache is optional: without it the build simply
         # re-checks ambiguous records, subject to its per-run lookup budget.
@@ -160,4 +160,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
