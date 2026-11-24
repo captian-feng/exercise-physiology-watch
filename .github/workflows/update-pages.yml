@@ -29,6 +29,19 @@ on:
       - "dist/**"
       - "catalog.sqlite.gz"
   workflow_dispatch:
+    inputs:
+      deepseek_backfill:
+        description: '回填网站已收录但尚未翻译的文献（非高峰时段自动跳过忙时）'
+        type: boolean
+        default: false
+      backfill_batch:
+        description: '本次最多调用次数（建议 200-500；上限保护）'
+        type: number
+        default: 300
+      backfill_budget:
+        description: '回填累计调用总上限（防止超支；用完即停）'
+        type: number
+        default: 1200
 
 concurrency:
   group: journal-archive-and-pages
@@ -63,6 +76,10 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || secrets.DEEPSEEK }}
           # This override is enabled only for the explicitly approved trial push.
           DEEPSEEK_PEAK_TRIAL: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[peak100]') && '1' || '' }}
+          # Manual backfill is opt-in; the completed one-off translation trial stays disabled.
+          DEEPSEEK_BACKFILL: ${{ github.event_name == 'workflow_dispatch' && inputs.deepseek_backfill && '1' || '' }}
+          DEEPSEEK_BACKFILL_BATCH: ${{ inputs.backfill_batch || '300' }}
+          DEEPSEEK_BACKFILL_BUDGET: ${{ inputs.backfill_budget || '1200' }}
         run: python -X utf8 cloud_refresh.py
       - name: Save the updated archive
         run: python scripts/archive_state.py persist "$RUNNER_TEMP/journal-archive-base"

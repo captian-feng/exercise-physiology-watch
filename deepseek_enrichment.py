@@ -101,6 +101,15 @@ class MetadataText(HTMLParser):
     def handle_data(self, data): self.parts.append(data)
     def text(self): return ' '.join(self.parts).strip()
 
+def _positive_int(name, default):
+    """Read a bounded integer setting; invalid or non-positive values use the default."""
+    try:
+        value = int(os.environ.get(name, ''))
+        return value if value > 0 else default
+    except (TypeError, ValueError):
+        return default
+
+
 def enrich(db, candidates, now=None):
     db.execute('CREATE TABLE IF NOT EXISTS deepseek_cache (identity TEXT PRIMARY KEY, title TEXT NOT NULL, zh TEXT NOT NULL, summary TEXT NOT NULL, day TEXT NOT NULL)')
     columns = {r[1] for r in db.execute('PRAGMA table_info(deepseek_cache)')}
@@ -108,19 +117,35 @@ def enrich(db, candidates, now=None):
         db.execute("ALTER TABLE deepseek_cache ADD COLUMN abstract_source TEXT NOT NULL DEFAULT ''")
     db.execute('CREATE TABLE IF NOT EXISTS deepseek_attempts (day TEXT NOT NULL, identity TEXT NOT NULL)')
     db.execute('CREATE TABLE IF NOT EXISTS deepseek_trial_attempts (day TEXT NOT NULL, identity TEXT NOT NULL)')
+    # Backfill covers only records already shown on the site. Progress is tracked
+    # separately so a retry never starts from the beginning or re-spends on a
+    # paper whose enrichment previously failed.
+    db.execute('CREATE TABLE IF NOT EXISTS deepseek_backfill_attempts (identity TEXT PRIMARY KEY, day TEXT NOT NULL)')
+    backfill = os.environ.get('DEEPSEEK_BACKFILL') == '1'
+    backfill_run_limit = _positive_int('DEEPSEEK_BACKFILL_BATCH', 300)
+    backfill_budget = _positive_int('DEEPSEEK_BACKFILL_BUDGET', 1200)
     trial_path = Path(__file__).resolve().parent / 'deepseek_top100.json'
     # The completed trial remains disabled unless explicitly enabled again.
     trial = json.loads(trial_path.read_text(encoding='utf-8')) if trial_path.exists() and os.environ.get('DEEPSEEK_TRIAL_ENABLED') == '1' else []
     trial_rank = {value: index for index, value in enumerate(trial)}
     trial_used = db.execute('SELECT COUNT(*) FROM deepseek_trial_attempts').fetchone()[0]
     trial_run_used = 0
-    candidates = sorted(candidates, key=lambda entry: trial_rank.get(identity_for(entry[0]), len(trial_rank)))
+    if backfill:
+        # Only the site's screened candidates are passed in; never widen the set
+        # to excluded records. Older first-seen dates are eligible here.
+        done = {row[0] for row in db.execute('SELECT identity FROM deepseek_backfill_attempts')}
+        candidates = [entry for entry in candidates if identity_for(entry[0]) not in done]
+        print(f'DeepSeek backfill: {len(candidates)} site records pending', flush=True)
+    else:
+        candidates = sorted(candidates, key=lambda entry: trial_rank.get(identity_for(entry[0]), len(trial_rank)))
     key = os.environ.get('DEEPSEEK_API_KEY', '')
     peak_trial = os.environ.get('DEEPSEEK_PEAK_TRIAL') == '1'
     fixed_now = now
     now = now or datetime.datetime.now(ZONE)
     day = now.astimezone(ZONE).date().isoformat()
     used = db.execute('SELECT COUNT(*) FROM deepseek_attempts WHERE day=?', (day,)).fetchone()[0]
+    backfill_run_used = 0
+    backfill_total = db.execute('SELECT COUNT(*) FROM deepseek_backfill_attempts').fetchone()[0]
     for item, seen, tier in candidates:
         if not key:
             break
@@ -130,7 +155,10 @@ def enrich(db, candidates, now=None):
             continue
         if is_trial and (trial_used >= TRIAL_LIMIT or trial_run_used >= (100 if peak_trial else TRIAL_PER_RUN) or db.execute('SELECT COUNT(*) FROM deepseek_trial_attempts WHERE identity=?', (identity,)).fetchone()[0] >= 2):
             continue
-        if not is_trial and (used >= DAILY_LIMIT or not seen or seen < START_DATE):
+        if backfill:
+            if backfill_run_used >= backfill_run_limit or backfill_total >= backfill_budget:
+                break
+        elif not is_trial and (used >= DAILY_LIMIT or not seen or seen < START_DATE):
             continue
         if identity == 'pmid:':
             continue
@@ -155,6 +183,10 @@ def enrich(db, candidates, now=None):
                 db.execute('INSERT INTO deepseek_trial_attempts VALUES (?,?)', (day, identity))
                 trial_used += 1
                 trial_run_used += 1
+            if backfill:
+                db.execute('INSERT OR REPLACE INTO deepseek_backfill_attempts VALUES (?,?)', (identity, day))
+                backfill_run_used += 1
+                backfill_total += 1
             db.commit()
             used += 1
             stage = 'api response'
@@ -176,6 +208,9 @@ def enrich(db, candidates, now=None):
             if isinstance(exc, urllib.error.HTTPError) and exc.code in (401, 402, 403, 429):
                 break
             continue
+    if backfill:
+        print(f'DeepSeek backfill: {backfill_run_used} called this run, '
+              f'{backfill_total}/{backfill_budget} lifetime budget used', flush=True)
     return {row[0]: (row[1], row[2], row[3]) for row in db.execute('SELECT identity, zh, summary, abstract_source FROM deepseek_cache')}
 
 
