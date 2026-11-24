@@ -20,6 +20,7 @@
       clinical: record.c === 1,
       en: record.e,
       zh: record.z || "",
+      summary: record.summary || "",
       doi: record.d,
       pmid: record.m || "",
       url: record.u || (record.d ? "https://doi.org/" + record.d : ""),
@@ -168,6 +169,17 @@
       const translation = node("p", "english", record.zh);
       translation.lang = "zh-CN";
       row.append(translation);
+    }
+    if (record.summary) {
+      const summary = node("p", "article-summary", "摘要简介（AI 生成）：" + record.summary + " ");
+      if (record.pmid) {
+        const source = node("a", "", "PubMed 摘要");
+        source.href = "https://pubmed.ncbi.nlm.nih.gov/" + encodeURIComponent(record.pmid) + "/";
+        source.target = "_blank";
+        source.rel = "noopener noreferrer";
+        summary.append(source);
+      }
+      row.append(summary);
     }
     return row;
   }
@@ -426,3 +438,4 @@
     ].join("\n"),
   });
 })();
+
