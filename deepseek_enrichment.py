@@ -60,18 +60,24 @@ def enrich(db, candidates, now=None):
         title = item.get('title', '').strip()
         if not title:
             continue
+        stage = 'abstract'
         try:
             pmid = str(item.get('pmid') or '')
             abstract = get_abstract(pmid) if pmid.isdigit() else ''
+            stage = 'glossary'
             hint = glossary_hint(title + ' ' + abstract)
             prompt = '翻译英文论文标题为简体中文。仅依据提供的摘要用中文简述研究对象、方法和主要结果，不要推测；没有摘要时简介返回空字符串。返回 JSON 对象，字段 zh 和 summary。\n术语参考：' + hint + '\n标题：' + title + '\n摘要：' + abstract[:12000]
-            body = json.dumps({'model':'deepseek-flash','messages':[{'role':'user','content':prompt}], 'response_format':{'type':'json_object'}, 'thinking':{'type':'disabled'}, 'max_tokens':500, 'temperature':0.1}).encode('utf-8')
+            body = json.dumps({'model':'deepseek-flash','messages':[{'role':'user','content':prompt}], 'response_format':{'type':'json_object'}, 'thinking':{'type':'disabled'}, 'max_tokens':800, 'temperature':0.1}).encode('utf-8')
             req = urllib.request.Request('https://api.deepseek.com/chat/completions', data=body, headers={'Authorization':'Bearer '+key, 'Content-Type':'application/json'}, method='POST')
             db.execute('INSERT INTO deepseek_attempts VALUES (?,?)', (day, identity))
             db.commit()
             used += 1
+            stage = 'api response'
             with urllib.request.urlopen(req, timeout=45) as response:
-                content = json.loads(response.read())['choices'][0]['message']['content']
+                payload = json.loads(response.read())
+            choice = payload['choices'][0]
+            content = choice['message']['content']
+            stage = 'model JSON (finish_reason=' + str(choice.get('finish_reason', 'unknown')) + ', length=' + str(len(content or '')) + ')'
             result = json.loads(content)
             zh = result.get('zh'); summary = result.get('summary', '')
             if not isinstance(zh, str) or not zh.strip() or not isinstance(summary, str):
@@ -79,7 +85,7 @@ def enrich(db, candidates, now=None):
             db.execute('INSERT OR REPLACE INTO deepseek_cache VALUES (?,?,?,?,?)', (identity, title, zh.strip(), summary.strip() if abstract else '', day))
             db.commit()
         except Exception as exc:
-            print('DeepSeek enrichment skipped:', type(exc).__name__, flush=True)
+            print('DeepSeek enrichment skipped at', stage + ':', type(exc).__name__, flush=True)
             break
     return {row[0]: (row[1], row[2]) for row in db.execute('SELECT identity, zh, summary FROM deepseek_cache')}
 
