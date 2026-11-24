@@ -203,6 +203,19 @@ def _positive_int(name, default):
     except (TypeError, ValueError):
         return default
 
+def _unlimited_requested():
+    """A negative batch or budget input means the user explicitly removed all caps."""
+    for name in ('DEEPSEEK_BACKFILL_BATCH', 'DEEPSEEK_BACKFILL_BUDGET', 'DEEPSEEK_FULL'):
+        raw = os.environ.get(name, '')
+        if raw == '1':
+            return True
+        try:
+            if int(raw) < 0:
+                return True
+        except (TypeError, ValueError):
+            pass
+    return False
+
 def _full_worker(item, key):
     """Fetch abstract and call DeepSeek once; no database access in worker threads."""
     identity = identity_for(item)
@@ -247,8 +260,8 @@ def enrich_full(db, candidates, key, day, now=None):
     cached = {row[0] for row in db.execute('SELECT identity FROM deepseek_cache WHERE length(summary) > 0')}
     done = {row[0] for row in db.execute('SELECT identity FROM deepseek_full_attempts')}
     pending = [entry for entry in candidates if identity_for(entry[0]) not in cached and identity_for(entry[0]) not in done]
-    workers = _positive_int('DEEPSEEK_FULL_WORKERS', 8)
-    deadline_seconds = _positive_int('DEEPSEEK_RUN_SECONDS', 19800)
+    workers = _positive_int('DEEPSEEK_FULL_WORKERS', 20)
+    deadline_seconds = _positive_int('DEEPSEEK_RUN_SECONDS', 2400)
     deadline = time.monotonic() + deadline_seconds
     print(f'DeepSeek full pass: {len(pending)} records need a summary '
           f'({workers} workers, {deadline_seconds}s window)', flush=True)
@@ -301,7 +314,7 @@ def enrich(db, candidates, now=None):
     # separately so a retry never starts from the beginning or re-spends on a
     # paper whose enrichment previously failed.
     db.execute('CREATE TABLE IF NOT EXISTS deepseek_backfill_attempts (identity TEXT PRIMARY KEY, day TEXT NOT NULL)')
-    full = os.environ.get('DEEPSEEK_FULL') == '1'
+    full = _unlimited_requested()
     backfill = os.environ.get('DEEPSEEK_BACKFILL') == '1'
     key = os.environ.get('DEEPSEEK_API_KEY', '')
     fixed_now = now
