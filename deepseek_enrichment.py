@@ -295,8 +295,16 @@ def enrich_full(db, candidates, key, day, now=None):
                 identity = futures.pop(future)
                 try:
                     outcome = future.result()
+                except urllib.error.HTTPError as exc:
+                    try:
+                        detail = exc.read().decode('utf-8', 'replace')[:300]
+                    except Exception:
+                        detail = ''
+                    print('DeepSeek full pass HTTP error for', identity, exc.code, detail, flush=True)
+                    errors += 1
+                    db.execute('INSERT OR REPLACE INTO deepseek_full_attempts VALUES (?,?)', (identity, day + ':error'))
                 except Exception as exc:
-                    print('DeepSeek full pass error for', identity, type(exc).__name__, flush=True)
+                    print('DeepSeek full pass error for', identity, type(exc).__name__, str(exc)[:300], flush=True)
                     errors += 1
                     db.execute('INSERT OR REPLACE INTO deepseek_full_attempts VALUES (?,?)', (identity, day + ':error'))
                 else:
