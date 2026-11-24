@@ -141,6 +141,7 @@ HUMAN_OUTCOME = re.compile(
     r"bone|cartilage|tendon\w*|ligament\w*|fascia|connective tissue|"
     r"body (?:fat|composition|mass|weight)|adipos\w*|fat mass|lean mass|obesity|"
     r"insulin|glucose|glyc\w*|lipid\w*|cholesterol|triglycerid\w*|"
+    r"fat oxidation|substrate oxidation|energy expenditure|metaboli\w*|mitochondri\w*|"
     r"immun\w*|inflamm\w*|cytokine\w*|microbiome|gut|"
     r"hepatic|liver|kidney|renal|"
     r"menstrual|hormon\w*|testosterone|estrogen|cortisol|"
@@ -177,7 +178,10 @@ EXERCISE_OUTCOME = re.compile(
     r"physical activit\w* (?:levels?|pattern\w*|behavio\w*|assessment|measurement)|"
     r"physically active|muscle strength|muscular strength|"
     r"neuromuscular (?:function|performance|adapt\w*)|"
-    r"training (?:response|adapt\w*|load)|exercise[- ]induced)\b", re.I,
+    r"training (?:response|adapt\w*|load)|exercise[- ]induced|"
+    # Whole-body metabolic outcomes are physiological findings about the person.
+    r"(?:peak |maximal |whole-body )?fat oxidation|substrate oxidation|"
+    r"energy expenditure|mitochondrial (?:coupling|respiration|function))"
 )
 EXERCISE_INTERVENTION = re.compile(
     r"\b(?:(?:aerobic|resistance|endurance|strength|interval|concurrent|"
@@ -341,6 +345,8 @@ WHOLE_BODY_MEASURE = re.compile(
     r"change in body composition|"
     r"force[- ]velocity|load[- ]velocity|torque|"
     r"running economy|energy expenditure|substrate oxidation|"
+    r"(?:peak |maximal |whole-body )?fat oxidation|"
+    r"fat oxidation|mitochondrial (?:coupling|respiration|function)|"
     r"body composition|lean mass|fat mass|"
     r"core temperature|skin temperature|sweat rate|"
     r"arterial (?:stiffness|pressure)|blood pressure|"
