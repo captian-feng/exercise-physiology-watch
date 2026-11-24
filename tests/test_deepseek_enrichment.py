@@ -141,6 +141,36 @@ class TestEnrichment(unittest.TestCase):
         self.assertGreater(len(calls), 0)
         self.assertLessEqual(db.execute('SELECT COUNT(*) FROM deepseek_full_attempts').fetchone()[0], len(calls))
 
+    def test_full_worker_retries_rate_limit(self):
+        answer = {'usage': {}, 'choices': [{'message': {'content': json.dumps({'zh': '译文', 'summary': '简介'})}}]}
+        err = module.urllib.error.HTTPError('https://api.deepseek.com/chat/completions', 429, 'rate limited', {}, io.BytesIO(b''))
+        with patch.object(module, 'find_abstract', return_value=('a sufficiently long abstract text', 'https://example.org/1')), \
+             patch.object(module.time, 'sleep') as sleep, \
+             patch.object(module.urllib.request, 'urlopen', side_effect=[err, Response(json.dumps(answer).encode())]) as request:
+            identity, outcome = module._full_worker({'doi': '10.3/retry', 'title': 'Title'}, 'test')
+        self.assertEqual(identity, '10.3/retry')
+        self.assertEqual(outcome[1], '简介')
+        self.assertEqual(request.call_count, 2)
+        sleep.assert_called_once_with(1)
+
+    def test_error_marked_identity_is_retried(self):
+        db = sqlite3.connect(':memory:')
+        rows = [({'doi': '10.4/retry', 'title': 'Retry title'}, '2025-01-01', 'core')]
+        calls = []
+        def fake_worker(item, key):
+            identity = module.identity_for(item)
+            calls.append(identity)
+            if len(calls) == 1:
+                raise module.urllib.error.HTTPError('https://api.deepseek.com/chat/completions', 503, 'busy', {}, io.BytesIO(b''))
+            return identity, ('译文', '简介', item['title'], '', False)
+        env = {'DEEPSEEK_API_KEY': 'test', 'DEEPSEEK_FULL': '1', 'DEEPSEEK_FULL_WORKERS': '1'}
+        with patch.dict(os.environ, env), patch.object(module, '_full_worker', side_effect=fake_worker):
+            module.enrich(db, rows, None)
+            self.assertEqual(len(calls), 1)
+            result = module.enrich(db, rows, None)
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(result['10.4/retry'][1], '简介')
+
 if __name__ == '__main__':
     unittest.main()
 
