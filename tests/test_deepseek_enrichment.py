@@ -73,6 +73,24 @@ class TestEnrichment(unittest.TestCase):
             if old is None: path.unlink()
             else: path.write_text(old, encoding='utf-8')
 
+    def test_peak_override_only_processes_pinned_trial(self):
+        db = sqlite3.connect(':memory:')
+        now = datetime.datetime(2026,11,24,15,0,tzinfo=ZoneInfo('Asia/Shanghai'))
+        candidates = [({'doi':'10.1/trial','title':'trial'}, '2025-01-01', 'core'), ({'doi':'10.1/new','title':'new'}, '2026-11-24', 'core')]
+        answer = {'choices':[{'message':{'content':json.dumps({'zh':'译文','summary':'简介'})}}]}
+        path = module.Path(__file__).resolve().parent.parent / 'deepseek_top100.json'
+        old = path.read_text(encoding='utf-8') if path.exists() else None
+        try:
+            path.write_text(json.dumps(['10.1/trial']), encoding='utf-8')
+            with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test', 'DEEPSEEK_PEAK_TRIAL':'1'}), patch.object(module, 'find_abstract', return_value=('text', 'https://pubmed.ncbi.nlm.nih.gov/1/')), patch.object(module.urllib.request, 'urlopen', return_value=Response(json.dumps(answer).encode())) as request:
+                result = module.enrich(db, candidates, now)
+            self.assertEqual(request.call_count, 1)
+            self.assertIn('10.1/trial', result)
+            self.assertNotIn('10.1/new', result)
+        finally:
+            if old is None: path.unlink()
+            else: path.write_text(old, encoding='utf-8')
+
 if __name__ == '__main__':
     unittest.main()
 
