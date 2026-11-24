@@ -21,6 +21,7 @@
       en: record.e,
       zh: record.z || "",
       summary: record.summary || "",
+      summarySource: record.summary_source || "",
       doi: record.d,
       pmid: record.m || "",
       url: record.u || (record.d ? "https://doi.org/" + record.d : ""),
@@ -165,6 +166,15 @@
       title.textContent = record.en;
     }
     row.append(meta, title);
+    if (record.pmid) {
+      const backup = node("p", "article-backup");
+      const link = node("a", "", "数据库备用入口（PubMed）");
+      link.href = "https://pubmed.ncbi.nlm.nih.gov/" + encodeURIComponent(record.pmid) + "/";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      backup.append(link);
+      row.append(backup);
+    }
     if (record.zh) {
       const translation = node("p", "english", record.zh);
       translation.lang = "zh-CN";
@@ -172,9 +182,9 @@
     }
     if (record.summary) {
       const summary = node("p", "article-summary", "摘要简介（AI 生成）：" + record.summary + " ");
-      if (record.pmid) {
-        const source = node("a", "", "PubMed 摘要");
-        source.href = "https://pubmed.ncbi.nlm.nih.gov/" + encodeURIComponent(record.pmid) + "/";
+      if (record.summarySource || record.pmid) {
+        const source = node("a", "", "摘要来源");
+        source.href = record.summarySource || ("https://pubmed.ncbi.nlm.nih.gov/" + encodeURIComponent(record.pmid) + "/");
         source.target = "_blank";
         source.rel = "noopener noreferrer";
         summary.append(source);
@@ -438,4 +448,5 @@
     ].join("\n"),
   });
 })();
+
 
