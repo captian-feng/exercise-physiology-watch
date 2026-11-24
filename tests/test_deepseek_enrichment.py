@@ -25,7 +25,7 @@ class TestEnrichment(unittest.TestCase):
         now = datetime.datetime(2026,11,24,7,30,tzinfo=ZoneInfo('Asia/Shanghai'))
         candidate = [({'doi':'10.1000/example', 'title':'Exercise in humans'}, '2026-11-24', 'core')]
         answer = {'choices':[{'message':{'content':json.dumps({'zh':'人体运动','summary':'不应展示'})}}]}
-        with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test'}), patch.object(module, 'find_abstract', return_value=('', '')), patch.object(module.urllib.request, 'urlopen', return_value=Response(json.dumps(answer).encode())) as request:
+        with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test', 'DEEPSEEK_TRIAL_ENABLED':'1'}), patch.object(module, 'find_abstract', return_value=('', '')), patch.object(module.urllib.request, 'urlopen', return_value=Response(json.dumps(answer).encode())) as request:
             result = module.enrich(db, candidate, now)
             self.assertEqual(result['10.1000/example'], ('人体运动', '', ''))
             module.enrich(db, candidate, now)
@@ -52,7 +52,7 @@ class TestEnrichment(unittest.TestCase):
         now = datetime.datetime(2026,11,24,7,30,tzinfo=ZoneInfo('Asia/Shanghai'))
         rows = [({'doi':'10.1/one','title':'one'}, '2026-11-24', 'core'), ({'doi':'10.1/two','title':'two'}, '2026-11-24', 'core')]
         answer = {'choices':[{'message':{'content':json.dumps({'zh':'译文','summary':'简介'})}}]}
-        with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test'}), patch.object(module, 'find_abstract', return_value=('study text', 'https://pubmed.ncbi.nlm.nih.gov/1/')), patch.object(module.urllib.request, 'urlopen', side_effect=[Response(b'invalid'), Response(json.dumps(answer).encode())]):
+        with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test', 'DEEPSEEK_TRIAL_ENABLED':'1'}), patch.object(module, 'find_abstract', return_value=('study text', 'https://pubmed.ncbi.nlm.nih.gov/1/')), patch.object(module.urllib.request, 'urlopen', side_effect=[Response(b'invalid'), Response(json.dumps(answer).encode())]):
             result = module.enrich(db, rows, now)
         self.assertNotIn('10.1/one', result)
         self.assertEqual(result['10.1/two'][0], '译文')
@@ -66,7 +66,7 @@ class TestEnrichment(unittest.TestCase):
         old = path.read_text(encoding='utf-8') if path.exists() else None
         try:
             path.write_text(json.dumps(['10.1/trial']), encoding='utf-8')
-            with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test'}), patch.object(module, 'find_abstract', return_value=('text', 'https://pubmed.ncbi.nlm.nih.gov/1/')), patch.object(module.urllib.request, 'urlopen', return_value=Response(json.dumps(answer).encode())):
+            with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test', 'DEEPSEEK_TRIAL_ENABLED':'1'}), patch.object(module, 'find_abstract', return_value=('text', 'https://pubmed.ncbi.nlm.nih.gov/1/')), patch.object(module.urllib.request, 'urlopen', return_value=Response(json.dumps(answer).encode())):
                 self.assertEqual(module.enrich(db, candidate, now)['10.1/trial'][0], '译文')
             self.assertEqual(db.execute('SELECT COUNT(*) FROM deepseek_trial_attempts').fetchone()[0], 1)
         finally:
@@ -82,7 +82,7 @@ class TestEnrichment(unittest.TestCase):
         old = path.read_text(encoding='utf-8') if path.exists() else None
         try:
             path.write_text(json.dumps(['10.1/trial']), encoding='utf-8')
-            with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test', 'DEEPSEEK_PEAK_TRIAL':'1'}), patch.object(module, 'find_abstract', return_value=('text', 'https://pubmed.ncbi.nlm.nih.gov/1/')), patch.object(module.urllib.request, 'urlopen', return_value=Response(json.dumps(answer).encode())) as request:
+            with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test', 'DEEPSEEK_PEAK_TRIAL':'1', 'DEEPSEEK_TRIAL_ENABLED':'1'}), patch.object(module, 'find_abstract', return_value=('text', 'https://pubmed.ncbi.nlm.nih.gov/1/')), patch.object(module.urllib.request, 'urlopen', return_value=Response(json.dumps(answer).encode())) as request:
                 result = module.enrich(db, candidates, now)
             self.assertEqual(request.call_count, 1)
             self.assertIn('10.1/trial', result)
