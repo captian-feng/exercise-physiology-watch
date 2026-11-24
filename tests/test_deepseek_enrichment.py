@@ -171,6 +171,20 @@ class TestEnrichment(unittest.TestCase):
         self.assertEqual(len(calls), 2)
         self.assertEqual(result['10.4/retry'][1], '简介')
 
+    def test_insufficient_balance_stops_run_without_marking_attempts(self):
+        db = sqlite3.connect(':memory:')
+        rows = [({'doi': '10.5/%d' % i, 'title': 'Title %d' % i}, '2025-01-01', 'core') for i in range(80)]
+        calls = []
+        def fake_worker(item, key):
+            calls.append(module.identity_for(item))
+            raise module.InsufficientBalance('balance exhausted')
+        env = {'DEEPSEEK_API_KEY': 'test', 'DEEPSEEK_FULL': '1', 'DEEPSEEK_FULL_WORKERS': '2'}
+        with patch.dict(os.environ, env), patch.object(module, '_full_worker', side_effect=fake_worker):
+            module.enrich(db, rows, None)
+        self.assertGreater(len(calls), 0)
+        self.assertLess(len(calls), 20, 'a 402 balance error should stop the run immediately')
+        self.assertEqual(db.execute('SELECT COUNT(*) FROM deepseek_full_attempts').fetchone()[0], 0)
+
 if __name__ == '__main__':
     unittest.main()
 
