@@ -58,6 +58,8 @@ jobs:
       - name: Install translation dependencies
         run: python -m pip install -r requirements.txt
       - name: Collect papers and build the static site
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python -X utf8 cloud_refresh.py
       - name: Save the updated archive
         run: python scripts/archive_state.py persist "$RUNNER_TEMP/journal-archive-base"
@@ -78,4 +80,5 @@ jobs:
     steps:
       - id: pages
         uses: actions/deploy-pages@v4
+
 
