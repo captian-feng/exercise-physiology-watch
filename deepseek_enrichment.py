@@ -255,49 +255,68 @@ def enrich_full(db, candidates, key, day, now=None):
     A wall-clock deadline only prevents losing the whole run to GitHub's job limit;
     re-dispatch the workflow to continue.
     """
-    from concurrent.futures import ThreadPoolExecutor, as_completed
+    from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
     db.execute('CREATE TABLE IF NOT EXISTS deepseek_full_attempts (identity TEXT PRIMARY KEY, day TEXT NOT NULL)')
     cached = {row[0] for row in db.execute('SELECT identity FROM deepseek_cache WHERE length(summary) > 0')}
     done = {row[0] for row in db.execute('SELECT identity FROM deepseek_full_attempts')}
     pending = [entry for entry in candidates if identity_for(entry[0]) not in cached and identity_for(entry[0]) not in done]
     workers = _positive_int('DEEPSEEK_FULL_WORKERS', 20)
-    deadline_seconds = _positive_int('DEEPSEEK_RUN_SECONDS', 2400)
+    deadline_seconds = _positive_int('DEEPSEEK_RUN_SECONDS', 1800)
     deadline = time.monotonic() + deadline_seconds
     print(f'DeepSeek full pass: {len(pending)} records need a summary '
           f'({workers} workers, {deadline_seconds}s window)', flush=True)
-    ok = no_abstract = errors = 0
+    ok = no_abstract = errors = submitted = 0
+    queue = iter(pending)
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {}
-        for item, seen, tier in pending:
-            if time.monotonic() >= deadline:
+
+        def fill():
+            nonlocal submitted
+            while len(futures) < workers * 2:
+                try:
+                    item, seen, tier = next(queue)
+                except StopIteration:
+                    return
+                futures[pool.submit(_full_worker, item, key)] = identity_for(item)
+                submitted += 1
+
+        fill()
+        while futures:
+            left = deadline - time.monotonic()
+            if left <= 0:
                 print('DeepSeek full pass: time window reached, checkpointing progress', flush=True)
+                for future in futures:
+                    future.cancel()
                 break
-            futures[pool.submit(_full_worker, item, key)] = identity_for(item)
-        for future in as_completed(futures):
-            identity = futures[future]
-            try:
-                outcome = future.result()
-            except Exception as exc:
-                print('DeepSeek full pass error for', identity, type(exc).__name__, flush=True)
-                errors += 1
-                db.execute('INSERT OR REPLACE INTO deepseek_full_attempts VALUES (?,?)', (identity, day + ':error'))
-            else:
-                if outcome[1] is None:
-                    db.execute('INSERT OR REPLACE INTO deepseek_full_attempts VALUES (?,?)', (identity, day))
-                    continue
-                zh, summary, title, source, missing = outcome[1]
-                if missing:
-                    no_abstract += 1
-                    db.execute('INSERT OR REPLACE INTO deepseek_full_attempts VALUES (?,?)', (identity, day + ':noabstract'))
+            done_set, _ = wait(futures, timeout=min(left, 30), return_when=FIRST_COMPLETED)
+            if not done_set:
+                continue
+            for future in done_set:
+                identity = futures.pop(future)
+                try:
+                    outcome = future.result()
+                except Exception as exc:
+                    print('DeepSeek full pass error for', identity, type(exc).__name__, flush=True)
+                    errors += 1
+                    db.execute('INSERT OR REPLACE INTO deepseek_full_attempts VALUES (?,?)', (identity, day + ':error'))
                 else:
-                    ok += 1
-                    db.execute('INSERT OR REPLACE INTO deepseek_cache (identity,title,zh,summary,day,abstract_source) VALUES (?,?,?,?,?,?)',
-                               (identity, title, zh, summary, day, source))
-                    db.execute('INSERT OR REPLACE INTO deepseek_full_attempts VALUES (?,?)', (identity, day))
-            db.commit()
+                    if outcome[1] is None:
+                        db.execute('INSERT OR REPLACE INTO deepseek_full_attempts VALUES (?,?)', (identity, day))
+                    else:
+                        zh, summary, title, source, missing = outcome[1]
+                        if missing:
+                            no_abstract += 1
+                            db.execute('INSERT OR REPLACE INTO deepseek_full_attempts VALUES (?,?)', (identity, day + ':noabstract'))
+                        else:
+                            ok += 1
+                            db.execute('INSERT OR REPLACE INTO deepseek_cache (identity,title,zh,summary,day,abstract_source) VALUES (?,?,?,?,?,?)',
+                                       (identity, title, zh, summary, day, source))
+                            db.execute('INSERT OR REPLACE INTO deepseek_full_attempts VALUES (?,?)', (identity, day))
+                db.commit()
+            fill()
     remaining = db.execute('SELECT COUNT(*) FROM deepseek_cache WHERE length(summary) = 0').fetchone()[0]
     attempted = db.execute('SELECT COUNT(*) FROM deepseek_full_attempts').fetchone()[0]
-    print(f'DeepSeek full pass: {ok} summaries added, {no_abstract} without abstract, '
+    print(f'DeepSeek full pass: {submitted} submitted, {ok} summaries added, {no_abstract} without abstract, '
           f'{errors} errors this run; {attempted} checked total; '
           f'{remaining} cached entries still without summary', flush=True)
     return {row[0]: (row[1], row[2], row[3]) for row in db.execute(
