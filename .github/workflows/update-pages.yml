@@ -2,11 +2,10 @@ name: 更新运动生理文献库
 
 on:
   schedule:
-    # GitHub cron is UTC. 00:30 UTC is 08:30 in Asia/Shanghai (UTC+8); the second
-    # entry is an afternoon retry in case the morning run is delayed or skipped,
-    # because scheduled runs are best-effort and can be dropped under load.
-    - cron: "30 0 * * *"
-    - cron: "30 6 * * *"
+    # GitHub cron is UTC: these are 07:30 and 13:00 in Asia/Shanghai.
+    # Scheduled runs are best-effort and can be delayed or skipped.
+    - cron: "30 23 * * *"
+    - cron: "0 5 * * *"
   push:
     branches:
       - main
