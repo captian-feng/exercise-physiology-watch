@@ -55,7 +55,7 @@
 
 如需**无限制全量补齐简介**，手动运行时勾选 `deepseek_backfill`，并把 `backfill_batch` 和 `backfill_budget` 都填 **-1**（负数=取消所有上限；`deepseek_full` 开关待工作流权限开放后也可直接使用）。该模式遍历所有网站已收录、尚缺简介的题录，不设调用次数、累计预算和非高峰时段限制；摘要按 PubMed → Europe PMC → Crossref → OpenAlex → Europe PMC(DOI) → Frontiers → 期刊页面 meta 的顺序逐条查找，任一来源拿到摘要即用，单个来源失败不影响下一条；Semantic Scholar 仅在配置了 `S2_API_KEY` 时启用（匿名访问会被限流）。已有简介的题录会跳过，避免重复调用。并发数由 `DEEPSEEK_FULL_WORKERS` 控制（默认 8）。
 
-全量模式为避免被 GitHub 单次作业上限中断而丢失进度，设置了 19800 秒（5.5 小时）的单次运行窗口；到点会安全检查点退出，重新运行同一开关即可续跑，不会重头开始。实际请求数、输入/输出 token 与估算费用见每次运行日志；账单以 DeepSeek 账户为准。
+全量模式为避免被 GitHub 单次作业上限中断而丢失进度，内部设置 2400 秒（40 分钟）运行窗口，外层子进程超时为 21000 秒；到点会安全检查点退出，重新运行同一开关即可续跑，不会重头开始。实际请求数、输入/输出 token 与估算费用见每次运行日志；账单以 DeepSeek 账户为准。
 
 DeepSeek 官方定价与忙闲时段以其文档为准：https://api-docs.deepseek.com/quick_start/pricing/
 - GitHub 会暂停长时间无活动的公开仓库定时工作流。更新停滞时可先检查 Actions 中该流程是否已停用。https://docs.github.com/en/actions/how-tos/manage-workflow-runs/disable-and-enable-workflows
