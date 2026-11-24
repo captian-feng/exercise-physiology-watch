@@ -25,9 +25,9 @@ class TestEnrichment(unittest.TestCase):
         now = datetime.datetime(2026,11,24,7,30,tzinfo=ZoneInfo('Asia/Shanghai'))
         candidate = [({'doi':'10.1000/example', 'title':'Exercise in humans'}, '2026-11-24', 'core')]
         answer = {'choices':[{'message':{'content':json.dumps({'zh':'人体运动','summary':'不应展示'})}}]}
-        with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test'}), patch.object(module.urllib.request, 'urlopen', return_value=Response(json.dumps(answer).encode())) as request:
+        with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test'}), patch.object(module, 'find_abstract', return_value=('', '')), patch.object(module.urllib.request, 'urlopen', return_value=Response(json.dumps(answer).encode())) as request:
             result = module.enrich(db, candidate, now)
-            self.assertEqual(result['10.1000/example'], ('人体运动', ''))
+            self.assertEqual(result['10.1000/example'], ('人体运动', '', ''))
             module.enrich(db, candidate, now)
             self.assertEqual(request.call_count, 1)
 
@@ -38,6 +38,26 @@ class TestEnrichment(unittest.TestCase):
             module.enrich(db, [({'doi':'10.1/example','title':'title'},'2026-11-24','core')], now)
             request.assert_not_called()
 
+    def test_pubmed_failure_uses_publisher_abstract(self):
+        class Page(Response):
+            def geturl(self): return 'https://www.frontiersin.org/example'
+        page = b'<meta name="citation_doi" content="10.3389/fphys.2026.123"><meta name="citation_abstract" content="Human exercise study.">'
+        with patch.object(module, 'get_abstract', side_effect=OSError('offline')), patch.object(module.urllib.request, 'urlopen', return_value=Page(page)):
+            text, source = module.find_abstract({'pmid':'123','doi':'10.3389/fphys.2026.123'})
+        self.assertEqual(text, 'Human exercise study.')
+        self.assertIn('frontiersin.org', source)
+
+    def test_bad_record_does_not_stop_next(self):
+        db = sqlite3.connect(':memory:')
+        now = datetime.datetime(2026,11,24,7,30,tzinfo=ZoneInfo('Asia/Shanghai'))
+        rows = [({'doi':'10.1/one','title':'one'}, '2026-11-24', 'core'), ({'doi':'10.1/two','title':'two'}, '2026-11-24', 'core')]
+        answer = {'choices':[{'message':{'content':json.dumps({'zh':'译文','summary':'简介'})}}]}
+        with patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test'}), patch.object(module, 'find_abstract', return_value=('study text', 'https://pubmed.ncbi.nlm.nih.gov/1/')), patch.object(module.urllib.request, 'urlopen', side_effect=[Response(b'invalid'), Response(json.dumps(answer).encode())]):
+            result = module.enrich(db, rows, now)
+        self.assertNotIn('10.1/one', result)
+        self.assertEqual(result['10.1/two'][0], '译文')
+
 if __name__ == '__main__':
     unittest.main()
+
 
