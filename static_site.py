@@ -119,7 +119,14 @@ def write_site(db, journals):
         doi = item.get("doi", "")
         # Frontiers publishes article pages before some DOI records resolve.
         # Its official article route accepts the DOI and redirects to the page.
-        if re.fullmatch(r"10[.]3389/[a-z0-9.-]+", doi, re.I):
+        source_url = item.get('url', '') or ''
+        source_parts = urlsplit(source_url)
+        source_host = (source_parts.hostname or '').lower()
+        publisher_hosts = ('frontiersin.org', 'link.springer.com', 'journals.humankinetics.com', 'jhk.termedia.pl', 'www.termedia.pl')
+        if (source_parts.scheme == 'https' and source_host in publisher_hosts
+                and doi and doi.lower() in source_url.lower()):
+            location = source_url
+        elif re.fullmatch(r"10[.]3389/[a-z0-9.-]+", doi, re.I):
             location = "https://www.frontiersin.org/articles/" + quote(doi, safe="/") + "/full"
         else:
             location = "https://doi.org/" + quote(doi, safe="/:") if doi else item.get("url", "")
@@ -161,12 +168,14 @@ def write_site(db, journals):
         if not doi or location != "https://doi.org/" + doi:
             row["u"] = location
         enrichment_key = known_doi or ('pmid:' + known_pmid)
-        enriched_title, summary = enriched.get(enrichment_key, ('', ''))
+        enriched_title, summary, summary_source = enriched.get(enrichment_key, ('', '', ''))
         chinese = enriched_title or translated.get(title)
         if chinese:
             row["z"] = chinese
         if summary:
             row["summary"] = summary
+            if summary_source:
+                row["summary_source"] = summary_source
         records.append(row)
 
     updated = db.execute("SELECT MAX(day) FROM runs").fetchone()[0]
@@ -195,4 +204,5 @@ def write_site(db, journals):
     pending.write_text(page, encoding="utf-8")
     pending.replace(output / "index.html")
     print(f"{output / 'index.html'} | {len(records)} screened records")
+
 
