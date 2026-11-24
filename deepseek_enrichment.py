@@ -20,6 +20,9 @@ TRIAL_PER_RUN = 40
 FULL_VERSION = 1
 USER_AGENT = 'Mozilla/5.0 (compatible; JournalWatch/1.0)'
 
+class InsufficientBalance(RuntimeError):
+    """DeepSeek returned HTTP 402; further calls cannot succeed until topped up."""
+
 def identity_for(item):
     return (item.get('doi') or '').strip().lower() or ('pmid:' + str(item.get('pmid') or ''))
 
@@ -241,6 +244,8 @@ def _full_worker(item, key):
                 payload = json.loads(response.read())
             break
         except urllib.error.HTTPError as exc:
+            if exc.code == 402:
+                raise InsufficientBalance('DeepSeek account balance is insufficient') from exc
             if exc.code in (429, 500, 502, 503, 504) and attempt < 2:
                 time.sleep(2 ** attempt)
                 continue
@@ -291,6 +296,7 @@ def enrich_full(db, candidates, key, day, now=None):
                 submitted += 1
 
         fill()
+        fatal = False
         while futures:
             left = deadline - time.monotonic()
             if left <= 0:
@@ -305,6 +311,12 @@ def enrich_full(db, candidates, key, day, now=None):
                 identity = futures.pop(future)
                 try:
                     outcome = future.result()
+                except InsufficientBalance as exc:
+                    print('DeepSeek full pass stopped:', str(exc), flush=True)
+                    for queued in futures:
+                        queued.cancel()
+                    fatal = True
+                    break
                 except urllib.error.HTTPError as exc:
                     try:
                         detail = exc.read().decode('utf-8', 'replace')[:300]
@@ -331,6 +343,8 @@ def enrich_full(db, candidates, key, day, now=None):
                                        (identity, title, zh, summary, day, source))
                             db.execute('INSERT OR REPLACE INTO deepseek_full_attempts VALUES (?,?)', (identity, day))
                 db.commit()
+            if fatal:
+                break
             fill()
     remaining = db.execute('SELECT COUNT(*) FROM deepseek_cache WHERE length(summary) = 0').fetchone()[0]
     attempted = db.execute('SELECT COUNT(*) FROM deepseek_full_attempts').fetchone()[0]
