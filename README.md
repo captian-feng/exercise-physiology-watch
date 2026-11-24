@@ -40,12 +40,20 @@
 
 ## 日常更新和故障恢复
 
-- GitHub Actions 每天北京时间 08:17 运行。选择非整点可减少高负载时的排队，实际发布时间仍取决于 GitHub 和外部数据源。
+- GitHub Actions 每天北京时间 07:30 和 11:00 运行。实际发布时间仍取决于 GitHub 和外部数据源，定时任务可能延迟或漏跑。
 - 初次从仓库中的压缩 SQLite 起始快照恢复。此后读取 archive-state 分支，保留历史题录、已翻译标题和各来源的采集进度。任务串行运行，状态更新使用正常 Git 推送。只有 dist 作为 Pages 站点发布。
 - 每次运行的 Summary 列出失败来源和待译标题。单个来源失败时，保留其上次成功位置，后续继续补查。整次采集失败时，Pages 保留上次成功版本。恢复后可用 Run workflow 手动补跑。
 - 已配置的官网「最新文章／在线首发／当前卷期」按页面采集。文章的在线发表日期不影响这条采集路径，当前卷期有分页时会逐页读取。仍缺官网卷期入口的刊物用 Crossref 的正式出版日期补查，Crossref 和 PubMed 增量继续独立运行。官网入口在 sources.json 的 publisher_pages 中维护。
 - Crossref 和 PubMed 分别限速，暂时性错误会重试。PubMed 查询太大时，按入库日期拆分。期刊官网首发与正式目录仍需逐刊对账，来源状态不能替代覆盖率核验。
 - 可以设置默认分支合并需通过「检查协作改动」并经维护者审核。自动归档所用的 archive-state 分支需要允许 Actions 正常推送。
+
+## DeepSeek 历史回填
+
+百篇试译队列已关闭；其他历史题录的 AI 中文标题与摘要简介通过**手动回填**完成，范围仅限网站上实际展示的题录，未纳入的文献不会被翻译。
+
+在 Actions 中手动运行「更新运动生理文献库」时勾选 `deepseek_backfill`，可设置本次调用上限 `backfill_batch`（默认 300）和累计预算 `backfill_budget`（默认 1200）。回填只在 DeepSeek 官方非高峰时段发出请求，忙时的运行会安全跳过；已翻译或已尝试过的题录不会重复调用，失败项也会被记录以免反复重试。用完预算后必须手动提高上限才会继续。实际请求数、输入/输出 token 与估算费用见每次运行日志；账单以 DeepSeek 账户为准。
+
+DeepSeek 官方定价与忙闲时段以其文档为准：https://api-docs.deepseek.com/quick_start/pricing/
 - GitHub 会暂停长时间无活动的公开仓库定时工作流。更新停滞时可先检查 Actions 中该流程是否已停用。https://docs.github.com/en/actions/how-tos/manage-workflow-runs/disable-and-enable-workflows
 
 ## 本地验证
