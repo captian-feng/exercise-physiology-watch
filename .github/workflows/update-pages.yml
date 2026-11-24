@@ -6,9 +6,6 @@ on:
     # Scheduled runs are best-effort and can be delayed or skipped.
     - cron: "30 23 * * *"
     - cron: "0 5 * * *"
-    # Temporary Nov 24 evening run for the approved one-time 100-paper trial.
-    # Remove this calendar entry after the trial; cron has no year field.
-    - cron: "5 10 24 11 *"
   push:
     branches:
       - main
