@@ -240,9 +240,13 @@ def feed(url):
                "url": article_url}
 
 
-def pull(fn, args):
+def pull(fn, args, limit=None):
     try:
-        return list(fn(*args)), ""
+        if limit is None:
+            return list(fn(*args)), ""
+        # The cap is passed by keyword: pubmed() takes "until" before "limit",
+        # so a positional argument would land in the wrong slot.
+        return list(fn(*args, limit=limit)), ""
     except (OSError, ValueError, KeyError, ElementTree.ParseError) as error:
         return [], str(error)
 
@@ -495,9 +499,7 @@ def main():
                 args = (*args, start)
                 if fn is crossref:
                     args = (*args, checkpoint is None)
-            if limit is not None:
-                args = (*args, limit)
-            jobs.append((source, label, fn, args, journal))
+            jobs.append((source, label, fn, args, journal, limit))
         journal_ids = dict(journals)
         issue_start = (now.date() - timedelta(days=55)).isoformat()
         for name, issns in journals:
@@ -528,22 +530,22 @@ def main():
                 (backfill_crossref, backfill_pubmed),
             ))
             plans = [
-                (backfill_crossref, name, crossref, (issns, start, True, False, until), True)
+                (backfill_crossref, name, crossref, (issns, start, True, False, until), True, None)
                 for name, issns in journals
             ]
             plans.extend(
                 (backfill_pubmed, name, pubmed,
-                 (" OR ".join(f'"{issn}"[is]' for issn in issns), start, until), True)
+                 (" OR ".join(f'"{issn}"[is]' for issn in issns), start, until), True, None)
                 for name, issns in journals
             )
-            plans.extend((backfill_pubmed, topic, pubmed, (query, start, until), False)
+            plans.extend((backfill_pubmed, topic, pubmed, (query, start, until), False, None)
                          for topic, query in TOPICS.items())
             jobs.extend(plan for plan in plans if plan[:2] not in done)
         history = []
         completed = []
         with ThreadPoolExecutor(max_workers=3) as pool:
-            futures = [pool.submit(pull, fn, args) for _, _, fn, args, _ in jobs]
-            for (source, label, _, _, journal), future in zip(jobs, futures):
+            futures = [pool.submit(pull, fn, args, limit) for _, _, fn, args, _, limit in jobs]
+            for (source, label, _, _, journal, _), future in zip(jobs, futures):
                 items, error = future.result()
                 history.append((source, label, len(items), error))
                 if error:
