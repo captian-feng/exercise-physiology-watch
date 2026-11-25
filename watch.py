@@ -34,6 +34,10 @@ TOPICS = SOURCES["topics"]
 FEEDS = SOURCES["feeds"]
 PUBLISHER_PAGES = SOURCES.get("publisher_pages", {})
 HISTORY_BACKFILL = SOURCES.get("history_backfill")
+# Upper bound on the records one cross-journal topic sweep may fetch in a run.
+# The wide topic queries can match tens of thousands of records, which would
+# otherwise exhaust the job's time budget before the site is rebuilt.
+TOPIC_FETCH_LIMIT = 300
 
 
 # Each host has its own lock and minimum interval between request starts.
@@ -150,26 +154,34 @@ def openalex(issns, since):
         cursor = page["meta"].get("next_cursor") if len(page["results"]) == 100 else None
 
 
-def pubmed_ids(query, start, end, field="crdt"):
+def pubmed_ids(query, start, end, field="crdt", limit=None):
     window = f'"{start:%Y/%m/%d}"[{field}] : "{end:%Y/%m/%d}"[{field}]'
+    # "date" sorting returns the newest records first, so a capped sweep keeps
+    # the papers that matter most instead of an arbitrary slice.
     search = json.loads(fetch(NCBI + "esearch.fcgi", db="pubmed", retmode="json",
-                              retmax=9999, term=f"({query}) AND ({window})"))
+                              retmax=9999, sort="date", term=f"({query}) AND ({window})"))
     result = search["esearchresult"]
     ids = result["idlist"]
     if int(result["count"]) <= len(ids):
-        yield from ids
+        yield from (ids[:limit] if limit else ids)
         return
     if start == end:
         raise ValueError(f"PubMed query still exceeds the per-request cap on {start}")
+    # The window is split in half so each request stays under the cap. The
+    # newer half comes first, so a limited sweep keeps the most recent papers.
     midpoint = start + (end - start) // 2
-    yield from pubmed_ids(query, start, midpoint, field)
-    yield from pubmed_ids(query, midpoint + timedelta(days=1), end, field)
+    yield from pubmed_ids(query, midpoint + timedelta(days=1), end, field, limit)
+    yield from pubmed_ids(query, start, midpoint, field,
+                           limit if limit is None else max(0, limit - len(ids)))
 
 
-def pubmed(query, since, until=None):
+def pubmed(query, since, until=None, limit=None):
     start_date = datetime.fromisoformat(since).date()
     end = datetime.fromisoformat(until).date() if until else max(start_date, datetime.now(TZ).date())
-    ids = list(pubmed_ids(query, start_date, end, "pdat" if until else "crdt"))
+    # A wide cross-journal query can return tens of thousands of records.
+    # Fetching them all would blow the job's time budget, so the sweep is
+    # capped; pubmed_ids keeps the newest records within that cap.
+    ids = list(pubmed_ids(query, start_date, end, "pdat" if until else "crdt", limit))
     for start in range(0, len(ids), 100):
         batch = ElementTree.fromstring(fetch(NCBI + "efetch.fcgi", db="pubmed",
                                              id=",".join(ids[start:start + 100]), retmode="xml"))
@@ -474,7 +486,7 @@ def main():
             render_catalog(db, day, journal_order, baseline, previous_history(db, day))
             return 0
         jobs = []
-        def enqueue(source, label, fn, args, journal, dated=True):
+        def enqueue(source, label, fn, args, journal, dated=True, limit=None):
             if dated:
                 checkpoint = db.execute("SELECT day FROM checkpoints WHERE source=? AND label=?",
                                         (source, label)).fetchone()
@@ -483,8 +495,9 @@ def main():
                 args = (*args, start)
                 if fn is crossref:
                     args = (*args, checkpoint is None)
+            if limit is not None:
+                args = (*args, limit)
             jobs.append((source, label, fn, args, journal))
-
         journal_ids = dict(journals)
         issue_start = (now.date() - timedelta(days=55)).isoformat()
         for name, issns in journals:
@@ -500,7 +513,11 @@ def main():
         pubmed_journals = " OR ".join(f'"{issn}"[is]' for issn in issn_names)
         enqueue("PubMed", "全部重点刊", pubmed, (pubmed_journals,), True)
         for topic, query in TOPICS.items():
-            enqueue("PubMed", topic, pubmed, (query,), False)
+            # Cross-journal topic sweeps are capped per run: the wide queries
+            # would otherwise fetch tens of thousands of records and exceed
+            # the job's time budget. The next run continues from the window
+            # that is still missing.
+            enqueue("PubMed", topic, pubmed, (query,), False, limit=TOPIC_FETCH_LIMIT)
         if HISTORY_BACKFILL:
             start, until = HISTORY_BACKFILL["from"], HISTORY_BACKFILL["through"]
             period = start + " 至 " + until
