@@ -38,112 +38,276 @@ def apply_corrections(title, chinese):
     return chinese
 
 TOPIC_PATTERNS = {
-    "临界功率、耐力与氧摄取动力学": (
-        r"critical (?:power|speed)|oxygen uptake kinetics|vo[₂2]\s?kinetics|"
-        r"ventilatory threshold|lactate threshold|maximal lactate steady state|"
-        r"anaerobic threshold|time to exhaustion|aerobic capacity|endurance performance|"
-        r"pacing|pacing strategy|fatigue resistance|durability"
-    ),
-    "环境生理：热、冷、高原与缺氧": (
-        r"heat (?:acclim\w*|stress|strain|exposure|tolerance)|thermoregulat\w*|"
-        r"core temperature|body temperature|skin temperature|hyperthermi\w*|"
-        r"hypothermi\w*|cold (?:exposure|water|stress|acclim\w*)|"
-        r"altitude|hypoxi\w*|hypobaric|hyperbaric|dehydrat\w*|hydration|"
-        r"fluid (?:balance|intake|loss|replacement)|sweat\w*|environmental"
-    ),
-    "运动与脑认知、心理健康": (
-        r"cognit\w*|brain|neuro(?:science|nal|n)?\b|mental health|mood|anxiety|depress\w*|"
-        r"psychological|psycholog\w*|executive function|memory|attention|"
-        r"well-?being|quality of life|self-?efficacy|motivation|behaviou?r change|"
-        r"self[- ]regulation|burnout|resilience|"
-        r"cognitive (?:function|performance|decline|impairment)|neurodegenerat\w*"
-    ),
-    "免疫、炎症与分子适应": (
-        r"immun\w*|inflamm\w*|cytokine\w*|microbiome|gut (?:microbiota|bacteria)|"
-        r"exosome\w*|extracellular vesicle\w*|mirna\w*|microrna\w*|lncrna\w*|"
-        r"transcriptom\w*|proteom\w*|metabolom\w*|epigen\w*|gene expression|"
-        r"signal(?:l)?ing|molecular|cellular|mitochondrial (?:biogenesis|function|quality)|"
-        r"oxidative stress|antioxidant|aging|ageing|longevity|hallmark\w*|"
-        r"mimetic|senescence|telomere\w*|autophagy|mitophagy|heat shock"
-    ),
-    "特殊人群与生命周期": (
-        r"pregnan\w*|postpartum|placenta\w*|maternal|pediatric|paediatric|"
-        r"pre-?school|children|adolescen\w*|youth|juvenile|older (?:adults?|people|women|men)|"
-        r"middle-?aged|menopaus\w*|postmenopaus\w*|masters? athletes?|aged\b|"
-        r"menstru\w*|disabilit\w*|para-?athlet\w*|wheelchair|amputee|spinal cord|"
-        r"impairment|intellectual disability|transgender|sex difference\w*|"
-        r"female athlete|male athlete|puberty|master\w* athlete"
-    ),
-    "骨骼、结缔组织与损伤康复": (
-        r"injur\w*|concussion\w*|rehabilitat\w*|return to (?:sport|play)|"
-        r"tendinopath\w*|tendon\w*|ligament\w*|anterior cruciate|\bacl\b|"
-        r"bone (?:mineral|density|health|mass|turnover)|osteo\w*|fracture\w*|"
-        r"cartilage|meniscus|joint|sprain|overuse|physical therapy|"
-        r"impairment|classification"
-    ),
-    "力量与肌肉适应": (
-        r"strength|hypertroph\w*|resistance train\w*|powerlift\w*|weightlift\w*|"
-        r"muscle (?:mass|size|thickness|cross-sectional area|protein synthesis|damage|"
-        r"activation|architect\w*|fatigue|glycogen|oxidative)|sarcopenia|atroph\w*|"
-        r"plyometric|sprint train\w*|velocity-?based|one-?repetition maximum|\b1rm\b|"
-        r"maximal (?:strength|power)|force[- ]velocity|rate of force development|"
-        r"electromyogra\w*|\bemg\b|motor unit|neuromuscul\w*|myoelectric|"
-        r"knee extensor|plantar flexor|eccentric|mechanical load\w*|sarcomer\w*|"
-        r"contractile|stretch[- ]shorten|kicking|throwing|sprinting|sprint speed"
-    ),
-    "可穿戴设备、运动监测与数据建模": (
-        r"wearab\w*|acceleromet\w*|gyroscop\w*|actigraph\w*|smartwatch|smart ring|"
-        r"inertial measurement|global positioning|\bgps\b|\bsensors?\b|"
-        r"machine learning|deep learning|artificial intelligence|neural network|"
-        r"data[ -]driven|load monitoring|readiness score|heart rate variabilit|\bhrv\b|"
-        r"step count|mobile (?:app|health)|digital (?:health|biomarker)|"
-        r"photoplethysmograph\w*|device[- ]measured"
-    ),
-    "生物力学、装备与运动控制": (
-        r"biomechanic\w*|kinematic\w*|kinetic\w*|joint moment|torque|ground reaction|"
-        r"force plate|gait\b|walking|running (?:kinematic|biomechanic|mechanics)|"
-        r"balance|postur\w*|stabil\w*|motor control|motor learning|coordination|"
-        r"movement (?:pattern|analysis|quality|variability)|motion (?:capture|analysis)|"
-        r"proprioception|proprioceptive|landing|jump(?:ing)?|sprint mechanic\w*|"
-        r"muscle[ -]tendon|fascicle|pennation|stiffness|"
-        r"footwear|shoe\w*|spike\w*|apparel|garment\w*|compression|equipment|"
-        r"exoskeleton|technique|treadmill|ergometer|change[- ]of[- ]direction|agility"
-    ),
-    "心肺与整合生理": (
+    # Core physiology: oxygen transport, muscle metabolism, thresholds, strength.
+    "氧运输与心肺整合": (
         r"cardiac|cardiovascular|heart rate|stroke volume|cardiac output|"
         r"blood (?:pressure|flow|volume|vessel)|vascular|endothelial|arterial|"
         r"respirat\w*|pulmonary|ventilat\w*|gas exchange|circulat\w*|"
         r"inspiratory|expiratory|respiratory muscle|"
         r"oxygen (?:uptake|consumption|delivery|extraction|saturation)|"
         r"ha?emodynamic\w*|oxygenation|hematolog\w*|blood volume|"
-        r"autonomic|sympathetic|parasympathetic|baroreflex"
+        r"autonomic|sympathetic|parasympathetic|baroreflex|"
+        r"vo[₂2]\s?max|maximum oxygen uptake|peak oxygen uptake|"
+        r"arterial stiffness|flow-mediated dilation|"
+        r"haemoglobin|hemoglobin|"
+        r"myocard\w*|coronary|cardiomyopath\w*|"
+        r"v̇o2|vo2"
     ),
-    "营养、能量代谢与补剂": (
-        r"nutrition|supplement\w*|caffeine|creatine|beta-?alanine|nitrate|"
-        r"carbohydrat\w*|protein (?:intake|supplement|synthesis|dose)|amino acid\w*|"
-        r"diet\w*|energy (?:intake|expenditure|availability|deficit|balance)|"
-        r"glycogen|ketone\w*|fat oxidation|substrate (?:oxidation|utilization)|"
-        r"metabol\w*|body composition|body fat|adipos\w*|weight (?:loss|gain|management)|"
-        r"fasting|low energy availability|\bred-?s\b|hydration strategy|"
-        r"thermogenesis|metabolic rate|nutrient\w*|feeding|food|caloric|"
-        r"hepatic steatosis|liver fat|dosing"
+    "骨骼肌代谢与线粒体功能": (
+        r"skeletal muscle|muscle (?:metabolism|metabolic|energy|oxidative|"
+        r"glycogen|mitochondri|fiber type|fibre type|protein synthesis|"
+        r"excitation[- ]contraction|calcium handling)|"
+        r"mitochondri\w*|mitophagy|mitochondrial biogenesis|"
+        r"pgc-?1|ampk|sirtuin|"
+        r"oxidative phosphorylation|electron transport|"
+        r"fat oxidation|carbohydrate oxidation|protein oxidation|"
+        r"substrate (?:oxidation|utilization|availability)|"
+        r"metabolic (?:flexibility|inflexion|profile|adaptation|"
+        r"reprogramming|load|rate|syndrome)|"
+        r"glycolysis|glycogenolysis|glycogen resynthesis|"
+        r"myofibrillar|actomyosin|sarcoplasmic reticulum|"
+        r"muscle fibre|muscle fiber|myosin|"
+        r"creatine kinase|phosphocreatine|atp resynthesis|"
+        r"muscle (?:oxygen|work output)|"
+        r"satellite cell|myoblast|myogenesis|"
+        r"insulin resistance|glucose uptake|lactate metabolism|"
+        r"thermogen\w*|brown adipose|beiging"
     ),
-    "训练负荷、恢复与竞技表现": (
-        r"training load|training impulse|session[ -]rpe|periodi[sz]ation|taperi\w*|"
-        r"overreach\w*|overtrain\w*|recovery|readiness|detrain\w*|"
-        r"workload|training (?:volume|intensity|frequency|program\w*|intervention|"
-        r"method\w*|status|cycle|session|practice|week)|"
-        r"perceived exertion|\brpe\b|training monotony|acute:chronic|"
-        r"competition|tournament|match\w*|game\w*|locomotor|external load|"
-        r"internal load|technical (?:action|performance|demand)|team sport|"
-        r"small-sided|microdos\w*|sport[- ]specific|weekly (?:load|volume)|"
-        r"sport performance|athletic performance|performance (?:analysis|profile)|"
-        r"high[- ]intensity interval|interval train\w*|concurrent train\w*|"
-        r"plyometric train\w*|strength and conditioning|sleep|"
-        r"playing position|talent (?:identification|development)|draft|"
-        r"physical (?:predictors|fitness|testing)|selection"
+    "强度阈值、临界功率与耐力表现": (
+        r"critical (?:power|speed|velocity)|critical swimming speed|"
+        r"oxygen uptake kinetics|vo[₂2]\s?kinetics|"
+        r"ventilatory threshold|lactate threshold|maximal lactate steady state|"
+        r"anaerobic threshold|time to exhaustion|\btte\b|time trial|"
+        r"endurance performance|endurance capacity|"
+        r"pacing|pacing strategy|durability|fatigue resistance|"
+        r"respiratory exchange threshold|"
+        r"intensity domain|training zone|zone 2|zone 3|"
+        r"maximal aerobic speed|anaerobic power|"
+        r"threshold (?:speed|power|pace|workload)|"
+        r"excess post-exercise oxygen consumption|epoc|"
+        r"oxygen (?:uptake|consumption)[^.]{0,40}(?:1|2|3|4|5|6)[ -]?km|"
+        r"(?:1|2|3|4|5|6|10|12|21)[ -]?km\b|"
+        r"running speed|swimming speed|cycling power output|"
+        r"respiratory compensation point|"
+        r"aerobic (?:power|performance|capacity)"
     ),
-    "运动与公共卫生、政策与教育": (
+    "力量、爆发力与神经肌肉": (
+        r"strength|hypertroph\w*|resistance train\w*|powerlift\w*|weightlift\w*|"
+        r"muscle (?:mass|size|thickness|cross-sectional area|damage|"
+        r"activation|architecture|fatigue)|sarcopenia|atroph\w*|"
+        r"plyometric|sprint train\w*|velocity-?based|one-?repetition maximum|\b1rm\b|"
+        r"maximal (?:strength|power|force)|force[- ]velocity|rate of force development|"
+        r"electromyogra\w*|\bemg\b|\bsemg\b|motor unit|neuromuscul\w*|myoelectric|"
+        r"knee extensor|plantar flexor|eccentric|concentric|"
+        r"sarcomer\w*|contractile|stretch[- ]shorten|"
+        r"kicking|throwing|sprinting|sprint speed|"
+        r"jump(?:ing)? performance|explosive|"
+        r"muscle soreness|delayed onset|\bdoms\b|"
+        r"squat|deadlift|bench press|clean and jerk|snatch|"
+        r"countermovement jump|isokinetic|"
+        r"handgrip strength|grip strength|"
+        r"flywheel|"
+        r"mechanical load\w*"
+    ),
+    "免疫、炎症与分子适应": (
+        r"immun\w*|inflamm\w*|cytokine\w*|microbiome|gut (?:microbiota|bacteria)|"
+        r"exosome\w*|extracellular vesicle\w*|mirna\w*|microrna\w*|lncrna\w*|"
+        r"transcriptom\w*|proteom\w*|metabolom\w*|epigen\w*|gene expression|"
+        r"signal(?:l)?ing|molecular|cellular|"
+        r"oxidative stress|antioxidant|aging|ageing|longevity|hallmark\w*|"
+        r"mimetic|senescence|telomere\w*|autophagy|mitophagy|heat shock|"
+        r"myokine|myokines|adipokine|"
+        r"nrf2|nf-?kb"
+    ),
+    # Training and performance: what was done, what happened afterwards.
+    "训练干预与周期化": (
+        r"training (?:intervention|program\w*|plan|cycle|block|periodi|"
+        r"volume|intensity|frequency|method\w*|status|week|session|practice)|"
+        r"periodi[sz]ation|taperi\w*|microcycle|macrocycle|mesocycle|deload\w*|"
+        r"concurrent train\w*|high[- ]intensity interval|interval train\w*|"
+        r"endurance train\w*|"
+        r"plyometric train\w*|strength and conditioning|"
+        r"training effect|training adaptation\w*|adaptation to training|"
+        r"adaptations? (?:to|from) (?:endurance|resistance|strength|sprint|"
+        r"high[- ]intensity|exercise|training)|"
+        r"exercise (?:intervention|prescription|program\w*)|"
+        r"dose[- ]response|dosage|"
+        r"preconditioning|warm-?up|"
+        r"session rpe|training load|training impulse|"
+        r"train(?:ing|ed)? (?:for|over) \d+ (?:week|month|year)|"
+        r"after \d+ (?:week|month|year)s? of (?:resistance|endurance|high[- ]intensity|sprint|"
+        r"strength|plyometric|balance|flexibility|stretching)"
+    ),
+    "疲劳、恢复与竞技表现": (
+        r"fatigue|fatigability|recovery|overreach\w*|overtrain\w*|detrain\w*|"
+        r"readiness|recovery time|sleep|nap\w*|rest(?:it|orative)|"
+        r"supercompensation|acute:chronic|training monotony|"
+        r"muscle damage|strength loss|"
+        r"between[- ]session|post[- ]competition|in[- ]season|off[- ]season|"
+        r"preseason|pre-?season"
+    ),
+    "测试、评估与运动表现": (
+        r"assess\w*|evaluat\w*|test(?:ing)?\b|test protocol|battery|"
+        r"questionnaire|scal(?:e|ing)|survey|"
+        r"predictors?|prediction|predicting|predictive|"
+        r"benchmark\w*|"
+        r"fitness test|performance test|field test|"
+        r"reference values|normative values|"
+        r"response to training|"
+        r"detect\w*|identif\w*|"
+        r"pre-?season fitness|preseason fitness|"
+        r"perceptual acuity|psychophysic\w*|"
+        r"characteristics of (?:elite|trained|world[- ]class)"
+    ),
+    "生物力学、技术与装备": (
+        r"biomechanic\w*|kinematic\w*|kinetic\w*|joint moment|torque|ground reaction|"
+        r"force plate|gait\b|walking|running (?:kinematic|biomechanic|mechanics)|"
+        r"balance\b|postur\w*|stabil\w*|motor control|motor learning|coordination|"
+        r"movement (?:pattern|analysis|quality|variability)|motion (?:capture|analysis)|"
+        r"proprioception|proprioceptive|landing|jump(?:ing)?|sprint mechanic\w*|"
+        r"muscle[ -]tendon|fascicle|pennation|stiffness|"
+        r"footwear|shoe\w*|spike\w*|apparel|garment\w*|compression|equipment|"
+        r"exoskeleton|technique|treadmill|ergometer|change[- ]of[- ]direction|agility|"
+        r"joint stiffness|tendon stiffness|"
+        r"energy storage|stretching|flexibility|range of motion"
+    ),
+    "竞技与比赛分析": (
+        r"match(?:es)?\b|matchday|fixture|"
+        r"competition|competitive|tournament|championship|league|season\b|"
+        r"round[- ]of|play-?off|"
+        r"team sport|team performance|team selection|squad|line-?up|"
+        r"tactic\w*|formation|playing position|"
+        r"expected goals|\bxg\b|possession|shots? on target|"
+        r"match load|match performance|match outcome|match play|"
+        r"transfer fee|transfer market|scouting|draft\b|talent identification|"
+        r"home advantage|away team|"
+        r"world cup|olympic|premier league|\bnba\b|\bnfl\b|champions league|"
+        r"athletic performance|sport performance|"
+        r"performance analysis|performance profile|"
+        r"(?:football|soccer|basketball|rugby|cricket|handball|volleyball|"
+        r"baseball|hockey|badminton|table tennis|cycling|swimming|rowing|sailing|"
+        r"skiing|snowboard|gymnastics)\s+"
+        r"(?:match|league|player|players|team|teams|season|competition|"
+        r"performance|tournament|championship|club|training|players)"
+    ),
+    # Methods: how the data was measured, modelled and reported.
+    "可穿戴与运动监测": (
+        r"wearab\w*|acceleromet\w*|gyroscop\w*|actigraph|smartwatch|smart ring|"
+        r"inertial measurement|global positioning|\bgps\b|"
+        r"photoplethysmograph\w*|device[- ]measured|"
+        r"heart rate variability|\bhrv\b|"
+        r"step count|daily steps|movement behaviou?r|"
+        r"mobile (?:app|health)|digital (?:health|biomarker)|"
+        r"activity tracker|fitness tracker|sensor array|"
+        r"remote monitoring|continuous monitoring|"
+        r"telemonitoring|mhealth|e-?health|"
+        r"monitoring\b|monitor\w*"
+    ),
+    "数据建模与算法": (
+        r"machine learning|deep learning|artificial intelligence|neural network|"
+        r"algorithm\w*|random forest|support vector|"
+        r"model[- ]based|mathematical model|computational model|"
+        r"simulation|simulated|finite element|"
+        r"data[- ]driven|data mining|feature (?:engineering|selection)|"
+        r"prediction model|predictive model|"
+        r"computer vision|pose estimation|"
+        r"deep[- ]learning|convolution|transformer|"
+        r"clustering|regression model|classification model|"
+        r"statistical model|mixed[- ]model|"
+        r"artificial neural|gradient boost"
+    ),
+    "测量方法与效度": (
+        r"methodolog\w*|measurement (?:validity|reliability|precision|error)|"
+        r"reliab\w*|valid\w*|reproducib\w*|"
+        r"agreement between|concordance|bland[- ]altman|"
+        r"intraclass|coefficient of variation|"
+        r"minimal detectable change|standard error of measurement|"
+        r"measurement properties|psychometric\w*|clinimetric\w*|"
+        r"criterion[- ]?valid|construct valid|content valid|"
+        r"data collection|protocol development|"
+        r"reporting quality|open science|data availability|"
+        r"systematic review protocol|"
+        r"reference (?:values|standards)|calibration|"
+        r"accuracy and precision|precision and accuracy|"
+        r"instrumentation|sensor validation|"
+        r"inter[- ]rater|intra[- ]rater|test[- ]retest|"
+        r"smallest worthwhile"
+    ),
+    # People and environment.
+    "环境生理与特殊场景": (
+        r"heat (?:acclim\w*|stress|strain|exposure|tolerance|adaptation)|"
+        r"thermoregulat\w*|core temperature|body temperature|skin temperature|"
+        r"hyperthermi\w*|hypothermi\w*|cold (?:exposure|water|air|stress|acclim\w*)|"
+        r"altitude|hypoxi\w*|hypobaric|hyperbaric|decompress\w*|"
+        r"spaceflight|space flight|microgravity|bed rest|confinement|"
+        r"isolated confined|extreme environment|arctic|polar|desert|"
+        r"dehydrat\w*|hydration|fluid (?:balance|intake|loss|replacement)|"
+        r"sweat\w*|thermal strain|"
+        r"environmental (?:stress|challenge)|"
+        r"military|armed forces|special forces|"
+        r"circadian|timezone|shift work|night shift|"
+        r"heat loss|temperature and heat|"
+        r"indoor cycling system|video-based"
+    ),
+    "特殊人群与生命周期": (
+        r"pregnan\w*|postpartum|placenta\w*|maternal|pediatric|paediatric|"
+        r"pre-?school|children|adolescen\w*|youth|juvenile|older (?:adults?|people|women|men)|"
+        r"middle-?aged|menopaus\w*|postmenopaus\w*|masters? athletes?|aged\b|"
+        r"menstru\w*|disabilit\w*|para-?athlet\w*|wheelchair|amputee|spinal cord|"
+        r"intellectual disability|transgender|sex difference\w*|"
+        r"female athlete|male athlete|puberty|"
+        r"infant|toddler|neonat\w*|preterm|"
+        r"elite (?:athlete|player)s?|world[- ]class|"
+        r"geriatr\w*|frailty"
+    ),
+    "肌肉骨骼、损伤与康复": (
+        r"injur\w*|concussion\w*|rehabilitat\w*|return to (?:sport|play)|"
+        r"tendinopath\w*|tendon\w*|ligament\w*|anterior cruciate|\bacl\b|"
+        r"bone (?:mineral|density|health|mass|turnover)|osteopor\w*|osteoblast|osteoclast|"
+        r"fracture\w*|cartilage|meniscus|joint\b|sprain|overuse|physical therapy|"
+        r"musculoskeletal|low back pain|neck pain|shoulder pain|"
+        r"patellofemoral|tendinopathy|"
+        r"fracture risk|bone turnover|osteogenesis"
+    ),
+    "营养、补剂与能量可用性": (
+        r"nutrition|supplement\w*|caffeine|creatine\b|beta-?alanine|nitrate|"
+        r"carbohydrat\w*|protein (?:intake|supplement|dose|feeding|availability)|"
+        r"amino acid\w*|diet\w*|"
+        r"energy (?:intake|expenditure|availability|deficit|balance)|"
+        r"low energy availability|\bred-?s\b|"
+        r"ketone\w*|fasting|"
+        r"body composition|body fat|adipos\w*|weight (?:loss|gain|management)|"
+        r"nutrient\w*|feeding|food|caloric|"
+        r"energy intake|protein timing|nutrient timing|"
+        r"hydration strategy|fluid intake|"
+        r"vitamins?\b|minerals?\b|iron\b|magnesium|zinc|"
+        r"polyphenol\w*|anthocyanin|curcumin|green tea|"
+        r"ergogenic|placebo|"
+        r"hepatic steatosis|liver fat|"
+        r"bone biomarker|biomarker concentrations|"
+        r"l-?alanine|l-?glutamine|l-?arginine|glycine|"
+        r"appetite|hypothalam\w*"
+    ),
+    "脑认知、心理健康与行为": (
+        r"cognit\w*|brain|neuroscien\w*|mental health|mood|anxiety|depress\w*|"
+        r"psycholog\w*|psychiatr\w*|executive function|memory|attention|"
+        r"well-?being|quality of life|self-?efficacy|motivation|"
+        r"behaviou?r change|self[- ]regulation|burnout|resilience|"
+        r"cognitive (?:function|performance|decline|impairment)|neurodegenerat\w*|"
+        r"dopamine|prefrontal|hippocamp\w*|default mode|"
+        r"emotion|affect\b|mindfulness|meditation|"
+        r"testosterone|hormone|hormonal|cortisol|"
+        r"sympatholysis|"
+        r"binge drinking|alcohol"
+    ),
+    "体力活动、公共卫生与人群干预": (
+        r"physical activit\w*|sedentar\w*|sitting|inactiv\w*|"
+        r"exercise (?:intervention|prescription|program\w*|referral)|"
+        r"health (?:outcome\w*|benefit|promotion|inequalit\w*)|"
+        r"mortality|morbidit\w*|risk factor|incidence|prevalence|"
+        r"cohort|longitudinal|cross-sectional|population|epidemiolog\w*|"
+        r"steps? count|daily steps|movement behaviou?r\w*|24-?hour movement|"
+        r"smoking|alcohol|screen time|"
         r"public health|policy|polic\w*|governance|equity|inequalit\w*|"
         r"racism|ethnic\w*|gender|socioeconomic|social\w*|"
         r"sustainab\w*|climate|environmental impact|carbon|travel distance|"
@@ -151,24 +315,44 @@ TOPIC_PATTERNS = {
         r"guideline\w*|consensus|position stand|surveillance|"
         r"promotion|adherence|compliance|doping|"
         r"replicab\w*|research (?:method|practice|quality)|meta-research|reporting|"
-        r"transparen\w*|peer review"
-    ),
-    "体力活动、健康与人群干预": (
-        r"physical activit\w*|sedentar\w*|sitting|inactiv\w*|"
-        r"exercise (?:intervention|prescription|program\w*|referral)|"
-        r"health (?:outcome\w*|benefit\w*|promotion)|"
-        r"mortality|morbidity|risk|incidence|prevalence|"
-        r"cohort|longitudinal|cross-sectional|population|epidemiolog\w*|"
-        r"steps? count|daily steps|movement behaviou?r\w*|24-?hour movement|"
-        r"smoking|alcohol|screen time|sedentary time"
+        r"transparen\w*|peer review|"
+        r"community[- ]based|"
+        r"workplace|occupational|sedentary behaviour|sedentary behavior"
     ),
 }
 PATTERNS = {topic: re.compile(pattern, re.IGNORECASE) for topic, pattern in TOPIC_PATTERNS.items()}
+# Tie-break order for titles that match several topics equally. Earlier wins.
+TIE_BREAK = {
+    topic: index
+    for index, topic in enumerate((
+        "数据建模与算法",
+        "测试、评估与运动表现",
+        "测量方法与效度",
+        "训练干预与周期化",
+        "疲劳、恢复与竞技表现",
+        "竞技与比赛分析",
+        "可穿戴与运动监测",
+        "环境生理与特殊场景",
+        "骨骼肌代谢与线粒体功能",
+        "强度阈值、临界功率与耐力表现",
+        "免疫、炎症与分子适应",
+        "脑认知、心理健康与行为",
+        "肌肉骨骼、损伤与康复",
+        "营养、补剂与能量可用性",
+        "生物力学、技术与装备",
+        "特殊人群与生命周期",
+        "氧运输与心肺整合",
+        "力量、爆发力与神经肌肉",
+        "体力活动、公共卫生与人群干预",
+    ))
+}
+# Journal-level topic tags collected from the cross-journal PubMed searches.
+# Each tag points at the topic that best describes the articles it retrieves.
 CROSS_JOURNAL_TOPICS = {
-    "临界功率与速度": "临界功率、耐力与氧摄取动力学",
-    "氧摄取动力学": "临界功率、耐力与氧摄取动力学",
-    "训练负荷": "训练负荷、恢复与竞技表现",
-    "可穿戴运动监测": "可穿戴设备、运动监测与数据建模",
+    "临界功率与速度": "强度阈值、临界功率与耐力表现",
+    "氧摄取动力学": "强度阈值、临界功率与耐力表现",
+    "训练负荷": "训练干预与周期化",
+    "可穿戴运动监测": "可穿戴与运动监测",
 }
 OTHER = "其他或题名信息不足"
 PUBLICATION_NOTICE = "编辑信息、勘误与撤稿"
@@ -209,7 +393,12 @@ def topic_for(item):
         + 3 * sum(CROSS_JOURNAL_TOPICS.get(tag) == topic for tag in known)
         for topic, pattern in PATTERNS.items()
     }
-    strongest = max(votes, key=votes.get)
+    # Ties are common because one title can carry several exercise-science
+    # signals. The order below decides them: study-design topics (population,
+    # methods, modelling, training design) win over the broad physiology
+    # buckets, so "older adults after resistance training" lands on the
+    # population topic rather than on strength.
+    strongest = max(votes, key=lambda topic: (votes[topic], -TIE_BREAK.get(topic, len(TIE_BREAK))))
     return strongest if votes[strongest] else OTHER
 
 
