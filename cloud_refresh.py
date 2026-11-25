@@ -3,6 +3,7 @@
 import argparse
 from contextlib import closing
 import gzip
+import subprocess
 from hashlib import file_digest
 import json
 import os
@@ -114,6 +115,14 @@ def validate(db_path, site):
                 message = " ".join(f"{source} · {label} · {error}".split()).replace("<", "&lt;")
                 output.write(f"  - {message}\n")
 
+def save_state(db_path):
+    """Write the working database back to the committed archive."""
+    next_state = STATE.with_suffix(".tmp")
+    with db_path.open("rb") as stream, next_state.open("wb") as output:
+        with gzip.GzipFile(filename="", mode="wb", fileobj=output, mtime=0) as packed:
+            copyfileobj(stream, packed)
+    return next_state
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -140,6 +149,10 @@ def main():
             arguments += ["--render-only", options.render_only]
         else:
             install_model(work)
+        # A large backlog of untranslated titles would push the rebuild past
+        # the job's time limit, so the translation pass is capped per run and
+        # resumes with the next one.
+        os.environ.setdefault("TRANSLATION_QUOTA", "1200")
         unlimited = os.environ.get("DEEPSEEK_FULL") == "1"
         if not unlimited:
             for setting in ("DEEPSEEK_BACKFILL_BATCH", "DEEPSEEK_BACKFILL_BUDGET"):
@@ -148,19 +161,28 @@ def main():
                         unlimited = True
                 except ValueError:
                     pass
-        run_timeout = 21000 if unlimited else 1500
-        run(arguments, cwd=work, check=True, timeout=run_timeout)
+        # The rebuild grows with the archive: every new paper needs a
+        # translation, an abstract lookup and a summary. The job itself
+        # allows 50 minutes, so the internal budget must leave room for the
+        # final upload step as well.
+        run_timeout = 21000 if unlimited else 3300
+        try:
+            run(arguments, cwd=work, check=True, timeout=run_timeout)
+        except subprocess.TimeoutExpired:
+            # The build was cut short by the time budget. Whatever the
+            # translation and summary passes already committed is kept, so the
+            # next run resumes instead of repeating that work.
+            save_state(db_path)
+            print(f"Rebuild exceeded {run_timeout}s; the archive was saved for the next run", flush=True)
+            raise
         site = work / "site" / "index.html"
         validate(db_path, site)
         if options.render_only:
             return
-        next_state = STATE.with_suffix(".tmp")
         site_path = ROOT / "dist" / "index.html"
         next_site = site_path.with_suffix(".tmp")
         copy2(site, next_site)
-        with db_path.open("rb") as stream, next_state.open("wb") as output:
-            with gzip.GzipFile(filename="", fileobj=output, mode="wb", mtime=0) as packed:
-                copyfileobj(stream, packed)
+        save_state(db_path)
         next_state.replace(STATE)
         next_site.replace(site_path)
         # Verdicts learned during this run are written back so the next build
