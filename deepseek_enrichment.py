@@ -275,7 +275,7 @@ def enrich_full(db, candidates, key, day, now=None):
     # permanently exclude a paper that has a usable abstract.
     done = {row[0] for row in db.execute("SELECT identity FROM deepseek_full_attempts WHERE day NOT LIKE '%:error'")}
     pending = [entry for entry in candidates if identity_for(entry[0]) not in cached and identity_for(entry[0]) not in done]
-    workers = _positive_int('DEEPSEEK_FULL_WORKERS', 20)
+    workers = _positive_int('DEEPSEEK_FULL_WORKERS', 50)
     deadline_seconds = _positive_int('DEEPSEEK_RUN_SECONDS', 1800)
     deadline = time.monotonic() + deadline_seconds
     print(f'DeepSeek full pass: {len(pending)} records need a summary '
