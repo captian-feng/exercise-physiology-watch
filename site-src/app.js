@@ -127,8 +127,14 @@
   function articleRow(record, grouped) {
     const row = node("li", "article");
     const meta = node("div", "article-meta");
-    const shownDate = record[dateField.value];
-    meta.append(node("span", "", dateField.value === "seen" ? "本站首次收录" : record.onlineDate ? "在线发表" : "发表日期（上线时间待核）"));
+    // In the default view the list is ranked by the day the paper first
+    // entered the site, so the label has to match that order.
+    const collected = sort.value === "collected";
+    const shownDate = collected ? record.seen : record[dateField.value];
+    const shownLabel = collected ? "本站首次收录"
+      : dateField.value === "seen" ? "本站首次收录"
+      : record.onlineDate ? "在线发表" : "发表日期（上线时间待核）";
+    meta.append(node("span", "", shownLabel));
     meta.append(shownDate ? time(shownDate) : node("span", "", "日期未记录"));
     if (!grouped) {
       meta.append(node("span", "", record.journal), node("span", "topic", record.topic));
@@ -188,7 +194,7 @@
   }
 
   function renderRows(rows) {
-    if (sort.value === "recent") {
+    if (sort.value !== "grouped") {
       const list = node("ul", "article-list");
       for (const record of rows) list.append(articleRow(record, false));
       articles.replaceChildren(list);
@@ -314,9 +320,19 @@
       return (b[dateField.value] || "").localeCompare(a[dateField.value] || "")
         || collator.compare(a.en, b.en);
     }
+    // "最新收录" ranks by the day the paper first entered the site, so papers
+    // added by the latest daily run float to the top even when their
+    // publication date is older.
+    function newestCollected(a, b) {
+      return (b.seen || "").localeCompare(a.seen || "")
+        || (b.published || "").localeCompare(a.published || "")
+        || collator.compare(a.en, b.en);
+    }
     if (sort.value === "grouped") {
       matches.sort((a, b) => compareJournal(a.journal, b.journal)
         || compareTopic(a.topic, b.topic) || newest(a, b));
+    } else if (sort.value === "collected") {
+      matches.sort(newestCollected);
     } else {
       matches.sort(newest);
     }
