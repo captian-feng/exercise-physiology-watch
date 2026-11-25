@@ -10,6 +10,7 @@ the catch-all bucket.
 
 from collections import defaultdict
 import json
+import os
 from pathlib import Path
 import re
 
@@ -616,6 +617,18 @@ def translate_batch(engine, sp, titles):
     return best
 
 
+def _translation_quota():
+    """How many new titles one run may translate; 0 means no limit."""
+    raw = os.environ.get("TRANSLATION_QUOTA", "")
+    if not raw:
+        return 0
+    try:
+        value = int(raw)
+    except ValueError:
+        return 0
+    return value if value > 0 else 0
+
+
 def translations(db, records):
     db.execute("CREATE TABLE IF NOT EXISTS translations (title TEXT PRIMARY KEY, zh TEXT NOT NULL)")
     db.execute("CREATE TABLE IF NOT EXISTS retranslated (title TEXT PRIMARY KEY)")
@@ -650,6 +663,14 @@ def translations(db, records):
         item["title"] for item in records
         if item["title"] not in cached
     ))
+    # Translating every untranslated title in one run can take longer than the
+    # build's time limit when the archive just grew. A per-run quota keeps the
+    # build bounded; the remaining titles are picked up by the next run.
+    quota = _translation_quota()
+    if quota and len(pending) > quota:
+        pending = pending[:quota]
+        print(f"Translation queue trimmed to {quota} titles for this run "
+              f"({len(pending)} of the backlog translated now)", flush=True)
     if not pending:
         return cached, ""
     rejected = 0
@@ -688,6 +709,10 @@ def translations(db, records):
                     chinese = previous[title]
                 cached[title] = chinese
                 db.execute("INSERT OR REPLACE INTO translations VALUES (?, ?)", (title, chinese))
+            # Commit every batch: a rebuild that is cut short by the job's
+            # time limit must keep the translations it already produced, so
+            # the next run continues instead of starting over.
+            db.commit()
         for title in retried:
             db.execute("INSERT OR IGNORE INTO retranslated VALUES (?)", (title,))
         if rejected:
