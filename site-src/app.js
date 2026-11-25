@@ -180,7 +180,9 @@
         source.rel = "noopener noreferrer";
         summary.append(source);
       }
-      row.append(summary);
+      const details = node("details", "article-abstract");
+      details.append(node("summary", "article-abstract-toggle", "查看摘要"), summary);
+      row.append(details);
     }
     return row;
   }

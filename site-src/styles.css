@@ -138,3 +138,8 @@ input:focus, select:focus { border-color:#117d74; }
   .overview dd { font-size:1.6rem; }
   .article { padding:.8rem; }
 }
+
+.article-abstract { margin-top: .55rem; }
+.article-abstract-toggle { cursor: pointer; color: #006963; font-size: .9rem; font-weight: 600; width: fit-content; }
+.article-abstract-toggle:focus-visible { outline: 2px solid #006963; outline-offset: 3px; }
+.article-abstract .article-summary { margin-top: .55rem; }
