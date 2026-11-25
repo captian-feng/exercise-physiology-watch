@@ -481,6 +481,7 @@ def main():
             for curated in json.loads(curated_path.read_text(encoding="utf-8")):
                 label = curated.get("journal") or curated.get("venue") or "指定文献"
                 upsert(db, curated, label, "用户指定文献", day, bool(curated.get("journal")))
+            db.commit()  # Close this import transaction before the crawl starts its own.
         run = db.execute("SELECT baseline FROM runs WHERE day=?", (day,)).fetchone()
         baseline = bool(run[0]) if run else not db.execute("SELECT 1 FROM runs LIMIT 1").fetchone()
         journals = [
