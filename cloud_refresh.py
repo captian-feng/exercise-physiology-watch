@@ -135,6 +135,9 @@ def main():
         trial = ROOT / 'deepseek_top100.json'
         if trial.exists():
             copy2(trial, work / trial.name)
+        curated = ROOT / "curated_papers.json"
+        if curated.exists():
+            copy2(curated, work / curated.name)
         # The scope-verification cache is optional: without it the build simply
         # re-checks ambiguous records, subject to its per-run lookup budget.
         verification = ROOT / "scope_verification.json"

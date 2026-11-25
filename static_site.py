@@ -75,7 +75,7 @@ def write_site(db, journals):
     verified_in = 0
     for raw, seen in db.execute("SELECT data, first_seen FROM articles ORDER BY id"):
         item = json.loads(raw)
-        tier = relevance_tier(item)
+        tier = "core" if item.get("user_curated") else relevance_tier(item)
         if tier is None and screening.needs_verification(item):
             tier = verifier.verify(item)
             verified_in += bool(tier)

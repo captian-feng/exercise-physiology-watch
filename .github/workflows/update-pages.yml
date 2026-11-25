@@ -19,6 +19,7 @@ on:
       - "exercise_glossary.json"
       - "deepseek_top100.json"
       - "article_type_overrides.json"
+      - "curated_papers.json"
       - "pubmed_online_dates.json"
       - "crossref_online_dates.json"
       - "publisher_online_dates.json"
