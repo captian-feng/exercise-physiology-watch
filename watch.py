@@ -475,6 +475,12 @@ def main():
         CREATE TABLE IF NOT EXISTS runs (day TEXT PRIMARY KEY, baseline INTEGER);
         CREATE TABLE IF NOT EXISTS report_history (day TEXT PRIMARY KEY, history TEXT NOT NULL);
         """)
+        # User-selected papers are imported by DOI/PMID through the same deduplication path.
+        curated_path = ROOT / "curated_papers.json"
+        if curated_path.exists():
+            for curated in json.loads(curated_path.read_text(encoding="utf-8")):
+                label = curated.get("journal") or curated.get("venue") or "指定文献"
+                upsert(db, curated, label, "用户指定文献", day, bool(curated.get("journal")))
         run = db.execute("SELECT baseline FROM runs WHERE day=?", (day,)).fetchone()
         baseline = bool(run[0]) if run else not db.execute("SELECT 1 FROM runs LIMIT 1").fetchone()
         journals = [
