@@ -1,0 +1,33 @@
+name: 校验多智能体贡献
+
+on:
+  pull_request:
+    paths:
+      - "contributions/**"
+      - ".ai/**"
+      - "scripts/validate_contribution.py"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Validate JSON contributions
+        shell: bash
+        run: |
+          shopt -s nullglob
+          files=(contributions/**/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No JSON contribution files found."
+            exit 0
+          fi
+          for file in "${files[@]}"; do
+            python scripts/validate_contribution.py "$file"
+          done
+
