@@ -81,6 +81,9 @@ jobs:
           DEEPSEEK_BACKFILL: ${{ github.event_name == 'workflow_dispatch' && inputs.deepseek_backfill && '1' || '' }}
           DEEPSEEK_BACKFILL_BATCH: ${{ inputs.backfill_batch || '300' }}
           DEEPSEEK_BACKFILL_BUDGET: ${{ inputs.backfill_budget || '1200' }}
+          # Explicit unlimited backfill for the approved DeepSeek cleanup run.
+          DEEPSEEK_FULL: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[deepseek-full]') && '1' || '' }}
+          TRANSLATION_QUOTA: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[deepseek-full]') && '0' || '1200' }}
         run: |
           if [[ "${{ github.event.head_commit.message || '' }}" == *"[render-only]"* ]]; then
             python -X utf8 cloud_refresh.py --render-only 2026-11-20

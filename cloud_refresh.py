@@ -155,7 +155,7 @@ def main():
         # A large backlog of untranslated titles would push the rebuild past
         # the job's time limit, so the translation pass is capped per run and
         # resumes with the next one.
-        os.environ.setdefault("TRANSLATION_QUOTA", "1200")
+        os.environ.setdefault("TRANSLATION_QUOTA", "0")
         unlimited = os.environ.get("DEEPSEEK_FULL") == "1"
         if not unlimited:
             for setting in ("DEEPSEEK_BACKFILL_BATCH", "DEEPSEEK_BACKFILL_BUDGET"):
