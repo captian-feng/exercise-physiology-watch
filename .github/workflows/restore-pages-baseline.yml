@@ -1,0 +1,64 @@
+name: Restore preserved literature site baseline
+
+on:
+  push:
+    paths:
+      - ".restore-pages-2026-11-26"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+  pages: write
+  id-token: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Restore archived database and validated Pages artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch origin archive-state
+          git show FETCH_HEAD:catalog.sqlite.gz > catalog.sqlite.gz
+          curl --fail --location --retry 3 \\
+            -H "Authorization: Bearer $GH_TOKEN" \\
+            -H "Accept: application/vnd.github+json" \\
+            https://api.github.com/repos/captian-feng/exercise-physiology-watch/actions/artifacts/15091440379/zip \\
+            --output pages.zip
+          unzip -q pages.zip
+          tar -xf artifact.tar
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          page = Path('index.html').read_text(encoding='utf-8')
+          payload = page.split('<script id="dataset" type="application/json">',1)[1].split('</script>',1)[0]
+          records = json.loads(payload)['records']
+          assert len(records) == 20600, len(records)
+          assert sum(bool(row.get('summary')) for row in records) == 13741
+          PY
+          mkdir -p dist
+          mv index.html dist/index.html
+      - name: Commit restored baseline
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog.sqlite.gz dist/index.html
+          git diff --cached --quiet || git commit -m "Restore preserved literature site baseline"
+          git push
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    needs: restore
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4

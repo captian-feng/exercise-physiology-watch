@@ -1,68 +1,10 @@
-name: 合并多智能体贡献并发布
+name: Contribution merge paused for baseline preservation
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "contributions/**"
-      - "scripts/merge_contributions.py"
-      - "scripts/validate_contribution.py"
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
 jobs:
-  merge:
+  frozen:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-      - name: Restore archive
-        run: |
-          python - <<'PY'
-          import gzip, shutil
-          with gzip.open("catalog.sqlite.gz","rb") as a, open("catalog.sqlite","wb") as b: shutil.copyfileobj(a,b)
-          PY
-      - name: Validate contributions
-        run: |
-          shopt -s nullglob
-          for file in contributions/**/*.json; do python scripts/validate_contribution.py "$file"; done
-      - name: Merge contributions
-        run: python -X utf8 scripts/merge_contributions.py
-      - name: Rebuild site and archive
-        run: |
-          python - <<'PY'
-          import gzip, shutil, sqlite3
-          from pathlib import Path
-          from static_site import write_site
-          journals=[x.strip() for x in Path("journals.txt").read_text(encoding="utf-8").splitlines() if x.strip() and not x.startswith("#")]
-          db=sqlite3.connect("catalog.sqlite"); write_site(db,journals); db.close()
-          Path("dist").mkdir(exist_ok=True); shutil.copyfile("site/index.html","dist/index.html")
-          with open("catalog.sqlite","rb") as a, gzip.open("catalog.sqlite.gz","wb") as b: shutil.copyfileobj(a,b)
-          PY
-      - name: Commit generated data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add catalog.sqlite.gz dist/index.html
-          git diff --cached --quiet || git commit -m "Merge validated literature contributions"
-          git push
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: dist
-  deploy:
-    needs: merge
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-    permissions:
-      pages: write
-      id-token: write
-    steps:
-      - uses: actions/deploy-pages@v4
-
+      - run: echo "Automatic full rebuilds are paused while the preserved site baseline is restored."
