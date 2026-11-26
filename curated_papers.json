@@ -7,7 +7,10 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/39206382/",
     "publisher_url": "https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2024.1449384/full",
     "title_zh": "较高骑行强度后肌肉再氧合更慢，而运动肌部位比辅助肌部位更快且更可靠",
-    "topics": ["肌肉氧合", "运动表现"],
+    "topics": [
+      "肌肉氧合",
+      "运动表现"
+    ],
     "type": "Journal Article",
     "user_curated": true,
     "date": "2024-08-14",
@@ -22,7 +25,10 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/28336535/",
     "publisher_url": "https://journals.physiology.org/doi/10.1152/japplphysiol.00514.2016",
     "title_zh": "间歇运动中较短与较长工作时段对VO₂峰值动力学、肌肉去氧合和能量系统贡献的影响",
-    "topics": ["训练负荷", "肌肉氧合"],
+    "topics": [
+      "训练负荷",
+      "肌肉氧合"
+    ],
     "type": "Journal Article",
     "user_curated": true,
     "date": "2017-03-23",
@@ -37,7 +43,10 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/23325717/",
     "publisher_url": "https://www.thieme-connect.com/products/ejournals/html/10.1055/s-0032-1331717",
     "title_zh": "主动或被动恢复时长对间歇冲刺骑行运动表现和肌肉氧合的影响",
-    "topics": ["训练负荷", "肌肉氧合"],
+    "topics": [
+      "训练负荷",
+      "肌肉氧合"
+    ],
     "type": "Journal Article, Randomized Controlled Trial",
     "user_curated": true,
     "date": "2013-01-16",
@@ -52,7 +61,10 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/27087981/",
     "publisher_url": "https://bmcsportsscimedrehabil.biomedcentral.com/articles/10.1186/s13102-016-0036-y",
     "title_zh": "运动后肌肉氧合与骑行运动时长的关系",
-    "topics": ["肌肉氧合", "运动表现"],
+    "topics": [
+      "肌肉氧合",
+      "运动表现"
+    ],
     "type": "Journal Article",
     "user_curated": true,
     "date": "2016-04-14",
@@ -66,7 +78,9 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/42994440/",
     "publisher_url": "https://www.thieme-connect.com/products/ejournals/html/10.1055/a-2999-0052",
     "title_zh": "自主选择休息间歇对肌肉适应的影响",
-    "topics": ["训练负荷"],
+    "topics": [
+      "训练负荷"
+    ],
     "type": "Journal Article",
     "user_curated": true,
     "date": "2026-11-23",
@@ -81,7 +95,10 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/43077664/",
     "publisher_url": "https://doi.org/10.1097/JOM.0000000000003939",
     "title_zh": "消防员心率变异性指标与身体适能的关联",
-    "topics": ["心血管", "运动表现"],
+    "topics": [
+      "心血管",
+      "运动表现"
+    ],
     "type": "Journal Article",
     "user_curated": true,
     "date": "2026-11-24",
@@ -95,7 +112,10 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/43075974/",
     "publisher_url": "https://anatoljcardiol.com/article/10.14744/AnatolJCardiol.2026.6879",
     "title_zh": "匹配生理负荷下高强度间歇跑与持续跑对中年休闲男性急性心脏生物标志物反应的影响",
-    "topics": ["心血管", "训练负荷"],
+    "topics": [
+      "心血管",
+      "训练负荷"
+    ],
     "type": "Journal Article",
     "user_curated": true,
     "date": "2026-11-24",
@@ -109,7 +129,10 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/43066533/",
     "publisher_url": "https://physoc.onlinelibrary.wiley.com/doi/10.1113/JP292701",
     "title_zh": "攻击氧运输级联中的适应储备以提升V̇O₂max：是时候组合多种策略了吗？",
-    "topics": ["心肺适能", "运动表现"],
+    "topics": [
+      "心肺适能",
+      "运动表现"
+    ],
     "type": "Journal Article",
     "user_curated": true,
     "date": "2026-11-21",
@@ -124,7 +147,10 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/43067342/",
     "publisher_url": "https://journals.humankinetics.com/view/journals/ijspp/aop/article-10.1123/ijspp.2026-0458/article-10.1123/ijspp.2026-0458.xml",
     "title_zh": "一名世界级男子800–1500米游泳运动员的十年训练历程",
-    "topics": ["训练负荷", "运动表现"],
+    "topics": [
+      "训练负荷",
+      "运动表现"
+    ],
     "type": "Journal Article",
     "user_curated": true,
     "date": "2026-11-20",
@@ -139,7 +165,10 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/43013354/",
     "publisher_url": "https://doi.org/10.1519/JSC.0000000000005703",
     "title_zh": "男子耐力跑者感知敏锐能力的生理与心理物理动态",
-    "topics": ["运动表现", "心理与知觉"],
+    "topics": [
+      "运动表现",
+      "心理与知觉"
+    ],
     "type": "Journal Article",
     "user_curated": true,
     "date": "2026-11-11",
@@ -154,7 +183,10 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/43044059/",
     "publisher_url": "https://doi.org/10.1519/JSC.0000000000005739",
     "title_zh": "哑铃卧推与哑铃飞鸟在休闲训练男性中诱发相似的胸大肌肥大",
-    "topics": ["力量训练", "肌肉适应"],
+    "topics": [
+      "力量训练",
+      "肌肉适应"
+    ],
     "type": "Journal Article",
     "user_curated": true,
     "date": "2026-11-17",
@@ -169,11 +201,637 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/43049498/",
     "publisher_url": "https://www.medecinesciences.org/en/articles/medsci/full_html/2026/11/medsci2026163.html",
     "title_zh": "骨骼肌机械转导：机制与治疗前景",
-    "topics": ["肌肉适应", "机制与综述"],
+    "topics": [
+      "肌肉适应",
+      "机制与综述"
+    ],
     "type": "Journal Article, Review, English Abstract",
     "user_curated": true,
     "date": "2026-11-18",
     "online_date": "2026-11-18"
+  },
+  {
+    "title": "Reliability and Minimal Detectable Change of Training Efficiency Index During Preseason and In-Season Training in Professional Rugby League Athletes",
+    "title_zh": "职业橄榄球联盟运动员在季前和赛季期间训练中训练效率指数的可靠性和最小可检测变化。",
+    "pmid": "43083641",
+    "venue": "Journal of strength and conditioning research",
+    "journal": "Journal of strength and conditioning research",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083641/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083641/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "AI-embedded Multimodal E-skin Enabling Muscle Proprioception",
+    "title_zh": "嵌入人工智能的多模态电子皮肤实现肌肉本体感觉。",
+    "pmid": "43084750",
+    "venue": "IEEE journal of biomedical and health informatics",
+    "journal": "IEEE journal of biomedical and health informatics",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43084750/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43084750/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Anaerobic Training in Elite Team Handball - A Narrative Review",
+    "title_zh": "精英手球队的无氧训练——综述。",
+    "pmid": "43083393",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083393/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083393/",
+    "type": "Journal Article, Review",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Resistance Training and Drop Jump Derived Reactive Strength Index: A Systematic Review and Meta-Analysis of Training Modality Effects",
+    "title_zh": "阻力训练和落地跳衍生反应性力量指数：训练模式效果的系统综述和荟萃分析。",
+    "pmid": "43083392",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083392/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083392/",
+    "type": "Journal Article, Review",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Neuromuscular Performance Thresholds to Support Player Development in a Professional Soccer Academy",
+    "title_zh": "支持职业足球学院球员发展的神经肌肉表现阈值。",
+    "pmid": "43083390",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083390/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083390/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "The Relationship Between Muscle Strength and Jump Height with Bone Mineral Density (BMD) in Elite Female Soccer Players: The Mediating Role of Lean Body Mass",
+    "title_zh": "精英女足球运动员的肌肉力量和跳跃高度与骨矿物质密度（BMD）之间的关系：瘦体重的中介作用。",
+    "pmid": "43083384",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083384/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083384/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Acute Musculoskeletal Responses to Isometric Blood Flow Restriction Training of the Patellar Tendon in Healthy, Active Young Adults: A Randomized Controlled Trial",
+    "title_zh": "健康、活跃的青年人髌腱等长性血流受限训练的急性肌肉骨骼反应：一项随机对照试验。",
+    "pmid": "43083376",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083376/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083376/",
+    "type": "Journal Article, Randomized Controlled Trial",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Cardiac and Hemodynamic Responses to Resistance Training Sessions with and Without Blood Flow Restriction Performed to Muscular Failure",
+    "title_zh": "在有和没有血流限制的情况下进行至肌肉衰竭的阻力训练的心脏和血流动力学反应。",
+    "pmid": "43083359",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083359/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083359/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Effects of Real-Time Quantitative Feedback and Verbal Encouragement on Maximal Strength and Power During Squat Training in Young Men",
+    "title_zh": "实时定量反馈和口头鼓励对年轻男性深蹲训练期间最大力量和爆发力的影响。",
+    "pmid": "43083348",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083348/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083348/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Beyond Exercise Labels: A Critical Review of Constraint- and Phase-Dependent Biomechanics in Squat and Deadlift Variations",
+    "title_zh": "超越运动标签：对深蹲和硬拉变式中受限和阶段依赖性生物力学的批判性综述。",
+    "pmid": "43083339",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083339/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083339/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "A Practical Approach to Exercise in Hypertrophic Cardiomyopathy",
+    "title_zh": "肥厚型心肌病运动的实用方法。",
+    "pmid": "43083100",
+    "venue": "Journal of cardiovascular development and disease",
+    "journal": "Journal of cardiovascular development and disease",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083100/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083100/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Effects of Dual-Task Strength Training on Physical and Cognitive Outcomes in Older Adults: A Systematic Review and Meta-Analysis",
+    "title_zh": "双任务力量训练对老年人身体和认知结果的影响：系统综述和荟萃分析。",
+    "pmid": "43082577",
+    "venue": "Diseases (Basel, Switzerland)",
+    "journal": "Diseases (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43082577/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43082577/",
+    "type": "Journal Article, Review",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Geniohyoid Muscle and Diaphragm Ultrasonography and Maximal Expiratory Pressure During Four Weeks of Expiratory Muscle Strength Training in Healthy Young Men: An Exploratory Pilot Study",
+    "title_zh": "健康年轻男性在为期四周的呼气肌力量训练期间的颏舌骨肌和膈肌超声检查以及最大呼气压力：一项探索性试点研究。",
+    "pmid": "43081445",
+    "venue": "Muscles (Basel, Switzerland)",
+    "journal": "Muscles (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081445/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081445/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Changes in the Isokinetic Strength Profile in Soccer Players Following Fatigue: A Systematic Review",
+    "title_zh": "足球运动员疲劳后等速肌力特征的变化：一项系统综述。",
+    "pmid": "43081362",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081362/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081362/",
+    "type": "Journal Article, Review",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Resistance Training for Hypertrophy in Trained Populations: A Narrative Review and Fatigue-Management Framework (2020-2026)",
+    "title_zh": "训练人群的增肌阻力训练：综述与疲劳管理框架（2020-2026）。",
+    "pmid": "43081354",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081354/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081354/",
+    "type": "Journal Article, Review",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "抗阻与力量训练"
+    ]
+  },
+  {
+    "title": "Familiarization Matters in Endurance Performance Testing: Exploratory Evidence from a Time-to-Exhaustion Protocol",
+    "title_zh": "耐力表现测试中的熟悉化事项：来自耗竭时间方案的探索性证据。",
+    "pmid": "43081367",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081367/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081367/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "耐力与有氧训练"
+    ]
+  },
+  {
+    "title": "Blood and Vascular Endothelial Responses to Mild Hyperbaric Oxygen During EPA-Supplemented Aerobic Exercise: A Randomised Crossover Trial",
+    "title_zh": "在补充EPA的有氧运动期间，血液和血管内皮对轻度高压氧的反应：一项随机交叉试验。",
+    "pmid": "43081343",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081343/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081343/",
+    "type": "Journal Article, Randomized Controlled Trial",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "耐力与有氧训练"
+    ]
+  },
+  {
+    "title": "The Impact of Race-to-Race Fatigue on Performance in a 24-Hour Competitive Swimming Schedule",
+    "title_zh": "在24小时竞技游泳赛程中，赛间疲劳对成绩的影响。",
+    "pmid": "43078074",
+    "venue": "International journal of sports physiology and performance",
+    "journal": "International journal of sports physiology and performance",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43078074/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43078074/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026-11-23",
+    "online_date": "2026-11-23",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Sex-specific associations between physical abilities, lower limb kinematics, and acceleration performance in highly trained sprinters",
+    "title_zh": "在训练有素的短跑运动员中，身体能力、下肢运动学和加速表现之间存在性别特异性关联。",
+    "pmid": "43079761",
+    "venue": "Journal of sports sciences",
+    "journal": "Journal of sports sciences",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43079761/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43079761/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Monitoring External Load and Internal Responses Across Selected Endurance Sports: A Scoping Review",
+    "title_zh": "对选定耐力运动的外部负荷和内部反应进行监测：范围综述。",
+    "pmid": "43083371",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083371/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083371/",
+    "type": "Journal Article, Review",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Fingerprint Dermatoglyphics and Objectively Measured Physical Ability: No Evidence of a Practically Useful Association in a Systematic Review and Meta-Analysis",
+    "title_zh": "指纹皮肤纹理学和客观测量的身体能力：一项系统综述和荟萃分析未发现具有实用意义的相关性证据。",
+    "pmid": "43083354",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083354/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083354/",
+    "type": "Journal Article, Review",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Acute Effects of Moderate Altitude and Normoxia on Physiological, Neuromuscular, and Performance Responses in Highly Trained Swimmers",
+    "title_zh": "中等海拔和常氧对高水平训练游泳运动员生理、神经肌肉和运动表现反应的急性影响。",
+    "pmid": "43083351",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083351/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083351/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Longitudinal Metabolic and Perceptual Responses to an Individualized, Biochemically Guided Interval-Swimming Protocol: A Non-Randomized Controlled Pilot Study",
+    "title_zh": "对个体化、生化指导的间歇游泳方案的纵向代谢和感知反应：一项非随机对照试点研究。",
+    "pmid": "43083347",
+    "venue": "Sports (Basel, Switzerland)",
+    "journal": "Sports (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083347/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083347/",
+    "type": "Journal Article, Randomized Controlled Trial",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Cardiac Rehabilitation After TAVI: From Procedural Success to Multidomain Recovery",
+    "title_zh": "TAVI术后的心脏康复：从手术成功到多领域康复。",
+    "pmid": "43083098",
+    "venue": "Journal of cardiovascular development and disease",
+    "journal": "Journal of cardiovascular development and disease",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43083098/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43083098/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Urinary Tract Infections in Athletes: A Scoping Review of Reported Occurrence, Associated Factors, and Potential Implications for Sports Participation",
+    "title_zh": "运动员的泌尿道感染：对报告的发病率、相关因素以及对体育运动参与的潜在影响的范围综述。",
+    "pmid": "43082617",
+    "venue": "Diseases (Basel, Switzerland)",
+    "journal": "Diseases (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43082617/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43082617/",
+    "type": "Journal Article, Review",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Five- to Nine-Year Clinical and Radiographic Performance of Morse-Tapered Hybrid Dental Implants: A Retrospective Observational Study",
+    "title_zh": "莫氏锥形混合种植体的5至9年临床和影像学表现：一项回顾性观察性研究。",
+    "pmid": "43082357",
+    "venue": "Dentistry journal",
+    "journal": "Dentistry journal",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43082357/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43082357/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Shoulder Biomechanical and Morphological Characteristics Across Para-Swimming Functional Classes: A Comparative Ultrasound Study",
+    "title_zh": "残疾人游泳各功能等级的肩部生物力学和形态学特征：一项超声比较研究。",
+    "pmid": "43081443",
+    "venue": "Muscles (Basel, Switzerland)",
+    "journal": "Muscles (Basel, Switzerland)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081443/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081443/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Bosco Jump Variables Are Associated with GPS-Derived Match Demands and Repeated-Sprint Performance in Elite Female Field Hockey Players",
+    "title_zh": "Bosco跳跃变量与GPS衍生比赛要求和精英女子曲棍球运动员的反复冲刺表现相关。",
+    "pmid": "43081387",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081387/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081387/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Changes in Explosive Power, Sprint, and Change-of-Direction Speed Following a 10-Week Plyometric Training Program in Young Basketball Players: An Exploratory Two-Team Comparison",
+    "title_zh": "年轻篮球运动员在10周的 বাঙ্গালীদের训练计划后爆发力、冲刺和变向速度的变化：一项探索性的两队比较研究。",
+    "pmid": "43081370",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081370/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081370/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Kinanthropometric Profiles and Neuromuscular Performance in Professional Male Boxers: Relationships Between Body Composition, Proportionality, and Force Expression",
+    "title_zh": "职业男拳手的体质人类学特征和神经肌肉表现：体成分、比例和力量表现之间的关系。",
+    "pmid": "43081360",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081360/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081360/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Associations of Free-Living Physical Activity, Sleep, and Wellness with Neuromuscular, Postural, and Visuomotor Performance in University Students: A 14-Day Multimodal Study",
+    "title_zh": "日常生活中体育活动、睡眠和健康与大学生神经肌肉、姿势和视动表现的关联：一项为期14天的多模态研究。",
+    "pmid": "43081357",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081357/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081357/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "运动表现与竞技"
+    ]
+  },
+  {
+    "title": "Time Course and Muscular Correlates of Sit-to-Stand Adaptations Following Intermittent or Continuous Light-Intensity Activity in Older Adults: A Two-Arm Quasi-Randomised Trial",
+    "title_zh": "间歇性或持续性轻度活动后老年人坐姿到站立姿势适应的时间过程和肌肉相关性：一项双组准随机对照试验。",
+    "pmid": "43081361",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081361/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081361/",
+    "type": "Journal Article, Randomized Controlled Trial",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "生理适应与机制"
+    ]
+  },
+  {
+    "title": "Static Stretching and Human Movement: An Integrative Narrative Review of Tissue Mechanics, Neuromechanical Responses, and Functional Performance",
+    "title_zh": "静态拉伸与人体运动：组织力学、神经力学反应和功能表现的综合综述。",
+    "pmid": "43081336",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081336/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081336/",
+    "type": "Journal Article, Review",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "生理适应与机制"
+    ]
+  },
+  {
+    "title": "Association Between Collision Exposure and Post-Match Physiological Recovery Markers in Rugby Union Players: A Systematic Review",
+    "title_zh": "橄榄球运动员碰撞暴露与赛后生理恢复指标之间的关联：系统综述。",
+    "pmid": "43081350",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081350/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081350/",
+    "type": "Journal Article, Review",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "训练负荷与恢复"
+    ]
+  },
+  {
+    "title": "The Neuromotor Exercise Progression: A Quantitative Framework for the Classification and Progression of Neuromotor Exercises",
+    "title_zh": "神经运动锻炼的进展：神经运动锻炼分类和进展的定量框架。",
+    "pmid": "43081376",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081376/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081376/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "其他相关"
+    ]
+  },
+  {
+    "title": "Association Between Physical Fitness and Engagement with Home-Based Physical Activity Equipment and Activity Locations Among Adolescents: The DESpertar Project",
+    "title_zh": "青少年体能与居家体育活动器材和活动场所参与度之间的关系：DESpertar项目。",
+    "pmid": "43081339",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081339/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081339/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "其他相关"
+    ]
+  },
+  {
+    "title": "A Comparison Between Change of Direction and Lateral Jumping Abilities in Basketball Players",
+    "title_zh": "篮球运动员变向能力与侧向跳跃能力对比。",
+    "pmid": "43081338",
+    "venue": "Journal of functional morphology and kinesiology",
+    "journal": "Journal of functional morphology and kinesiology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43081338/",
+    "publisher_url": "https://pubmed.ncbi.nlm.nih.gov/43081338/",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026",
+    "online_date": "2026",
+    "topics": [
+      "其他相关"
+    ]
+  },
+  {
+    "title": "Long-term effects of physical exercise on cardiorespiratory fitness among adults living with human immunodeficiency virus: a systematic review and meta-analysis",
+    "title_zh": "体育锻炼对感染人类免疫缺陷病毒的成年人心肺健康的长期影响：系统综述和荟萃分析",
+    "pmcid": "PMC13791795",
+    "venue": "Sao Paulo medical journal = Revista paulista de medicina",
+    "journal": "Sao Paulo medical journal",
+    "url": "https://europepmc.org/article/PMC/PMC13791795",
+    "publisher_url": "https://europepmc.org/article/PMC/PMC13791795",
+    "type": "Journal Article, Review",
+    "user_curated": true,
+    "date": "2026-11-25",
+    "online_date": "2026-11-25",
+    "topics": [
+      "其他相关"
+    ]
+  },
+  {
+    "title": "Enhancing blood glucose regulation through hypoxic conditioning: A role for microRNAs?",
+    "title_zh": "通过缺氧适应增强血糖调节：微小RNA的作用？",
+    "pmcid": "PMC13795887",
+    "venue": "Experimental physiology",
+    "journal": "Experimental Physiology",
+    "url": "https://europepmc.org/article/PMC/PMC13795887",
+    "publisher_url": "https://europepmc.org/article/PMC/PMC13795887",
+    "type": "Journal Article",
+    "user_curated": true,
+    "date": "2026-11-24",
+    "online_date": "2026-11-24",
+    "topics": [
+      "其他相关"
+    ]
   }
 ]
-
