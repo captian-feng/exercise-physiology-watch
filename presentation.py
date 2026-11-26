@@ -632,6 +632,15 @@ def _translation_quota():
 def translations(db, records):
     db.execute("CREATE TABLE IF NOT EXISTS translations (title TEXT PRIMARY KEY, zh TEXT NOT NULL)")
     db.execute("CREATE TABLE IF NOT EXISTS retranslated (title TEXT PRIMARY KEY)")
+    # Curated records may carry an editor-approved Chinese title. Seed the
+    # normal translation cache from that field so render-only rebuilds do not
+    # need to download or run a translation model.
+    for item in records:
+        title_zh = str(item.get("title_zh") or "").strip()
+        if title_zh:
+            db.execute("INSERT OR REPLACE INTO translations VALUES (?, ?)",
+                       (item["title"], title_zh))
+    db.commit()
     # Cached titles go through the whole post-processing chain, not just the
     # term correction: leftover English, stray spaces and doubled words were
     # added later and only reached newly decoded titles otherwise.
@@ -722,3 +731,4 @@ def translations(db, records):
         return cached, ""
     except (ImportError, OSError, RuntimeError, ValueError) as error:
         return cached, str(error)
+

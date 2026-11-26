@@ -81,7 +81,12 @@ jobs:
           DEEPSEEK_BACKFILL: ${{ github.event_name == 'workflow_dispatch' && inputs.deepseek_backfill && '1' || '' }}
           DEEPSEEK_BACKFILL_BATCH: ${{ inputs.backfill_batch || '300' }}
           DEEPSEEK_BACKFILL_BUDGET: ${{ inputs.backfill_budget || '1200' }}
-        run: python -X utf8 cloud_refresh.py
+        run: |
+          if [[ "${{ github.event.head_commit.message || '' }}" == *"[render-only]"* ]]; then
+            python -X utf8 cloud_refresh.py --render-only 2026-11-20
+          else
+            python -X utf8 cloud_refresh.py
+          fi
       - name: Save the updated archive
         run: python scripts/archive_state.py persist "$RUNNER_TEMP/journal-archive-base"
       - uses: actions/upload-pages-artifact@v4
@@ -101,6 +106,7 @@ jobs:
     steps:
       - id: pages
         uses: actions/deploy-pages@v4
+
 
 
 

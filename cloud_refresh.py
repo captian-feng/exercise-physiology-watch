@@ -181,11 +181,17 @@ def main():
         site = work / "site" / "index.html"
         validate(db_path, site)
         if options.render_only:
+            site_path = ROOT / "dist" / "index.html"
+            next_site = site_path.with_suffix(".tmp")
+            copy2(site, next_site)
+            next_site.replace(site_path)
+            next_state = save_state(db_path)
+            next_state.replace(STATE)
             return
         site_path = ROOT / "dist" / "index.html"
         next_site = site_path.with_suffix(".tmp")
         copy2(site, next_site)
-        save_state(db_path)
+        next_state = save_state(db_path)
         next_state.replace(STATE)
         next_site.replace(site_path)
         # Verdicts learned during this run are written back so the next build
@@ -197,6 +203,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
