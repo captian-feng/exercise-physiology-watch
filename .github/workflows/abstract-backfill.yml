@@ -60,3 +60,15 @@ jobs:
         with:
           path: dist
 
+  deploy:
+    needs: rebuild
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4
+
