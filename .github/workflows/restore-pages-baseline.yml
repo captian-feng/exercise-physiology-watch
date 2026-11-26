@@ -23,11 +23,7 @@ jobs:
         run: |
           git fetch origin archive-state
           git show FETCH_HEAD:catalog.sqlite.gz > catalog.sqlite.gz
-          curl --fail --location --retry 3 \\
-            -H "Authorization: Bearer $GH_TOKEN" \\
-            -H "Accept: application/vnd.github+json" \\
-            https://api.github.com/repos/captian-feng/exercise-physiology-watch/actions/artifacts/15091440379/zip \\
-            --output pages.zip
+          curl --fail --location --retry 3 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/captian-feng/exercise-physiology-watch/actions/artifacts/15091440379/zip" --output pages.zip
           unzip -q pages.zip
           tar -xf artifact.tar
           python - <<'PY'
