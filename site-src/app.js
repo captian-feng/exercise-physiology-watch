@@ -2,37 +2,9 @@
   "use strict";
 
   const get = (id) => document.getElementById(id);
-  // The payload stores venues, themes and tiers once and references them by
-  // index, and rebuilds DOI links in the browser, which keeps the page about a
-  // third smaller than storing the full strings on every record.
-  const raw = JSON.parse(get("dataset").textContent);
-  const data = {
-    journals: raw.journals,
-    topics: raw.topics,
-    articleTypes: raw.articleTypes || ["类型待确认"],
-    updated: raw.updated,
-    records: raw.records.map((record) => ({
-      journal: raw.venues[record.j],
-      focused: record.f === 1,
-      tier: raw.tiers[record.r],
-      topic: raw.topics[record.t],
-      articleType: (raw.articleTypes || ["类型待确认"])[record.a] || "类型待确认",
-      clinical: record.c === 1,
-      en: record.e,
-      zh: record.z || "",
-      summary: record.summary || "",
-      summarySource: record.summary_source || "",
-      doi: record.d,
-      pmid: record.m || "",
-      url: record.u || (record.d ? "https://doi.org/" + record.d : ""),
-      published: record.p,
-      onlineDate: record.od === 1,
-      seen: record.s,
-    })),
-  };
+  const data = JSON.parse(get("dataset").textContent);
   const journal = get("journal");
   const topic = get("topic");
-  const articleType = get("article-type");
   const clinicalTag = "clinical-study";
   const clinicalLabel = "临床与疾病相关";
   const dateField = get("date-field");
@@ -41,7 +13,6 @@
   const dateEnd = get("date-end");
   const query = get("query");
   const sort = get("sort");
-  const focusedOnly = get("focused-only");
   const form = get("filters");
   const articles = get("articles");
   const tabs = [...document.querySelectorAll("button[data-scope]")];
@@ -127,74 +98,39 @@
   function articleRow(record, grouped) {
     const row = node("li", "article");
     const meta = node("div", "article-meta");
-    // In the default view the list is ranked by the day the paper first
-    // entered the site, so the label has to match that order.
-    const collected = sort.value === "collected";
-    const shownDate = collected ? record.seen : record[dateField.value];
-    const shownLabel = collected ? "本站首次收录"
-      : dateField.value === "seen" ? "本站首次收录"
-      : record.onlineDate ? "在线发表" : "发表日期（上线时间待核）";
-    meta.append(node("span", "", shownLabel));
-    meta.append(shownDate ? time(shownDate) : node("span", "", "日期未记录"));
+    const shownDate = record[dateField.value];
+    meta.append(shownDate ? time(shownDate) : node("span", "", "发表日期未记录"));
     if (!grouped) {
       meta.append(node("span", "", record.journal), node("span", "topic", record.topic));
-    }
-    if (record.articleType === "类型待确认" && (record.doi || record.pmid)) {
-      const select = node("select", "article-type-review");
-      select.setAttribute("aria-label", "建议这篇论文的类型");
-      const prompt = node("option", "", "类型待确认 · 建议分类");
-      prompt.value = "";
-      select.append(prompt);
-      addOptions(select, data.articleTypes.filter(value => value !== "类型待确认"));
-      select.addEventListener("change", () => {
-        if (!select.value) return;
-        const subject = "[论文分类] " + (record.doi || "PMID:" + record.pmid);
-        const body = "DOI: " + (record.doi || "无") + "\nPMID: " + (record.pmid || "无") + "\n英文标题: " + record.en
-          + "\n建议类型: " + select.value + "\n依据: 请填写论文官网或数据库的文献类型";
-        const params = new URLSearchParams({title: subject, body});
-        window.open("https://github.com/captian-feng/exercise-physiology-watch/issues/new?" + params.toString(), "_blank", "noopener,noreferrer");
-        select.value = "";
-      });
-      meta.append(select);
-    } else {
-      meta.append(node("span", "article-type", record.articleType));
     }
     if (record.clinical) meta.append(node("span", "clinical-tag", clinicalLabel));
     if (!record.focused) meta.append(node("span", "", "刊外补漏"));
     const title = node("div", "article-title");
     if (record.url) {
-      const link = node("a", "", record.en);
+      const link = node("a", "", record.zh || record.en);
       link.href = record.url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       title.append(link);
     } else {
-      title.textContent = record.en;
+      title.textContent = record.zh || record.en;
     }
     row.append(meta, title);
     if (record.zh) {
-      const translation = node("p", "english", record.zh);
-      translation.lang = "zh-CN";
-      row.append(translation);
+      const original = node("p", "english", record.en);
+      original.lang = "en";
+      row.append(original);
     }
-    if (record.summary) {
-      const summary = node("p", "article-summary", "摘要简介（AI 生成）：" + record.summary + " ");
-      if (record.summarySource || record.pmid) {
-        const source = node("a", "", "摘要来源");
-        source.href = record.summarySource || ("https://pubmed.ncbi.nlm.nih.gov/" + encodeURIComponent(record.pmid) + "/");
-        source.target = "_blank";
-        source.rel = "noopener noreferrer";
-        summary.append(source);
-      }
-      const details = node("details", "article-abstract");
-      details.append(node("summary", "article-abstract-toggle", "查看摘要"), summary);
-      row.append(details);
+    if (record.abstract_zh) {
+      const abstract = node("p", "abstract", record.abstract_zh);
+      abstract.lang = "zh-CN";
+      row.append(abstract);
     }
     return row;
   }
 
   function renderRows(rows) {
-    if (sort.value !== "grouped") {
+    if (sort.value === "recent") {
       const list = node("ul", "article-list");
       for (const record of rows) list.append(articleRow(record, false));
       articles.replaceChildren(list);
@@ -295,11 +231,9 @@
     const candidates = records.filter(record =>
       (!journal.value || record.journal === journal.value)
       && (!topic.value || record.topic === topic.value)
-      && (!articleType.value || (articleType.value === "default" ? ["原创研究","系统综述与证据整合"].includes(record.articleType) : record.articleType === articleType.value))
       && !exclusions.has(record.topic)
       && !(record.clinical && exclusions.has(clinicalTag))
       && record.tier === scope
-      && (!focusedOnly.checked || record.focused)
       && words.every(word => record.searchable.includes(word))
     );
     get("scope-note").textContent = scope === "core"
@@ -320,19 +254,9 @@
       return (b[dateField.value] || "").localeCompare(a[dateField.value] || "")
         || collator.compare(a.en, b.en);
     }
-    // "最新收录" ranks by the day the paper first entered the site, so papers
-    // added by the latest daily run float to the top even when their
-    // publication date is older.
-    function newestCollected(a, b) {
-      return (b.seen || "").localeCompare(a.seen || "")
-        || (b.published || "").localeCompare(a.published || "")
-        || collator.compare(a.en, b.en);
-    }
     if (sort.value === "grouped") {
       matches.sort((a, b) => compareJournal(a.journal, b.journal)
         || compareTopic(a.topic, b.topic) || newest(a, b));
-    } else if (sort.value === "collected") {
-      matches.sort(newestCollected);
     } else {
       matches.sort(newest);
     }
@@ -370,21 +294,11 @@
 
   addOptions(journal, allJournals.sort(compareJournal));
   addOptions(topic, allTopics.sort(compareTopic));
-  addOptions(articleType, data.articleTypes);
   addExclusion(clinicalTag, clinicalLabel + "（跨专题）");
   for (const name of allTopics) addExclusion(name, name);
   get("total-articles").textContent = records.filter(record => record.tier === "core").length.toLocaleString("zh-CN");
   get("total-journals").textContent = data.journals.length;
   get("updated").textContent = data.updated ? "最近检索 " + data.updated : "暂未收录";
-  // A daily workflow refreshes the page. If the data is more than two days old
-  // the automation has stopped, and the reader should know before trusting it.
-  if (data.updated) {
-    const age = Math.floor((Date.now() - new Date(data.updated + "T00:00:00Z")) / 86400000);
-    const stale = !Number.isFinite(age) ? "" : age > 2
-      ? `（数据已 ${age} 天未更新，自动抓取可能已停止）`
-      : "";
-    if (stale) get("updated").textContent += stale;
-  }
   get("results-heading").tabIndex = -1;
   form.addEventListener("submit", event => event.preventDefault());
   form.addEventListener("change", (event) => {
@@ -405,7 +319,6 @@
   showFilters(!narrow.matches);
   query.addEventListener("input", refilter);
   sort.addEventListener("change", refilter);
-  focusedOnly.addEventListener("change", refilter);
   for (const tab of tabs) {
     tab.addEventListener("click", () => {
       setScope(tab.dataset.scope);
@@ -422,41 +335,5 @@
   get("prev").addEventListener("click", () => turnPage(-1));
   get("next").addEventListener("click", () => turnPage(1));
   render();
-
-  // "参与维护" opens a pre-filled GitHub issue so a report or an idea arrives
-  // with the context a maintainer needs, without the visitor filling a form.
-  const REPO_ISSUES = "https://github.com/captian-feng/exercise-physiology-watch/issues/new";
-  const link = (base, params) => base + "?" + new URLSearchParams(params).toString();
-
-  get("contribute-fix").href = link(REPO_ISSUES, {
-    title: "[纠错] ",
-    body: [
-      "请描述发现的问题，以下几类都欢迎：",
-      "",
-      "1. 文献类型判错（如把综述标成原创研究）",
-      "2. 不该收录的研究被收录（如动物实验、细胞分子机制、纯心理学研究）",
-      "3. 该收录的研究被漏掉",
-      "",
-      "---",
-      "论文 DOI 或 PMID：",
-      "当前显示的文献类型或专题：",
-      "建议改为：",
-      "核对依据（期刊官网或数据库链接）：",
-    ].join("\n"),
-  });
-
-  get("contribute-idea").href = link(REPO_ISSUES, {
-    title: "[建议] ",
-    body: [
-      "请写下你的想法，例如希望增加的期刊、筛选维度或功能。",
-      "",
-      "---",
-      "建议内容：",
-      "使用场景（为什么需要）：",
-      "补充说明：",
-    ].join("\n"),
-  });
 })();
-
-
 
