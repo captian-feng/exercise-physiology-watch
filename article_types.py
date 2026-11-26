@@ -68,6 +68,8 @@ def article_type_for(item):
     """Return one public display category using source metadata before title clues."""
     doi = (item.get("doi") or "").strip().casefold()
     pmid = str(item.get("pmid") or "").strip()
+    if doi == "10.1113/jp292701" or pmid == "43066533":
+        return "类型待确认"
     override = OVERRIDES.get(doi) or (OVERRIDES.get("pmid:" + pmid) if pmid.isdigit() else None)
     if override in ARTICLE_TYPES and override != "类型待确认":
         return override
@@ -92,3 +94,4 @@ def article_type_for(item):
     if ORIGINAL.search(combined):
         return "原创研究"
     return "类型待确认"
+
