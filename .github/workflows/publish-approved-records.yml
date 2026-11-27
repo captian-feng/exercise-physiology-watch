@@ -13,7 +13,8 @@ jobs:
       - uses: actions/setup-python@v6
         with: {python-version: "3.12"}
       - name: Resolve DOI metadata, translate, and append only new records
-        env: {DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}}
+        env:
+          DEEPSEEK_API_KEY: "${{ secrets.DEEPSEEK_API_KEY }}"
         run: |
           python -X utf8 - <<'PY'
           import gzip,hashlib,json,sqlite3,urllib.request,urllib.parse,re
