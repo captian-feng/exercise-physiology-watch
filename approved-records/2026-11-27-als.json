@@ -1,0 +1,31 @@
+{
+  "batch": "2026-11-27-als",
+  "records": [
+    {
+      "pmid": "43096161",
+      "first_seen": "2026-11-27",
+      "zh_title": "肌萎缩侧索硬化症患者的体育运动干预：一项系统综述与荟萃分析",
+      "topic": "特殊人群与生命周期",
+      "article_type": "系统综述与证据整合",
+      "zh_abstract": "引言：本系统综述与荟萃分析考察特定运动方式对肌萎缩侧索硬化症（ALS）患者的疗效。方法：在PubMed、Cochrane、Scopus、Web of Science、Embase、PEDro和Scielo数据库中全面检索涉及ALS患者运动的随机对照试验。根据FITT-VP（频率、强度、类型、时间、总量和进阶）原则及美国运动医学会指南对干预进行分类。采用RoB 2和PEDro量表评估偏倚风险和方法学质量，采用随机效应荟萃分析估计合并效应量及95%置信区间和预测区间。结果：共纳入15项研究（n=595）。荟萃分析显示，抗阻训练〔标准化均数差（SMD）=0.258，95%置信区间：−0.578至1.095，倾向运动〕、心血管训练〔均数差（MD）=−1.677，95%置信区间：−11.224至7.871，倾向对照〕和联合训练（MD=5.573，95%置信区间：−6.095至17.242，倾向运动）对功能能力的影响均无统计学显著性。呼吸训练未显著改善吸气压（SMD=0.42，95%置信区间：−0.18至1.03，倾向运动）。较高的依从性（82%）和相当的不良事件发生情况证实了安全性。研究间存在较大异质性且证据确定性低，无法形成确切的临床结论。结论：运动在ALS患者中似乎安全且耐受性良好，但其特异性临床疗效仍未得到证实。PROSPERO注册号：CRD420251161766。",
+      "article": {
+        "doi": "10.1080/17582024.2026.2767799",
+        "pmid": "43096161",
+        "title": "Physical exercise interventions for people with amyotrophic lateral sclerosis: a systematic review with meta-analysis.",
+        "author": "",
+        "date": "2026-11-26",
+        "type": "Systematic Review",
+        "venue": "Neurodegenerative disease management",
+        "journal": "Neurodegenerative Disease Management",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/43096161/",
+        "sources": [
+          "PubMed"
+        ],
+        "online_date": "2026-11-26",
+        "topics": [
+          "特殊人群与生命周期"
+        ]
+      }
+    }
+  ]
+}
