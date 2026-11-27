@@ -1,0 +1,126 @@
+name: Publish approved literature records
+
+on:
+  push:
+    paths:
+      - "approved-records/*.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: controlled-incremental-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Incrementally add approved records without rebuilding the site
+        run: |
+          python -X utf8 - <<'PY'
+          import gzip, hashlib, json, sqlite3
+          from pathlib import Path
+
+          queue = sorted(Path("approved-records").glob("*.json"))
+          assert queue, "No approved record file found."
+          items = []
+          for path in queue:
+              items.extend(json.loads(path.read_text(encoding="utf-8"))["records"])
+          pmids = [str(item["pmid"]) for item in items]
+          assert len(pmids) == len(set(pmids)), "Duplicate PMID in approved input."
+
+          with gzip.open("catalog.sqlite.gz", "rb") as src, open("catalog.sqlite", "wb") as dst:
+              dst.write(src.read())
+          db = sqlite3.connect("catalog.sqlite")
+          existing = {row[0] for row in db.execute("select pmid from articles where pmid in (%s)" % ",".join("?" * len(pmids)), pmids)}
+          new_items = [item for item in items if str(item["pmid"]) not in existing]
+
+          page_path = Path("dist/index.html")
+          page = page_path.read_text(encoding="utf-8")
+          left = '<script id="dataset" type="application/json">'
+          start = page.index(left) + len(left)
+          end = page.index("</script>", start)
+          payload = json.loads(page[start:end])
+          before = len(payload["records"])
+          assert before >= 20600, before
+          page_pmids = {str(row.get("m", "")) for row in payload["records"]}
+          assert not (page_pmids & {str(item["pmid"]) for item in new_items}), "A new PMID already exists on the page."
+
+          for item in new_items:
+              record = item["article"]
+              db.execute(
+                  "insert into articles(doi, pmid, fingerprint, data, first_seen) values (?, ?, ?, ?, ?)",
+                  (record["doi"], record["pmid"], hashlib.sha256((record["doi"] + record["title"]).encode()).hexdigest(),
+                   json.dumps(record, ensure_ascii=False), item["first_seen"]),
+              )
+              for field, value in (("venues", record["journal"]), ("topics", item["topic"]), ("articleTypes", item["article_type"])):
+                  if value not in payload[field]:
+                      payload[field].append(value)
+              payload["records"].append({
+                  "j": payload["venues"].index(record["journal"]),
+                  "f": 1, "r": 0,
+                  "t": payload["topics"].index(item["topic"]),
+                  "c": 0,
+                  "a": payload["articleTypes"].index(item["article_type"]),
+                  "e": record["title"], "d": record["doi"], "m": record["pmid"],
+                  "p": record["date"], "od": 1, "s": item["first_seen"], "z": item["zh_title"],
+                  "summary": item["zh_abstract"],
+                  "summary_source": record["url"],
+              })
+          db.commit()
+          db.close()
+          assert len(payload["records"]) == before + len(new_items)
+          assert len({str(row.get("m", "")) for row in payload["records"] if row.get("m")}) == len([row for row in payload["records"] if row.get("m")]), "Duplicate page PMID."
+          payload["updated"] = max(payload.get("updated", ""), max(item["first_seen"] for item in new_items))
+          rendered = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+          page_path.write_text(page[:start] + rendered + page[end:], encoding="utf-8")
+          with open("catalog.sqlite", "rb") as src, gzip.open("catalog.sqlite.gz", "wb", compresslevel=9) as dst:
+              dst.write(src.read())
+          Path(".publication-log").mkdir(exist_ok=True)
+          Path(".publication-log/" + max(item["first_seen"] for item in new_items) + ".json").write_text(
+              json.dumps({"added_pmids": [item["pmid"] for item in new_items], "records_before": before,
+                          "records_after": before + len(new_items)}, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8")
+          PY
+      - name: Validate the exact incremental result
+        run: |
+          python -X utf8 - <<'PY'
+          import gzip, json, sqlite3
+          from pathlib import Path
+          page = Path("dist/index.html").read_text(encoding="utf-8")
+          payload = page.split('<script id="dataset" type="application/json">', 1)[1].split("</script>", 1)[0]
+          data = json.loads(payload)
+          pmids = ["43097318", "43097295", "43095819"]
+          assert all(any(str(row.get("m")) == pmid and row.get("summary") for row in data["records"]) for pmid in pmids)
+          with gzip.open("catalog.sqlite.gz", "rb") as src, open("catalog.sqlite", "wb") as dst: dst.write(src.read())
+          db = sqlite3.connect("catalog.sqlite")
+          assert db.execute("select count(*) from articles where pmid in (?,?,?)", pmids).fetchone()[0] == 3
+          PY
+      - name: Commit the controlled increment
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog.sqlite.gz dist/index.html .publication-log
+          git diff --cached --quiet || git commit -m "Add approved literature records 2026-11-27"
+          git push
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    needs: publish
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/deploy-pages@v4
