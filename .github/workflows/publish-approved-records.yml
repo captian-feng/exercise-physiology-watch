@@ -1,10 +1,20 @@
 name: Publish approved literature records
+
 on:
   push:
-    paths: ["approved-records/*.json"]
+    paths:
+      - "approved-records/*.json"
   workflow_dispatch:
-permissions: {contents: write, pages: write, id-token: write}
-concurrency: {group: controlled-incremental-publish, cancel-in-progress: false}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: controlled-incremental-publish
+  cancel-in-progress: false
+
 jobs:
   publish:
     runs-on: ubuntu-latest
