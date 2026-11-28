@@ -44,7 +44,7 @@ jobs:
             assert x.get("zh_title") and x.get("zh_abstract"), "Missing reviewed Chinese translation: "+doi
             assert len(x["zh_abstract"].strip()) >= 40, "Chinese abstract too short: "+doi
             date="-".join(map(str,(msg.get("published-online") or msg.get("published-print") or msg.get("issued"))["date-parts"][0]))
-            x["zh_title"]=out["zh"]; x["zh_abstract"]=out["summary"]; x["pmid"]=""
+            x["pmid"]=""
             x["article"]={"doi":doi,"pmid":"","title":msg["title"][0],"author":(msg.get("author") or [{}])[0].get("family",""),"date":date,"type":x["article_type"],"venue":(msg.get("container-title") or [""])[0],"journal":(msg.get("container-title") or [""])[0],"url":"https://doi.org/"+doi,"sources":["Crossref"],"topics":[x["topic"]]}
           with gzip.open("catalog.sqlite.gz","rb") as s,open("catalog.sqlite","wb") as d:d.write(s.read())
           db=sqlite3.connect("catalog.sqlite"); existing={r[0].lower() for r in db.execute("select doi from articles where doi is not null")}
