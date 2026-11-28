@@ -41,11 +41,8 @@ jobs:
             doi=x["doi"].lower(); msg=json.load(urllib.request.urlopen("https://api.crossref.org/works/"+urllib.parse.quote(doi,safe="")))["message"]
             h=Text(); h.feed(msg.get("abstract","")); abstract=h.out().strip()
             assert len(abstract)>30, "No verified abstract: "+doi
-            prompt="将英文论文标题翻译为简体中文，并仅依据英文摘要准确翻译为简体中文摘要；不得添加结论。返回JSON字段zh和summary。\n标题："+msg["title"][0]+"\n摘要："+abstract
-            body=json.dumps({"model":"deepseek-flash","messages":[{"role":"user","content":prompt}],"response_format":{"type":"json_object"},"thinking":{"type":"disabled"},"temperature":0.1,"max_tokens":1400}).encode()
-            key=__import__("os").environ["DEEPSEEK_API_KEY"]; req=urllib.request.Request("https://api.deepseek.com/chat/completions",data=body,headers={"Authorization":"Bearer "+key,"Content-Type":"application/json"})
-            out=json.loads(json.load(urllib.request.urlopen(req))["choices"][0]["message"]["content"])
-            assert out.get("zh") and out.get("summary"), "Empty translation: "+doi
+            assert x.get("zh_title") and x.get("zh_abstract"), "Missing reviewed Chinese translation: "+doi
+            assert len(x["zh_abstract"].strip()) >= 40, "Chinese abstract too short: "+doi
             date="-".join(map(str,(msg.get("published-online") or msg.get("published-print") or msg.get("issued"))["date-parts"][0]))
             x["zh_title"]=out["zh"]; x["zh_abstract"]=out["summary"]; x["pmid"]=""
             x["article"]={"doi":doi,"pmid":"","title":msg["title"][0],"author":(msg.get("author") or [{}])[0].get("family",""),"date":date,"type":x["article_type"],"venue":(msg.get("container-title") or [""])[0],"journal":(msg.get("container-title") or [""])[0],"url":"https://doi.org/"+doi,"sources":["Crossref"],"topics":[x["topic"]]}
